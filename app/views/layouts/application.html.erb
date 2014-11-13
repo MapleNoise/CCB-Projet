@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>CCBProjet</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link data-turbolinks-track="true" href="/stylesheets/application.css" media="all" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
 
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/javascripts/app.min.js"></script>
 </body>
 </html>
