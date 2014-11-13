@@ -24,7 +24,5 @@ public/stylesheets/*
 # Ignore Gemfile.lock
 Gemfile.lock
 
-Gemfile.lock
-
 # Netbeans
 /nbproject/
