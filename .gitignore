@@ -24,3 +24,6 @@ public/stylesheets/*
 Gemfile.lock
 
 Gemfile.lock
+
+# Netbeans
+nbproject/*
