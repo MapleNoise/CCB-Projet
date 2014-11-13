@@ -14,7 +14,7 @@ gem 'gulp_rails', '~> 1.0'
 
 #for authentificate
 gem 'cancan', '~> 1.6.10'
-gem 'devise', '~> 3.4.1' 
+gem 'devise', '~> 3.4.1'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
