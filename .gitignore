@@ -27,4 +27,4 @@ Gemfile.lock
 Gemfile.lock
 
 # Netbeans
-nbproject/*
+/nbproject/
