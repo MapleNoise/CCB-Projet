@@ -15,11 +15,11 @@ class Produit < ActiveRecord::Base
       update_attribute(:dateModification, dateModification)
     end
     
-     def delete
+    def delete
        
-      puts "Destruction immdenentente"
-        update_attribute(:dateSuppression, Time.now)
-     end
+      puts "Destruction immediate"
+       update_attribute(:dateSuppression, Time.now)
+    end
     
 #  validates_associated :typeproduits
 end
