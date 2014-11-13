@@ -18,3 +18,7 @@
 # ignore sass 
 /app/assets/.sass-cache/**/
 node_modules/
+public/stylesheets/*
+
+# Ignore Gemfile.lock
+Gemfile.lock
