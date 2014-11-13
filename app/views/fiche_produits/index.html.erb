@@ -1,0 +1,39 @@
+<h1>Listing fiche_produits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref</th>
+      <th>Titre</th>
+      <th>Description</th>
+      <th>Descriptioncourte</th>
+      <th>Datepublication</th>
+      <th>Datecreation</th>
+      <th>Datemodification</th>
+      <th>Datesuppression</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fiche_produits.each do |fiche_produit| %>
+      <tr>
+        <td><%= fiche_produit.ref %></td>
+        <td><%= fiche_produit.titre %></td>
+        <td><%= fiche_produit.description %></td>
+        <td><%= fiche_produit.descriptionCourte %></td>
+        <td><%= fiche_produit.datePublication %></td>
+        <td><%= fiche_produit.dateCreation %></td>
+        <td><%= fiche_produit.dateModification %></td>
+        <td><%= fiche_produit.dateSuppression %></td>
+        <td><%= link_to 'Show', fiche_produit %></td>
+        <td><%= link_to 'Edit', edit_fiche_produit_path(fiche_produit) %></td>
+        <td><%= link_to 'Destroy', fiche_produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fiche produit', new_fiche_produit_path %>

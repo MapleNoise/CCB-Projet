@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  nom: MyString
+  prix: 1.5
+  dateCreation: 
+  dateModification: 
+  dateSuppression: 
+
+two:
+  ref: MyString
+  nom: MyString
+  prix: 1.5
+  dateCreation: 
+  dateModification: 
+  dateSuppression: 

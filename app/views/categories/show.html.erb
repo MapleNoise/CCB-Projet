@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @category.nom %>
+</p>
+
+<p>
+  <strong>Mere:</strong>
+  <%= @category.mere %>
+</p>
+
+<p>
+  <strong>Datecreation:</strong>
+  <%= @category.dateCreation %>
+</p>
+
+<p>
+  <strong>Datemodification:</strong>
+  <%= @category.dateModification %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @category.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

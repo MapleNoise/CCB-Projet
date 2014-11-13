@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :categories
+
+  resources :type_produits
+
+  resources :fiche_produits
+
+  resources :produits
+  
+  delete "/produits/:id" => "produits#delete"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

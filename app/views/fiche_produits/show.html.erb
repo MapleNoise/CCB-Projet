@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @fiche_produit.ref %>
+</p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @fiche_produit.titre %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fiche_produit.description %>
+</p>
+
+<p>
+  <strong>Descriptioncourte:</strong>
+  <%= @fiche_produit.descriptionCourte %>
+</p>
+
+<p>
+  <strong>Datepublication:</strong>
+  <%= @fiche_produit.datePublication %>
+</p>
+
+<p>
+  <strong>Datecreation:</strong>
+  <%= @fiche_produit.dateCreation %>
+</p>
+
+<p>
+  <strong>Datemodification:</strong>
+  <%= @fiche_produit.dateModification %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @fiche_produit.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_fiche_produit_path(@fiche_produit) %> |
+<%= link_to 'Back', fiche_produits_path %>
