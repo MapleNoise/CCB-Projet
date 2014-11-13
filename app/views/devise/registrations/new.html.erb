@@ -9,17 +9,34 @@
   </div>
 
   <div class="field">
+    <%= f.label :mail_confirmation %>
+    <%= f.email_field :mail_confirmation%>
+  </div>
+
+  <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> caractères minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :nom %>
+    <%= f.text_field :nom, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :prenom %>
+    <%= f.text_field :prenom, autofocus: true %>
+  </div>
+
+  
 
   <div class="actions">
     <%= f.submit "Sign up" %>
