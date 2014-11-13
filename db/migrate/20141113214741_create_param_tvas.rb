@@ -2,9 +2,9 @@ class CreateParamTvas < ActiveRecord::Migration
   def change
     create_table :param_tvas do |t|
       t.float :valeur
-      t.varchar :label
+      t.string :label
       t.datetime :dateCreation
-      t.varchar :dateSuppression
+      t.datetime :dateSuppression
 
       t.timestamps
     end
