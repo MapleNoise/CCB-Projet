@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :nom
     devise_parameter_sanitizer.for(:sign_up) <<:prenom
-    devise_parameter_sanitizer.for(:sign_up) <<:mail_confirmation
+    devise_parameter_sanitizer.for(:sign_up) <<:email_confirmation
   end
 end
