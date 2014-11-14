@@ -10,7 +10,7 @@ class ParamTva < ActiveRecord::Base
   end
   
   def update(params)
-    # Cette méthode ne doit pas être implémenter car la valeur de TVA ne peut pas être changé.
+    # Cette méthode ne doit pas être implémentée car la valeur de TVA ne peut pas être changé.
     # Si on veut faire une modification il faut créer une nouvelle TVA
     fail "La TVA ne peut pas être modifiée"
   end
