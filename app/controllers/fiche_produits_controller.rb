@@ -25,7 +25,8 @@ class FicheProduitsController < ApplicationController
   # POST /fiche_produits.json
   def create
     @fiche_produit = FicheProduit.new(fiche_produit_params)
-
+    
+    
     respond_to do |format|
       if @fiche_produit.save
         format.html { redirect_to @fiche_produit, notice: 'Fiche produit was successfully created.' }
@@ -54,7 +55,7 @@ class FicheProduitsController < ApplicationController
   # DELETE /fiche_produits/1
   # DELETE /fiche_produits/1.json
   def destroy
-    @fiche_produit.destroy
+    @fiche_produit.delete!
     respond_to do |format|
       format.html { redirect_to fiche_produits_url, notice: 'Fiche produit was successfully destroyed.' }
       format.json { head :no_content }

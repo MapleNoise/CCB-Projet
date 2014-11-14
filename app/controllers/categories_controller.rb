@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Categorie.new
+    @categorie = Categorie.new
   end
 
   # GET /categories/1/edit
@@ -24,15 +24,14 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Categorie.new(category_params)
-
+    @categorie = Categorie.new(category_params)
     respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Categorie was successfully created.' }
-        format.json { render :show, status: :created, location: @category }
+      if @categorie.save
+        format.html { redirect_to @categorie, notice: 'Categorie was successfully created.' }
+        format.json { render :show, status: :created, location: @categorie }
       else
         format.html { render :new }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.json { render json: @categorie.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -41,12 +40,12 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1.json
   def update
     respond_to do |format|
-      if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Categorie was successfully updated.' }
-        format.json { render :show, status: :ok, location: @category }
+      if @categorie.update(category_params)
+        format.html { redirect_to @categorie, notice: 'Categorie was successfully updated.' }
+        format.json { render :show, status: :ok, location: @categorie }
       else
         format.html { render :edit }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+        format.json { render json: @categorie.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +53,7 @@ class CategoriesController < ApplicationController
   # DELETE /categories/1
   # DELETE /categories/1.json
   def destroy
-    @category.destroy
+    @categorie.delete!
     respond_to do |format|
       format.html { redirect_to categories_url, notice: 'Categorie was successfully destroyed.' }
       format.json { head :no_content }
@@ -64,11 +63,11 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Categorie.find(params[:id])
+      @categorie = Categorie.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:nom, :mere)
+      params.require(:categorie).permit(:nom, :mere)
     end
 end

@@ -12,36 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ref %><br>
+    <%= f.label "Référence" %><br>
     <%= f.text_field :ref %>
   </div>
   <div class="field">
-    <%= f.label :titre %><br>
+    <%= f.label "Titre" %><br>
     <%= f.text_field :titre %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label "Description" %><br>
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :descriptionCourte %><br>
+    <%= f.label "Description Courte" %><br>
     <%= f.text_area :descriptionCourte %>
   </div>
   <div class="field">
-    <%= f.label :datePublication %><br>
-    <%= f.text_field :datePublication %>
+    <%= f.label "Date de Publication" %><br>
+    <%= f.date_field :datePublication%>
   </div>
   <div class="field">
-    <%= f.label :dateCreation %><br>
-    <%= f.text_field :dateCreation %>
-  </div>
-  <div class="field">
-    <%= f.label :dateModification %><br>
-    <%= f.text_field :dateModification %>
-  </div>
-  <div class="field">
-    <%= f.label :dateSuppression %><br>
-    <%= f.text_field :dateSuppression %>
+    <%= f.label "Heure de Publication" %><br>
+    <%= f.time_field :datePublication %>
   </div>
   <div class="actions">
     <%= f.submit %>
