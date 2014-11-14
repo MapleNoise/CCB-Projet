@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  
+  # Routes personnalisées à placer avant les routes par défaut
+  delete "/produits/:id" => "produits#delete"
+  
+  # Routes des ressources
+  devise_for :utilisateurs
+
   resources :categories
 
   resources :type_produits
@@ -6,10 +13,7 @@ Rails.application.routes.draw do
   resources :fiche_produits
 
   resources :produits
-  
-  delete "/produits/:id" => "produits#delete"
 
-  devise_for :utilisateurs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

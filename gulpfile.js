@@ -12,12 +12,12 @@ var gulp = require('gulp'),
 var assetsDir = 'app/assets/';
 
 var src = {
-  javascript: assetsDir + 'javascripts/',
+  javascripts: assetsDir + 'javascripts/',
   stylesheets: assetsDir + 'stylesheets/'
 };
 
 var dest = {
-  javascript: 'public/javascripts',
+  javascripts: 'public/javascripts',
   css: 'public/stylesheets'
 };
 
@@ -39,14 +39,12 @@ gulp.task('scripts', function() {
     return gulp.src(src.javascripts + '**/*.js')
         .pipe(cache('scripts'))
         .pipe(plumber())
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest(dest.javascripts))
-        .pipe(rename('app.min.js'))
+        .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(dest.javascripts));
 });
 
-gulp.task('watch', ['scss'], function(){
+gulp.task('watch', ['scss', 'scripts'], function(){
   	var server = livereload();
   	gulp.watch(src.stylesheets + '**/*', ['scss']).on('change', function(file) {
   		console.log('le fichier ' + file.path + ' changé');
@@ -59,4 +57,4 @@ gulp.task('watch', ['scss'], function(){
     });
 })
 
-gulp.task('default', ['scss']);
+gulp.task('default', ['scss', 'scripts']);

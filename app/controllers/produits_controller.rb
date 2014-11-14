@@ -1,5 +1,5 @@
 class ProduitsController < ApplicationController
-  before_action :set_produit, only: [:show, :edit, :update, :destroy]
+  before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
 
   # GET /produits
   # GET /produits.json
@@ -43,8 +43,6 @@ class ProduitsController < ApplicationController
       if @produit.update(produit_params)
         format.html { redirect_to @produit, notice: 'Produit was successfully updated.' }
         format.json { render :show, status: :ok, location: @produit }
-            puts "update en attente"
-
       else
         format.html { render :edit }
         format.json { render json: @produit.errors, status: :unprocessable_entity }
@@ -57,7 +55,7 @@ class ProduitsController < ApplicationController
   def delete
     puts "Destruction en attente"
 
-    @produit.delete
+    @produit.delete!
     respond_to do |format|
       format.html { redirect_to produits_url, notice: 'Produit was successfully destroyed.' }
       format.json { head :no_content }

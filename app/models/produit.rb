@@ -10,16 +10,15 @@ class Produit < ActiveRecord::Base
       self.dateCreation  ||= Time.now
     end
     
-    def update(dateModification)
-      dateModification = Time.now
-      update_attribute(:dateModification, dateModification)
+    def update(params)
+      params[:dateModification] = Time.now
+      update_attributes(params)
     end
     
-     def delete
-       
-      puts "Destruction immdenentente"
-        update_attribute(:dateSuppression, Time.now)
-     end
+    # Gestion de la suppression d'un produit
+    def delete!
+      update_attribute(:dateSuppression, Time.now)
+    end
     
 #  validates_associated :typeproduits
 end
