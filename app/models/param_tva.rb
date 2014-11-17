@@ -16,7 +16,7 @@ class ParamTva < ActiveRecord::Base
   end
   
   def getValideTVA(date=Time.now)
-    res ||= ParamTva.where(["dateCreation < :dateNow and 
+    return ParamTva.where(["dateCreation < :dateNow and 
     (dateSuppression > :dateNow or dateSuppression is null)",
         {dateNow: date}])
   end
