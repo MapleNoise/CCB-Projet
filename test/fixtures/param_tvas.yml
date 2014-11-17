@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valeur: 1.5
+  label: 
+  dateCreation: 2014-11-13 22:47:41
+  dateSuppression: 
+
+two:
+  valeur: 1.5
+  label: 
+  dateCreation: 2014-11-13 22:47:41
+  dateSuppression: 
