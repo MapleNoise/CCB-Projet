@@ -3,12 +3,6 @@ class ParamTva < ActiveRecord::Base
   
   validates_presence_of :label, :valeur
   
-  after_initialize :init
-  
-  def init
-    self.dateCreation ||= Time.now
-  end
-  
   def update(params)
     # Cette méthode ne doit pas être implémentée car la valeur de TVA ne peut pas être changé.
     # Si on veut faire une modification il faut créer une nouvelle TVA

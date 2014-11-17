@@ -1,0 +1,41 @@
+<%= form_for(@fiche_produit) do |f| %>
+  <% if @fiche_produit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fiche_produit.errors.count, "error") %> prohibited this fiche_produit from being saved:</h2>
+
+      <ul>
+      <% @fiche_produit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Référence" %><br>
+    <%= f.text_field :ref %>
+  </div>
+  <div class="field">
+    <%= f.label "Titre" %><br>
+    <%= f.text_field :titre %>
+  </div>
+  <div class="field">
+    <%= f.label "Description" %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label "Description Courte" %><br>
+    <%= f.text_area :descriptionCourte %>
+  </div>
+  <div class="field">
+    <%= f.label "Date de Publication" %><br>
+    <%= f.date_field :datePublication%>
+  </div>
+  <div class="field">
+    <%= f.label "Heure de Publication" %><br>
+    <%= f.time_field :datePublication %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

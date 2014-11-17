@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @produit.ref %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @produit.nom %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @produit.prix %>
+</p>
+
+<p>
+  <strong>Datecreation:</strong>
+  <%= @produit.created_at %>
+</p>
+
+<p>
+  <strong>Datemodification:</strong>
+  <%= @produit.updated_at %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @produit.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_produit_path(@produit) %> |
+<%= link_to 'Back', produits_path %>

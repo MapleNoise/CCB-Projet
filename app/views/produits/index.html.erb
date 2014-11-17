@@ -1,0 +1,35 @@
+<h1>Listing produits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Datecreation</th>
+      <th>Datemodification</th>
+      <th>Datesuppression</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @produits.each do |produit| %>
+      <tr>
+        <td><%= produit.ref %></td>
+        <td><%= produit.nom %></td>
+        <td><%= produit.prix %></td>
+        <td><%= produit.created_at %></td>
+        <td><%= produit.updated_at %></td>
+        <td><%= produit.dateSuppression %></td>
+        <td><%= link_to 'Show', produit %></td>
+        <td><%= link_to 'Edit', edit_produit_path(produit) %></td>
+        <td><%= link_to 'Delete', produit, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Produit', new_produit_path %>

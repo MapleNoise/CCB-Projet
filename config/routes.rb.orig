@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'welcome/index'
 
   devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
+=======
   
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :produits
 
+>>>>>>> purgeMigration
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

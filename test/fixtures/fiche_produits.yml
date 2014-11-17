@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  titre: MyString
+  description: MyText
+  descriptionCourte: MyText
+  datePublication: 
+  dateCreation: 
+  dateModification: 
+  dateSuppression: 
+
+two:
+  ref: MyString
+  titre: MyString
+  description: MyText
+  descriptionCourte: MyText
+  datePublication: 
+  dateCreation: 
+  dateModification: 
+  dateSuppression: 
