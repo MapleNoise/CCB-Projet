@@ -13,7 +13,6 @@
     <% @type_produits.each do |type_produit| %>
       <tr>
         <td><%= type_produit.nom %></td>
-        <td><%= type_produit.format %></td>
         <td><%= link_to 'Show', type_produit %></td>
         <td><%= link_to 'Edit', edit_type_produit_path(type_produit) %></td>
         <td><%= link_to 'Destroy', type_produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>

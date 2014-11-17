@@ -17,8 +17,8 @@
       <tr>
         <td><%= category.nom %></td>
         <td><%= category.mere %></td>
-        <td><%= category.dateCreation %></td>
-        <td><%= category.dateModification %></td>
+        <td><%= category.created_at %></td>
+        <td><%= category.updated_at %></td>
         <td><%= category.dateSuppression %></td>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
