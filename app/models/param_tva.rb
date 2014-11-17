@@ -15,6 +15,10 @@ class ParamTva < ActiveRecord::Base
     fail "La TVA ne peut pas être modifiée"
   end
   
+  def getValidateTVAFromDate(date)
+    
+  end
+  
   def delete!
     update_attribute(:dateSuppression, Time.now)
   end
