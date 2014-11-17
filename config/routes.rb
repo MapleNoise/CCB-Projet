@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :utilisateurs
+  get 'welcome/index'
+
+  devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'welcome#index'
 
   get 'test/style' => 'style#index'
 
@@ -56,4 +58,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get '/utilisateurs/sign_out' => 'devise/sessions#destroy'
 end

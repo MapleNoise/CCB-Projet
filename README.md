@@ -9,12 +9,18 @@ TechGame G4IM Y2 - 2014
 * [node](http://nodejs.org) ([on github](https://github.com/joyent/node))
 
 
-**Install**
-For install all gem
+**Installation**
+Installer les nouvelles gem ajouté dans le gemfile :
 ``` Bash
   bundle install
 ```
-for all node / gulp dependencies
+
+Installer gulp pour la gestion et la compilation des assets 
+``` Bash
+  npm install gulp -g
+```
+
+Installer les modules node.js nécessaire pour le projet implémenté dans dans le package.js
 ``` Bash
   npm install
 ```
