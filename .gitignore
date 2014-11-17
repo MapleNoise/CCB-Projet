@@ -13,6 +13,8 @@
 /db/schema.rb
 /db/*.sqlite3_test
 
+*.sqlite3_test
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -29,3 +31,6 @@ Gemfile.lock
 
 # Netbeans
 /nbproject/
+
+
+db/development.sqlite3_test

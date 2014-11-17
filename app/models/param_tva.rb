@@ -15,8 +15,10 @@ class ParamTva < ActiveRecord::Base
     fail "La TVA ne peut pas être modifiée"
   end
   
-  def getValidateTVAFromDate(date)
-    
+  def getValideTVA(date=Time.now)
+    res ||= ParamTva.where(["dateCreation < :dateNow and 
+    (dateSuppression > :dateNow or dateSuppression is null)",
+        {dateNow: date}])
   end
   
   def delete!
