@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  
 
   devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
+  devise_scope :utilisateur do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+  end
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
    root 'welcome#index'
 
