@@ -24,10 +24,15 @@ class UtilisateursController < ApplicationController
     end
   
   def create
-    @utilisateur = Utilisateur.new(params[:utilisateur])
+    
+    @utilisateur = Utilisateur.new(utilisateur_params)
+    #utilisateur = Utilisateur.new()
+    
+    #@utilisateur = utilisateur
     if @utilisateur.save
+      @utilisateur.add_role :utilisateur
       flash[:notice] = "Successfully created User." 
-      redirect_to root_path
+      redirect_to @utilisateur
     else
       render :action => 'new'
     end
@@ -59,7 +64,7 @@ end
  
 private
   def utilisateur_params
-    params.require(:utilisateur).permit(:email, :email_confirmation, :encrypted_password, :nom, :prenom, :dateCreation, :dateModification)
+    params.require(:utilisateur).permit(:email, :email_confirmation, :password, :password_confirmation,  :nom, :prenom)
   end
   
   

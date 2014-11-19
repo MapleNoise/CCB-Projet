@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # put    "utilisateurs/password"            => "devise/passwords#update"
     get    "inscription/cancel"  => "devise/registrations#cancel", as: :cancel_utilisateur_registration
     post   "inscription"         => "devise/registrations#create", as: :utilisateur_registration
-    get    "inscription/sign_up" => "devise/registrations#new", as: :new_utilisateur_registration
+    get    "inscription/enregistrement" => "devise/registrations#new", as: :new_utilisateur_registration
     get    "inscription/edit"    => "devise/registrations#edit", as: :edit_utilisateur_registration
     patch  "inscription"         => "devise/registrations#update"
     put    "inscription"         => "devise/registrations#update"
