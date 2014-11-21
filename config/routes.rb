@@ -1,27 +1,30 @@
-Rails.application.routes.draw do
-  get 'welcome/index'
+Rails.application.routes.draw do  
 
-  devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
+  devise_for :utilisateurs, skip: :all
+  devise_scope :utilisateur do
+    get 'connexion' => 'devise/sessions#new', as: :new_utilisateur_session
+    post 'connexion' => 'devise/sessions#create', as: :utilisateur_session
+    get 'deconnexion' => 'devise/sessions#destroy', as: :destroy_utilisateur_session
+    # post   "utilisateurs/password"            => "devise/passwords#create", as: :utilisateur_password
+    # get    "utilisateurs/password/new"        => "devise/passwords#new", as: :new_utilisateur_password
+    # get    "utilisateurs/password/edit"       => "devise/passwords#edit", as: :edit_utilisateur_password
+    # patch  "utilisateurs/password"            => "devise/passwords#update"
+    # put    "utilisateurs/password"            => "devise/passwords#update"
+    get    "inscription/cancel"  => "devise/registrations#cancel", as: :cancel_utilisateur_registration
+    post   "inscription"         => "devise/registrations#create", as: :utilisateur_registration
+    get    "inscription/enregistrement" => "devise/registrations#new", as: :new_utilisateur_registration
+    get    "inscription/edit"    => "devise/registrations#edit", as: :edit_utilisateur_registration
+    patch  "inscription"         => "devise/registrations#update"
+    put    "inscription"         => "devise/registrations#update"
+    delete "inscription"         => "devise/registrations#destroy"
+  end
   
-  # Routes personnalisées à placer avant les routes par défaut
-  delete "/produits/:id" => "produits#delete"
   
-  # Routes des ressources
-  devise_for :utilisateurs
-
-  resources :categories
-
-  resources :type_produits
-
-  resources :fiche_produits
-
-  resources :produits
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
-   root 'welcome#index'
+  root 'welcome#index'
 
   get 'test/style' => 'style#index'
 
@@ -73,5 +76,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get '/utilisateurs/sign_out' => 'devise/sessions#destroy'
 end

@@ -3,19 +3,22 @@ class Utilisateurs::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+   def new
+     super
+   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+   def create
+     @utilisateur.add_role("utilisateur");
+     super
+     #@utilisateur.add_role("utilisateur");
+   end
 
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
+   # GET /resource/edit
+   def edit
+     super
+     @utilisateur
+   end
 
   # PUT /resource
   # def update
