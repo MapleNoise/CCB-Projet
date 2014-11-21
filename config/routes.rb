@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete "/produits/:id" => "produits#delete"
   
   # Routes des ressources
-  devise_for :utilisateurs
+  # devise_for :utilisateurs
 
   resources :categories
 

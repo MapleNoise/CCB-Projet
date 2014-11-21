@@ -26,7 +26,5 @@ module CCBProjet
     GulpRails.options[:command]   = 'gulp'
     # The directory in which your command should be executed
     GulpRails.options[:directory] = Rails.root
-    Encoding.default_external = Encoding::UTF_8
-    Encoding.default_internal = Encoding::UTF_8
   end
 end
