@@ -10,6 +10,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :categories
   fixtures :fiche_produits
+  fixtures :produits
+  fixtures :type_produits
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
