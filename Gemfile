@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+# Installer la gem mysql
+# gem 'mysql', '~> 2.9.1'
 
 # Ajout de sass pour le projet
 gem 'sass', '~> 3.4.7'
