@@ -2,10 +2,6 @@ require 'test_helper'
 
 class ParamTvaTest < ActiveSupport::TestCase
   
-  test "the truth" do
-    assert true
-  end
-  
   test "ne_pas_enregister_une_TVA_sans_label" do
     tva ||= ParamTva.new
     assert_not tva.save
@@ -33,5 +29,14 @@ class ParamTvaTest < ActiveSupport::TestCase
     puts "length : " + res.length.to_s
     
   end
-  
+
+  test "La valeur de la TVA doit etre un nombre" do
+    tva ||= ParamTva.create(valeur: "Pouet", label: "TVA label")
+    assert_not tva.save
+  end
+
+    test "La valeur de la TVA doit etre un nombre superieur a 0" do
+    tva ||= ParamTva.create(valeur: -2, label: "TVA label")
+    assert_not tva.save
+  end
 end

@@ -14,7 +14,7 @@ class CategorieTest < ActiveSupport::TestCase
 
   test "Le nom est trop long" do
   	#60 x "a"
-  	c =  Categorie.create(nom: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+  	c =  Categorie.create(nom: "a" * 60)
   	assert_not c.save
   end
 

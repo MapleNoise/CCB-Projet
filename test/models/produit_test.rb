@@ -37,4 +37,9 @@ class ProduitTest < ActiveSupport::TestCase
 		assert_not pt.save
 	end
 
+	test "save normal" do
+		pt = Produit.create(nom: "name", prix: 0, ref: "a"*6)
+		assert pt.save
+	end
+
 end
