@@ -1,0 +1,55 @@
+.menu {
+	
+	@include gridle_parent();
+	border: 1px solid #d2d3d5;
+	height: 80px;
+
+	&__item {
+		
+		@include gridle(2);
+		display: inline-block;
+		height: 80px;
+		border-right: 1px solid #d2d3d5;
+		text-decoration: none;
+		color: rgb(88, 89, 91);
+		line-height: 24px;
+		text-align: center;
+		vertical-align: middle;
+		
+		&.is-active {
+			background-color: #eee;
+		}
+
+		&:hover {
+			background-color: #898787;
+			color: $color-white;
+		}
+
+		&--last {
+			@include gridle(1);
+			border-right: none;
+		}
+
+		&--first {
+			@include gridle(1);
+		}
+
+		&__title {
+			font-size: 15px;
+			line-height: 18px;
+			font-weight: normal;
+			text-transform: uppercase;
+
+			&--logo {
+
+			}
+		}
+
+		&__body {
+			display: inline-block;
+			font-size: 13px;
+			font-style: italic;
+			text-transform: lowercase;
+		}
+	}
+}

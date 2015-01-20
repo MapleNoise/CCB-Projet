@@ -1,0 +1,22 @@
+.color-bar {
+	
+	@include gridle_parent();
+	
+	&__item {
+
+		@include gridle(4);
+		height: $color-bar-height;
+
+		&--blue {
+			background-color: $color-blue;
+		}
+
+		&--green {
+			background-color: $color-green;
+		}
+
+		&--yellow {
+			background-color: $color-yellow;
+		}
+	}
+}

@@ -113,9 +113,11 @@
 				and $stateName {
 				// html class :
 				@if $has-parent {
-					html#{_gridle_classname("#{$stateName}")} & { @content; }
+					$className: _gridle_classname("#{$stateName}");
+					html#{$className} & { @content; }
 				} @else {
-					html#{_gridle_classname("#{$stateName}")} { @content; }
+					$className: _gridle_classname("#{$stateName}");
+					html#{$className} { @content; }
 				}
 			}
 
@@ -146,9 +148,11 @@
 			and $stateName {
 			// html class :
 			@if $has-parent {
-				html#{_gridle_classname("#{$stateName}")} & { @content; }
+				$className: _gridle_classname("#{$stateName}");
+				html#{$className} & { @content; }
 			} @else {
-				html#{_gridle_classname("#{$stateName}")} { @content; }
+				$className: _gridle_classname("#{$stateName}");
+				html#{$className} { @content; }
 			}
 		}
 
@@ -217,7 +221,8 @@
 	
 	// ie7 support :
 	@if $ie7-support == true {
-		*width: expression((this.parentNode.clientWidth/#{$context}*#{($columns / $name-multiplicator)} - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px');
+		// $v: ($columns/$name-multiplicator);
+		// *width: expression((this.parentNode.clientWidth/#{$context}*#{$v} - parseInt(this.currentStyle['paddingLeft']) - parseInt(this.currentStyle['paddingRight'])) + 'px');
 	}
 	
 	// debug :

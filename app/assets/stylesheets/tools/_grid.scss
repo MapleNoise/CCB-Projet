@@ -3,7 +3,6 @@
 @include gridle_setup((
 	context: $grid-columns,
 	gutter-width: $grid-gutter,
-	debug : true
 ));
 
 
