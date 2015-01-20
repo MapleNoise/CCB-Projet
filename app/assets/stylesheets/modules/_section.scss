@@ -1,0 +1,27 @@
+$border-section-title-width : 3px 0;
+$border-section-title-type : solid #020001;
+$border-section-body : 1px solid #d2d3d5;
+
+.section {
+	border-bottom: $border-section-body;
+
+	&__content {
+
+		@include gridle(9, large);
+		@include gridle(12, small);
+		@include gridle-centered();
+
+		border-left: 1px solid #d2d3d5;
+		border-right: 1px solid #d2d3d5;
+
+		&__title{
+			padding : 10px !important;
+			border-bottom: $border-section-title-type;
+			border-width: $border-section-title-width;
+		}
+		&__body{
+			height: 100%;
+			//border-bottom: $border-section-body;
+		}
+	}
+}
