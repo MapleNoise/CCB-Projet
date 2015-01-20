@@ -1,5 +1,7 @@
 Rails.application.routes.draw do  
 
+  resources :formats
+
   devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
   
   # Routes personnalisées à placer avant les routes par défaut
@@ -13,8 +15,6 @@ Rails.application.routes.draw do
     resources :fiche_produits
 
     resources :produits
-
-  end
   
   
   # The priority is based upon order of creation: first created -> highest priority.

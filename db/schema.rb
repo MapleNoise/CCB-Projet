@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117173045) do
+ActiveRecord::Schema.define(version: 20150120103811) do
 
   create_table "categories", force: true do |t|
     t.string   "nom"
@@ -21,6 +21,11 @@ ActiveRecord::Schema.define(version: 20141117173045) do
     t.datetime "updated_at"
   end
 
+  create_table "categories_produits", id: false, force: true do |t|
+    t.integer "produit_id",  null: false
+    t.integer "category_id", null: false
+  end
+
   create_table "fiche_produits", force: true do |t|
     t.string   "ref"
     t.string   "titre"
@@ -28,6 +33,14 @@ ActiveRecord::Schema.define(version: 20141117173045) do
     t.text     "descriptionCourte"
     t.datetime "datePublication"
     t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "param_tvas_id"
+    t.integer  "produits_id"
+  end
+
+  create_table "formats", force: true do |t|
+    t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141117173045) do
     t.datetime "dateSuppression"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_produits_id"
   end
 
   create_table "roles", force: true do |t|
@@ -64,6 +78,7 @@ ActiveRecord::Schema.define(version: 20141117173045) do
     t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "formats_id"
   end
 
   create_table "utilisateurs", force: true do |t|

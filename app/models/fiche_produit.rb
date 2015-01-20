@@ -9,6 +9,9 @@ class FicheProduit < ActiveRecord::Base
   validates :descriptionCourte, length: { minimum: 6 , too_short: "Le minimum requis est de %{count} caracteres"}
   validates :descriptionCourte, length: { maximum: 200 , too_long: "Le maximum requis est de %{count} caracteres"}
 
+  has_one :ParamTVA
+  has_many :Produit
+
   # Gestion de la suppression d'un produit
   def delete!
     update_attribute(:dateSuppression, Time.now)
