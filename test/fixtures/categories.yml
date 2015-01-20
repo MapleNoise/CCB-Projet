@@ -1,15 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nom: MyString
+testunit:
+  nom: Cat 1
   mere: 
-  dateCreation: 
-  dateModification: 
   dateSuppression: 
 
-two:
-  nom: MyString
+testunit2:
+  nom: Cat 2
   mere: 
-  dateCreation: 
-  dateModification: 
   dateSuppression: 

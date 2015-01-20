@@ -1,23 +1,5 @@
 Rails.application.routes.draw do  
 
-<<<<<<< HEAD
-  devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
-  
-  # Routes personnalisées à placer avant les routes par défaut
-  delete "/produits/:id" => "produits#delete"
-  
-  # Routes des ressources
-  devise_for :utilisateurs
-
-  resources :categories
-
-  resources :type_produits
-
-  resources :fiche_produits
-
-  resources :produits
-
-=======
   devise_for :utilisateurs, skip: :all
   devise_scope :utilisateur do
     get 'connexion' => 'devise/sessions#new', as: :new_utilisateur_session
@@ -35,10 +17,31 @@ Rails.application.routes.draw do
     patch  "inscription"         => "devise/registrations#update"
     put    "inscription"         => "devise/registrations#update"
     delete "inscription"         => "devise/registrations#destroy"
+    resources :categories
+
+    resources :type_produits
+
+    resources :fiche_produits
+
+    resources :produits
+
   end
   
   
->>>>>>> Gestion_droit_utilisateur
+<<<<<<< HEAD
+=======
+  # Routes des ressources
+  # devise_for :utilisateurs
+
+  resources :categories
+
+  resources :type_produits
+
+  resources :fiche_produits
+
+  resources :produits
+
+>>>>>>> associationsBDD
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :utilisateurs, :controller => "utilisateurs"

@@ -1,8 +1,9 @@
+#encoding: UTF-8
 require 'test_helper'
 
 class CategoriesControllerTest < ActionController::TestCase
   setup do
-    @category = categories(:one)
+    @category = categories(:testunit)
   end
 
   test "should get index" do
@@ -16,12 +17,15 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should not create category (uniqueness)" do
+    assert_not( Categorie.create({ nom: @category.nom }).save )
+  end
+
   test "should create category" do
     assert_difference('Categorie.count') do
-      post :create, category: { dateCreation: @category.dateCreation, dateModification: @category.dateModification, dateSuppression: @category.dateSuppression, mere: @category.mere, nom: @category.nom }
+      post :create, categorie: { nom: "#{@category.nom}unit", mere: @category.mere }
     end
-
-    assert_redirected_to category_path(assigns(:category))
+    assert_redirected_to category_path(assigns(:categorie))
   end
 
   test "should show category" do
@@ -35,15 +39,21 @@ class CategoriesControllerTest < ActionController::TestCase
   end
 
   test "should update category" do
-    patch :update, id: @category, category: { dateCreation: @category.dateCreation, dateModification: @category.dateModification, dateSuppression: @category.dateSuppression, mere: @category.mere, nom: @category.nom }
-    assert_redirected_to category_path(assigns(:category))
+    patch :update, id: @category, categorie: { dateSuppression: @category.dateSuppression, mere: @category.mere, nom: @category.nom }
+    assert_redirected_to category_path(assigns(:categorie))
+  end
+  
+  test "doit mettre à jour le champs dateSuppression" do
+    @category.delete!
+    @category.save
+    assert ( @category[:dateSuppression] != nil)
   end
 
-  test "should destroy category" do
-    assert_difference('Categorie.count', -1) do
-      delete :destroy, id: @category
-    end
-
-    assert_redirected_to categories_path
-  end
+  # test "should destroy category" do
+  #   assert_difference('Categorie.count', -1) do
+  #     delete :destroy, id: @category
+  #   end
+  #
+  #   assert_redirected_to categories_path
+  # end
 end

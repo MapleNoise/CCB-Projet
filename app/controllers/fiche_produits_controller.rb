@@ -70,6 +70,6 @@ class FicheProduitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fiche_produit_params
-      params.require(:fiche_produit).permit(:ref, :titre, :description, :descriptionCourte, :datePublication, :dateCreation, :dateModification, :dateSuppression)
+      params.require(:fiche_produit).permit(:ref, :titre, :description, :descriptionCourte, :datePublication, :dateSuppression)
     end
 end
