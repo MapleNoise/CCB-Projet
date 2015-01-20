@@ -15,7 +15,9 @@ $border-section-body : 1px solid #d2d3d5;
 		border-right: 1px solid #d2d3d5;
 
 		&__title{
-			padding : 10px !important;
+			margin-top: 0px;
+			margin-left: 15px;
+			padding-top: 15px;
 			border-bottom: $border-section-title-type;
 			border-width: $border-section-title-width;
 		}
