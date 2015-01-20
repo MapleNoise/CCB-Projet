@@ -17,6 +17,14 @@ Rails.application.routes.draw do
     patch  "inscription"         => "devise/registrations#update"
     put    "inscription"         => "devise/registrations#update"
     delete "inscription"         => "devise/registrations#destroy"
+    resources :categories
+
+    resources :type_produits
+
+    resources :fiche_produits
+
+    resources :produits
+
   end
   
   
