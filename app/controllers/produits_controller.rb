@@ -15,6 +15,9 @@ class ProduitsController < ApplicationController
   # GET /produits/new
   def new
     @produit = Produit.new
+    puts "cocoucocucfghjkjhgfghjkjhgfghjklkjhgf"
+    @categories_base = Categorie.all
+    puts @categories_base
   end
 
   # GET /produits/1/edit
@@ -70,6 +73,6 @@ class ProduitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def produit_params
-      params.require(:produit).permit(:ref, :nom, :prix)
+      params.require(:produit).permit(:ref, :nom, :prix, :)
     end
 end
