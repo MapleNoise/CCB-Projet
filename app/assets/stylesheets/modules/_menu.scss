@@ -12,9 +12,12 @@
 		border-right: 1px solid #d2d3d5;
 		text-decoration: none;
 		color: rgb(88, 89, 91);
-		line-height: 24px;
+		line-height: 4px;
 		text-align: center;
-		vertical-align: middle;
+		//vertical-align: middle;
+                //@include vertical-align(middle);
+                
+                
 		
 		&.is-active {
 			background-color: #eee;
@@ -29,6 +32,10 @@
 			@include gridle(1);
 			border-right: none;
 		}
+                
+                &--cart {
+                     background-color: $color-blue;
+                }
 
 		&--first {
 			@include gridle(1);
@@ -39,17 +46,31 @@
 			line-height: 18px;
 			font-weight: normal;
 			text-transform: uppercase;
-
+                        display: inline-block;
+                        vertical-align: middle;
+                        //@include vertical-align(middle);
+                        text-align: center;
+                        //height: 15px;
+                        padding-top: 15px;
 			&--logo {
 
 			}
+                        
+                       
 		}
 
 		&__body {
-			display: inline-block;
-			font-size: 13px;
+			display: block;
+			font-size: 14px;
 			font-style: italic;
 			text-transform: lowercase;
+                        vertical-align: middle;
+                        padding-top: 5px;
+                        padding-bottom: 15px;
+                        //@include vertical-align();
 		}
+                
+                
 	}
 }
+
