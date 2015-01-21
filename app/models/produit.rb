@@ -4,11 +4,12 @@ class Produit < ActiveRecord::Base
   validates :ref, length: { minimum: 6 , too_short: "Le minimum requis est de %{count} caracteres"} , uniqueness: true
   validates :ref, length: { maximum: 20 , too_long: "Le maximum requis est de %{count} caracteres"}
 
-  has_many :FicheProduit
+  has_many :categories_produits
+  has_many :categories, :through  => :categories_produits
+  has_many :fiche_produits
   #belongs_to :Coach
-  has_and_belongs_to_many :Categorie
   #has_many :Chapitre
-  has_one :TypeProduits
+  has_one :type_produits
   
   # Gestion de la suppression d'un produit
   def delete!

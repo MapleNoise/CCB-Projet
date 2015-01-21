@@ -25,13 +25,24 @@ class ProduitsController < ApplicationController
   # POST /produits.json
   def create
     @produit = Produit.new(produit_params)
+    @produit_categorie  = Categories_produits.new
+    @produit_categorie.category_id = produit_categorie_params
+   
     respond_to do |format|
-      if @produit.save
-        format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
-        format.json { render :show, status: :created, location: @produit }
-      else
-        format.html { render :new }
-        format.json { render json: @produit.errors, status: :unprocessable_entity }
+      Produit.transaction do
+        if @produit.save
+          if 
+            format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
+            format.json { render :show, status: :created, location: @produit }
+          else
+            format.html { render :new }
+            format.json { render json: @produit.errors, status: :unprocessable_entity }
+          end       
+          Produit.transaction do
+              @produit_categorie.produit_id = @produit.id
+              @produit_categorie.save
+          end
+        end
       end
     end
   end
@@ -71,5 +82,9 @@ class ProduitsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def produit_params
       params.require(:produit).permit(:ref, :nom, :prix)
+    end
+    
+    def produit_categorie_params
+        params.require(:categorie)
     end
 end
