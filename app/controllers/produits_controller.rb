@@ -15,6 +15,7 @@ class ProduitsController < ApplicationController
   # GET /produits/new
   def new
     @produit = Produit.new
+    @produit.init!
   end
 
   # GET /produits/1/edit
