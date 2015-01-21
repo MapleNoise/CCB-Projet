@@ -25,6 +25,7 @@ class ProduitsController < ApplicationController
   # POST /produits.json
   def create
     @produit = Produit.new(produit_params)
+    @produit.type_produits_id = type_produit_params
     @produit_categorie  = Categories_produits.new
     @produit_categorie.category_id = produit_categorie_params
    
@@ -41,6 +42,7 @@ class ProduitsController < ApplicationController
           Produit.transaction do
               @produit_categorie.produit_id = @produit.id
               @produit_categorie.save
+              
           end
         end
       end
@@ -86,5 +88,9 @@ class ProduitsController < ApplicationController
     
     def produit_categorie_params
         params.require(:categorie)
+    end
+    
+     def type_produit_params
+        params.require(:types_produits)
     end
 end
