@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Référence" %><br>
-    <%= f.text_field :ref %>
+    <%= f.label "Référence : #{f.object.ref}" %><br>
   </div>
+  <hr>
   <div class="field">
     <%= f.label "Titre" %><br>
     <%= f.text_field :titre %>
