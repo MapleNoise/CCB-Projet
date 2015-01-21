@@ -25,8 +25,8 @@ gulp.task('scss', function(){
           onError: console.error.bind(console, 'SCSS error : ')
         }))
         .pipe(gulp.dest(dest.css))
-        .pipe($.size());
-        .pipe(browserSync.reload({stream:true}))
+        .pipe($.size())
+        .pipe(browserSync.reload({stream:true}));
 })
 
 
