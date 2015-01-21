@@ -10,8 +10,13 @@
 @import 'base/base',
         'base/resetcss';
 
+@import 'layouts/section';
+
+
 @import 
 	'modules/color-bar',
 	'modules/menu',
 	'modules/button',
-	'modules/section';
+	'modules/section',
+	'modules/footer',
+	'modules/categorie';

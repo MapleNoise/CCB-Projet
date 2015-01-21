@@ -1,29 +1,28 @@
-$border-section-title-width : 3px 0;
-$border-section-title-type : solid #020001;
-$border-section-body : 1px solid #d2d3d5;
-
 .section {
 	border-bottom: $border-section-body;
-
 	&__content {
-
-		@include gridle(9, large);
-		@include gridle(12, small);
-		@include gridle-centered();
-
-		border-left: 1px solid #d2d3d5;
-		border-right: 1px solid #d2d3d5;
+		border-left: $border-section-body;
+		border-right: $border-section-body;
+		padding: 30px;
+		&--sticky{
+			padding-top: 30px;
+			@include gridle_no_gutter();
+			.section__content__title{
+				margin: 0 30px 15px 30px;
+			}
+		}
 
 		&__title{
-			margin-top: 0px;
-			margin-left: 15px;
-			padding-top: 15px;
+			text-transform : uppercase;
+			font-size: 18px;
+			padding-bottom: 5px;
+			margin-bottom: 15px;
 			border-bottom: $border-section-title-type;
 			border-width: $border-section-title-width;
 		}
+		
 		&__body{
-			height: 100%;
-			//border-bottom: $border-section-body;
+			padding-bottom: 20px;
 		}
 	}
 }
