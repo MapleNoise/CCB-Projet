@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+  browserSync = require('browser-sync'),
   $ = require('gulp-load-plugins')(),
   assetsDir = 'app/assets/',
   src = {
@@ -11,16 +12,27 @@ var gulp = require('gulp'),
   };
 
 
+gulp.task('browser-sync', function() {
+    browserSync({
+        proxy: "localhost:3000"
+    });
+});
+
+
 gulp.task('scss', function(){
     return gulp.src(src.stylesheets + 'application.scss')
         .pipe($.sass({
           onError: console.error.bind(console, 'SCSS error : ')
         }))
-        .pipe(gulp.dest(dest.css));
+        .pipe(gulp.dest(dest.css))
+        .pipe($.size());
+        .pipe(browserSync.reload({stream:true}))
 })
 
 
 gulp.task('default', function(){
+       gulp.watch('app/views/**/*.html.erb', browserSync.reload());
+       gulp.watch('public/*.html', browserSync.reload());
        gulp.watch(src.stylesheets + '**/*', ['scss']);
 })
 

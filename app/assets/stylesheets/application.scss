@@ -1,15 +1,17 @@
-@import 'settings';
+@import 
+	'settings';
 
-@import 'tools/functions';
-@import 'tools/mixins';
+@import 
+	'tools/functions',
+	'tools/mixins',
+	'tools/grid';
 
-@import 'tools/grid';
 
+@import 'base/base',
+	'base/normalize';
 
-@import 'base/base';
-@import 'base/normalize';
-
-@import 'modules/color-bar';
-@import 'modules/menu';
-@import 'modules/button';
-@import 'modules/section';
+@import 
+	'modules/color-bar',
+	'modules/menu',
+	'modules/button',
+	'modules/section';
