@@ -15,6 +15,7 @@ class FicheProduitsController < ApplicationController
   # GET /fiche_produits/new
   def new
     @fiche_produit = FicheProduit.new
+    @fiche_produit.init!
   end
 
   # GET /fiche_produits/1/edit

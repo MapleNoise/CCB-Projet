@@ -8,7 +8,7 @@ class Produit < ActiveRecord::Base
   #belongs_to :Coach
   has_and_belongs_to_many :Categorie
   #has_many :Chapitre
-  has_one :TypeProduits
+  has_one :TypeProduit
   
   # Gestion de la suppression d'un produit
   def delete!

@@ -16,4 +16,8 @@ class FicheProduit < ActiveRecord::Base
   def delete!
     update_attribute(:dateSuppression, Time.now)
   end
+
+  def init!
+    self.ref = Digest::MD5.hexdigest((Time.now).strftime("%Y%m%dT%H%M%S%L%z"))[10..25]
+  end
 end
