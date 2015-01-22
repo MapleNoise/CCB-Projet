@@ -6,11 +6,11 @@
     @include gridle_parent();
     margin-top: 15px;
 	&__copyright{
-		@include gridle(6);
+		@include gridle(4.8);
 		@include gridle_push(0.2);
 	}
 	&__link{
-		@include gridle(6);
+		@include gridle(5.6);
 		@include gridle_push(1.4);
 		.button--link {
 			padding : 0 10px;

@@ -17,7 +17,6 @@ gulp.task('browser-sync', function() {
         proxy: "localhost:3000",
         startPath: "/design.html",
         port: 8080,
-        browser: "google chrome",
         files: ["app/views/**/*.html.erb", 'public/*.html']
     });
 });
