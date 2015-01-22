@@ -13,6 +13,7 @@
 		@include gridle(5.6);
 		@include gridle_push(1.4);
 		.button--link {
+			text-align: right;
 			padding : 0 10px;
 			border-right : 2px solid #58595b;
 			line-height : 14px;
