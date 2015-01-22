@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     resources :produits
     
     resources :categories
+    
+  get 'connexion' => 'sessions#login_attempt'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
