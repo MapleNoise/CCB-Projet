@@ -1,0 +1,65 @@
+.header{
+    @include gridle_parent();
+        &__logo{
+            @include gridle(1);
+            float: left;
+            width: 475px;
+            height: 134px;
+            background: url("../images/logo-cap-coherence.png")  no-repeat;
+            
+        }
+        
+    &__client{
+        @include gridle(1);
+        text-align: right;
+        padding-right: 20px;
+        display: inline-block;
+        width: 475px;
+        position: relative;
+    }
+}
+
+
+.client {
+        &__login{
+            position: absolute;
+            right: 27px;
+            top: 25px;
+            
+                    &__picto{
+                        width: 17px;
+                    }
+        }
+        
+        &__newsletter{
+            position: relative;
+            height: 104px;
+            width: 320px;
+            margin: 56px 20px 0px 48px;
+            padding: 10px;
+            background-color: #F6F6F6;
+            display: block;
+            
+            
+            &__picto{
+                position: absolute;
+                top: 17px;
+                left: 15px;
+                width: 25px;
+                display: inline-block;
+            }
+            
+        p{
+            margin-left: 46px;
+            color: black;
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+        }
+}
+
+.bold{
+    font-weight:600;
+}
