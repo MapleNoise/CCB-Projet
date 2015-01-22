@@ -10,9 +10,14 @@
 @import 'base/base',
         'base/resetcss';
 
+@import 'layouts/section';
+
+
 @import 
 	'modules/color-bar',
 	'modules/menu',
 	'modules/button',
 	'modules/section',
         'modules/header';
+	'modules/footer',
+	'modules/categorie';
