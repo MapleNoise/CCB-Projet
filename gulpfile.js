@@ -14,7 +14,11 @@ var gulp = require('gulp'),
 
 gulp.task('browser-sync', function() {
     browserSync({
-        proxy: "localhost:3000"
+        proxy: "localhost:3000",
+        startPath: "/design.html",
+        port: 8080,
+        browser: "google chrome",
+        files: ["app/views/**/*.html.erb", 'public/*.html']
     });
 });
 
@@ -30,11 +34,12 @@ gulp.task('scss', function(){
 })
 
 
-gulp.task('default', function(){
-       gulp.watch('app/views/**/*.html.erb', browserSync.reload());
-       gulp.watch('public/*.html', browserSync.reload());
+gulp.task('default', ['browser-sync'], function(){
+       // gulp.watch('app/views/**/*.html.erb', browserSync.reload());
+       // gulp.watch('public/*.html', browserSync.reload());
        gulp.watch(src.stylesheets + '**/*', ['scss']);
 })
+
 
 // Concatenate & Minify JS
 // gulp.task('scripts', function() {

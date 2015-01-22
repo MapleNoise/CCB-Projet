@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20141117173045) do
     t.datetime "updated_at"
   end
 
+  create_table "roles", force: true do |t|
+    t.string   "name"
+    t.integer  "resource_id"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
+  add_index "roles", ["name"], name: "index_roles_on_name"
+
   create_table "type_produits", force: true do |t|
     t.string   "nom"
     t.datetime "created_at"
@@ -76,5 +87,12 @@ ActiveRecord::Schema.define(version: 20141117173045) do
   end
 
   add_index "utilisateurs", ["reset_password_token"], name: "index_utilisateurs_on_reset_password_token", unique: true
+
+  create_table "utilisateurs_roles", id: false, force: true do |t|
+    t.integer "utilisateur_id"
+    t.integer "role_id"
+  end
+
+  add_index "utilisateurs_roles", ["utilisateur_id", "role_id"], name: "index_utilisateurs_roles_on_utilisateur_id_and_role_id"
 
 end

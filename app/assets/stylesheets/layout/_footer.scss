@@ -1,3 +1,7 @@
+.l-footer{
+	position: relative;
+}
+
 .footer{
     @include gridle_parent();
     margin-top: 15px;
