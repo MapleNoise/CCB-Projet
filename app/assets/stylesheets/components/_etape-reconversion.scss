@@ -1,0 +1,54 @@
+.etape-reconversion{
+		position: relative;
+		width: 25%;
+		height: 25%;
+		
+	&--constat{
+		.etape-reconversion__item {
+			background-color: $color-grey;
+		}
+		.etape-reconversion__categorie{
+			background-color: darken($color-grey, 10);
+		}
+
+	}
+	&--analyse{
+		background-color: $color-blue;
+	}
+	&--decision{
+		background-color: $color-green;
+	}
+	&--action{
+		background-color: orange;
+	}
+	&--cap{
+		background-color: yellow;
+	}
+	&__item{
+		@include vertical-align();
+		position:absolute;
+		display: block;
+		width: 65%;
+		height: 65%;
+		color: $color-white;
+		text-align: center;
+		text-decoration: none;
+		@include box-shadow(8px 8px 20px -5px #AAA);
+		@include border-radius(50%);
+	}
+	&__categorie{
+		position: relative;
+		top:0;
+		margin: 10px;
+		left: 160px;
+		display: block;
+		width: 60px;
+		height: 60px;
+		font-size: 12px;
+		color: $color-white;
+		text-align: center;
+		text-decoration: none;
+		@include box-shadow(8px 8px 20px -5px #AAA);
+		@include border-radius(50%);
+	}
+}
