@@ -34,6 +34,10 @@
 		
 		&__body{
 			padding-bottom: 20px;
+                    
+                                &--sticky{
+                                    padding-bottom: 0px;
+                                }
 		}
 	}
 }

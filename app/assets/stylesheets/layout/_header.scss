@@ -1,20 +1,22 @@
 .header{
     @include gridle_parent();
         &__logo{
-            @include gridle(1);
-            float: left;
-            width: 475px;
+            @include gridle(7);
+            //float: left;
+            //width: 475px;
             height: 134px;
-            background: url("../images/logo-cap-coherence.png")  no-repeat;
+            background: url("../images/logo-cap-coherence2.png")  no-repeat;
+            background-size: 475px;
             
         }
         
     &__client{
-        @include gridle(1);
+        @include gridle(5);
         text-align: right;
         padding-right: 20px;
         display: inline-block;
-        width: 475px;
+        float: right;
+        //width: 408px;
         position: relative;
     }
 }
@@ -24,10 +26,11 @@
         &__login{
             position: absolute;
             right: 27px;
-            top: 25px;
             
                     &__picto{
                         width: 17px;
+                        vertical-align: middle;
+                        padding-bottom: 5px;
                     }
         }
         
@@ -35,10 +38,13 @@
             position: relative;
             height: 104px;
             width: 320px;
-            margin: 56px 20px 0px 48px;
+            //margin: 26px 20px 0px 48px;
+            margin-right: 40px;
+            margin-top: 26px;
             padding: 10px;
             background-color: #F6F6F6;
             display: block;
+            float: right;
             
             
             &__picto{
@@ -52,11 +58,25 @@
         p{
             margin-left: 46px;
             color: black;
-            font-size: 13px;
+            font-size: 14px;
             line-height: 20px;
             margin-bottom: 0;
             text-align: left;
         }
+        }
+}
+
+.expert{
+        &__login{
+            //padding-right: 150px;
+            position: absolute;
+            float: right;
+            right: 150px;
+                    &__picto{
+                        width: 17px;
+                        vertical-align: middle;
+                        padding-bottom: 5px;
+                    }
         }
 }
 
