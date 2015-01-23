@@ -1,0 +1,29 @@
+<h1>Listing reponses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Reponse</th>
+      <th>Estjuste</th>
+      <th>Datesuppression</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reponses.each do |reponse| %>
+      <tr>
+        <td><%= reponse.reponse %></td>
+        <td><%= reponse.estJuste %></td>
+        <td><%= reponse.dateSuppression %></td>
+        <td><%= link_to 'Show', reponse %></td>
+        <td><%= link_to 'Edit', edit_reponse_path(reponse) %></td>
+        <td><%= link_to 'Destroy', reponse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reponse', new_reponse_path %>

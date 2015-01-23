@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122135009) do
+ActiveRecord::Schema.define(version: 20150123110719) do
 
   create_table "categories", force: true do |t|
     t.string   "nom"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20150122135009) do
     t.integer "category_id", null: false
   end
 
+  create_table "chapitres", force: true do |t|
+    t.string   "ref"
+    t.string   "nom"
+    t.string   "description"
+    t.string   "texte"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sections_id"
+  end
+
   create_table "fiche_produits", force: true do |t|
     t.string   "ref"
     t.string   "titre"
@@ -37,6 +48,17 @@ ActiveRecord::Schema.define(version: 20150122135009) do
     t.datetime "updated_at"
     t.integer  "param_tvas_id"
     t.integer  "produits_id"
+  end
+
+  create_table "formations", force: true do |t|
+    t.string   "ref"
+    t.string   "nom"
+    t.string   "descriptionCourte"
+    t.string   "description"
+    t.boolean  "estPublic"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "formats", force: true do |t|
@@ -63,6 +85,33 @@ ActiveRecord::Schema.define(version: 20150122135009) do
     t.integer  "type_produits_id"
   end
 
+  create_table "questions", force: true do |t|
+    t.string   "nom"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quizzs_id"
+  end
+
+  create_table "quizzs", force: true do |t|
+    t.string   "ref"
+    t.string   "nom"
+    t.string   "description"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "chapitres_id"
+  end
+
+  create_table "reponses", force: true do |t|
+    t.string   "reponse"
+    t.boolean  "estJuste"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "questions_id"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -73,6 +122,16 @@ ActiveRecord::Schema.define(version: 20150122135009) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "sections", force: true do |t|
+    t.string   "ref"
+    t.string   "nom"
+    t.string   "description"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "formations_id"
+  end
 
   create_table "type_produits", force: true do |t|
     t.string   "nom"

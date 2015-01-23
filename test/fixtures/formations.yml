@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  nom: MyString
+  descriptionCourte: MyString
+  description: MyString
+  estPublic: false
+  dateSuppression: 2015-01-23 09:31:06
+
+two:
+  ref: MyString
+  nom: MyString
+  descriptionCourte: MyString
+  description: MyString
+  estPublic: false
+  dateSuppression: 2015-01-23 09:31:06

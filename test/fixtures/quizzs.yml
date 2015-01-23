@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ref: MyString
+  nom: MyString
+  description: MyString
+  dateSuppression: 2015-01-23 09:40:12
+
+two:
+  ref: MyString
+  nom: MyString
+  description: MyString
+  dateSuppression: 2015-01-23 09:40:12

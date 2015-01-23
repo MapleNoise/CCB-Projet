@@ -1,5 +1,17 @@
 Rails.application.routes.draw do  
 
+  resources :reponses
+
+  resources :questions
+
+  resources :quizzs
+
+  resources :chapitres
+
+  resources :sections
+
+  resources :formations
+
   resources :utilisateur2s
 
   resources :formats
