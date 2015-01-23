@@ -1,8 +1,16 @@
 .l-footer{
 	position: relative;
+
+	.section__content {
+		padding-top: 0;
+	}
+
+	.menu {
+		border-top: none;
+	}
 }
 
-.footer{
+.footer {
     @include gridle_parent();
     margin-top: 15px;
 	&__copyright{

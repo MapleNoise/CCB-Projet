@@ -1,23 +1,20 @@
 .menu {
-	
+
 	@include gridle_parent();
 	border: 1px solid #d2d3d5;
 	height: 80px;
 
 	&__item {
 		
-		@include gridle(2);
+		@include gridle(1.85);
 		display: inline-block;
 		height: 80px;
 		border-right: 1px solid #d2d3d5;
 		text-decoration: none;
 		color: rgb(88, 89, 91);
-		line-height: 4px;
+		line-height: 80px;
 		text-align: center;
-		//vertical-align: middle;
-                //@include vertical-align(middle);
-                
-                
+        @include vertical-align();
 		
 		&.is-active {
 			background-color: #eee;
@@ -29,29 +26,27 @@
 		}
 
 		&--last {
-			@include gridle(1);
+			// @include gridle(1.5);
 			border-right: none;
 		}
                 
-                &--cart {
-                     background-color: $color-blue;
-                }
+        &--cart {
+             background-color: $color-blue;
+        }
 
 		&--first {
-			@include gridle(1);
+			@include gridle(0.9);
 		}
 
 		&__title {
-			font-size: 15px;
+			font-size: 14px;
 			line-height: 18px;
 			font-weight: normal;
 			text-transform: uppercase;
-                        display: inline-block;
-                        vertical-align: middle;
-                        //@include vertical-align(middle);
-                        text-align: center;
-                        //height: 15px;
-                        padding-top: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+
 			&--logo {
 
 			}
@@ -61,16 +56,11 @@
 
 		&__body {
 			display: block;
-			font-size: 14px;
+			font-size: 13px;
 			font-style: italic;
 			text-transform: lowercase;
-                        vertical-align: middle;
-                        padding-top: 5px;
-                        padding-bottom: 15px;
-                        //@include vertical-align();
 		}
                 
                 
 	}
 }
-
