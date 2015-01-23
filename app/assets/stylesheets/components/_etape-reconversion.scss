@@ -1,15 +1,13 @@
 .etape-reconversion{
-	margin: 0;
 	padding: 0;
 	display: inline-block;
+	margin: 0 auto;
+	margin-right: 2px;
 	position: relative;
-	width: 23%;
-	min-width: 170px;
+	width: 20%;
+	min-width: 240px;
 	height: auto;
-	&:before{
-		display: block;
-		padding-top: 100%;
-	}
+	min-height: 240px;
 	&:hover{
 		.etape-reconversion__categorie, .etape-reconversion__categorie--variante{
 			visibility: visible;
@@ -27,8 +25,10 @@
 		}
 	}
 	&--analyse{
+		border-right: 4px solid red;
 		.etape-reconversion__item{
 			background-color: $color-blue;
+
 		}
 		.etape-reconversion__categorie{
 			background-color: darken($color-blue, 10);
@@ -39,34 +39,34 @@
 	}
 	&--decision{
 		.etape-reconversion__item{
-			background-color: $color-green;
+			background-color: #96AD32;
 		}
 		.etape-reconversion__categorie{
-			background-color: darken($color-green,10);
+			background-color: darken(#96AD32,10);
 			&--variante{
-				background-color: darken($color-green,10);
+				background-color: darken(#96AD32,10);
 			}
 		}
 	}
 	&--action{
 		.etape-reconversion__item{
-			background-color: orange;
+			background-color: #F8B142;
 		}
 		.etape-reconversion__categorie{
-			background-color: darken(orange,10);
+			background-color: darken(#F8B142,10);
 			&--variante{
-				background-color: darken(orange,10);
+				background-color: darken(#F8B142,10);
 			}
 		}
 	}
 	&--cap{
 		.etape-reconversion__item{
-			background-color: #FBFB00;
+			background-color: #FFDC0B;
 		}
 		.etape-reconversion__categorie{
-			background-color: darken(#DFDF00,10);
+			background-color: darken(#FFDC0B,10);
 			&--variante{
-				background-color: darken(#DFDF00,10);
+				background-color: darken(#FFDC0B,10);
 			}
 		}
 	}
@@ -76,16 +76,21 @@
 		@include border-radius(50%);
 		position:absolute;
 		display: block;
-		width: 125px;
-		height: 125px;
+		width: 150px;
+		height: 150px;
+		padding-top: 18px;
+		padding-left: 4px;
+		padding-right: 4px;
 		color: $color-white;
 		text-align: center;
 		text-decoration: none;
 		&__title{
 			font-weight: bold;
+			text-shadow: 1px 1px $color-grey;
 		}
 		&__description{
 			font-size: 80%;
+			text-shadow: 1px 1px $color-grey;
 		}
 	}
 	&__categorie{
@@ -94,9 +99,9 @@
 		position: relative;
 		top:0;
 		margin: 4%;
-		left: 120px;
-		width: 50px;
-		height: 50px;
+		left: 140px;
+		width: 80px;
+		height: 80px;
 		font-size: 75%;
 		color: $color-white;
 		text-align: center;
@@ -111,10 +116,9 @@
 			visibility: hidden;
 			position: relative;
 			top:0;
-			margin: 3%;
-			left: 90px;
-			width: 50px;
-			height: 50px;
+			left: 110px;
+			width: 80px;
+			height: 80px;
 			font-size: 75%;
 			color: $color-white;
 			text-align: center;
@@ -123,4 +127,13 @@
 			@include border-radius(50%);
 		}
 	}
+}
+.tarace{
+	position: relative;
+	width: 490px;
+	left: 380px;
+}
+.tarace2{
+	top: -75px;
+position: relative;
 }
