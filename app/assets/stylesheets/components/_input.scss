@@ -22,6 +22,7 @@ $input-border : 1px solid #ccc;
 			outline: none;
 			cursor: pointer;
 		}
+
 		.input__label{
 			@include gridle(10);
 			background: none;
@@ -30,20 +31,25 @@ $input-border : 1px solid #ccc;
 			line-height: 1.4125em;
 			color : #4d4d4d;
 		}
+
 	}
 
 	&__control{
 		@include gridle(9);
 		@include transition(all 150ms linear);
+
 		&--error{
 			background-color : $input-error-background-color;
 			border-color : $input-error-border-color;
 		}
+
 		&:focus{
 			border-color : lighten(black , 65%);
 			outline: none;
 		}
+
 	}
+	
 	&__label{
 		@include gridle(3);
 		background: #f2f2f2;

@@ -16,7 +16,8 @@
 
 @import 
 	'base/reset',
-        'base/base';
+    'base/base',
+    'base/typography';
 
 @import 
 	'layout/section',
@@ -31,6 +32,9 @@
 	'components/categorie',
 	'components/etape-reconversion',
 	'components/input';
+
+@import
+	'pages/connexion';
 
 @import 
 	'shame';

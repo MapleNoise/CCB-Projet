@@ -1,0 +1,30 @@
+/*.section__content {
+	@include gridle(4.5, large);
+	@include gridle(4.5, large);
+	@include gridle(6, small);
+	@include gridle(6, small);
+}*/
+.section--connexion {
+	.section_content {
+		background-color: #eee;
+	}
+	.section__content__title{
+		padding-top: 15px;
+		margin: 0 0 30px 0;
+	}
+
+	.section__content__body {
+		@include gridle(6);
+		padding-bottom: 0px;
+		background-color : #eee;
+	}
+	.section__content__body:last-child {
+		text-align: center;
+		background-color: #fff;
+	}
+}
+
+.button--connexion{
+	display: block;
+	margin-bottom: 10px;
+}

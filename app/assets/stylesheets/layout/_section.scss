@@ -3,11 +3,11 @@
 	@include gridle_parent();
 }
 	.section__content {
+		@include gridle_parent();
 		@include gridle(9, large);
 		@include gridle(12, small);
 		@include gridle_centered();
 	}
-
 
 .section {
 	border-bottom: $border-section-body;
@@ -21,9 +21,13 @@
 			text-transform : uppercase;
 			font-size: 18px;
 			padding-bottom: 5px;
-			margin-bottom: 15px;
+			margin-bottom: 30px;
 			border-bottom: $border-section-title-type;
 			border-width: $border-section-title-width;
+
+			&--page{
+				font-size: 22px;
+			}
 		}
 		
 		&__body{
