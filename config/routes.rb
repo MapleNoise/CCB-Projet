@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :formats
 
-  devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
+  # devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
   
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
@@ -31,15 +31,25 @@ Rails.application.routes.draw do
     resources :produits
     
     resources :categories
-    
-  get 'connexion' => 'sessions#login_attempt'
+
+    root :to => "sessions#login"
+    match "signup", :to => "utilisateur2#new", via: [:get, :post]
+    match "login", :to => "sessions#login", via: [:get, :post]
+    match "logout", :to => "sessions#logout", via: [:get, :post]
+    match "home", :to => "sessions#home", via: [:get, :post]
+    match "profile", :to => "sessions#profile", via: [:get, :post]
+    match "setting", :to => "sessions#setting"    , via: [:get, :post]
+    match 'connexion' => 'sessions#login_attempt', via: [:get, :post]
+#  get 'login' => 'sessions#setting'
+
+
   
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :utilisateurs, :controller => "utilisateurs"
+  # resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  #root 'welcome#index'
 
   get 'test/style' => 'style#index'
 
