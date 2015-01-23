@@ -11,17 +11,11 @@
 
 .section {
 	border-bottom: $border-section-body;
+
 	&__content {
 		border-left: $border-section-body;
 		border-right: $border-section-body;
 		padding: 30px;
-		&--sticky{
-			padding-top: 30px;
-			@include gridle_no_gutter();
-			.section__content__title{
-				margin: 0 30px 15px 30px;
-			}
-		}
 
 		&__title{
 			text-transform : uppercase;
@@ -34,10 +28,39 @@
 		
 		&__body{
 			padding-bottom: 20px;
-                    
-                                &--sticky{
-                                    padding-bottom: 0px;
-                                }
 		}
+
+
+		&--wide {
+			@include gridle_no_gutter();
+
+			.section__content__title {
+				margin: 0 30px 15px 30px;
+			}
+			
+			.section__content__body {
+				padding: 0;
+			}
+
+		}
+		
+		&--sticky {
+			padding: 0;
+			@include gridle_no_gutter();
+
+			.section__content__title {
+				margin: 0 30px 15px 30px;
+			}
+			
+			.section__content__body {
+				padding: 0;
+			}
+			
+
+			.menu {
+				border: none;
+			}
+		}
+
 	}
 }
