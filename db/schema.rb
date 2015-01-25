@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150120103811) do
+ActiveRecord::Schema.define(version: 20150125204853) do
 
   create_table "categories", force: true do |t|
     t.string   "nom"
@@ -19,11 +19,6 @@ ActiveRecord::Schema.define(version: 20150120103811) do
     t.datetime "dateSuppression"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "categories_produits", id: false, force: true do |t|
-    t.integer "produit_id",  null: false
-    t.integer "category_id", null: false
   end
 
   create_table "fiche_produits", force: true do |t|
@@ -35,14 +30,13 @@ ActiveRecord::Schema.define(version: 20150120103811) do
     t.datetime "dateSuppression"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "param_tvas_id"
-    t.integer  "produits_id"
   end
 
   create_table "formats", force: true do |t|
     t.string   "extension"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_produits_id"
   end
 
   create_table "param_tvas", force: true do |t|
@@ -61,6 +55,15 @@ ActiveRecord::Schema.define(version: 20150120103811) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "type_produits_id"
+    t.text     "description"
+    t.text     "descriptionCourte"
+    t.datetime "datePublication"
+    t.boolean  "estPublic"
+  end
+
+  create_table "produits_tags", id: false, force: true do |t|
+    t.integer "produit_id", null: false
+    t.integer "tag_id",     null: false
   end
 
   create_table "roles", force: true do |t|
@@ -74,11 +77,18 @@ ActiveRecord::Schema.define(version: 20150120103811) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
 
+  create_table "tags", force: true do |t|
+    t.string   "nom"
+    t.integer  "mere"
+    t.datetime "dateSuppression"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "type_produits", force: true do |t|
     t.string   "nom"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "formats_id"
   end
 
   create_table "utilisateurs", force: true do |t|

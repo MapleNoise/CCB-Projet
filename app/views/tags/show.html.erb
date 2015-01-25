@@ -2,28 +2,28 @@
 
 <p>
   <strong>Nom:</strong>
-  <%= @categorie.nom %>
+  <%= @tag.nom %>
 </p>
 
 <p>
   <strong>Mere:</strong>
-  <%= @categorie.mere %>
+  <%= @tag.mere %>
 </p>
 
 <p>
   <strong>Datecreation:</strong>
-  <%= @categorie.created_at %>
+  <%= @tag.created_at %>
 </p>
 
 <p>
   <strong>Datemodification:</strong>
-  <%= @categorie.updated_at %>
+  <%= @tag.updated_at %>
 </p>
 
 <p>
   <strong>Datesuppression:</strong>
-  <%= @categorie.dateSuppression %>
+  <%= @tag.dateSuppression %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@categorie) %> |
+<%= link_to 'Edit', edit_category_path(@tag) %> |
 <%= link_to 'Back', categories_path %>

@@ -27,8 +27,11 @@ class ProduitsController < ApplicationController
   def create
     @produit = Produit.new(produit_params)
     @produit.type_produits_id = type_produit_params
-    @produit_categorie  = Categories_produits.new
-    @produit_categorie.category_id = produit_categorie_params
+    #@produit_categorie  = Categories_produits.new
+    #@produit_categorie.category_id = produit_categorie_params
+   
+   @tag = Tag.find_by(:id => produit_tag_params)
+   @produit.tags << @tag
    
     respond_to do |format|
       Produit.transaction do
@@ -40,11 +43,7 @@ class ProduitsController < ApplicationController
             format.html { render :new }
             format.json { render json: @produit.errors, status: :unprocessable_entity }
           end       
-          Produit.transaction do
-              @produit_categorie.produit_id = @produit.id
-              @produit_categorie.save
-              
-          end
+          
         end
       end
     end
@@ -84,11 +83,11 @@ class ProduitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def produit_params
-      params.require(:produit).permit(:ref, :nom, :prix)
+      params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description)
     end
     
-    def produit_categorie_params
-        params.require(:categorie)
+    def produit_tag_params
+        params.require(:tag)
     end
     
      def type_produit_params
