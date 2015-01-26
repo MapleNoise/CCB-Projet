@@ -47,8 +47,10 @@
             vertical-align: middle;
             text-align: center;
 
-			&--logo {
-
+			&--home {
+				width: 24px;
+				height: 21px;
+				background: url("#{$images_path}/picto-home.png") left bottom no-repeat;
 			}
                         
                        

@@ -5,7 +5,7 @@
             //float: left;
             //width: 475px;
             height: 134px;
-            background: url("../images/logo-cap-coherence2.png")  no-repeat;
+            background: url("#{$images_path}/logo-cap-coherence.png")  no-repeat;
             background-size: 475px;
             
         }
@@ -23,18 +23,19 @@
 
 
 .client {
-        &__login{
+        &__login {
             position: absolute;
             right: 27px;
             
-                    &__picto{
-                        width: 17px;
-                        vertical-align: middle;
-                        padding-bottom: 5px;
-                    }
+            &__picto {
+                width: 17px;
+                vertical-align: middle;
+                padding-bottom: 5px;
+            }
+
         }
         
-        &__newsletter{
+        &__newsletter {
             position: relative;
             height: 104px;
             width: 320px;
@@ -47,7 +48,7 @@
             float: right;
             
             
-            &__picto{
+            &__picto {
                 position: absolute;
                 top: 17px;
                 left: 15px;
@@ -58,7 +59,7 @@
         p{
             margin-left: 46px;
             color: black;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 20px;
             margin-bottom: 0;
             text-align: left;
@@ -78,8 +79,4 @@
                         padding-bottom: 5px;
                     }
         }
-}
-
-.bold{
-    font-weight:600;
 }

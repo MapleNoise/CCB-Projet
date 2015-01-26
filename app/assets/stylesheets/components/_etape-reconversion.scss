@@ -8,63 +8,80 @@
 	min-width: 240px;
 	height: auto;
 	min-height: 240px;
-	&:hover{
+	color: $color-white;
+
+	&:hover {
 		.etape-reconversion__categorie, .etape-reconversion__categorie--variante{
 			visibility: visible;
 		}
 	}
-	&--constat{
-		.etape-reconversion__item{
+	&--constat {
+		
+		.etape-reconversion__item {
 			background-color: $color-grey;
 		}
-		.etape-reconversion__categorie{
+		
+		.etape-reconversion__categorie {
 			background-color: darken($color-grey, 10);
-			&--variante{
+		
+			&--variante {
 				background-color: darken($color-grey, 10);
 			}
 		}
 	}
-	&--analyse{
+	&--analyse {
 		border-right: 4px solid red;
-		.etape-reconversion__item{
+		
+		.etape-reconversion__item {
 			background-color: $color-blue;
 
 		}
-		.etape-reconversion__categorie{
+
+		.etape-reconversion__categorie {
 			background-color: darken($color-blue, 10);
+
 			&--variante{
 				background-color: darken($color-blue, 10);
 			}
 		}
 	}
 	&--decision{
-		.etape-reconversion__item{
+
+		.etape-reconversion__item {
 			background-color: #96AD32;
 		}
-		.etape-reconversion__categorie{
+
+		.etape-reconversion__categorie {
 			background-color: darken(#96AD32,10);
-			&--variante{
+
+			&--variante {
 				background-color: darken(#96AD32,10);
 			}
 		}
 	}
-	&--action{
-		.etape-reconversion__item{
+	&--action {
+
+		.etape-reconversion__item {
 			background-color: #F8B142;
 		}
-		.etape-reconversion__categorie{
+
+		.etape-reconversion__categorie {
 			background-color: darken(#F8B142,10);
-			&--variante{
+
+			&--variante {
 				background-color: darken(#F8B142,10);
 			}
 		}
 	}
 	&--cap{
+		
 		.etape-reconversion__item{
 			background-color: #FFDC0B;
 		}
+		
 		.etape-reconversion__categorie{
 			background-color: darken(#FFDC0B,10);
+		
 			&--variante{
 				background-color: darken(#FFDC0B,10);
 			}
@@ -84,15 +101,18 @@
 		color: $color-white;
 		text-align: center;
 		text-decoration: none;
+		
 		&__title{
 			font-weight: bold;
 			text-shadow: 1px 1px $color-grey;
 		}
+		
 		&__description{
 			font-size: 80%;
 			text-shadow: 1px 1px $color-grey;
 		}
 	}
+	
 	&__categorie{
 		display: block;
 		visibility: hidden;
@@ -108,9 +128,11 @@
 		text-decoration: none;
 		@include box-shadow(8px 8px 20px -5px #AAA);
 		@include border-radius(50%);
+	
 		&__content{
 			@include vertical-align();
 		}
+	
 		&--variante{
 			display: block;
 			visibility: hidden;
@@ -128,11 +150,13 @@
 		}
 	}
 }
+
 .tarace{
 	position: relative;
 	width: 490px;
 	left: 380px;
 }
+
 .tarace2{
 	top: -75px;
 position: relative;

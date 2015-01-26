@@ -7,8 +7,8 @@ var gulp = require('gulp'),
     stylesheets: assetsDir + 'stylesheets/'
   },
   dest = {
-    javascripts: 'public/javascripts',
-    css: 'public/stylesheets'
+    javascripts: 'public/assets/javascripts',
+    css: 'public/assets/stylesheets'
   };
 
 
