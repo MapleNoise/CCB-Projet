@@ -1,0 +1,21 @@
+.menuback {
+    @include gridle_parent();
+    border: 1px solid #d2d3d5;
+    border-radius: 2px;
+    height: 60px;
+    vertical-align: middle;
+    
+        &__item{
+            @include gridle(3);
+            height: 100%;
+            display: inline-block;
+            line-height: 100%;
+            text-align: center;
+            
+            &.is-active {
+                border: 1px solid #d2d3d5;
+                border-radius: 2px;
+                vertical-align: middle;
+            }
+        }
+}

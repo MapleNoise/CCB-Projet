@@ -1,20 +1,20 @@
-.l-section:before, .section__content:before, .header:before, .headerback:before, .footer:before, .color-bar:before, .menu:before, .categories:before, .l-section:after, .section__content:after, .header:after, .headerback:after, .footer:after, .color-bar:after, .menu:after, .categories:after {
+.l-section:before, .section__content:before, .header:before, .headerback:before, .footer:before, .color-bar:before, .menu:before, .menuback:before, .categories:before, .l-section:after, .section__content:after, .header:after, .headerback:after, .footer:after, .color-bar:after, .menu:after, .menuback:after, .categories:after {
   content: "";
   display: table; }
-.l-section:after, .section__content:after, .header:after, .headerback:after, .footer:after, .color-bar:after, .menu:after, .categories:after {
+.l-section:after, .section__content:after, .header:after, .headerback:after, .footer:after, .color-bar:after, .menu:after, .menuback:after, .categories:after {
   clear: both; }
-.l-section, .section__content, .header, .headerback, .footer, .color-bar, .menu, .categories {
+.l-section, .section__content, .header, .headerback, .footer, .color-bar, .menu, .menuback, .categories {
   zoom: 1; }
 
 .footer__copyright, .footer__link {
   position: relative; }
 
-.l-section, .section__content, .header, .headerback, .footer, .color-bar, .menu, .categories {
+.l-section, .section__content, .header, .headerback, .footer, .color-bar, .menu, .menuback, .categories {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.section__content, .header__logo, .header__client, .headerback__logo, .headerback__client, .footer__copyright, .footer__link, .color-bar__item, .menu__item, .menu__item--first, .categorie, .input--checkbox .input__control, .input--checkbox .input__label, .input__control, .input__label, .section--connexion .section__content__body {
+.section__content, .header__logo, .header__client, .headerback__logo, .headerback__client, .footer__copyright, .footer__link, .color-bar__item, .menu__item, .menu__item--first, .menuback__item, .categorie, .input--checkbox .input__control, .input--checkbox .input__label, .input__control, .input__label, .section--connexion .section__content__body {
   display: inline-block;
   min-height: 1px;
   -webkit-box-sizing: border-box;
@@ -1582,6 +1582,46 @@ table {
       font-size: 13px;
       font-style: italic;
       text-transform: lowercase; }
+
+.menuback {
+  padding-left: 0;
+  padding-right: 0;
+  border: 1px solid #d2d3d5;
+  border-radius: 2px;
+  height: 60px;
+  vertical-align: middle; }
+  .menuback__item {
+    float: left;
+    direction: ltr;
+    padding-left: 0;
+    padding-right: 0;
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    line-height: 100%;
+    text-align: center; }
+    @media screen and (max-width: 640px) {
+      .menuback__item {
+        float: left;
+        direction: ltr;
+        padding-left: 0;
+        padding-right: 0; } }
+    @media screen and (min-width: 641px) {
+      .menuback__item {
+        float: left;
+        direction: ltr;
+        padding-left: 0;
+        padding-right: 0; } }
+    @media screen and (min-width: 1025px) {
+      .menuback__item {
+        float: left;
+        direction: ltr;
+        padding-left: 0;
+        padding-right: 0; } }
+    .menuback__item.is-active {
+      border: 1px solid #d2d3d5;
+      border-radius: 2px;
+      vertical-align: middle; }
 
 .button {
   border-radius: 2px;
