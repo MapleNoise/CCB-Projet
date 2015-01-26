@@ -1,0 +1,37 @@
+<%= form_for(@section) do |f| %>
+  <% if @section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+      <% @section.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :ref %><br>
+    <%= f.text_field :ref %>
+  </div>
+  <div class="field">
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+ <div class="field">
+  	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+  	<%= select_tag(:formation, options_from_collection_for_select(Formation.all, :id, :nom)) %>
+  </div>
+  <div class="field">
+    <%= f.label :dateSuppression %><br>
+    <%= f.datetime_select :dateSuppression %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

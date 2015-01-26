@@ -45,3 +45,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'digest'
 
+gem 'bcrypt'
+

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @formation.ref %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @formation.nom %>
+</p>
+
+<p>
+  <strong>Descriptioncourte:</strong>
+  <%= @formation.descriptionCourte %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @formation.description %>
+</p>
+
+<p>
+  <strong>Estpublic:</strong>
+  <%= @formation.estPublic %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @formation.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_formation_path(@formation) %> |
+<%= link_to 'Back', formations_path %>
