@@ -19,8 +19,11 @@
 		background-color : #eee;
 	}
 	.section__content__body:last-child {
-		text-align: center;
+		margin-left: 250px;
+		@include icons('lock');
+		font-size: 300px;
 		background-color: #fff;
+		color:#EEEEEE;
 	}
 }
 

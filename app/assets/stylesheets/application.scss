@@ -10,21 +10,20 @@
 
 @import 
 	'utils/functions',
+	'utils/silence-class',
 	'utils/mixins',
 	'utils/grid';
 
-
 @import 
 	'base/reset',
-  'base/base',
-  'base/icon';
+  	'base/base',
+  	'base/icon';
 
 @import 
 	'layout/section',
 	'layout/header',
         'layout/header_back',
 	'layout/footer';
-
 
 @import 
 	'components/color-bar',
