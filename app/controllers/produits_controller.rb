@@ -90,7 +90,7 @@ class ProduitsController < ApplicationController
         params.require(:tag)
     end
     
-     def type_produit_params
+    def type_produit_params
         params.require(:types_produits)
     end
 end

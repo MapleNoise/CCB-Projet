@@ -26,6 +26,13 @@ class TypeProduitsController < ApplicationController
   def create
     @type_produit = TypeProduit.new(type_produit_params)
 
+    puts "------extension_fichier_params------"
+    puts extension_fichier_params
+    
+    #@type_produit.extension_fichier_ids = extension_fichier_params
+
+    @type_produit.extension_fichiers << ExtensionFichier.find_by(:id => extension_fichier_params)
+    
     respond_to do |format|
       if @type_produit.save
         format.html { redirect_to @type_produit, notice: 'Type produit was successfully created.' }
@@ -67,8 +74,12 @@ class TypeProduitsController < ApplicationController
       @type_produit = TypeProduit.find(params[:id])
     end
 
+    def extension_fichier_params
+      @type_produit.extension_fichier_ids
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def type_produit_params
-      params.require(:type_produit).permit(:nom, :format)
+      params.require(:type_produit).permit(:nom, :extension_fichier_ids => [])
     end
 end

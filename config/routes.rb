@@ -1,5 +1,7 @@
 Rails.application.routes.draw do  
 
+  resources :extension_fichiers
+
   resources :formats
 
   devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }

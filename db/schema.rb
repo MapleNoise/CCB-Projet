@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125204853) do
+ActiveRecord::Schema.define(version: 20150126165731) do
 
   create_table "categories", force: true do |t|
     t.string   "nom"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20150125204853) do
     t.datetime "dateSuppression"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "extension_fichiers", force: true do |t|
+    t.string   "extension"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "extension_fichiers_type_produits", id: false, force: true do |t|
+    t.integer "extension_fichier_id", null: false
+    t.integer "type_produit_id",      null: false
   end
 
   create_table "fiche_produits", force: true do |t|
