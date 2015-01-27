@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @section.ref %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @section.nom %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @section.description %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @section.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

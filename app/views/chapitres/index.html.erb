@@ -1,0 +1,33 @@
+<h1>Listing chapitres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ref</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Texte</th>
+      <th>Datesuppression</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chapitres.each do |chapitre| %>
+      <tr>
+        <td><%= chapitre.ref %></td>
+        <td><%= chapitre.nom %></td>
+        <td><%= chapitre.description %></td>
+        <td><%= chapitre.texte %></td>
+        <td><%= chapitre.dateSuppression %></td>
+        <td><%= link_to 'Show', chapitre %></td>
+        <td><%= link_to 'Edit', edit_chapitre_path(chapitre) %></td>
+        <td><%= link_to 'Destroy', chapitre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Chapitre', new_chapitre_path %>
