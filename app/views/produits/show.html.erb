@@ -1,33 +1,55 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Ref:</strong>
-  <%= @produit.ref %>
+<p id="notice">
+	<%= notice %>
 </p>
 
 <p>
-  <strong>Nom:</strong>
-  <%= @produit.nom %>
+	<strong>Ref:</strong>
+	<%= @produit.ref %>
 </p>
 
 <p>
-  <strong>Prix:</strong>
-  <%= @produit.prix %>
+	<strong>Nom:</strong>
+	<%= @produit.nom %>
 </p>
 
 <p>
-  <strong>Datecreation:</strong>
-  <%= @produit.created_at %>
+	<strong>Description Courte :</strong>
+	<%= @produit.descriptionCourte %>
 </p>
 
 <p>
-  <strong>Datemodification:</strong>
-  <%= @produit.updated_at %>
+	<strong>Description :</strong>>
+	<%= @produit.description %>
 </p>
 
 <p>
-  <strong>Datesuppression:</strong>
-  <%= @produit.dateSuppression %>
+	<strong>Prix:</strong>
+	<%= @produit.prix %>
+</p>
+
+<p>
+	<strong>Tag :</strong>
+	<%= @produit.tags[0].nom %>
+</p>
+
+<p>
+	<strong>Type produit :</strong>
+	<%= TypeProduit.find_by(@produit.type_produits_id).nom %>
+</p>
+
+<p>
+	<strong>Datecreation:</strong>
+	<%= @produit.created_at %>
+</p>
+
+<p>
+	<strong>Datemodification:</strong>
+	<%= @produit.updated_at %>
+</p>
+
+<p>
+	<strong>Datesuppression:</strong>
+	<%= @produit.dateSuppression %>
 </p>
 
 <%= link_to 'Edit', edit_produit_path(@produit) %> |

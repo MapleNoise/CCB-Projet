@@ -4,7 +4,7 @@ class TagsController < ApplicationController
   # GET /Tags
   # GET /Tags.json
   def index
-    @Tags = Tag.all
+    @tags = Tag.all
   end
 
   # GET /Tags/1
@@ -14,7 +14,7 @@ class TagsController < ApplicationController
 
   # GET /Tags/new
   def new
-    @Tag = Tag.new
+    @tag = Tag.new
   end
 
   # GET /Tags/1/edit
@@ -24,14 +24,14 @@ class TagsController < ApplicationController
   # POST /Tags
   # POST /Tags.json
   def create
-    @Tag = Tag.new(category_params)
+    @tag = Tag.new(category_params)
     respond_to do |format|
-      if @Tag.save
-        format.html { redirect_to @Tag, notice: 'Tag was successfully created.' }
-        format.json { render :show, status: :created, location: @Tag }
+      if @tag.save
+        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
+        format.json { render :show, status: :created, location: @tag }
       else
         format.html { render :new }
-        format.json { render json: @Tag.errors, status: :unprocessable_entity }
+        format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,12 +40,12 @@ class TagsController < ApplicationController
   # PATCH/PUT /Tags/1.json
   def update
     respond_to do |format|
-      if @Tag.update(category_params)
-        format.html { redirect_to @Tag, notice: 'Tag was successfully updated.' }
-        format.json { render :show, status: :ok, location: @Tag }
+      if @tag.update(category_params)
+        format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
+        format.json { render :show, status: :ok, location: @tag }
       else
         format.html { render :edit }
-        format.json { render json: @Tag.errors, status: :unprocessable_entity }
+        format.json { render json: @tag.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,9 +53,9 @@ class TagsController < ApplicationController
   # DELETE /Tags/1
   # DELETE /Tags/1.json
   def destroy
-    @Tag.delete!
+    @tag.delete!
     respond_to do |format|
-      format.html { redirect_to Tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -63,11 +63,11 @@ class TagsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @Tag = Tag.find(params[:id])
+      @tag = Tag.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:Tag).permit(:nom, :mere)
+      params.require(:tag).permit(:nom, :mere)
     end
 end
