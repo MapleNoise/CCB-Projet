@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
     resources :produits
     
-    resources :categories
+    resources :tags
 
     root :to => "sessions#login"
     match "signup", :to => "utilisateur2#new", via: [:get, :post]

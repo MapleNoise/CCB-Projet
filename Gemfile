@@ -7,6 +7,7 @@ gem 'rails', '4.1.6'
 gem 'sqlite3'
 # Installer la gem mysql
 # gem 'mysql', '~> 2.9.1'
+#gem 'mysql2', '~> 0.3.17'
 
 # Ajout de sass pour le projet
 gem 'sass', '~> 3.4.7'

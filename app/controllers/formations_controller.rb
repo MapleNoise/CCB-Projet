@@ -42,6 +42,6 @@ class FormationsController < ApplicationController
     end
 
     def formation_params
-      params.require(:formation).permit(:ref, :nom, :descriptionCourte, :description, :estPublic, :dateSuppression)
+      params.require(:formation).permit(:ref, :nom, :descriptionCourte, :description, :estPublic, :dateSuppression, :prix)
     end
 end
