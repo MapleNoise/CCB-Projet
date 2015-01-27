@@ -14,7 +14,7 @@
 		color: rgb(88, 89, 91);
 		line-height: 80px;
 		text-align: center;
-                @include vertical-align();
+    @include vertical-align();
 		
 		&.is-active {
 			background-color: #eee;
