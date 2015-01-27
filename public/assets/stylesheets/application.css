@@ -1888,6 +1888,31 @@ img.map, map area {
   width: 100%;
   height: auto; }
 
+table {
+  border: 1px solid #4E4E4E;
+  margin: 0 auto; }
+
+tr {
+  height: 30px; }
+
+th {
+  background-color: #DADADA;
+  border: 1px solid #4E4E4E;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-weight: bold;
+  vertical-align: middle; }
+
+td {
+  border: 1px solid #4E4E4E;
+  padding-right: 5px;
+  padding-left: 5px;
+  vertical-align: middle; }
+  td.is-online {
+    background-color: #39B042; }
+  td.is-wait {
+    background-color: #EDB20E; }
+
 .input {
   display: inline-block;
   font-size: 0.875em;
