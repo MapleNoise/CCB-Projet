@@ -1634,7 +1634,7 @@ html, body {
   border: 1px solid #d2d3d5;
   border-radius: 2px;
   height: 60px;
-  vertical-align: middle; }
+  font-weight: bold; }
   .menuback__item {
     float: left;
     direction: ltr;
@@ -1644,7 +1644,13 @@ html, body {
     height: 100%;
     display: inline-block;
     line-height: 100%;
-    text-align: center; }
+    text-align: center;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-decoration: none; }
     @media screen and (max-width: 640px) {
       .menuback__item {
         float: left;
@@ -1663,10 +1669,24 @@ html, body {
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    .menuback__item.is-active {
+    .menuback__item.is-active .menuback__item__title {
       border: 1px solid #d2d3d5;
       border-radius: 2px;
-      vertical-align: middle; }
+      vertical-align: middle;
+      color: #898787; }
+    .menuback__item__title {
+      text-align: center;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      horizontal-align: middle;
+      display: inline-block;
+      line-height: 18px;
+      width: 150px;
+      color: #231f20;
+      margin: 0 auto; }
 
 .button {
   border-radius: 2px;
@@ -1918,6 +1938,12 @@ html, body {
 .tarace2 {
   top: -75px;
   position: relative; }
+
+map .reconversion-area- {
+  background-color: rgba(255, 0, 0, 0.5);
+  -moz-box-shadow: inset -2px -2px 2px 2px red;
+  -webkit-box-shadow: inset -2px -2px 2px 2px red;
+  box-shadow: inset -2px -2px 2px 2px red; }
 
 .input {
   display: inline-block;

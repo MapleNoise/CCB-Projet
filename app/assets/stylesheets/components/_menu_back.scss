@@ -3,7 +3,8 @@
     border: 1px solid #d2d3d5;
     border-radius: 2px;
     height: 60px;
-    vertical-align: middle;
+    font-weight: bold;
+    //vertical-align: middle;
     
         &__item{
             @include gridle(3);
@@ -11,11 +12,29 @@
             display: inline-block;
             line-height: 100%;
             text-align: center;
+             @include vertical-align();
+             //vertical-align: middle;
+             text-decoration: none;
             
             &.is-active {
-                border: 1px solid #d2d3d5;
-                border-radius: 2px;
-                vertical-align: middle;
+                .menuback__item__title{
+                    border: 1px solid #d2d3d5;
+                    border-radius: 2px;
+                    vertical-align: middle;
+                    color: $color-grey;
+                }
+            }
+            
+            &__title{
+                text-align: center;
+                @include vertical-align();
+                horizontal-align: middle;
+                display: inline-block;
+                line-height: 18px;
+                width: 150px;
+                color: $color-black;
+                margin: 0 auto;
+             
             }
         }
 }
