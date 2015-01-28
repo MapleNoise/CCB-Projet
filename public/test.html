@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Implémentation des différents composants du style</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <style>
+    .box {
+      background-color: blue;
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .box__description {
+      position: absolute;
+      background-color: red;
+      top: 150px;
+      width: 100%;
+      height: 100%;
+      transition: all 2s ease;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="box">
+    <div class="box__description"></div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.min.js"></script>
+  <script type="text/javascript">
+     $('.box').onmouseover(function(e){
+        $(this).find('.box__description').css('top', 0);
+     })
+  </script>
+</body>
+</html>

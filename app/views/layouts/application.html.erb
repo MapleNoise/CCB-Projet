@@ -3,7 +3,8 @@
 <html>
 	<head>
 	  <title><%= yield(:title) %></title>
-	  <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	  <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
 	  <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
 	</head>
@@ -55,15 +56,6 @@
               <h2 class="menu__item__title menu__item__title--home"></h2>
             </a>
             <div class="menu__item menu__item--icon">
-                <ul> 
-                  <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
-                  <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
-                  <li><a href="">Outils</a></li>
-                  <li><a href="">Blog</a></li> 
-                  <li><a href="">Cap cohérence</a></li>
-                  <li><a href="">Nos Formations</a></li>
-                </ul> 
-              
               <select class="menu__item__select" onChange="window.location.href=this.value"> 
                 <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
                 <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
@@ -106,7 +98,7 @@
     </div>
   </section> 
 
-<% if !content_for?(:special_template) %>
+<% if content_for?(:special_template) %>
 	<section class="section">
 		<div class="l-section section__content">
 <% end %>
@@ -114,7 +106,7 @@
 	<%= flash[:alert]  %>
 	<%= yield %>
 
-<% if !content_for?(:special_template) %>	
+<% if content_for?(:special_template) %>	
 		</div>
 	</section>
 <% end%>
@@ -127,15 +119,6 @@
               <h2 class="menu__item__title menu__item__title--home"></h2>
             </a>
             <div class="menu__item menu__item--icon">
-                <ul> 
-                  <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
-                  <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
-                  <li><a href="">Outils</a></li>
-                  <li><a href="">Blog</a></li> 
-                  <li><a href="">Cap cohérence</a></li>
-                  <li><a href="">Nos Formations</a></li>
-                </ul> 
-              
               <select class="menu__item__select" onChange="window.location.href=this.value"> 
                 <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
                 <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
@@ -197,7 +180,7 @@
 	  </section>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="assets/javascripts/app.min.js"></script>
+		<script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
 		<script>
 	    $(document).ready(function(e) {
 	        $('img[usemap]').rwdImageMaps();

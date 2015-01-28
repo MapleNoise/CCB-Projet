@@ -5,7 +5,8 @@
 	height: 80px;
 
 	&__item {
-		@include gridle(1.85);
+		@include gridle_hide('small');
+		@include gridle(1.85, 'medium large');
 		display: inline-block;
 		height: 80px;
 		border-right: 1px solid #d2d3d5;
@@ -29,12 +30,14 @@
 			border-right: none;
 		}
                 
-        &--cart {
-            background-color: $color-blue;
-        }
+    &--cart {
+        background-color: $color-blue;
+    }
 
 		&--first {
-			@include gridle(0.9);
+			@include gridle_show('small');
+			@include gridle(2,'small');
+			@include gridle(0.9, 'medium large');
 		}
 
 		&__title {
@@ -59,15 +62,27 @@
 			font-style: italic;
 			text-transform: lowercase;
 		}
-                
-                
+
+	}
+
+	&__select {
+		@include gridle_show('small');
+		@include gridle_hide('medium large');
+		@include gridle(10);
+		@include gridle_centered();
+		height: 100%;
+	}
+
+	&:last-child{
+		@include gridle_hide('small');
 	}
 }
-nav select{
-		display: none;
-	}
-body .menu__item--icon{
-	@include gridle_hide('large');
-	@include gridle_hide('medium');
 
+
+body .menu__item--icon{
+	@include gridle_show('small');
+	@include gridle_hide('medium');
+	@include gridle_hide('large');
+	@include gridle(10);
+	padding: 20px;
 }
