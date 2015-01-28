@@ -90,3 +90,13 @@ produit3 = Produit.create(
   
 produit3.tags << Tag.find_by(:nom => "L'analyse")
 produit3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+# Création des status
+Status.create([{nom: "En ligne"},
+  {nom: "En cours"},
+  {nom: "Désactivé"}])
+
+# Création des fonctions
+Fonction.create([{nom: "Expert"},
+  {nom: "Administrateur"},
+  {nom: "Client"}])
