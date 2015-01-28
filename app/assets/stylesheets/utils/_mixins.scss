@@ -389,7 +389,7 @@
 }
 
 // Icons
-@mixin icons($name){
+@mixin icon($name){
     @extend %icon;
     @extend .awe-#{$name};
     //@extend ".awe-#{$args}:before";

@@ -7,13 +7,13 @@
 
 // register states :
 @include gridle_register_state( small , (
-    max-width : 640px
+    max-width : 40.062em
 ) );
 @include gridle_register_state( medium, (
-    min-width : 641px
+    min-width : 40.063em
 ) );
 @include gridle_register_state( large, (
-    min-width : 1025px
+    min-width : 64.063em
 ) );
 
 

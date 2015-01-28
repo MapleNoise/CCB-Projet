@@ -17,11 +17,13 @@
 		@include gridle(6);
 		padding-bottom: 0px;
 		background-color : #eee;
+		min-height : 300px;
 	}
 	.section__content__body:last-child {
-		margin-left: 250px;
-		@include icons('lock');
-		font-size: 300px;
+		text-align: center;
+		@include icon('lock');
+		font-size: 250px;
+		width: 50%;
 		background-color: #fff;
 		color:#EEEEEE;
 	}
@@ -30,4 +32,24 @@
 .button--connexion{
 	display: block;
 	margin-bottom: 10px;
+	width: 100%;
+}
+
+.link--connexion{
+	color:black;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #fff;
 }
