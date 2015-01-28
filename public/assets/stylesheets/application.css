@@ -232,7 +232,9 @@ table {
   box-sizing: border-box; }
 
 html, body {
-  min-height: 100%; }
+  min-height: 100%;
+  position: relative;
+  bottom: 0; }
 
 img.map, map area {
   outline: none; }
@@ -1313,7 +1315,7 @@ img.map, map area {
     display: block;
     padding-top: 20px;
     padding-bottom: 20px;
-    border: 0.5px solid #4E4E4E; }
+    border-bottom: 1px solid #4E4E4E; }
   .sectionback__pied {
     background-color: #4E4E4E;
     color: #fff;
@@ -1341,6 +1343,10 @@ img.map, map area {
           -webkit-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
           transform: translateY(-50%); }
+
+.body {
+  width: 85%;
+  margin: 0 auto; }
 
 .header {
   padding-left: 0;
@@ -1444,7 +1450,8 @@ img.map, map area {
 
 .headerback {
   padding-left: 0;
-  padding-right: 0; }
+  padding-right: 0;
+  margin-top: 10px; }
   .headerback__logo {
     float: left;
     direction: ltr;
@@ -1608,6 +1615,8 @@ img.map, map area {
       background-color: #39B042; }
     .color-bar__item--yellow {
       background-color: #FEF200; }
+  .color-bar--bottom {
+    bottom: 0; }
 
 .menu {
   padding-left: 0;
@@ -1707,7 +1716,8 @@ img.map, map area {
   border: 1px solid #d2d3d5;
   border-radius: 2px;
   height: 60px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-bottom: 10px; }
   .menuback__item {
     float: left;
     direction: ltr;

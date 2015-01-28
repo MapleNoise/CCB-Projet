@@ -19,4 +19,9 @@
 			background-color: $color-yellow;
 		}
 	}
+        
+    &--bottom{
+        //position: absolue;
+        bottom: 0;
+    }
 }

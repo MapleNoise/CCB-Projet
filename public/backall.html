@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Implémentation des différents composants du style</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="color-bar">
+          <div class="color-bar__item color-bar__item--blue"></div>
+          <div class="color-bar__item color-bar__item--green"></div>
+          <div class="color-bar__item color-bar__item--yellow"></div>
+        </div>
+      </header>
+    
+    <div class="body">
+        <div class="headerback">
+           <a href="#" class="headerback__logo">
+           </a>
+         <div class="header__client">
+             <div class="client">
+                 <span class="client__hello">Bonjour, Charly</span>
+                <a href="#" class="button button--link">Déconnexion</a>
+              </div>
+            </div>
+          </div>
+
+           <nav class="menuback">
+               <a href="#" class="menuback__item is-active">
+                  <h2 class="menuback__item__title ">Mon compte</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Formations</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Modules</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Chapitres</h2>
+               </a>
+           </nav>
+
+           <section class="sectionback">
+               <div class="sectionback__entete">
+                   <span class="sectionback__entete__title">Gestion des formations</span>
+                   <button class="sectionback__entete__back">Retour</button>
+               </div>
+               <div class="sectionback__content">
+                   <button>Créer une formation</button> 
+               </div>
+               <div class="sectionback__content">
+                   <table>
+                       <tr>
+                           <th>Formation</th>
+                           <th>Catégorie</th>
+                           <th>Statut</th>
+                           <th>Date de création</th>
+                           <th>Date de publication</th>
+                           <th>Modifier</th>
+                           <th>Supprimer</th>
+                       </tr>
+                       <tr>
+                           <td>Titre</td>
+                           <td>La décision</td>
+                           <td class="is-online">En ligne</td>
+                           <td>Date1</td>
+                           <td>Date2</td>
+                           <td>Bouton modifier</td>
+                           <td>Bouton supprimer</td>
+                       </tr>
+                       <tr>
+                           <td>Titre2</td>
+                           <td>La décision2</td>
+                           <td class="is-wait">En attente</td>
+                           <td>Date1</td>
+                           <td>Date2</td>
+                           <td>Bouton modifier</td>
+                           <td>Bouton supprimer</td>
+                       </tr>
+                   </table>
+               </div>
+               <div class="sectionback__pied">
+                   <span class="sectionback__pied__page">Page :
+                       <a href="#" class="sectionback__pied__page__num is-active">1</a>
+                       <a href="#" class="sectionback__pied__page__num">2</a>
+                       <a href="#" class="sectionback__pied__page__num">3</a>
+                       <a href="#" class="sectionback__pied__page__num">4</a>
+                   </span>
+
+               </div>
+           </section>
+        </div>
+    
+      <section>
+        <div class="color-bar--bottom">
+          <div class="color-bar__item color-bar__item--blue"></div>
+          <div class="color-bar__item color-bar__item--green"></div>
+          <div class="color-bar__item color-bar__item--yellow"></div>
+        </div>
+      </section>
+</body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.min.js"></script>
+</body>
+</html>

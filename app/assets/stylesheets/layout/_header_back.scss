@@ -1,5 +1,6 @@
 .headerback {
     @include gridle_parent();
+    margin-top: 10px;
         &__logo{
             @include gridle(7);
             height: 134px;

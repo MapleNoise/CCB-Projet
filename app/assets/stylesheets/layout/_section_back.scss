@@ -38,7 +38,7 @@
         display: block;
         padding-top: 20px;
         padding-bottom: 20px;
-        border: 0.5px solid $color-grey-black;
+        border-bottom: 1px solid $color-grey-black;
     }
         
     &__pied{
@@ -68,4 +68,11 @@
                         
                 }
     }
+}
+
+.body{
+    //padding-right: 100px;
+    //padding-left: 100px;
+    width: 85%;
+    margin: 0 auto;
 }
