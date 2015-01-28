@@ -13,14 +13,28 @@
 .footer {
     @include gridle_parent();
     margin-top: 15px;
+    line-height: 30px;
 	&__copyright{
-		@include gridle(4.8);
+		@include gridle_parent();
+		@include gridle(11.8, 'small');
+		@include gridle(4.8, 'medium large');
 		@include gridle_push(0.2);
+		@include gridle_state( 'small' ) {
+			text-align: center;
+		}
 	}
 	&__link{
-		@include gridle(5.6);
-		@include gridle_push(1.4);
+		@include gridle_parent();
+		@include gridle(11.8, 'small');
+		@include gridle(5.6, 'medium large');
+		@include gridle_push(0.2, 'small');
+		@include gridle_push(1.4, 'medium large');
 		text-align: right;
+
+		@include gridle_state( 'small' ) {
+			text-align: center;
+		}
+
 		.button--link {
 			padding : 0 10px;
 			border-right : 2px solid #58595b;

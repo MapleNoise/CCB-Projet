@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Implémentation des différents composants du style</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+  <style>
+    p {
+      font-size: 24px;
+    }
+
+    p:before {
+      padding-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+
+<p class="awe-glass">glass</p><br>
+
+<p class="awe-music">music</p><br>
+
+<p class="awe-search">search</p><br>
+
+<p class="awe-envelope">envelope</p><br>
+
+<p class="awe-heart">heart</p><br>
+
+<p class="awe-star">star</p><br>
+
+<p class="awe-star-empty">star-empty</p><br>
+
+<p class="awe-user">user</p><br>
+
+<p class="awe-film">film</p><br>
+
+<p class="awe-th-large">th-large</p><br>
+
+<p class="awe-th">th</p><br>
+
+<p class="awe-th-list">th-list</p><br>
+
+<p class="awe-ok">ok</p><br>
+
+<p class="awe-remove">remove</p><br>
+
+<p class="awe-zoom-in">zoom-in</p><br>
+
+<p class="awe-zoom-out">zoom-out</p><br>
+
+<p class="awe-off">off</p><br>
+
+<p class="awe-signal">signal</p><br>
+
+<p class="awe-cog">cog</p><br>
+
+<p class="awe-trash">trash</p><br>
+
+<p class="awe-home">home</p><br>
+
+<p class="awe-file">file</p><br>
+
+<p class="awe-time">time</p><br>
+
+<p class="awe-road">road</p><br>
+
+<p class="awe-download-alt">download-alt</p><br>
+
+<p class="awe-download">download</p><br>
+
+<p class="awe-upload">upload</p><br>
+
+<p class="awe-inbox">inbox</p><br>
+
+<p class="awe-play-circle">play-circle</p><br>
+
+<p class="awe-repeat"> repeat</p><br>
+
+<p class="awe-rotate-right"> rotate-right</div><br>
+
+<p class="awe-refresh">refresh</p><br>
+
+<p class="awe-list-alt">list-alt</p><br>
+
+<p class="awe-lock">lock</p><br>
+
+<p class="awe-flag">flag</p><br>
+
+<p class="awe-headphones">headphones</p><br>
+
+<p class="awe-volume-off">volume-off</p><br>
+
+<p class="awe-volume-down">volume-down</p><br>
+
+<p class="awe-volume-up">volume-up</p><br>
+
+<p class="awe-qrcode">qrcode</p><br>
+
+<p class="awe-barcode">barcode</p><br>
+
+<p class="awe-tag">tag</p><br>
+
+<p class="awe-tags">tags</p><br>
+
+<p class="awe-book">book</p><br>
+
+<p class="awe-bookmark">bookmark</p><br>
+
+<p class="awe-print">print</p><br>
+
+<p class="awe-camera">camera</p><br>
+
+<p class="awe-font">font</p><br>
+
+<p class="awe-bold">bold</p><br>
+
+<p class="awe-italic">italic</p><br>
+
+<p class="awe-text-height">text-height</p><br>
+
+<p class="awe-text-width">text-width</p><br>
+
+<p class="awe-align-left">align-left</p><br>
+
+<p class="awe-align-center">align-center</p><br>
+
+<p class="awe-align-right">align-right</p><br>
+
+<p class="awe-align-justify">align-justify</p><br>
+
+<p class="awe-list">list</p><br>
+
+<p class="awe-indent-left">indent-left</p><br>
+
+<p class="awe-indent-right">indent-right</p><br>
+
+<p class="awe-facetime-video">facetime-video</p><br>
+
+<p class="awe-picture">picture</p><br>
+
+<p class="awe-pencil">pencil</p><br>
+
+<p class="awe-map-marker">map-marker</p><br>
+
+<p class="awe-adjust">adjust</p><br>
+
+<p class="awe-tint">tint</p><br>
+
+<p class="awe-edit">edit</p><br>
+
+<p class="awe-share">share</p><br>
+
+<p class="awe-check">check</p><br>
+
+<p class="awe-move">move</p><br>
+
+<p class="awe-step-backward">step-backward</p><br>
+
+<p class="awe-fast-backward">fast-backward</p><br>
+
+<p class="awe-backward">backward</p><br>
+
+<p class="awe-play">play</p><br>
+
+<p class="awe-pause">pause</p><br>
+
+<p class="awe-stop">stop</p><br>
+
+<p class="awe-forward">forward</p><br>
+
+<p class="awe-fast-forward">fast-forward</p><br>
+
+<p class="awe-step-forward">step-forward</p><br>
+
+<p class="awe-eject">eject</p><br>
+
+<p class="awe-chevron-left">chevron-left</p><br>
+
+<p class="awe-chevron-right">chevron-right</p><br>
+
+<p class="awe-plus-sign">plus-sign</p><br>
+
+<p class="awe-minus-sign">minus-sign</p><br>
+
+<p class="awe-remove-sign">remove-sign</p><br>
+
+<p class="awe-ok-sign">ok-sign</p><br>
+
+<p class="awe-question-sign">question-sign</p><br>
+
+<p class="awe-info-sign">info-sign</p><br>
+
+<p class="awe-screenshot">screenshot</p><br>
+
+<p class="awe-remove-circle">remove-circle</p><br>
+
+<p class="awe-ok-circle">ok-circle</p><br>
+
+<p class="awe-ban-circle">ban-circle</p><br>
+
+<p class="awe-arrow-left">arrow-left</p><br>
+
+<p class="awe-arrow-right">arrow-right</p><br>
+
+<p class="awe-arrow-up">arrow-up</p><br>
+
+<p class="awe-arrow-down">arrow-down</p><br>
+
+p.awe-share-alt:before,<div class="awe-mail-forward">share-alt:before,.awe-mail-forward</div><br>
+<p class="awe-resize-full">resize-full</p><br>
+
+<p class="awe-resize-small">resize-small</p><br>
+
+<p class="awe-plus">plus</p><br>
+
+<p class="awe-minus">minus</p><br>
+
+<p class="awe-asterisk">asterisk</p><br>
+
+<p class="awe-exclamation-sign">exclamation-sign</p><br>
+
+<p class="awe-gift">gift</p><br>
+
+<p class="awe-leaf">leaf</p><br>
+
+<p class="awe-fire">fire</p><br>
+
+<p class="awe-eye-open">eye-open</p><br>
+
+<p class="awe-eye-close">eye-close</p><br>
+
+<p class="awe-warning-sign">warning-sign</p><br>
+
+<p class="awe-plane">plane</p><br>
+
+<p class="awe-calendar">calendar</p><br>
+
+<p class="awe-random">random</p><br>
+
+<p class="awe-comment">comment</p><br>
+
+<p class="awe-magnet">magnet</p><br>
+
+<p class="awe-chevron-up">chevron-up</p><br>
+
+<p class="awe-chevron-down">chevron-down</p><br>
+
+<p class="awe-retweet">retweet</p><br>
+
+<p class="awe-shopping-cart">shopping-cart</p><br>
+
+<p class="awe-folder-close">folder-close</p><br>
+
+<p class="awe-folder-open">folder-open</p><br>
+
+<p class="awe-resize-vertical">resize-vertical</p><br>
+
+<p class="awe-resize-horizontal">resize-horizontal</p><br>
+
+<p class="awe-bar-chart">bar-chart</p><br>
+
+<p class="awe-twitter-sign">twitter-sign</p><br>
+
+<p class="awe-facebook-sign">facebook-sign</p><br>
+
+<p class="awe-camera-retro">camera-retro</p><br>
+
+<p class="awe-key">key</p><br>
+
+<p class="awe-cogs">cogs</p><br>
+
+<p class="awe-comments">comments</p><br>
+
+<p class="awe-thumbs-up">thumbs-up</p><br>
+
+<p class="awe-thumbs-down">thumbs-down</p><br>
+
+<p class="awe-star-half">star-half</p><br>
+
+<p class="awe-heart-empty">heart-empty</p><br>
+
+<p class="awe-signout">signout</p><br>
+
+<p class="awe-linkedin-sign">linkedin-sign</p><br>
+
+<p class="awe-pushpin">pushpin</p><br>
+
+<p class="awe-external-link">external-link</p><br>
+
+<p class="awe-signin">signin</p><br>
+
+<p class="awe-trophy">trophy</p><br>
+
+<p class="awe-github-sign">github-sign</p><br>
+
+<p class="awe-upload-alt">upload-alt</p><br>
+
+<p class="awe-lemon">lemon</p><br>
+
+<p class="awe-phone">phone</p><br>
+
+<p class="awe-check-empty">check-empty</p><br>
+
+<p class="awe-bookmark-empty">bookmark-empty</p><br>
+
+<p class="awe-phone-sign">phone-sign</p><br>
+
+<p class="awe-twitter">twitter</p><br>
+
+<p class="awe-facebook">facebook</p><br>
+
+<p class="awe-github">github</p><br>
+
+<p class="awe-unlock">unlock</p><br>
+
+<p class="awe-credit-card">credit-card</p><br>
+
+<p class="awe-rss">rss</p><br>
+
+<p class="awe-hdd">hdd</p><br>
+
+<p class="awe-bullhorn">bullhorn</p><br>
+
+<p class="awe-bell">bell</p><br>
+
+<p class="awe-certificate">certificate</p><br>
+
+<p class="awe-hand-right">hand-right</p><br>
+
+<p class="awe-hand-left">hand-left</p><br>
+
+<p class="awe-hand-up">hand-up</p><br>
+
+<p class="awe-hand-down">hand-down</p><br>
+
+<p class="awe-circle-arrow-left">circle-arrow-left</p><br>
+
+<p class="awe-circle-arrow-right">circle-arrow-right</p><br>
+
+<p class="awe-circle-arrow-up">circle-arrow-up</p><br>
+
+<p class="awe-circle-arrow-down">circle-arrow-down</p><br>
+
+<p class="awe-globe">globe</p><br>
+
+<p class="awe-wrench">wrench</p><br>
+
+<p class="awe-tasks">tasks</p><br>
+
+<p class="awe-filter">filter</p><br>
+
+<p class="awe-briefcase">briefcase</p><br>
+
+<p class="awe-fullscreen">fullscreen</p><br>
+
+<p class="awe-group">group</p><br>
+
+<p class="awe-link">link</p><br>
+
+<p class="awe-cloud">cloud</p><br>
+
+<p class="awe-beaker">beaker</p><br>
+
+<p class="awe-cut">cut</p><br>
+
+<p class="awe-copy">copy</p><br>
+
+<p class="awe-paper-clip">paper-clip</p><br>
+
+<p class="awe-save">save</p><br>
+
+<p class="awe-sign-blank">sign-blank</p><br>
+
+<p class="awe-reorder">reorder</p><br>
+
+<p class="awe-list-ul">list-ul</p><br>
+
+<p class="awe-list-ol">list-ol</p><br>
+
+<p class="awe-strikethrough">strikethrough</p><br>
+
+<p class="awe-underline">underline</p><br>
+
+<p class="awe-table">table</p><br>
+
+<p class="awe-magic">magic</p><br>
+
+<p class="awe-truck">truck</p><br>
+
+<p class="awe-pinterest">pinterest</p><br>
+
+<p class="awe-pinterest-sign">pinterest-sign</p><br>
+
+<p class="awe-google-plus-sign">google-plus-sign</p><br>
+
+<p class="awe-google-plus">google-plus</p><br>
+
+<p class="awe-money">money</p><br>
+
+<p class="awe-caret-down">caret-down</p><br>
+
+<p class="awe-caret-up">caret-up</p><br>
+
+<p class="awe-caret-left">caret-left</p><br>
+
+<p class="awe-caret-right">caret-right</p><br>
+
+<p class="awe-columns">columns</p><br>
+
+<p class="awe-sort">sort</p><br>
+
+<p class="awe-sort-down">sort-down</p><br>
+
+<p class="awe-sort-up">sort-up</p><br>
+
+<p class="awe-envelope-alt">envelope-alt</p><br>
+
+<p class="awe-linkedin">linkedin</p><br>
+
+p.awe-undo:before,<div class="awe-rotate-left">undo:before,.awe-rotate-left</div><br>
+<p class="awe-legal">legal</p><br>
+
+<p class="awe-dashboard">dashboard</p><br>
+
+<p class="awe-comment-alt">comment-alt</p><br>
+
+<p class="awe-comments-alt">comments-alt</p><br>
+
+<p class="awe-bolt">bolt</p><br>
+
+<p class="awe-sitemap">sitemap</p><br>
+
+<p class="awe-umbrella">umbrella</p><br>
+
+<p class="awe-paste">paste</p><br>
+
+<p class="awe-lightbulb">lightbulb</p><br>
+
+<p class="awe-exchange">exchange</p><br>
+
+<p class="awe-cloud-download">cloud-download</p><br>
+
+<p class="awe-cloud-upload">cloud-upload</p><br>
+
+<p class="awe-user-md">user-md</p><br>
+
+<p class="awe-stethoscope">stethoscope</p><br>
+
+<p class="awe-suitcase">suitcase</p><br>
+
+<p class="awe-bell-alt">bell-alt</p><br>
+
+<p class="awe-coffee">coffee</p><br>
+
+<p class="awe-food">food</p><br>
+
+<p class="awe-file-alt">file-alt</p><br>
+
+<p class="awe-building">building</p><br>
+
+<p class="awe-hospital">hospital</p><br>
+
+<p class="awe-ambulance">ambulance</p><br>
+
+<p class="awe-medkit">medkit</p><br>
+
+<p class="awe-fighter-jet">fighter-jet</p><br>
+
+<p class="awe-beer">beer</p><br>
+
+<p class="awe-h-sign">h-sign</p><br>
+
+<p class="awe-plus-sign-alt">plus-sign-alt</p><br>
+
+<p class="awe-double-angle-left">double-angle-left</p><br>
+
+<p class="awe-double-angle-right">double-angle-right</p><br>
+
+<p class="awe-double-angle-up">double-angle-up</p><br>
+
+<p class="awe-double-angle-down">double-angle-down</p><br>
+
+<p class="awe-angle-left">angle-left</p><br>
+
+<p class="awe-angle-right">angle-right</p><br>
+
+<p class="awe-angle-up">angle-up</p><br>
+
+<p class="awe-angle-down">angle-down</p><br>
+
+<p class="awe-desktop">desktop</p><br>
+
+<p class="awe-laptop">laptop</p><br>
+
+<p class="awe-tablet">tablet</p><br>
+
+<p class="awe-mobile-phone">mobile-phone</p><br>
+
+<p class="awe-circle-blank">circle-blank</p><br>
+
+<p class="awe-quote-left">quote-left</p><br>
+
+<p class="awe-quote-right">quote-right</p><br>
+
+<p class="awe-spinner">spinner</p><br>
+
+<p class="awe-circle">circle</p><br>
+
+p.awe-reply:before,<div class="awe-mail-reply">reply:before,.awe-mail-reply</div><br>
+<p class="awe-folder-close-alt">folder-close-alt</p><br>
+
+<p class="awe-folder-open-alt">folder-open-alt</p><br>
+
+<p class="awe-expand-alt">expand-alt</p><br>
+
+<p class="awe-collapse-alt">collapse-alt</p><br>
+
+<p class="awe-smile">smile</p><br>
+
+<p class="awe-frown">frown</p><br>
+
+<p class="awe-meh">meh</p><br>
+
+<p class="awe-gamepad">gamepad</p><br>
+
+<p class="awe-keyboard">keyboard</p><br>
+
+<p class="awe-flag-alt">flag-alt</p><br>
+
+<p class="awe-flag-checkered">flag-checkered</p><br>
+
+<p class="awe-terminal">terminal</p><br>
+
+<p class="awe-code">code</p><br>
+
+<p class="awe-reply-all">reply-all</p><br>
+
+<p class="awe-mail-reply-all">mail-reply-all</p><br>
+
+p.awe-star-half-full:before,<div class="awe-star-half-empty">star-half-full:before,.awe-star-half-empty</div><br>
+<p class="awe-location-arrow">location-arrow</p><br>
+
+<p class="awe-crop">crop</p><br>
+
+<p class="awe-code-fork">code-fork</p><br>
+
+<p class="awe-unlink">unlink</p><br>
+
+<p class="awe-question">question</p><br>
+
+<p class="awe-info">info</p><br>
+
+<p class="awe-exclamation">exclamation</p><br>
+
+<p class="awe-superscript">superscript</p><br>
+
+<p class="awe-subscript">subscript</p><br>
+
+<p class="awe-eraser">eraser</p><br>
+
+<p class="awe-puzzle-piece">puzzle-piece</p><br>
+
+<p class="awe-microphone">microphone</p><br>
+
+<p class="awe-microphone-off">microphone-off</p><br>
+
+<p class="awe-shield">shield</p><br>
+
+<p class="awe-calendar-empty">calendar-empty</p><br>
+
+<p class="awe-fire-extinguisher">fire-extinguisher</p><br>
+
+<p class="awe-rocket">rocket</p><br>
+
+<p class="awe-maxcdn">maxcdn</p><br>
+
+<p class="awe-chevron-sign-left">chevron-sign-left</p><br>
+
+<p class="awe-chevron-sign-right">chevron-sign-right</p><br>
+
+<p class="awe-chevron-sign-up">chevron-sign-up</p><br>
+
+<p class="awe-chevron-sign-down">chevron-sign-down</p><br>
+
+<p class="awe-html5">html5</p><br>
+
+<p class="awe-css3">css3</p><br>
+
+<p class="awe-anchor">anchor</p><br>
+
+<p class="awe-unlock-alt">unlock-alt</p><br>
+
+<p class="awe-bullseye">bullseye</p><br>
+
+<p class="awe-ellipsis-horizontal">ellipsis-horizontal</p><br>
+
+<p class="awe-ellipsis-vertical">ellipsis-vertical</p><br>
+
+<p class="awe-rss-sign">rss-sign</p><br>
+
+<p class="awe-play-sign">play-sign</p><br>
+
+<p class="awe-ticket">ticket</p><br>
+
+<p class="awe-minus-sign-alt">minus-sign-alt</p><br>
+
+<p class="awe-check-minus">check-minus</p><br>
+
+<p class="awe-level-up">level-up</p><br>
+
+<p class="awe-level-down">level-down</p><br>
+
+<p class="awe-check-sign">check-sign</p><br>
+
+<p class="awe-edit-sign">edit-sign</p><br>
+
+<p class="awe-external-link-sign">external-link-sign</p><br>
+
+<p class="awe-share-sign">share-sign</p><br>
+
+</body>
+</html>
