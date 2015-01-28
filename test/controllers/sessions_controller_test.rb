@@ -2,17 +2,17 @@ require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
   test "should get login," do
-    get :login,
+    get :login
     assert_response :success
   end
 
   test "should get home," do
-    get :home,
+    get :home
     assert_response :success
   end
 
   test "should get profile," do
-    get :profile,
+    get :profile
     assert_response :success
   end
 
