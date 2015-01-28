@@ -6,11 +6,8 @@ class ProduitsController < ApplicationController
     @produits = Produit.all
   end
 
-  def test
+  def listeProduit
     @produits = Produit.all
-    
-  #@produit = Produit.find_by(:id => 1)
-  #@type_produit = TypeProduit.find_by(:id => @produit.type_produits_id)
   end
 
   # GET /produits/1

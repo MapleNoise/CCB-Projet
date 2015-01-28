@@ -1,9 +1,9 @@
 class PurgeDateCreationModificationToAllBases < ActiveRecord::Migration
   def up
     # Table utilisateurs
-    remove_column :utilisateurs, :mail, :string
-    remove_column :utilisateurs, :dateModification, :datetime
-    remove_column :utilisateurs, :dateCreation, :datetime
+    #remove_column :utilisateurs, :mail, :string
+    #remove_column :utilisateurs, :dateModification, :datetime
+    #remove_column :utilisateurs, :dateCreation, :datetime
     
     # Table produits
     remove_column :produits, :dateModification, :datetime

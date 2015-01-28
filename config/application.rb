@@ -23,9 +23,9 @@ module CCBProjet
     # config.i18n.default_locale = :de
 
     # Whether or not compilation should take place
-    GulpRails.options[:enabled]   = true
+    GulpRails.options[:enabled]   = false
     # The command to run
-    GulpRails.options[:command]   = 'gulp'
+    GulpRails.options[:command]   = 'gulp scss'
     # The directory in which your command should be executed
     GulpRails.options[:directory] = Rails.root
   end

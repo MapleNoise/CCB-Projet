@@ -21,14 +21,11 @@ Rails.application.routes.draw do
   resources :utilisateur2s
 
   resources :formats
-
-  # devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
   
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
   
   # Routes des ressources
-  # devise_for :utilisateurs
 
     resources :type_produits
 
@@ -52,7 +49,7 @@ Rails.application.routes.draw do
   
     resources :tags
   
-  get 'test' => 'produits#test'
+  get 'listeProduit' => 'produits#listeProduit'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
