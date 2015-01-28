@@ -1,3 +1,4 @@
+
 .button {
     border-radius: 2px;
     border-color: #777;
@@ -70,6 +71,61 @@
                     background-color: $color-white;
                     color: $color-grey;
                     text-decoration: none;
+        }
+    }
+
+    &-filter{
+        @extend .button;
+        @include transition(1s);
+        &--constat{
+            border-left: 15px solid $button-filter-color-constat;
+            background-position:right bottom;
+            background-size: 200% 100%;
+            @include linear-gradient-right($button-filter-color-constat, black,50% , $button-filter-color-constat , 50%);
+            &.is-active{
+                background-color : $button-filter-color-constat;
+                background-position:left bottom;
+            }
+        }
+        &--analyse{
+            border-left: 15px solid $button-filter-color-analyse;
+            background-position:right bottom;
+            background-size: 200% 100%;
+            @include linear-gradient-right($button-filter-color-analyse, black, 50%, $button-filter-color-analyse, 50%);
+            &.is-active{
+                background-color : $button-filter-color-analyse;
+                background-position:left bottom;
+            }
+        }
+        &--decision{
+            border-left: 15px solid $button-filter-color-decision;
+            background-position:right bottom;
+            background-size: 200% 100%;
+            @include linear-gradient-right($button-filter-color-decision, black,50% , $button-filter-color-decision , 50%);
+            &.is-active{
+                background-color : $button-filter-color-decision;
+                background-position:left bottom;
+            }
+        }
+        &--action{
+            border-left: 15px solid $button-filter-color-action;
+            background-position:right bottom;
+            background-size: 200% 100%;
+            @include linear-gradient-right($button-filter-color-action, black, 50%, $button-filter-color-action, 50%);
+            &.is-active{
+                background-color : $button-filter-color-action;
+                background-position:left bottom;
+            }
+        }
+        &--cap{
+            border-left: 15px solid $button-filter-color-cap;
+            background-position:right bottom;
+            background-size: 200% 100%;
+            @include linear-gradient-right($button-filter-color-cap, black, 50%, $button-filter-color-cap, 50%);
+            &.is-active{
+                background-color : $button-filter-color-cap;
+                background-position:left bottom;
+            }
         }
     }
 }
