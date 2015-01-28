@@ -134,7 +134,7 @@
  * @param 	list 	$pattern 		The name pattern of the class
  * @param 	list 	$statesNames 		The states names to generate
  */
-.section--connexion .section__content__body:last-child {
+.sectionback__entete__back, .section--connexion .section__content__body:last-child {
   font-family: 'FontAwesome';
   font-weight: normal;
   font-style: normal;
@@ -150,7 +150,7 @@
   background-position: 0% 0%;
   background-repeat: repeat;
   margin-top: 0; }
-  .section--connexion .section__content__body:last-child:before {
+  .sectionback__entete__back:before, .section--connexion .section__content__body:last-child:before {
     text-decoration: inherit;
     display: inline-block;
     speak: none; }
@@ -158,15 +158,15 @@
 .center {
   text-align: center; }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 40.062em) {
   .center-small {
     text-align: center; } }
 
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 40.063em) {
   .center-medium {
     text-align: center; } }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 64.063em) {
   .center-large {
     text-align: center; } }
 
@@ -516,7 +516,7 @@ img.map, map area {
 .awe-ban-circle:before {
   content: "\f05e"; }
 
-.awe-arrow-left:before {
+.awe-arrow-left:before, .sectionback__entete__back:before {
   content: "\f060"; }
 
 .awe-arrow-right:before {
@@ -1173,46 +1173,46 @@ img.map, map area {
   margin-left: auto !important;
   margin-right: auto !important;
   clear: both !important; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40.062em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 40.063em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 64.063em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 40.063em) {
     .section__content {
       width: 75%; } }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40.062em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 40.063em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 64.063em) {
     .section__content {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40.062em) {
     .section__content {
       width: 100%; } }
 
@@ -1343,43 +1343,43 @@ img.map, map area {
     height: 134px;
     background: url("/assets/images/logo-cap-coherence.png") no-repeat;
     background-size: 475px; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .header__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__logo {
         width: 100%; } }
   .header__client {
@@ -1397,43 +1397,43 @@ img.map, map area {
     display: inline-block;
     float: right;
     position: relative; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .header__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .header__client {
         width: 100%; } }
 
@@ -1490,19 +1490,19 @@ img.map, map area {
     height: 134px;
     background: url("/assets/images/logo-cap-coherence.png") no-repeat;
     background-size: 475px; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .headerback__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .headerback__logo {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .headerback__logo {
         float: left;
         direction: ltr;
@@ -1519,19 +1519,19 @@ img.map, map area {
     display: inline-block;
     float: right;
     position: relative; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .headerback__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .headerback__client {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .headerback__client {
         float: left;
         direction: ltr;
@@ -1559,19 +1559,19 @@ img.map, map area {
     padding-right: 0;
     width: 40%;
     left: 1.66667%; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .footer__copyright {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .footer__copyright {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .footer__copyright {
         float: left;
         direction: ltr;
@@ -1585,19 +1585,19 @@ img.map, map area {
     width: 46.66667%;
     left: 11.66667%;
     text-align: right; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .footer__link {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .footer__link {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .footer__link {
         float: left;
         direction: ltr;
@@ -1620,19 +1620,19 @@ img.map, map area {
     padding-right: 0;
     width: 33.33333%;
     height: 8px; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .color-bar__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .color-bar__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .color-bar__item {
         float: left;
         direction: ltr;
@@ -1670,19 +1670,19 @@ img.map, map area {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .menu__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .menu__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .menu__item {
         float: left;
         direction: ltr;
@@ -1703,19 +1703,19 @@ img.map, map area {
       padding-left: 0;
       padding-right: 0;
       width: 7.5%; }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 40.062em) {
         .menu__item--first {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 641px) {
+      @media screen and (min-width: 40.063em) {
         .menu__item--first {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 64.063em) {
         .menu__item--first {
           float: left;
           direction: ltr;
@@ -1742,10 +1742,10 @@ img.map, map area {
 nav select {
   display: none; }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 64.063em) {
   body .menu__item--icon {
     display: none; } }
-@media screen and (min-width: 641px) {
+@media screen and (min-width: 40.063em) {
   body .menu__item--icon {
     display: none; } }
 
@@ -1773,19 +1773,19 @@ nav select {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     text-decoration: none; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .menuback__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .menuback__item {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .menuback__item {
         float: left;
         direction: ltr;
@@ -1885,19 +1885,19 @@ nav select {
   width: 50%;
   position: relative;
   border: 1px solid #898787; }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 40.062em) {
     .categorie {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 40.063em) {
     .categorie {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 64.063em) {
     .categorie {
       float: left;
       direction: ltr;
@@ -1981,19 +1981,19 @@ td {
       width: 8.33333%;
       outline: none;
       cursor: pointer; }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 40.062em) {
         .input--checkbox .input__control {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 641px) {
+      @media screen and (min-width: 40.063em) {
         .input--checkbox .input__control {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 64.063em) {
         .input--checkbox .input__control {
           float: left;
           direction: ltr;
@@ -2010,19 +2010,19 @@ td {
       text-align: left;
       line-height: 1.4125em;
       color: #4d4d4d; }
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 40.062em) {
         .input--checkbox .input__label {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 641px) {
+      @media screen and (min-width: 40.063em) {
         .input--checkbox .input__label {
           float: left;
           direction: ltr;
           padding-left: 0;
           padding-right: 0; } }
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 64.063em) {
         .input--checkbox .input__label {
           float: left;
           direction: ltr;
@@ -2039,19 +2039,19 @@ td {
     -o-transition: all 150ms linear;
     -ms-transition: all 150ms linear;
     transition: all 150ms linear; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .input__control {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .input__control {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .input__control {
         float: left;
         direction: ltr;
@@ -2076,19 +2076,19 @@ td {
     text-align: center;
     line-height: 2.3125em;
     color: #333; }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 40.062em) {
       .input__label {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 641px) {
+    @media screen and (min-width: 40.063em) {
       .input__label {
         float: left;
         direction: ltr;
         padding-left: 0;
         padding-right: 0; } }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 64.063em) {
       .input__label {
         float: left;
         direction: ltr;
@@ -2113,34 +2113,58 @@ td {
   padding-right: 0;
   width: 50%;
   padding-bottom: 0px;
-  background-color: #eee; }
-  @media screen and (max-width: 640px) {
+  background-color: #eee;
+  min-height: 300px; }
+  @media screen and (max-width: 40.062em) {
     .section--connexion .section__content__body {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 40.063em) {
     .section--connexion .section__content__body {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 64.063em) {
     .section--connexion .section__content__body {
       float: left;
       direction: ltr;
       padding-left: 0;
       padding-right: 0; } }
 .section--connexion .section__content__body:last-child {
-  margin-left: 250px;
-  font-size: 300px;
+  text-align: center;
+  font-size: 250px;
+  width: 50%;
   background-color: #fff;
   color: #EEEEEE; }
 
 .button--connexion {
   display: block;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  width: 100%; }
+
+.link--connexion {
+  color: black; }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #fff; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #fff;
+  opacity: 1; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #fff;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #fff; }
 
 body .input__control {
   padding: 0.5em; }
