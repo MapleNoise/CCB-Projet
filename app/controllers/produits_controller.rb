@@ -8,7 +8,6 @@ class ProduitsController < ApplicationController
 
   def test
     @produits = Produit.all
-    @categories = [1,2]
     
   #@produit = Produit.find_by(:id => 1)
   #@type_produit = TypeProduit.find_by(:id => @produit.type_produits_id)
