@@ -1,7 +1,7 @@
 .menu {
 
 	@include gridle_parent();
-	border: 1px solid #d2d3d5;
+	border-bottom: 1px solid #d2d3d5;
 	height: 80px;
 
 	&__item {

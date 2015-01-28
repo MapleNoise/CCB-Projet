@@ -15,6 +15,7 @@ class FicheProduitsController < ApplicationController
   # GET /fiche_produits/new
   def new
     @fiche_produit = FicheProduit.new
+    @fiche_produit.init!
   end
 
   # GET /fiche_produits/1/edit
@@ -70,6 +71,6 @@ class FicheProduitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fiche_produit_params
-      params.require(:fiche_produit).permit(:ref, :titre, :description, :descriptionCourte, :datePublication, :dateCreation, :dateModification, :dateSuppression)
+      params.require(:fiche_produit).permit(:ref, :titre, :description, :descriptionCourte, :datePublication, :dateSuppression)
     end
 end

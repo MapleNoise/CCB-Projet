@@ -26,6 +26,7 @@
 
 .client {
         &__login {
+            @include icon('user');
             position: absolute;
             right: 27px;
             
@@ -72,6 +73,7 @@
 .expert{
         &__login{
             //padding-right: 150px;
+            @include icon('user');
             position: absolute;
             float: right;
             right: 150px;

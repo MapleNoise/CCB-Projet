@@ -1,8 +1,10 @@
+#encoding: UTF-8
 require 'test_helper'
 
 class FicheProduitsControllerTest < ActionController::TestCase
+
   setup do
-    @fiche_produit = fiche_produits(:one)
+    @fiche_produit = fiche_produits(:testunit)
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class FicheProduitsControllerTest < ActionController::TestCase
 
   test "should create fiche_produit" do
     assert_difference('FicheProduit.count') do
-      post :create, fiche_produit: { dateCreation: @fiche_produit.dateCreation, dateModification: @fiche_produit.dateModification, datePublication: @fiche_produit.datePublication, dateSuppression: @fiche_produit.dateSuppression, description: @fiche_produit.description, descriptionCourte: @fiche_produit.descriptionCourte, ref: @fiche_produit.ref, titre: @fiche_produit.titre }
+      post :create, fiche_produit: { datePublication: @fiche_produit.datePublication, dateSuppression: @fiche_produit.dateSuppression, description: @fiche_produit.description, descriptionCourte: @fiche_produit.descriptionCourte, ref: @fiche_produit.ref.to_s + "test", titre: @fiche_produit.titre }
     end
 
     assert_redirected_to fiche_produit_path(assigns(:fiche_produit))
@@ -35,15 +37,22 @@ class FicheProduitsControllerTest < ActionController::TestCase
   end
 
   test "should update fiche_produit" do
-    patch :update, id: @fiche_produit, fiche_produit: { dateCreation: @fiche_produit.dateCreation, dateModification: @fiche_produit.dateModification, datePublication: @fiche_produit.datePublication, dateSuppression: @fiche_produit.dateSuppression, description: @fiche_produit.description, descriptionCourte: @fiche_produit.descriptionCourte, ref: @fiche_produit.ref, titre: @fiche_produit.titre }
+    patch :update, id: @fiche_produit, fiche_produit: { datePublication: @fiche_produit.datePublication, dateSuppression: @fiche_produit.dateSuppression, description: @fiche_produit.description, descriptionCourte: @fiche_produit.descriptionCourte, ref: @fiche_produit.ref, titre: @fiche_produit.titre }
     assert_redirected_to fiche_produit_path(assigns(:fiche_produit))
   end
-
-  test "should destroy fiche_produit" do
-    assert_difference('FicheProduit.count', -1) do
-      delete :destroy, id: @fiche_produit
-    end
-
-    assert_redirected_to fiche_produits_path
+  
+  test "doit mettre à jour dateSuppression" do
+    @fiche_produit.delete!
+    @fiche_produit.save
+    
+    assert @fiche_produit[:dateSuppression] != nil
   end
+
+  # test "should destroy fiche_produit" do
+  #   assert_difference('FicheProduit.count', -1) do
+  #     delete :destroy, id: @fiche_produit
+  #   end
+  #
+  #   assert_redirected_to fiche_produits_path
+  # end
 end

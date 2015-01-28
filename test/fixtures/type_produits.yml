@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nom: MyString
-  format: MyText
+testunit:
+  nom: Document excel
 
-two:
-  nom: MyString
-  format: MyText
+testunit2:
+  nom: Vidéo

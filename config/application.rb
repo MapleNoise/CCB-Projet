@@ -12,6 +12,8 @@ module CCBProjet
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.autoload_paths << Rails.root.join("lib")
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
@@ -26,7 +28,5 @@ module CCBProjet
     GulpRails.options[:command]   = 'gulp scss'
     # The directory in which your command should be executed
     GulpRails.options[:directory] = Rails.root
-    Encoding.default_external = Encoding::UTF_8
-    Encoding.default_internal = Encoding::UTF_8
   end
 end

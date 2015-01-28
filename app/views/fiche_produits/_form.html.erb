@@ -12,9 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label "Référence" %><br>
-    <%= f.text_field :ref %>
+    <%= f.label :ref %><br>
+    <%= f.text_field :ref,:readonly => true%>  
   </div>
+  <hr>
   <div class="field">
     <%= f.label "Titre" %><br>
     <%= f.text_field :titre %>
@@ -28,12 +29,8 @@
     <%= f.text_area :descriptionCourte %>
   </div>
   <div class="field">
-    <%= f.label "Date de Publication" %><br>
-    <%= f.date_field :datePublication%>
-  </div>
-  <div class="field">
-    <%= f.label "Heure de Publication" %><br>
-    <%= f.time_field :datePublication %>
+    <%= f.label "Date de publication : " %><br>
+    <%= datetime_select("fiche_produit", "datePublication", :start_year => Date.current.year + 10, :end_year => 2000) %>
   </div>
   <div class="actions">
     <%= f.submit %>

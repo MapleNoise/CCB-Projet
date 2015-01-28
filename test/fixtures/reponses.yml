@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reponse: MyString
+  estJuste: false
+  dateSuppression: 2015-01-23 09:43:56
+
+two:
+  reponse: MyString
+  estJuste: false
+  dateSuppression: 2015-01-23 09:43:56

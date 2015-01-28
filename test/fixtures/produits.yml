@@ -1,17 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  ref: MyString
-  nom: MyString
-  prix: 1.5
-  dateCreation: 
-  dateModification: 
+testunit:
+  ref: 123456
+  nom: Nom produit 1
+  prix: 10.0
   dateSuppression: 
-
-two:
-  ref: MyString
-  nom: MyString
-  prix: 1.5
-  dateCreation: 
-  dateModification: 
+    
+testunit2:
+  ref: 234567
+  nom: Nom produit 2
+  prix: 15.2
   dateSuppression: 
