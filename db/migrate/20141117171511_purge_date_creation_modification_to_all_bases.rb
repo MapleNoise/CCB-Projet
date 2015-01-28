@@ -18,7 +18,7 @@ class PurgeDateCreationModificationToAllBases < ActiveRecord::Migration
     remove_column :categories, :dateCreation, :datetime
     
     # Table param_tvas
-    remove_column :param_tvas, :dateModification, :datetime
+    #remove_column :param_tvas, :dateModification, :datetime
     remove_column :param_tvas, :dateCreation, :datetime
   end
   
