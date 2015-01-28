@@ -1,7 +1,7 @@
 class Tag < ActiveRecord::Base
   
   validates_presence_of :nom
-  validates :nom, length: { minimum: 4 , too_short: "Le minimum requis est de %{count} caracteres"} , uniqueness: true
+  validates :nom, length: { minimum: 4 , too_short: "Le minimum requis est de %{count} caracteres"}
   validates :nom, length: { maximum: 50 , too_long: "Le maximum requis est de %{count} caracteres"}
 
   has_and_belongs_to_many :produits

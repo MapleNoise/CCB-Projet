@@ -1,6 +1,5 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
-
   # GET /produits
   # GET /produits.json
   def index
@@ -8,9 +7,11 @@ class ProduitsController < ApplicationController
   end
 
   def test
-    @produit = Produit.find_by(:id => 1)
-    @type_produit = TypeProduit.find_by(:id => @produit.type_produits_id)
+    @produits = Produit.all
+    @categories = [1,2]
     
+  #@produit = Produit.find_by(:id => 1)
+  #@type_produit = TypeProduit.find_by(:id => @produit.type_produits_id)
   end
 
   # GET /produits/1

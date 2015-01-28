@@ -7,6 +7,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Création d'utilisateur
+
+Utilisateur2.create(
+  [{name: "Thomas Ayoub",
+  email: "ayoub@gmail.com",
+  password: "azerty12",
+  password_confirmation: "azerty12"},
+  {name: "Maxime Mangel",
+  email: "mangel.maxime@outlook.com",
+  password: "azerty12",
+  password_confirmation: "azerty12"}
+  ])
 
 # Création de deux Type de fichier.
 #typeProduits = TypeProduit.create([{nom: "Fichier Excel"}, {nom: "Fichier Word"}])
@@ -38,5 +50,43 @@ Tag.create([{nom: "Le constat", mere: nil},
 
 # Création de quelques "sous-catégories"
 Tag.create([{nom: "Formation", mere: Tag.find_by(:nom => "Le constat").id},
-  {nom: "Quizz", mere: Tag.find_by(:nom => "Le constat").id}])
+  {nom: "Quizz", mere: Tag.find_by(:nom => "Le constat").id},
+  {nom: "Quizz", mere: Tag.find_by(:nom => "L'analyse").id}])
 
+# Création de produits
+produit1 = Produit.create(
+  ref: "90ba14f781d79464",
+  nom: "Produit 1",
+  prix: 10.0,
+  type_produits_id: 1,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: false)
+  
+produit1.tags << Tag.find_by(:nom => "Le constat")
+produit1.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
+
+
+produit2 = Produit.create(
+  ref: "90ba14f781d72464",
+  nom: "Produit 2",
+  prix: 10.0,
+  type_produits_id: 2,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: true)
+  
+produit2.tags << Tag.find_by(:nom => "L'analyse")
+produit2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+produit3 = Produit.create(
+  ref: "90ba14f781d72464",
+  nom: "Produit 2",
+  prix: 10.0,
+  type_produits_id: 2,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: true)
+  
+produit3.tags << Tag.find_by(:nom => "L'analyse")
+produit3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
