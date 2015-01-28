@@ -9,33 +9,6 @@
   font-style: normal;
 }
 
-%icon {
-	font-family: 'FontAwesome';
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-  *margin-right: .3em;
-
-  display: inline;
-  width: auto;
-  height: auto;
-  line-height: normal;
-  vertical-align: baseline;
-  background-image: none;
-  background-position: 0% 0%;
-  background-repeat: repeat;
-  margin-top: 0;
-
-	&:before {
-		text-decoration: inherit;
-  	display: inline-block;
-  	speak: none;
-	}
-}
-
-
-
 .awe-glass:before {
   content: "\f000";
 }

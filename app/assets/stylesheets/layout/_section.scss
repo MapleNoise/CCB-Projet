@@ -2,12 +2,12 @@
 	position: relative;
 	@include gridle_parent();
 }
-	.section__content {
-		@include gridle_parent();
-		@include gridle(9, large);
-		@include gridle(12, small);
-		@include gridle_centered();
-	}
+.section__content {
+	@include gridle_parent();
+	@include gridle(9, medium);
+	@include gridle(12, small);
+	@include gridle_centered();
+}
 
 .section {
 	border-bottom: $border-section-body;
