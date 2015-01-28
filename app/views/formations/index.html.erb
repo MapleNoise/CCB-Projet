@@ -3,11 +3,12 @@
 <table>
   <thead>
     <tr>
+      <th>Ref</th>
       <th>Nom</th>
-      <th>Prix</th>
+      <th>Descriptioncourte</th>
+      <th>Description</th>
       <th>Estpublic</th>
-      <th>Date création</th>
-      <th>Date publication</th>
+      <th>Datesuppression</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,11 +16,12 @@
   <tbody>
     <% @formations.each do |formation| %>
       <tr>
+        <td><%= formation.ref %></td>
         <td><%= formation.nom %></td>
-        <td><%= formation.prix %></td>
+        <td><%= formation.descriptionCourte %></td>
+        <td><%= formation.description %></td>
         <td><%= formation.estPublic %></td>
-        <td><%= formation.created_at %></td>
-        <td><%= formation.datePublication %></td>
+        <td><%= formation.dateSuppression %></td>
         <td><%= link_to 'Show', formation %></td>
         <td><%= link_to 'Edit', edit_formation_path(formation) %></td>
         <td><%= link_to 'Destroy', formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,33 @@
+.l-footer{
+	position: relative;
+
+	.section__content {
+		padding-top: 0;
+	}
+
+	.menu {
+		border-top: none;
+	}
+}
+
+.footer {
+    @include gridle_parent();
+    margin-top: 15px;
+	&__copyright{
+		@include gridle(4.8);
+		@include gridle_push(0.2);
+	}
+	&__link{
+		@include gridle(5.6);
+		@include gridle_push(1.4);
+		text-align: right;
+		.button--link {
+			padding : 0 10px;
+			border-right : 2px solid #58595b;
+			line-height : 14px;
+		}
+		.button--link:last-of-type {
+			border : none;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+.image-responsive-schema-reconversion {
+	@include gridle_parent();
+	@include gridle_centered();
+	max-width: 914px;
+	width: 100%;
+	height: auto;
+}

@@ -33,4 +33,6 @@ Gemfile.lock
 
 db/development.sqlite3_test
 .project
+public/assets/stylesheets/application.css
+.project
 db/schema.rb

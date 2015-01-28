@@ -3,26 +3,35 @@
 <p>
   <strong>Nom:</strong>
   <%= @formation.nom %>
+  <strong>Ref:</strong>
+  <%= @formation.ref %>
 </p>
 
 <p>
-  <strong>Prix:</strong>
-  <%= @formation.prix %>
+  <strong>Nom:</strong>
+  <%= @formation.nom %>
 </p>
 
 <p>
-  <strong>Datecreation:</strong>
-  <%= @formation.created_at %>
+  <strong>Descriptioncourte:</strong>
+  <%= @formation.descriptionCourte %>
 </p>
 
 <p>
   <strong>Date publication:</strong>
   <%= @formation.datePublication %>
+  <strong>Description:</strong>
+  <%= @formation.description %>
 </p>
 
 <p>
   <strong>Estpublic:</strong>
   <%= @formation.estPublic %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @formation.dateSuppression %>
 </p>
 
 <%= link_to 'Edit', edit_formation_path(@formation) %> |

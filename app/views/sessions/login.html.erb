@@ -1,9 +1,33 @@
-<% @page_title = "UserAuth | Login" -%>
-<div class= "Sign_Form">
-<h1>Log in</h1>
-<%= form_tag(:action => 'login_attempt') do %>
-<p>Email:</br> <%= text_field_tag(:email) %></p>
-<p>Password:</br> <%= password_field_tag :login_password %></p>
-<%= submit_tag("Log In") %>
-<% end %>
-</div> 
+<% 
+	@page_title = "UserAuth | Login",
+	provide(:special_template,true) 
+%>
+<section class="l-section section">
+  <div class="section__content">
+      <h3 class="section__content__title section__content__title--page">votre espace client</h3>
+  </div>
+</section>
+
+<section class="l-section section section--connexion">
+	<div class="section__content section__content--sticky">
+	  <div class="section__content__body">
+    	<%= form_tag(:action => 'login_attempt') do %>
+      <h3 class="section__content__title">Connexion</h3>
+      <span class="input input__label">Adresse Email</span>
+      <%= text_field_tag(:email, nil, {placeholder: 'Email@mail.com', class: 'input input__control'}) %>
+      <span class="input input__label">Mot de passe</span>
+      <%= password_field_tag :login_password, nil, {placeholder: 'Mot de passe', class: 'input input__control'} %>
+      <div class="input input--checkbox">
+        <input type="checkbox" class="input__control"> 
+        <label for="" class="input__label">Connexion persistante</label>
+      </div>
+      <%= submit_tag("Connexion", options = {class: 'button button--connexion'}) %>
+      <a class="" href="#">Vous avez perdu votre mot de passe?</a>
+      <% end %>
+    </div>
+    <div class="section__content__body">
+      <span class=""></span>
+    </div>
+  </div>
+</section>
+  

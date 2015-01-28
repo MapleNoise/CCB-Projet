@@ -1,0 +1,73 @@
+.menu {
+
+	@include gridle_parent();
+	border-bottom: 1px solid #d2d3d5;
+	height: 80px;
+
+	&__item {
+		@include gridle(1.85);
+		display: inline-block;
+		height: 80px;
+		border-right: 1px solid #d2d3d5;
+		text-decoration: none;
+		color: rgb(88, 89, 91);
+		line-height: 80px;
+		text-align: center;
+    	@include vertical-align();
+		
+		&.is-active {
+			background-color: #eee;
+		}
+
+		&:hover {
+			background-color: #898787;
+			color: $color-white;
+		}
+
+		&--last {
+			// @include gridle(1.5);
+			border-right: none;
+		}
+                
+        &--cart {
+            background-color: $color-blue;
+        }
+
+		&--first {
+			@include gridle(0.9);
+		}
+
+		&__title {
+			font-size: 14px;
+			line-height: 18px;
+			font-weight: normal;
+			text-transform: uppercase;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+
+			&--home {
+				width: 24px;
+				height: 21px;
+				background: url("#{$images_path}/picto-home.png") left bottom no-repeat;
+			}    
+		}
+
+		&__body {
+			display: block;
+			font-size: 13px;
+			font-style: italic;
+			text-transform: lowercase;
+		}
+                
+                
+	}
+}
+nav select{
+		display: none;
+	}
+body .menu__item--icon{
+	@include gridle_hide('large');
+	@include gridle_hide('medium');
+
+}
