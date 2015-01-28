@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @chapitre.ref %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @chapitre.nom %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @chapitre.description %>
+</p>
+
+<p>
+  <strong>Texte:</strong>
+  <%= @chapitre.texte %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @chapitre.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_chapitre_path(@chapitre) %> |
+<%= link_to 'Back', chapitres_path %>

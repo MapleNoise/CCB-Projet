@@ -9,17 +9,25 @@
 
 
 # Création de deux Type de fichier.
-typeProduits = TypeProduit.create([{nom: "Fichier Excel"}, {nom: "Fichier Word"}])
+#typeProduits = TypeProduit.create([{nom: "Fichier Excel"}, {nom: "Fichier Word"}])
 
 # Association de deux formats pour les fichiers Excels
-Format.create(extension: ".xls", type_produits_id: TypeProduit.find_by(:nom => "Fichier Excel").id)
-Format.create(extension: ".csv", type_produits_id: TypeProduit.find_by(:nom => "Fichier Excel").id)
+ExtensionFichier.create(extension: ".xls")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Excel").id)
+ExtensionFichier.create(extension: ".csv")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Excel").id)
 
 # Association de quatres formations pour les fichiers Words
-Format.create(extension: ".doc", type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
-Format.create(extension: ".docx", type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
-Format.create(extension: ".rtf", type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
-Format.create(extension: ".docm", type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
+ExtensionFichier.create(extension: ".doc")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
+ExtensionFichier.create(extension: ".docx")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
+ExtensionFichier.create(extension: ".rtf")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
+ExtensionFichier.create(extension: ".docm")#, type_produits_id: TypeProduit.find_by(:nom => "Fichier Word").id)
+
+TypeProduit.create(
+  nom: "Fichier Excel",
+  :extension_fichiers => ExtensionFichier.where(:extension => [".xls", ".csv"]))
+
+TypeProduit.create(
+	nom: "Fichier Word",
+	:extension_fichiers => ExtensionFichier.where(:extension => [".doc", ".docx", ".rtf", ".docm"]))
 
 # Création des catégories de bases
 Tag.create([{nom: "Le constat", mere: nil},

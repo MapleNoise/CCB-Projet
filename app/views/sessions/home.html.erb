@@ -1,0 +1,19 @@
+
+<html>
+  <!-- <head/> -->
+  <body>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
+
+    <% u = Utilisateur2.find_by(id: session[:user_id])%>
+	<% if u -%>
+		<%= "Votre email : #{u.email}"%>
+	<% else -%>
+		<%= "Vous n'êtes pas connecté !"%>
+	<% end -%>
+
+ 
+    <!-- more content -->
+  </body>
+</html>

@@ -15,6 +15,18 @@
     <%= f.label :nom %><br>
     <%= f.text_field :nom %>
   </div>
+
+<div class="field">
+  Extension :
+  <%= 
+    collection_check_boxes(:type_produit, :extension_fichier_ids, ExtensionFichier.all, :id, :extension) do |b|
+        b.label { b.check_box + b.text }
+    end 
+  %>
+
+</div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

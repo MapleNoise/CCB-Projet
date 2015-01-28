@@ -1,0 +1,2 @@
+module ExtensionFichiersHelper
+end

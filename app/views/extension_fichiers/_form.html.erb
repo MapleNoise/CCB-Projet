@@ -1,0 +1,21 @@
+<%= form_for(@extension_fichier) do |f| %>
+  <% if @extension_fichier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@extension_fichier.errors.count, "error") %> prohibited this extension_fichier from being saved:</h2>
+
+      <ul>
+      <% @extension_fichier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :extension %><br>
+    <%= f.text_field :extension %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

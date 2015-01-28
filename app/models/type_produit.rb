@@ -3,5 +3,5 @@ class TypeProduit < ActiveRecord::Base
   validates :nom, length: { minimum: 4 , too_short: "Le minimum requis est de %{count} caracteres"} , uniqueness: true
   validates :nom, length: { maximum: 40 , too_long: "Le maximum requis est de %{count} caracteres"}
 
-  has_many :Format
+    has_and_belongs_to_many :extension_fichiers
 end
