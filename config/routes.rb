@@ -1,5 +1,9 @@
 Rails.application.routes.draw do  
 
+  resources :fonctions
+
+  resources :statuses
+
   resources :extension_fichiers
 
   resources :reponses

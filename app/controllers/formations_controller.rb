@@ -22,6 +22,7 @@ class FormationsController < ApplicationController
 
   def create
     @formation = Formation.new(formation_params)
+    @formation.statusId = status_params
     @formation.save
     respond_with(@formation)
   end
@@ -43,5 +44,9 @@ class FormationsController < ApplicationController
 
     def formation_params
       params.require(:formation).permit(:ref, :nom, :descriptionCourte, :description, :estPublic, :dateSuppression, :prix)
+    end
+    
+     def status_params
+      params.require(:status)
     end
 end

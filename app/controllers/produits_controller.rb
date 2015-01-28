@@ -34,6 +34,7 @@ class ProduitsController < ApplicationController
   def create
     @produit = Produit.new(produit_params)
     @produit.type_produits_id = type_produit_params
+    @produit.statusId = status_params
     #@produit_categorie  = Categories_produits.new
     #@produit_categorie.category_id = produit_categorie_params
 
@@ -101,4 +102,7 @@ class ProduitsController < ApplicationController
   def type_produit_params
     params.require(:types_produits)
   end
+  def status_params
+      params.require(:status)
+    end
 end

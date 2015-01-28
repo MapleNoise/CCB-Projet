@@ -20,7 +20,7 @@ gem 'devise', '~> 3.4.1'
 
 # Sert pour la gestion des droits
 gem 'cancan', '~> 1.6.10'
-gem 'rolify', '~> 3.4.1'
+#gem 'rolify', '~> 3.4.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

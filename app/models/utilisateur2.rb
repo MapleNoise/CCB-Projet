@@ -9,7 +9,8 @@ class Utilisateur2 < ActiveRecord::Base
     length: { maximum: 255 },
     format: { with: EMAIL_REGEX },
     uniqueness: true
-
+  
+  has_one :fonctions
 
   validates :password, length: { minimum: 8, too_short: "C'est trop court" }
   has_secure_password
