@@ -98,17 +98,19 @@
     </div>
   </section> 
 
-<% if content_for?(:special_template) %>
-	<section class="section">
-		<div class="l-section section__content">
-<% end %>
+  
 
-	<%= flash[:alert]  %>
-	<%= yield %>
 
-<% if content_for?(:special_template) %>	
-		</div>
-	</section>
+<% if @special_template %>
+      <%= @special_template %>
+  </section>
+<% else %>
+  <section class="section">
+    <div class="l-section section__content">
+      <%= flash[:alert]  %>
+      <%= yield %>
+  </div>
+  </section>
 <% end%>
 
   <div class="l-footer section">

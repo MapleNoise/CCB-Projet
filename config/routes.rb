@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     
     resources :tags
 
-    root :to => "sessions#login"
+    root :to => "welcome#index"
     match "signup", :to => "utilisateur2#new", via: [:get, :post]
     match "login", :to => "sessions#login", via: [:get, :post]
     match "logout", :to => "sessions#logout", via: [:get, :post]
