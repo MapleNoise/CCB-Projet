@@ -6,7 +6,7 @@ class Produit < ActiveRecord::Base
   # Pour récupérer la liste des tags : produit.tags ça retourne un tableau de tags
   ################################
   
-  validates_presence_of :ref, :nom, :prix, :description, :descriptionCourte
+  validates_presence_of :ref, :nom, :prix, :description, :descriptionCourte, :urlFichier
   validates :prix, :numericality => { :greater_than_or_equal_to => 0 }
   validates :ref, length: { minimum: 6 , too_short: "Le minimum requis est de %{count} caractères"} , uniqueness: true
   validates :ref, length: { maximum: 20 , too_long: "Le maximum requis est de %{count} caractères"}

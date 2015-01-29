@@ -10,17 +10,17 @@ gem 'sqlite3'
 #gem 'mysql2', '~> 0.3.17'
 
 # Ajout de sass pour le projet
-gem 'sass', '~> 3.4.7'
+#gem 'sass', '~> 3.4.7'
 # Integration de gulp pour une application Rails
 gem 'gulp_rails', '~> 1.0'
 
 
 # Sert pour l'authentification'
-gem 'devise', '~> 3.4.1'
+#gem 'devise', '~> 3.4.1'
 
 # Sert pour la gestion des droits
-gem 'cancan', '~> 1.6.10'
-gem 'rolify', '~> 3.4.1'
+#gem 'cancan', '~> 1.6.10'
+#gem 'rolify', '~> 3.4.1'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

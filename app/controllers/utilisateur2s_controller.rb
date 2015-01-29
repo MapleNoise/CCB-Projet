@@ -22,6 +22,7 @@ class Utilisateur2sController < ApplicationController
 
   def create
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
+    @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
     respond_with(@utilisateur2)
   end
@@ -43,5 +44,9 @@ class Utilisateur2sController < ApplicationController
 
     def utilisateur2_params
       params.require(:utilisateur2).permit(:name, :email, :password, :password_confirmation)
+    end
+    
+    def fonction_params
+      params.require(:fonctions)
     end
 end

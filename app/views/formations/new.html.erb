@@ -37,6 +37,11 @@
     <%= f.label :estPublic %><br>
     <%= f.check_box :estPublic %>
   </div>
+<div class="field">
+	Status :
+	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+	<%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom)) %>
+</div>
   <div class="field">
     <%= f.label :dateSuppression %><br>
     <%= f.datetime_select :dateSuppression %>

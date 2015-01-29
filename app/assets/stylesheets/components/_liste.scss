@@ -1,0 +1,81 @@
+.liste{
+    @include gridle_parent();
+    position: relative;
+    //display: inline-block;
+    
+        &__item{
+            @include gridle(3);
+            display: inline-block;
+            //background-color: $color-grey-white;
+            //background: url("#{$images_path}/logo-cap-coherence.png")  no-repeat;
+            background-size: 100% 240px;
+            height: 240px;
+            
+            /*margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+            margin-top: 5px;*/
+            position: relative;
+            
+            &__etiquette{
+                margin: 5px 5px 5px 5px;
+                //padding-right: 50px;
+                border: 1px solid #d2d3d5;
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+                background: url("#{$images_path}/logo-cap-coherence.png")  no-repeat;
+
+                &:hover {
+                    .etiquette__description {
+                        display: inline-block;
+                        padding-top: 30px;
+                    }
+
+                    .etiquette__title {
+                        bottom: auto;
+                    }
+                }
+
+                &__title{
+                    background-color: rgba($color-green, 0.8);
+                    width: 100%;
+                    bottom: 0;
+                    display: inline-block;
+                    //padding-bottom: 0px;
+                    position: absolute;
+                    height: 30px;
+                    //@include vertical-align();
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+                &__description{
+                    display: none;
+                    //padding-top: 130px;
+                    position: absolute;
+                    height: 100%;
+                }
+
+                &__iconerubrique{
+                    width: 24px;
+                    height: 24px;
+                    float: right;
+                    margin-right: 10px;
+                    @include vertical-align();
+                    //position: absolute;
+                }
+
+                &__iconefile{
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    float: right;
+                    //padding-right: 5px;
+                    bottom: 0;
+                }
+            }
+            
+        }
+}
+

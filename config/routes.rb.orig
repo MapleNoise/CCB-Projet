@@ -1,8 +1,14 @@
 Rails.application.routes.draw do  
 
 <<<<<<< HEAD
+  resources :fonctions
+
+  resources :statuses
+
   resources :extension_fichiers
+
 =======
+>>>>>>> c693796bb2b77827ec692475aca777f9337d4336
   resources :reponses
 
   resources :questions
@@ -16,17 +22,22 @@ Rails.application.routes.draw do
   resources :formations
 
   resources :utilisateur2s
->>>>>>> FETCH_HEAD
 
   resources :formats
+<<<<<<< HEAD
+=======
 
   # devise_for :utilisateurs, path_names: { sign_in: 'connexion', sign_out: 'deconnexion', sign_up: 'enregistrement' }
+>>>>>>> c693796bb2b77827ec692475aca777f9337d4336
   
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
   
   # Routes des ressources
+<<<<<<< HEAD
+=======
   # devise_for :utilisateurs
+>>>>>>> c693796bb2b77827ec692475aca777f9337d4336
 
     resources :type_produits
 
@@ -34,9 +45,15 @@ Rails.application.routes.draw do
 
     resources :produits
     
+<<<<<<< HEAD
     resources :tags
 
     root :to => "sessions#login"
+=======
+    resources :categories
+
+    root :to => "welcome#index"
+>>>>>>> c693796bb2b77827ec692475aca777f9337d4336
     match "signup", :to => "utilisateur2#new", via: [:get, :post]
     match "login", :to => "sessions#login", via: [:get, :post]
     match "logout", :to => "sessions#logout", via: [:get, :post]
@@ -47,7 +64,13 @@ Rails.application.routes.draw do
 #  get 'login' => 'sessions#setting'
 
 
+<<<<<<< HEAD
   
+    resources :tags
+=======
+>>>>>>> c693796bb2b77827ec692475aca777f9337d4336
+  
+  get 'listeProduit' => 'produits#listeProduit'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

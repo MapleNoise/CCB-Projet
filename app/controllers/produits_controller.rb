@@ -6,12 +6,8 @@ class ProduitsController < ApplicationController
     @produits = Produit.all
   end
 
-  def test
+  def listeProduit
     @produits = Produit.all
-    @categories = [1,2]
-    
-  #@produit = Produit.find_by(:id => 1)
-  #@type_produit = TypeProduit.find_by(:id => @produit.type_produits_id)
   end
 
   # GET /produits/1
@@ -34,6 +30,7 @@ class ProduitsController < ApplicationController
   def create
     @produit = Produit.new(produit_params)
     @produit.type_produits_id = type_produit_params
+    @produit.statusId = status_params
     #@produit_categorie  = Categories_produits.new
     #@produit_categorie.category_id = produit_categorie_params
 
@@ -91,7 +88,7 @@ class ProduitsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def produit_params
-    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description)
+    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description, :urlFichier)
   end
 
   def produit_tag_params
@@ -101,4 +98,7 @@ class ProduitsController < ApplicationController
   def type_produit_params
     params.require(:types_produits)
   end
+  def status_params
+      params.require(:status)
+    end
 end

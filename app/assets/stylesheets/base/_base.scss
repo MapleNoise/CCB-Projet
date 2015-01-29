@@ -1,0 +1,12 @@
+* {
+	@include box-sizing(border-box);
+}
+
+html, body {
+	min-height: 100%;
+    position: relative;
+    bottom: 0;
+}
+img.map, map area {
+    outline: none;
+}

@@ -1,0 +1,13 @@
+ @include gridle_state( 'small' ) {
+	
+	body .client{
+			&__newsletter{
+				@include gridle_centered();
+			}
+			&__login{
+				@include gridle_centered();
+			}
+		}
+
+		
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Implémentation des différents composants du style</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+</head>
+<body>
+  <h2>La barre de couleur</h2>
+  <header>
+    <div class="color-bar">
+      <div class="color-bar__item color-bar__item--blue"></div>
+      <div class="color-bar__item color-bar__item--green"></div>
+      <div class="color-bar__item color-bar__item--yellow"></div>
+    </div>
+  </header>
+  
+  <br>
+  
+ 
+  
+  <h2>Le menu</h2>
+  <nav class="menu">
+    <a href="#" class="menu__item menu__item--first is-active">
+      <h2 class="menu__item__title menu__item__title--logo">home</h2>
+    </a>
+    <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+      <h2 class="menu__item__title">Reconversion professionnelle
+          <span class="menu__item__body">les 5 étapes clés</span>
+      </h2>
+    </a>
+    <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+      <h2 class="menu__item__title">Accompagnement
+          <span class="menu__item__body">conseils, coaching, bilan</span>
+      </h2>
+    </a>
+    <a href="" class="menu__item">
+      <h2 class="menu__item__title">Outils
+          <span class="menu__item__body">aide à la décision</span>
+      </h2>
+    </a>
+    <a href="" class="menu__item">
+      <h2 class="menu__item__title">Blog
+          <span class="menu__item__body">informations, analyses</span>
+      </h2>
+    </a>
+    <a href="" class="menu__item">
+      <h2 class="menu__item__title">Cap cohérence
+          <span class="menu__item__body">présentation, contact</span>
+      </h2>
+    </a>
+    <a href="" class="menu__item menu__item--last menu__item--cart">
+      <h2 class="menu__item__title menu__item__title--logo"></h2>
+    </a>
+  </nav>
+
+  <br>
+
+  <h2>Les boutons</h2>
+  <a class="button">Button</a>
+  <a class="button button--highlight">Button button--highlight</a>
+  <a class="button button--submit">Button button--submit</a>
+  <a class="button button--to">Button button--to</a>
+  <a class="button button--link">Button button--link</a>
+
+  <button class="button">Button</button>
+  <button class="button button--highlight">Button button--highlight</button>
+  <button class="button button--submit">Button button--submit</button>
+  <button class="button button--to">Button button--to</button>
+
+  <h2>Les filtres</h2>
+
+  <button class="button-filter button-filter--constat"> Le Constat </button>
+  <button class="button-filter button-filter--analyse"> L'analyse </button>
+  <button class="button-filter button-filter--decision"> La Decision </button>
+  <button class="button-filter button-filter--action"> L'action </button>
+   <button class="button-filter button-filter--cap"> Cap Cohérence </button>
+
+  <br>
+  
+  <h2>Les sections</h2>
+  <section class="section">
+    <div class="l-section section__content">
+      <h3 class="section__content__title">Titre de la section 1</h3>
+        <div class="section__content__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque blanditiis possimus laboriosam soluta quam repellat sequi porro aperiam expedita dolorum molestias neque esse, optio error, labore inventore. Nostrum, animi, delectus.</p>
+        </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="l-section section__content section__content--sticky">
+      <h3 class="section__content__title">Titre de la section 2</h3>
+        <div class="section__content__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque blanditiis possimus laboriosam soluta quam repellat sequi porro aperiam expedita dolorum molestias neque esse, optio error, labore inventore. Nostrum, animi, delectus.</p>
+        </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="l-section section__content">
+      <h3 class="section__content__title">Titre de la section 3</h3>
+        <div class="section__content__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque blanditiis possimus laboriosam soluta quam repellat sequi porro aperiam expedita dolorum molestias neque esse, optio error, labore inventore. Nostrum, animi, delectus.</p>
+        </div>
+    </div>
+  </section>
+
+  <br>
+
+  <h2>Les catégories</h2>
+  <div class="categories categories--block">
+    <div class="categorie">
+      <h4 class="categorie__title">Formations</h4>
+      <a href="#categorie" class="categorie__items">
+        <p class="categorie__item__random">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+        <p class="categorie__item__random">Réaliser un bilan comptable</p>
+        <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+      </a>
+    </div>
+    <div class="categorie">
+      <h4 class="categorie__title">eBook</h4>
+      <a href="#categorie" class="categorie__items">
+        <p class="categorie__item__random">Fnances</p>
+        <p class="categorie__item__random">Réaliser un bilan comptable</p>
+        <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+      </a>
+    </div>
+    <div class="categorie">
+      <h4 class="categorie__title">Bibliothèque</h4>
+      <a href="#categorie" class="categorie__items">
+        <p class="categorie__item__random">Fnances</p>
+        <p class="categorie__item__random">Réaliser un bilan comptable</p>
+        <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+      </a>
+    </div>
+    <div class="categorie">
+      <h4 class="categorie__title">Outils</h4>
+      <a href="#categorie" class="categorie__items">
+        <p class="categorie__item__random">Fnances</p>
+        <p class="categorie__item__random">Réaliser un bilan comptable</p>
+        <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+      </a>
+    </div>
+  </div>
+
+  <br>
+  <h2>Le header</h2>
+  <div class="section">
+    <div class="section__content section__content--sticky">
+      <div class="section__content__body--sticky">
+        <div class="header">
+            <a href="#" class="header__logo">
+            </a>
+          <div class="header__client">
+              <div class="expert__login">
+                <img class="expert__login__picto" alt="Picto-mail" src="/assets/images/espace-client.png">
+              <a href="#" class="button button--link">Espace expert</a>
+            </div>
+            <div class="client__login">
+                <img class="client__login__picto" alt="Picto-mail" src="/assets/images/espace-client.png">
+              <a href="#" class="button button--link">Espace client</a>
+            </div>
+            <div class="panel client__newsletter">
+                <img class="panel client__newsletter__picto" alt="Picto-mail" src="/assets/images/picto-mail.png">
+                <p class="bold">Abonnez-vous à notre newsletter !</p>
+                <p>5 vidéos bonus pour vous mettre sur la voie !</p>
+                <form>
+                    <input name="email" type="email">
+                    <button class="button button--submit">Je m'inscris</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Les inputs</h2>
+  <div class="section">
+    <div class="section__content">
+      <div class="section__content__body" style="width:40%;" >
+        <span class="input input__label">Adresse Email</span>
+        <input class="input input__control" type="email" placeholder="Email@mail.com" />
+        <span class="input input__label">Mot de passe</span>
+        <input class="input input__control" type="password" placeholder="Password" /></br>
+        </br>
+        <div class="input input--checkbox">
+          <input type="checkbox" class="input__control"> 
+          <label for="" class="input__label">Connexion persistante</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="l-section section">
+    <div class="section__content section__content--sticky">
+      <div class="section__content__body">
+        <nav class="menu">
+          <a href="#" class="menu__item menu__item--first is-active">
+            <h2 class="menu__item__title menu__item__title--logo">home</h2>
+          </a>
+          <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+            <h2 class="menu__item__title">Reconversion professionnelle</h2>
+            <span class="menu__item__body">les 5 étapes clés</span>
+          </a>
+          <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+            <h2 class="menu__item__title">Accompagnement</h2>
+            <span class="menu__item__body">conseils, coaching, bilan</span>
+          </a>
+          <a href="" class="menu__item">
+            <h2 class="menu__item__title">Outils</h2>
+            <span class="menu__item__body">aide à la décision</span>
+          </a>
+          <a href="" class="menu__item">
+            <h2 class="menu__item__title">Blog</h2>
+            <span class="menu__item__body">informations, analyses</span>
+          </a>
+          <a href="" class="menu__item">
+            <h2 class="menu__item__title">Cap cohérence</h2>
+            <span class="menu__item__body">présentation, contact</span>
+          </a>
+          <a href="" class="menu__item menu__item--last">
+            <h2 class="menu__item__title menu__item__title--logo"></h2>
+          </a>
+        </nav>
+
+        <div class="l-footer footer">
+          <p class="footer__copyright">© Copyright Cap Cohérence</p>
+          <div class="footer__link">
+            <a href="#" class="button--link">Espace client</a>
+            <a href="#" class="button--link">Témoignages clients</a>
+            <a href="#" class="button--link">Mentions légales</a>
+            <a href="#" class="button--link">C.G.V</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  </section>
+  <h2>V2 Les étapes de reconversion</h2>
+  <section class="section">
+    <div class="l-section section__content">
+      <div class="section__content__body">
+        <img name="immap"src="/assets/images/schema-reconversion-vierge.png" hidefocus="true" width="914" height="585" alt="Etapes de reconversion" usemap="#etapesReconversion" class="image-responsive-schema-reconversion">
+        <map name="etapesReconversion" class="etapes-reconversion" >
+        <!-- petites bulles de constat -->
+          <area shape="circle" class="etapes-reconversion__item" coords="137,292,30" href="#ConstatFormation" alt="Constat: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="201,331,30" href="#ConstateBook" alt="Constat: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="229,399,30" href="#ConstatOutils" alt="Constat: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="201,467,30" href="#ConstatBiblio" alt="Constat: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+        <!-- grosse bulle de constat -->
+          <area shape="circle" class="etapes-reconversion" coords="145,390,120" href="#leConstat" alt="Le Constat" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"  />
+        <!-- petites bulles de analyse -->
+          <area shape="circle" class="etapes-reconversion__item" coords="392,292,30" href="#AnalyseFormation" alt="Analyse: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="456,331,30" href="#AnalyseeBook" alt="Analyse: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="484,399,30" href="#AnalyseOutils" alt="Analyse: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="456,467,30" href="#AnalyseBiblio" alt="Analyse: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+        <!-- grosse bulle de analyse -->
+          <area shape="circle" class="etapes-reconversion" coords="400,395,120" href="#lAnalyse" alt="L'analyse" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
+        <!-- petites bulles de décision -->
+          <area shape="circle" class="etapes-reconversion__item" coords="420,177,30" href="#DecisionFormation" alt="Decision: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="476,130,30" href="#DecisioneBook" alt="Decision: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="550,136,30" href="#DecisionOutils" alt="Decision: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="607,182,30" href="#DecisionBiblio" alt="Decision: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+        <!-- grosse bulle de décision -->
+          <area shape="circle" class="etapes-reconversion" coords="512,200,120" href="#laDecision" alt="La décision" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
+        <!-- petites bulles de action -->
+          <area shape="circle" class="etapes-reconversion__item" coords="726,331,30" href="#ActionFormation" alt="Action: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="755,399,30" href="#ActioneBook" alt="Action: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="726,467,30" href="#ActionOutils" alt="Action: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="666,508,30" href="#ActionBiblio" alt="Action: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+        <!-- grosse bulle de action -->
+          <area shape="circle" class="etapes-reconversion" coords="689,420,120" href="#lAction" alt="L'action" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
+        <!-- petites bulles de CAP -->
+          <area shape="circle" class="etapes-reconversion__item" coords="709,87,30" href="#CapFormation" alt="Cap: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="781,104,30" href="#CapeBook" alt="Cap: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="821,166,30" href="#CapOutils" alt="Cap: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="821,236,30" href="#CapBiblio" alt="Cap: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
+        <!-- grosse bulle de CAP -->
+          <area shape="circle" class="etapes-reconversion" coords="748,175,120" href="#cap" alt="CAP" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
+        </map>
+      </div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/app.min.js"></script>
+  <script type="text/javascript" src="assets/javascripts/jquery.rwdImageMaps.js"></script>
+  <script>
+    $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+    });
+  </script>
+</body>
+</html>
