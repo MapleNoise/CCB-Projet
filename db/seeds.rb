@@ -10,11 +10,13 @@
 # Création d'utilisateur
 
 Utilisateur2.create(
-  [{name: "Thomas Ayoub",
+  [{nom: "Ayoub",
+  prenom: "Thomas",
   email: "ayoub@gmail.com",
   password: "azerty12",
   password_confirmation: "azerty12"},
-  {name: "Maxime Mangel",
+  {nom: "Mangel",
+  prenom: "Maxime",
   email: "mangel.maxime@outlook.com",
   password: "azerty12",
   password_confirmation: "azerty12"}

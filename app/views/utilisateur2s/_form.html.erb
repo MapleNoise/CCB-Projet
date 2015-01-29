@@ -11,20 +11,32 @@
     </div>
   <% end %>
 
+<div class="field">
+    <%= f.label "Nom" %><br>
+    <%= f.text_field :nom %>
+  </div>
+
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label "Prenom" %><br>
+    <%= f.text_field :prenom %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br>
+    <%= f.label "Confirmation email" %><br>
+    <%= f.text_field :email_confirmation %>
   </div>
+
   <div class="field">
-    <%= f.label "Password" %><br>
+    <%= f.label "Mot de passe" %><br>
     <%= f.password_field :password %><br>
-    <%= f.label "Confirmation" %><br>
+    <%= f.label "Confirmation mot de passe" %><br>
     <%= f.password_field :password_confirmation %>
   </div>
+
+<div class="field">  
+   <%= hidden_field_tag :fonctions, 3 %>
+</div>
   <div class="actions">
     <%= f.submit %>
   </div>

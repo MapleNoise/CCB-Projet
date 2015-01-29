@@ -43,7 +43,7 @@ class Utilisateur2sController < ApplicationController
     end
 
     def utilisateur2_params
-      params.require(:utilisateur2).permit(:name, :email, :password, :password_confirmation)
+      params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation)
     end
     
     def fonction_params

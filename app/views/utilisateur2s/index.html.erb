@@ -13,7 +13,7 @@
   <tbody>
     <% @utilisateur2s.each do |utilisateur2| %>
       <tr>
-        <td><%= utilisateur2.name %></td>
+        <td><%= utilisateur2.nom %> <%= utilisateur2.prenom %></td>
         <td><%= utilisateur2.email %></td>
         <td><%= utilisateur2.password_digest %></td>
         <td><%= link_to 'Show', utilisateur2 %></td>
