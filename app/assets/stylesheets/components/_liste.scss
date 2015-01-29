@@ -16,10 +16,7 @@
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-constat, 0.8);
       }
-      .liste__item__etiquette__volet__iconerubrique{
-        background: url("#{$images_path}/picto-mail.png")  no-repeat;
-        background-size: 24px 24px;
-      }
+      
     }
     
     &--analyse{
@@ -28,10 +25,6 @@
       }
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-analyse, 0.8);
-      }
-      .liste__item__etiquette__volet__iconerubrique{
-        background: url("#{$images_path}/picto-mail.png")  no-repeat;
-        background-size: 24px 24px;
       }
     }
     
@@ -42,10 +35,6 @@
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-decision, 0.8);
       }
-      .liste__item__etiquette__volet__iconerubrique{
-        background: url("#{$images_path}/picto-mail.png")  no-repeat;
-        background-size: 24px 24px;
-      }
     }
     
     &--action{
@@ -54,10 +43,6 @@
       }
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-action, 0.8);
-      }
-      .liste__item__etiquette__volet__iconerubrique{
-        background: url("#{$images_path}/picto-mail.png")  no-repeat;
-        background-size: 24px 24px;
       }
     }
     
@@ -68,8 +53,32 @@
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-cap, 0.8);
       }
+    }
+    
+    &--ebook{
       .liste__item__etiquette__volet__iconerubrique{
-        background: url("#{$images_path}/picto-mail.png")  no-repeat;
+        background: url("#{$images_path}/icone_ebook.png")  no-repeat;
+        background-size: 24px 24px;
+      }
+    }
+    
+    &--bibliotheque{
+      .liste__item__etiquette__volet__iconerubrique{
+        background: url("#{$images_path}/icone_bibliotheque.png")  no-repeat;
+        background-size: 24px 24px;
+      }
+    }
+    
+    &--outil{
+      .liste__item__etiquette__volet__iconerubrique{
+        background: url("#{$images_path}/icone_outil.png")  no-repeat;
+        background-size: 24px 24px;
+      }
+    }
+    
+    &--formation{
+      .liste__item__etiquette__volet__iconerubrique{
+        background: url("#{$images_path}/icone_formation.png")  no-repeat;
         background-size: 24px 24px;
       }
     }
