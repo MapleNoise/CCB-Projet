@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Implémentation des différents composants du style</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+</head>
+<body>
+  
+  <header>
+    <div class="color-bar">
+      <div class="color-bar__item color-bar__item--blue"></div>
+      <div class="color-bar__item color-bar__item--green"></div>
+      <div class="color-bar__item color-bar__item--yellow"></div>
+    </div>
+  </header>
+  
+  <div class="section">
+    <div class="section__content section__content--wide">
+      <div class="section__content__body--sticky">
+        <div class="header">
+            <a href="#" class="header__logo"></a>
+          <div class="header__client">
+              <div class="expert__login">
+              <a href="#" class="button button--link">Espace expert</a>
+            </div>
+            <div class="client__login">
+              <a href="#" class="button button--link">Espace client</a>
+            </div>
+            <div class="panel client__newsletter">
+                <img class="panel client__newsletter__picto" alt="Picto-mail" src="assets/images/picto-mail.png">
+                <p class="bold">Abonnez-vous à notre newsletter !</p>
+                <p>5 vidéos bonus pour vous mettre sur la voie !</p>
+                <form>
+                    <input name="email" type="email">
+                    <button class="button button--submit">Je m'inscris</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <section class="section">
+    <div class="l-section section__content section__content--sticky">
+        <div class="section__content__body">
+          <nav class="menu">
+            <a href="#" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+                <ul> 
+                  <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
+                  <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
+                  <li><a href="">Outils</a></li>
+                  <li><a href="">Blog</a></li> 
+                  <li><a href="">Cap cohérence</a></li>
+                  <li><a href="">Nos Formations</a></li>
+                </ul> 
+              
+              <select class="menu__item__select" onChange="window.location.href=this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="">Outils</option>
+                <option value="">Blog</option>
+                <option value="">Cap cohérence</option> 
+                <option value="">Nos Formations</option> 
+              </select>
+            </div>
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item menu--icon">
+              <h2 class="menu__item__title">Reconversion professionnelle
+                  <span class="menu__item__body">les 5 étapes clés</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
+                  <span class="menu__item__body">conseils, coaching, bilan</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Outils
+                  <span class="menu__item__body">aide à la décision</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Blog
+                  <span class="menu__item__body">informations, analyses</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
+                  <span class="menu__item__body">présentation, contact</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+        </div>
+    </div>
+  </section> 
+
+  <section class="l-section section">
+    <div class="section__content">
+        <h3 class="section__content__title section__content__title--page">Titre du produit</h3>
+    </div>
+  </section>  
+  <section class="l-section section">
+    <div class="section__content">
+     	<div class="image-produit">
+     		<img src="http://localhost:8080/assets/images/logo-cap-coherence.png">
+     	</div>
+     	<div class="detail-produit">
+	    	<h2>prix</h2>
+	    	<p>durée</p>
+	     	<p>etc..</p>
+     	</div>
+     	<div class="description-produit">
+    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</p>
+    		<p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	    	<p>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  		</div>
+    </div>
+  </section>
+
+
+  <div class="l-footer section">
+    <div class="section__content section__content--wide">
+      <div class="section__content__body">
+        <nav class="menu">
+            <a href="#" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+                <ul> 
+                  <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
+                  <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
+                  <li><a href="">Outils</a></li>
+                  <li><a href="">Blog</a></li> 
+                  <li><a href="">Cap cohérence</a></li>
+                  <li><a href="">Nos Formations</a></li>
+                </ul> 
+              
+              <select class="menu__item__select" onChange="window.location.href=this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="">Outils</option>
+                <option value="">Blog</option>
+                <option value="">Cap cohérence</option> 
+                <option value="">Nos Formations</option> 
+              </select>
+            </div>
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+              <h2 class="menu__item__title">Reconversion professionnelle
+                  <span class="menu__item__body">les 5 étapes clés</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
+                  <span class="menu__item__body">conseils, coaching, bilan</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Outils
+                  <span class="menu__item__body">aide à la décision</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Blog
+                  <span class="menu__item__body">informations, analyses</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
+                  <span class="menu__item__body">présentation, contact</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+
+        <div class="footer">
+          <p class="footer__copyright">© Copyright Cap Cohérence</p>
+          <div class="footer__link">
+            <a href="#" class="button--link">Espace client</a>
+            <a href="#" class="button--link">Témoignages clients</a>
+            <a href="#" class="button--link">Mentions légales</a>
+            <a href="#" class="button--link">C.G.V</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="color-bar">
+      <div class="color-bar__item color-bar__item--blue"></div>
+      <div class="color-bar__item color-bar__item--green"></div>
+      <div class="color-bar__item color-bar__item--yellow"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
