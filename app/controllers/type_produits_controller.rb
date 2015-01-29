@@ -28,11 +28,7 @@ class TypeProduitsController < ApplicationController
 
     puts "------extension_fichier_params------"
     puts extension_fichier_params
-    
-    #@type_produit.extension_fichier_ids = extension_fichier_params
-
-    @type_produit.extension_fichiers << ExtensionFichier.find_by(:id => extension_fichier_params)
-    
+        
     respond_to do |format|
       if @type_produit.save
         format.html { redirect_to @type_produit, notice: 'Type produit was successfully created.' }

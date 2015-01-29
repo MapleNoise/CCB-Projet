@@ -61,6 +61,150 @@ Tag.create([{nom: "Formation", mere: Tag.find_by(:nom => "Le constat").id},
   {nom: "Quizz", mere: Tag.find_by(:nom => "Le constat").id},
   {nom: "Quizz", mere: Tag.find_by(:nom => "L'analyse").id}])
 
+form1 = Formation.create(
+    ref: "90ba14f781d7h464",
+    nom: "L'anticipation",
+    descriptionCourte:"Lorem ipsum dolor sit amet", 
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: false,
+    prix: 10.0
+  )
+
+  form1.tags << Tag.find_by(:nom => "Le constat")
+form1.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
+
+form2 = Formation.create(
+    ref: "90ba56f781d79464",
+    nom: "La réflexion",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form2.tags << Tag.find_by(:nom => "L'analyse")
+form2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form3 = Formation.create(
+    ref: "form36f781d79464",
+    nom: "Le temps nécessaire",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form3.tags << Tag.find_by(:nom => "L'analyse")
+form3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form5 = Formation.create(
+    ref: "form56f781d79464",
+    nom: "La validation",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form5.tags << Tag.find_by(:nom => "L'analyse")
+form5.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form6 = Formation.create(
+    ref: "form66f781d79464",
+    nom: "Le passage à l'action",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form6.tags << Tag.find_by(:nom => "L'analyse")
+form6.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form7 = Formation.create(
+    ref: "form7f781d79464",
+    nom: "Eviter le burnout",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form7.tags << Tag.find_by(:nom => "L'analyse")
+form7.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form8 = Formation.create(
+    ref: "90ba56f781d79464",
+    nom: "Remonter après un burnout",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form8.tags << Tag.find_by(:nom => "L'analyse")
+form8.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form9 = Formation.create(
+    ref: "90baform91d79464",
+    nom: "Négocier une prime de départ",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form9.tags << Tag.find_by(:nom => "L'analyse")
+form9.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form10 = Formation.create(
+    ref: "form10f781d79464",
+    nom: "Partir un jour",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form10.tags << Tag.find_by(:nom => "L'analyse")
+form10.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form11 = Formation.create(
+    ref: "form11f781d79464",
+    nom: "Quand partir ?",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form11.tags << Tag.find_by(:nom => "L'analyse")
+form11.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form12 = Formation.create(
+    ref: "form12f781d79464",
+    nom: "Comment fonder son entreprise",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form12.tags << Tag.find_by(:nom => "L'analyse")
+form12.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
+form13 = Formation.create(
+    ref: "form13f781d79464",
+    nom: "Comment bien préparer son plan comptable",
+    descriptionCourte:"2Lorem ipsum dolor sit amet", 
+    description:"2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
+    estPublic: true,
+    prix: 109.0
+  )
+
+form13.tags << Tag.find_by(:nom => "L'analyse")
+form13.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+
 # Création de produits
 produit1 = Produit.create(
   ref: "80ba14f781d79164",
