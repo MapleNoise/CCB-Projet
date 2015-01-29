@@ -1,5 +1,5 @@
 class Utilisateur2sController < ApplicationController
-  before_action :set_utilisateur2, only: [:show, :edit, :update, :destroy]
+  before_action :set_utilisateur2, only: [:show, :edit, :update, :destroy, :modifierUtilisateur]
 
   respond_to :html
 
@@ -18,6 +18,9 @@ class Utilisateur2sController < ApplicationController
   end
 
   def edit
+  end
+  
+  def modifierUtilisateur
   end
 
   def create

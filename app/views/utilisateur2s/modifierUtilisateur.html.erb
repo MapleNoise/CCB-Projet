@@ -1,0 +1,44 @@
+<%#
+# To change this license header, choose License Headers in Project Properties.
+# To change this template file, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<%= form_for(@utilisateur2) do |f| %>
+  <% if @utilisateur2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@utilisateur2.errors.count, "error") %> prohibited this utilisateur2 from being saved:</h2>
+
+      <ul>
+      <% @utilisateur2.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="field">
+    <%= f.label "Nom" %><br>
+    <%= f.text_field :nom %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Prenom" %><br>
+    <%= f.text_field :prenom %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Mot de passe" %><br>
+    <%= f.password_field :password %><br>
+    <%= f.label "Confirmation mot de passe" %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+<div class="field">  
+   <%= hidden_field_tag :fonctions, 3 %>
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= "modifierUtilisateur.html" %>
