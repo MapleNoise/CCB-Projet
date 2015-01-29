@@ -1,0 +1,60 @@
+<hr>
+<%= link_to 'Creer une formation', new_formation_path %>
+<hr>
+<%@formations = Formation.all.paginate(:page => params[:page])%>
+<table>
+  <thead>
+    <tr>
+      <th>Ref</th>
+      <th>Nom</th>
+      <th>Prix</th>
+      <th>Catégorie</th>
+      <th>Status</th>
+      <th>Date de création</th>
+      <th>Date de publication</th>
+      <th>Editer</th>
+      <th>Supprimer</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @formations.each do |formation| %>
+      <tr>
+        <td><%= formation.ref %></td>
+        <td><%= link_to formation.nom, formation %></td>
+        <td><%= "#{formation.prix}€" %></td>
+        <% #trouver le tag qui n a pas de mere (il ne peut y en avoir qu un) %>
+        <td><%= 
+            t = Tag.where(:id => formation.tag_ids).order('mere ASC').limit(1)[0]
+            link_to t.nom, t  
+            %></td>
+        <td><%= 
+            if formation.estPublic
+              "En ligne"
+            else
+              "En attente"
+            end
+          %></td>
+        <td><%= formation.created_at %></td>
+        <td><%= 
+          if formation.datePublication 
+            formation.datePublication
+          else
+            "Pas de publication prévue"
+          end
+          %></td>
+        <td><%= link_to 'EDIT_IMAGE', edit_formation_path(formation) %></td>
+        <td><%= link_to 'DELETE_IMAGE', formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<hr>
+
+
+  <div class="digg_pagination">
+    <p>Page :<%= will_paginate @formations, :container => false %></p>
+  </div>
+
+<br>
