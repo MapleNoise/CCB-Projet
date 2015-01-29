@@ -24,7 +24,11 @@
                 </a>
                 <div class="headerback__client">
                     <div class="client">
-                        <span class="client__hello">Bonjour, Charly</span>
+                        <span class="client__hello">Bonjour, 
+                            <% u = Utilisateur2.find_by(id: session[:user_id])%>
+                            <% if u -%>
+                                    <%= "#{u.prenom} #{u.nom}"%>
+                            <% end -%></span>
                         <a href="/logout" class="button button--link">Déconnexion</a>
                     </div>
                 </div>
