@@ -110,15 +110,25 @@
   <section class="l-section section">
     <div class="section__content section__content--wide">
       <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
-      <div class="section__content__body">
-        <button class="button-filter button-filter--constat"> Le Constat </button>
+      <div class="section__content__body" style="padding: 10px;">
+        <p style="padding: 7px;">Filtrer par catégorie :</p>
+        <p style="padding: 7px;">
+          <button class="button-categorie button-categorie--formation"> Formation</button>
+        <button class="button-categorie button-categorie--ebook"> ebook</button>
+        <button class="button-categorie button-categorie--bibliotheque"> bibliotheque</button>
+        <button class="button-categorie button-categorie--outil"> outil</button>
+        </p>
+        <p style="padding: 7px;">Filtrer par étape de reconversion :</p>
+        <p style="padding: 7px;">
+          <button class="button-filter button-filter--constat"> Le Constat </button>
         <button class="button-filter button-filter--analyse"> L'analyse </button>
         <button class="button-filter button-filter--decision"> La Decision </button>
         <button class="button-filter button-filter--action"> L'action </button>
         <button class="button-filter button-filter--cap"> Cap Cohérence </button>
+        </p>
       </div>
         <div class="section__content__body">
-            <div class="liste">
+            <div id="produits" class="liste">
                 <div class="liste__item liste__item--constat">
                     <a href="#" class="liste__item__etiquette">
                         <img class="liste__item__etiquette__img" alt="img" src="/assets/images/logo-cap-coherence.png">
@@ -358,8 +368,12 @@
       <div class="color-bar__item color-bar__item--yellow"></div>
     </div>
   </section>
+  
+  <script id="produit-template" type="text/html">
+      toto is here <%= name %>
+  </script>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="javascripts/app.min.js"></script>
+  <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
 </body>
 </html>

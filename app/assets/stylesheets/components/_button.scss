@@ -77,55 +77,77 @@
     &-filter{
         @extend .button;
         @include transition(1s);
+        background-color: white;
+        color : black;
+        outline: none;
+        background-size: 200% 100%;
+        background-position:right bottom;
         &--constat{
-            border-left: 15px solid $button-filter-color-constat;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-constat, black,50% , $button-filter-color-constat , 50%);
+            border-left: 15px solid $color-constat;
+            @include linear-gradient-right($color-constat, white,50% , $color-constat , 50%);
             &.is-active{
-                background-color : $button-filter-color-constat;
+                background-color : $color-constat;
                 background-position:left bottom;
             }
         }
         &--analyse{
-            border-left: 15px solid $button-filter-color-analyse;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-analyse, black, 50%, $button-filter-color-analyse, 50%);
+            border-left: 15px solid $color-analyse;
+            @include linear-gradient-right($color-analyse, white, 50%, $color-analyse, 50%);
             &.is-active{
-                background-color : $button-filter-color-analyse;
+                background-color : $color-analyse;
                 background-position:left bottom;
             }
         }
         &--decision{
-            border-left: 15px solid $button-filter-color-decision;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-decision, black,50% , $button-filter-color-decision , 50%);
+            border-left: 15px solid $color-decision;
+            @include linear-gradient-right($color-decision, white,50% , $color-decision , 50%);
             &.is-active{
-                background-color : $button-filter-color-decision;
+                background-color : $color-decision;
                 background-position:left bottom;
             }
         }
         &--action{
-            border-left: 15px solid $button-filter-color-action;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-action, black, 50%, $button-filter-color-action, 50%);
+            border-left: 15px solid $color-action;
+            @include linear-gradient-right($color-action, white, 50%, $color-action, 50%);
             &.is-active{
-                background-color : $button-filter-color-action;
+                background-color : $color-action;
                 background-position:left bottom;
             }
         }
         &--cap{
-            border-left: 15px solid $button-filter-color-cap;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-cap, black, 50%, $button-filter-color-cap, 50%);
+            border-left: 15px solid $color-cap;
+            @include linear-gradient-right($color-cap, white, 50%, $color-cap, 50%);
             &.is-active{
-                background-color : $button-filter-color-cap;
+                background-color : $color-cap;
                 background-position:left bottom;
             }
+        }
+    }
+
+    &-categorie{
+        border : none;
+        outline: none;
+        text-transform: uppercase;
+        background-color: white;
+        font-size: 24px;
+        color : black;
+        &:hover{
+            background-color: $color-grey;
+        }
+        &.is-active{
+            background-color: $color-grey;
+        }
+        &--formation{
+            @include icon('list-ol');
+        }
+        &--ebook{
+            @include icon('book');
+        }
+        &--bibliotheque{
+            @include icon('apple');
+        }
+        &--outil{
+            @include icon('th');
         }
     }
 }
