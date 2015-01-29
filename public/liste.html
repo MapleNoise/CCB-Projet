@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Implémentation des différents composants du style</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
+  </head>
+  <body>
+
+    <header>
+      <div class="color-bar">
+        <div class="color-bar__item color-bar__item--blue"></div>
+        <div class="color-bar__item color-bar__item--green"></div>
+        <div class="color-bar__item color-bar__item--yellow"></div>
+      </div>
+    </header>
+
+    <div class="section">
+      <div class="section__content section__content--wide">
+        <div class="section__content__body--sticky">
+          <div class="header">
+            <a href="#" class="header__logo"></a>
+            <div class="header__client">
+              <div class="expert__login">
+                <img class="expert__login__picto" alt="Picto-mail" src="assets/images/espace-client.png">
+                <a href="#" class="button button--link">Espace expert</a>
+              </div>
+              <div class="client__login">
+                <img class="client__login__picto" alt="Picto-mail" src="assets/images/espace-client.png">
+                <a href="#" class="button button--link">Espace client</a>
+              </div>
+              <div class="panel client__newsletter">
+                <img class="panel client__newsletter__picto" alt="Picto-mail" src="assets/images/picto-mail.png">
+                <p class="bold">Abonnez-vous à notre newsletter !</p>
+                <p>5 vidéos bonus pour vous mettre sur la voie !</p>
+                <form>
+                  <input name="email" type="email">
+                  <button class="button button--submit">Je m'inscris</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="section">
+      <div class="l-section section__content section__content--sticky">
+        <div class="section__content__body">
+          <nav class="menu">
+            <a href="#" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+              <ul> 
+                <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
+                <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
+                <li><a href="">Outils</a></li>
+                <li><a href="">Blog</a></li> 
+                <li><a href="">Cap cohérence</a></li>
+                <li><a href="">Nos Formations</a></li>
+              </ul> 
+
+              <select class="menu__item__select" onChange="window.location.href = this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="">Outils</option>
+                <option value="">Blog</option>
+                <option value="">Cap cohérence</option> 
+                <option value="">Nos Formations</option> 
+              </select>
+            </div>
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item menu--icon">
+              <h2 class="menu__item__title">Reconversion professionnelle
+                <span class="menu__item__body">les 5 étapes clés</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
+                <span class="menu__item__body">conseils, coaching, bilan</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Outils
+                <span class="menu__item__body">aide à la décision</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Blog
+                <span class="menu__item__body">informations, analyses</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
+                <span class="menu__item__body">présentation, contact</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </section> 
+
+
+
+    <section class="l-section section">
+      <div class="section__content section__content--wide">
+        <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
+        <div class="section__content__body" style="padding: 10px;">
+          <p style="padding: 7px;">Filtrer par catégorie :</p>
+          <p style="padding: 7px;">
+            <button class="button-categorie button-categorie--formation" data-target-filter="formation"> Formation</button>
+            <button class="button-categorie button-categorie--ebook" data-target-filter="ebook"> ebook</button>
+            <button class="button-categorie button-categorie--bibliotheque" data-target-filter="bibliotheque"> bibliotheque</button>
+            <button class="button-categorie button-categorie--outil" data-target-filter="outil"> outil</button>
+          </p>
+          <p style="padding: 7px;">Filtrer par étape de reconversion :</p>
+          <p style="padding: 7px;">
+            <button class="button-filter button-filter--constat" data-target-filter="constat"> Le Constat </button>
+            <button class="button-filter button-filter--analyse" data-target-filter="analyse"> L'analyse </button>
+            <button class="button-filter button-filter--decision" data-target-filter="decision"> La Decision </button>
+            <button class="button-filter button-filter--action" data-target-filter="action"> L'action </button>
+            <button class="button-filter button-filter--cap" data-target-filter="cap"> Cap Cohérence </button>
+          </p>
+        </div>
+        <div class="section__content__body">
+          <div id="produits" class="liste">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="l-footer section">
+      <div class="section__content section__content--wide">
+        <div class="section__content__body">
+          <nav class="menu">
+            <a href="#" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+              <ul> 
+                <li><a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="active">Reconversion professionnelle</a></li> 
+                <li><a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</a></li> 
+                <li><a href="">Outils</a></li>
+                <li><a href="">Blog</a></li> 
+                <li><a href="">Cap cohérence</a></li>
+                <li><a href="">Nos Formations</a></li>
+              </ul> 
+
+              <select class="menu__item__select" onChange="window.location.href = this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="">Outils</option>
+                <option value="">Blog</option>
+                <option value="">Cap cohérence</option> 
+                <option value="">Nos Formations</option> 
+              </select>
+            </div>
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+              <h2 class="menu__item__title">Reconversion professionnelle
+                <span class="menu__item__body">les 5 étapes clés</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
+                <span class="menu__item__body">conseils, coaching, bilan</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Outils
+                <span class="menu__item__body">aide à la décision</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Blog
+                <span class="menu__item__body">informations, analyses</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
+                <span class="menu__item__body">présentation, contact</span>
+              </h2>
+            </a>
+            <a href="" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+
+          <div class="footer">
+            <p class="footer__copyright">© Copyright Cap Cohérence</p>
+            <div class="footer__link">
+              <a href="#" class="button--link">Espace client</a>
+              <a href="#" class="button--link">Témoignages clients</a>
+              <a href="#" class="button--link">Mentions légales</a>
+              <a href="#" class="button--link">C.G.V</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="color-bar">
+        <div class="color-bar__item color-bar__item--blue"></div>
+        <div class="color-bar__item color-bar__item--green"></div>
+        <div class="color-bar__item color-bar__item--yellow"></div>
+      </div>
+    </section>
+    
+    <div id="filters" style="display: none">
+      <div id="filter-categories">
+        <input type="checkbox" value="Formation" data-filter="formation">
+        <input type="checkbox" value="Outils" data-filter="outils">
+        <input type="checkbox" value="Bibliothèque" data-filter="bibliotheque">
+        <input type="checkbox" value="Ebook" data-filter="ebook">
+      </div>
+        
+      <div id="filter-etapes">
+        <input type="checkbox" value="L'analyse" data-filter="analyse">
+        <input type="checkbox" value="Le constat" data-filter="constat">
+        <input type="checkbox" value="La décision" data-filter="decision">
+        <input type="checkbox" value="L'action" data-filter="action">
+        <input type="checkbox" value="Cap vers la Cohérence" data-filter="cap">
+      </div>
+    </div>
+
+    <script id="produit-template" type="text/html">
+        <div class="liste__item <%= liste__item__class %>">
+              <a href="/produits/<%= _fid %>" class="liste__item__etiquette">
+                <img class="liste__item__etiquette__img" alt="img" src="/assets/images/logo-cap-coherence.png">
+                <div class="liste__item__etiquette__volet">
+                  <span class="liste__item__etiquette__volet__title"><%= nom %>
+                    <span class="liste__item__etiquette__volet__iconerubrique"></span>
+                  </span>
+                  <span class="liste__item__etiquette__volet__description"><%= description %>
+                  </span>
+                </div>
+              </a>
+            </div>
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script>
+    <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
+    <script type="text/javascript">
+
+    (function($){
+      $.urlParam = function(name){
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      var produits = [];
+
+      $.ajax('/listeProduit.json', {
+          async: false,
+          success: function(data){
+            produits = data;
+          }
+      })
+
+      var FJS = FilterJS(produits, '#produits', {
+          template: '#produit-template',
+          search: { ele: '#toto'},
+          callbacks: {
+            beforeRecordRender: function(produit){
+              produit.liste__item__class = '';
+              if ( typeof produit.description == 'undefined' ) { produit.description = ''};
+              if (produit.etape == 'Le constat') 
+              {
+               produit.liste__item__class += 'liste__item--constat';
+              }
+              else if (produit.etape == "L'analyse"){
+                produit.liste__item__class += 'liste__item--analyse';
+              }
+              else if (produit.etape == "La décision"){
+                produit.liste__item__class += 'liste__item--decision';
+              }
+              else if (produit.etape == "L'action"){
+                produit.liste__item__class += 'liste__item--action';
+              }
+              else if (produit.etape == "Cap vers la Cohérence"){
+                produit.liste__item__class += 'liste__item--cap';
+              }
+
+
+              if (produit.categorie == "Formation") 
+              {
+                produit.liste__item__class += ' liste__item--formation'; 
+              }
+              else if (produit.categorie == "Outils") 
+              {
+                produit.liste__item__class += ' liste__item--outils'; 
+              }
+              else if (produit.categorie == "Bibliothèque") 
+              {
+                produit.liste__item__class += ' liste__item--bibliotheque'; 
+              }
+              else if (produit.categorie == "Ebook") 
+              {
+                produit.liste__item__class += ' liste__item--ebook'; 
+              }
+
+
+            },
+          }
+      });
+
+      FJS.addCriteria({field: 'categorie', ele: '#filter-categories input:checkbox'})
+      FJS.addCriteria({field: 'etape', ele: '#filter-etapes input:checkbox'})
+
+      FJS.filter();
+
+      $('.button-filter, .button-categorie').click(function(e){
+          e.preventDefault();
+
+          $target = $(this).data('target-filter');
+
+          if ($target) 
+          {
+
+            $target_is_checked = $('#filters').find('[data-filter='+ $target +']').first();
+            if ($target_is_checked.prop('checked'))
+            {
+              $target_is_checked.trigger('click');
+            }
+            else 
+            {
+              $target_is_checked.trigger('click');
+            }
+          }
+
+      })
+
+      var categories = $.urlParam('categories') ? $.urlParam('categories').split(',') : [];
+      var etapes = $.urlParam('etapes') ? $.urlParam('etapes').split(',') : [];
+
+      if (categories.length > 0)
+      {
+        for(var i=0;i<categories.length;i++){
+
+           $('.button-categorie--' + categories[i]).trigger('click');
+        }
+      }
+
+      if (etapes.length > 0)
+      {
+        for(var i=0;i<etapes.length;i++){
+           $('.button-filter--' + etapes[i]).trigger('click');
+        }
+      }
+
+
+    })(jQuery)
+
+  </script>
+  </body>
+</html>
