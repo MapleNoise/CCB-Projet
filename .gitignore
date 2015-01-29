@@ -36,3 +36,5 @@ db/development.sqlite3_test
 public/assets/stylesheets/application.css
 .project
 db/schema.rb
+
+public/uploads/*
