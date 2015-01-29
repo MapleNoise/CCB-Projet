@@ -79,3 +79,159 @@
         }
 }
 
+.liste{
+    @include gridle_parent();
+    position: relative;
+    //display: inline-block;
+    
+        &__item{
+            @include gridle(3);
+            display: inline-block;
+            background-size: 100% 240px;
+            height: 240px;
+            position: relative;
+            
+            &--constat{
+                .liste__item__etiquette__title{
+                    background-color: rgba($color-constat, 0.8);
+                }
+                .liste__item__etiquette__description{
+                    background-color: rgba($color-constat, 0.8);
+                }
+                .liste__item__etiquette__iconerubrique{
+                    background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+            
+            &--analyse{
+                .liste__item__etiquette__title{
+                    background-color: rgba($color-analyse, 0.8);
+                }
+                .liste__item__etiquette__description{
+                    background-color: rgba($color-analyse, 0.8);
+                }
+                .liste__item__etiquette__iconerubrique{
+                    background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+            
+            &--decision{
+                .liste__item__etiquette__title{
+                    background-color: rgba($color-decision, 0.8);
+                }
+                .liste__item__etiquette__description{
+                    background-color: rgba($color-decision, 0.8);
+                }
+                .liste__item__etiquette__iconerubrique{
+                    background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+            
+            &--action{
+                .liste__item__etiquette__title{
+                    background-color: rgba($color-action, 0.8);
+                }
+                .liste__item__etiquette__description{
+                    background-color: rgba($color-action, 0.8);
+                }
+                .liste__item__etiquette__iconerubrique{
+                    background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+            
+            &--cap{
+                .liste__item__etiquette__title{
+                    background-color: rgba($color-cap, 0.8);
+                }
+                .liste__item__etiquette__description{
+                    background-color: rgba($color-cap, 0.8);
+                }
+                .liste__item__etiquette__iconerubrique{
+                    background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    background-size: 24px 24px;
+                }
+            }
+            
+            &__etiquette{
+                //margin: 5px 5px 5px 5px;
+                //padding-right: 50px;
+                border: 1px solid #d2d3d5;
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+                color: $color-white;
+                pointer: cursor;
+                position: relative;
+                //@include transition(2s);
+
+                &:hover {
+                    .liste__item__etiquette__description {
+                        display: inline-block;
+                        top: 30px;
+                        opacity: 1;
+                    }
+
+                    .liste__item__etiquette__title {
+                        bottom: auto;
+                        top: 0;
+                        background: none;
+                    }
+                }
+                
+                &__img {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                }
+
+                &__title{
+                    width: 100%;
+                    bottom: 0;
+                    display: inline-block;
+                    position: absolute;
+                    height: 30px;
+                    //@include vertical-align();
+                    text-align: center;
+                    vertical-align: middle;
+                    z-index:2;
+                    //transition: all 2s ease;
+                    @include transition(2s);
+                }
+
+                &__description {
+                    display: none;
+                    opacity: 0;
+                    top: 200px;
+                    position: absolute;
+                    height: 100%;
+                    z-index: 1;
+                    transition: all 2s ease;
+                    //@include transition(2s);
+                }
+
+                &__iconerubrique{
+                    width: 24px;
+                    height: 24px;
+                    float: right;
+                    margin-right: 10px;
+                    @include vertical-align();
+                    //background: url("#{$images_path}/picto-mail.png")  no-repeat;
+                    //background-size: 24px 24px;
+                }
+
+                &__iconefile{
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    float: right;
+                    bottom: 3px;
+                }
+            }
+            
+        }
+}
+
