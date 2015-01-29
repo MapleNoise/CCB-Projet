@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title><%= yield(:title) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	  <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
+	  <%= csrf_meta_tags %>
+    <%= favicon_link_tag '/favicon.png' %>
+	</head>
+	<body>
+           
+
+		<header>
+			<div class="color-bar">
+				<div class="color-bar__item color-bar__item--blue"></div>
+				<div class="color-bar__item color-bar__item--green"></div>
+				<div class="color-bar__item color-bar__item--yellow"></div>
+			</div>
+		</header>
+
+	  <div class="body">
+        <div class="headerback">
+           <a href="#" class="headerback__logo">
+           </a>
+         <div class="header__client">
+             <div class="client">
+                 <span class="client__hello">Bonjour, Charly</span>
+                <a href="#" class="button button--link">Déconnexion</a>
+              </div>
+            </div>
+          </div>
+
+           <nav class="menuback">
+               <a href="#" class="menuback__item is-active">
+                  <h2 class="menuback__item__title ">Mon compte</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Formations</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Modules</h2>
+               </a>
+               <a href="#" class="menuback__item">
+                  <h2 class="menuback__item__title">Chapitres</h2>
+               </a>
+           </nav>
+              
+              <% if @special_template %>
+                  <%= @special_template %>
+              </section>
+            <% else %>
+              <section class="sectionback">
+               <div class="sectionback__entete">
+                   <span class="sectionback__entete__title"><%= yield(:titreH1) %></span>
+                   <button class="sectionback__entete__back"> Retour</button>
+               </div>
+               
+               <div class="sectionback__content">
+                   <%= flash[:alert]  %>
+                    <%= yield %>
+               </div>
+               <div class="sectionback__pied">
+                   <!--<span class="sectionback__pied__page">Page :
+                       <a href="#" class="sectionback__pied__page__num is-active">1</a>
+                       <a href="#" class="sectionback__pied__page__num">2</a>
+                       <a href="#" class="sectionback__pied__page__num">3</a>
+                       <a href="#" class="sectionback__pied__page__num">4</a>
+                   </span> -->
+
+               </div>
+           </section>
+
+<% end%>
+
+             
+          </div>
+	  <section>
+	    <div class="color-bar">
+	      <div class="color-bar__item color-bar__item--blue"></div>
+	      <div class="color-bar__item color-bar__item--green"></div>
+	      <div class="color-bar__item color-bar__item--yellow"></div>
+	    </div>
+	  </section>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
+		<script>
+	    $(document).ready(function(e) {
+	        $('img[usemap]').rwdImageMaps();
+	    });
+  </script>
+	</body>
+</html>
