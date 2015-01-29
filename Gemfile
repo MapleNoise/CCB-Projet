@@ -48,3 +48,5 @@ gem 'digest'
 
 gem 'bcrypt'
 
+gem 'will_paginate', '~> 3.0.6'
+
