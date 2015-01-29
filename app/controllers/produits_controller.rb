@@ -1,18 +1,28 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
+  layout :produits_layout
+  
+  @layout = "back"
+  
+  def produits_layout
+    @layout
+  end
   # GET /produits
   # GET /produits.json
   def index
+    @layout = "back"
     @produits = Produit.all
   end
 
   def listeProduit
+    @layout = "application"
     @produits = Produit.all
   end
 
   # GET /produits/1
   # GET /produits/1.json
   def show
+    @layout = "application"
   end
 
   # GET /produits/new
