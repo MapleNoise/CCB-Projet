@@ -1,7 +1,6 @@
 .liste{
   @include gridle_parent();
   position: relative;
-  //display: inline-block;
   
   &__item{
     @include gridle(3);
@@ -76,33 +75,18 @@
     }
     
     &__etiquette{
-      //margin: 5px 5px 5px 5px;
-      //padding-right: 50px;
       border: 1px solid #d2d3d5;
       height: 240px;;
-      width: 100%;
+      width: 240px;
       display: inline-block;
       color: $color-white;
       pointer: cursor;
       position: relative;
-      //@include transition(2s);
       
       &:hover {
         .liste__item__etiquette__volet {
           top: 0;
           height: 240px;
-        }
-        
-        .liste__item__etiquette__description {
-          //display: inline-block;
-          //top: 30px;
-          //opacity: 1;
-        }
-        
-        .liste__item__etiquette__title {
-          //bottom: auto;
-          //top: 0;
-          //background: none;
         }
       }
       
@@ -119,34 +103,26 @@
         z-index: 3;
         position: absolute;
         top: 210px;
-        //background-color: $color-black;
         @include transition(1s);
         word-wrap: break-word;
         overflow: hidden;
         
         &__title{
           width: 100%;
-          //top: 200px;
           display: inline-block;
           position: absolute;
           height: 30px;
-          //@include vertical-align();
+          padding-top: 3px;
           text-align: center;
           vertical-align: middle;
           z-index:2;
-          //transition: all 2s ease;
           @include transition(2s);
         }
         
         &__description {
-          //display: none;
-          //opacity: 0;
           top: 30px;
           position: absolute;
-          height: 100%;
-          //z-index: 1;
-          //transition: all 2s ease;
-          //@include transition(2s);
+          height: 210px;
         }
         
         &__iconerubrique{
@@ -155,8 +131,6 @@
           float: right;
           margin-right: 10px;
           @include vertical-align();
-          //background: url("#{$images_path}/picto-mail.png")  no-repeat;
-          //background-size: 24px 24px;
         }
         
         &__iconefile{
