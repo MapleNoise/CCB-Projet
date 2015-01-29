@@ -14,7 +14,7 @@
     text-transform: uppercase;
     cursor: pointer;
     &:hover{
-            background-color: $color-grey;
+        background-color: $color-grey;
     }
   
     &--submit {
@@ -68,64 +68,103 @@
         padding: 0 0 0 0;
         padding-right: 20px;
         &:hover{
-                    background-color: $color-white;
-                    color: $color-grey;
-                    text-decoration: none;
+            background-color: $color-white;
+            color: $color-grey;
+            text-decoration: none;
         }
     }
 
     &-filter{
         @extend .button;
         @include transition(1s);
+        background-color: white;
+        color : black;
+        outline: none;
+        background-size: 200% 100%;
+        background-position:right bottom;
         &--constat{
-            border-left: 15px solid $button-filter-color-constat;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-constat, black,50% , $button-filter-color-constat , 50%);
+            border-left: 15px solid $color-constat;
+            @include linear-gradient-right($color-constat, white,50% , $color-constat , 50%);
             &.is-active{
-                background-color : $button-filter-color-constat;
+                background-color : $color-constat;
                 background-position:left bottom;
             }
         }
         &--analyse{
-            border-left: 15px solid $button-filter-color-analyse;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-analyse, black, 50%, $button-filter-color-analyse, 50%);
+            border-left: 15px solid $color-analyse;
+            @include linear-gradient-right($color-analyse, white, 50%, $color-analyse, 50%);
             &.is-active{
-                background-color : $button-filter-color-analyse;
+                background-color : $color-analyse;
                 background-position:left bottom;
             }
         }
         &--decision{
-            border-left: 15px solid $button-filter-color-decision;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-decision, black,50% , $button-filter-color-decision , 50%);
+            border-left: 15px solid $color-decision;
+            @include linear-gradient-right($color-decision, white,50% , $color-decision , 50%);
             &.is-active{
-                background-color : $button-filter-color-decision;
+                background-color : $color-decision;
                 background-position:left bottom;
             }
         }
         &--action{
-            border-left: 15px solid $button-filter-color-action;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-action, black, 50%, $button-filter-color-action, 50%);
+            border-left: 15px solid $color-action;
+            @include linear-gradient-right($color-action, white, 50%, $color-action, 50%);
             &.is-active{
-                background-color : $button-filter-color-action;
+                background-color : $color-action;
                 background-position:left bottom;
             }
         }
         &--cap{
-            border-left: 15px solid $button-filter-color-cap;
-            background-position:right bottom;
-            background-size: 200% 100%;
-            @include linear-gradient-right($button-filter-color-cap, black, 50%, $button-filter-color-cap, 50%);
+            border-left: 15px solid $color-cap;
+            @include linear-gradient-right($color-cap, white, 50%, $color-cap, 50%);
             &.is-active{
-                background-color : $button-filter-color-cap;
+                background-color : $color-cap;
                 background-position:left bottom;
             }
+        }
+    }
+
+    &-categorie{
+        // @include gridle_parent();
+        // @include gridle(1);
+        @extend .button;
+        border : none;
+        outline: none;
+        text-transform: uppercase;
+        background-color: white;
+        padding-left: 46px;
+        text-align: center;
+        font-size: 15px;     
+        color : black;
+        &:hover{
+            background-color: #eee;
+        }
+        &.is-active{
+            background-color: darken(#eee,10%);
+        }
+        &--formation{
+            background: url("#{$images_path}/icone_formation.png") no-repeat;
+            background-position: left center;
+            background-size: 36px;
+            height: 54px;      
+        }
+        &--ebook{
+            background: url("#{$images_path}/icone_ebook.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;            
+            height: 54px; 
+        }
+        &--bibliotheque{
+            background: url("#{$images_path}/icone_bibliotheque.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;            
+            height: 54px;
+        }
+        &--outil{
+            background: url("#{$images_path}/icone_outil.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;
+            height: 54px;
         }
     }
 }

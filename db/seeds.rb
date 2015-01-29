@@ -66,7 +66,9 @@ Tag.create([{nom: "Le constat", mere: nil},
 # Création de quelques "sous-catégories"
 Tag.create([{nom: "Formation", mere: Tag.find_by(:nom => "Le constat").id},
   {nom: "Quizz", mere: Tag.find_by(:nom => "Le constat").id},
-  {nom: "Quizz", mere: Tag.find_by(:nom => "L'analyse").id}])
+  {nom: "Quizz", mere: Tag.find_by(:nom => "L'analyse").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "La décision").id}
+  ])
 
 form1 = Formation.create(
     ref: "90ba14f781d7h464",
@@ -232,7 +234,7 @@ produit1.save
 
 
 produit2 = Produit.new(
-  ref: "90ba14f781d72264",
+  ref: "90ba14f781d12264",
   nom: "Produit 2",
   prix: 10.0,
   type_produits_id: 2,
@@ -247,7 +249,7 @@ produit2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'an
 produit2.save
 
 produit3 = Produit.new(
-  ref: "90ba14f781d12464",
+  ref: "90ba14f231d12464",
   nom: "Produit 3",
   prix: 10.0,
   type_produits_id: 2,
@@ -257,12 +259,12 @@ produit3 = Produit.new(
   
 produit3.urlFichier = urlSender
 
-produit3.tags << Tag.find_by(:nom => "L'analyse")
-produit3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit3.tags << Tag.find_by(:nom => "La décision")
+produit3.tags << Tag.find_by(:nom => "Ebook", :mere => Tag.find_by(:nom => "La décision"))
 produit3.save
 
 produit4 = Produit.new(
-  ref: "90ba14f78aze2464",
+  ref: "90ba14f7jkze2464",
   nom: "Produit 4",
   prix: 10.0,
   type_produits_id: 2,
@@ -272,12 +274,12 @@ produit4 = Produit.new(
   
 produit4.urlFichier = urlSender
 
-produit4.tags << Tag.find_by(:nom => "L'analyse")
+produit4.tags << Tag.find_by(:nom => "L'action")
 produit4.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
 produit4.save
 
 produit5 = Produit.new(
-  ref: "90ba14ze81d12464",
+  ref: "90baa4ze81d12464",
   nom: "Produit 5",
   prix: 10.0,
   type_produits_id: 2,
@@ -287,12 +289,12 @@ produit5 = Produit.new(
   
 produit5.urlFichier = urlSender
 
-produit5.tags << Tag.find_by(:nom => "L'analyse")
+produit5.tags << Tag.find_by(:nom => "Cap vers la Cohérence")
 produit5.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
 produit5.save
 
 produit6 = Produit.new(
-  ref: "90basdfd81d12464",
+  ref: "90bas23d81d12464",
   nom: "Produit 6",
   prix: 10.0,
   type_produits_id: 2,
@@ -307,7 +309,7 @@ produit5.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'an
 produit5.save
 
 produit6 = Produit.new(
-  ref: "90ba1ddfg1d12464",
+  ref: "90ba1ddfg1ty2464",
   nom: "Produit 6",
   prix: 10.0,
   type_produits_id: 2,
@@ -321,6 +323,20 @@ produit6.tags << Tag.find_by(:nom => "L'analyse")
 produit6.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
 produit6.save
 
+produit6 = Produit.new(
+  ref: "90ba1ddfg1d9a464",
+  nom: "Produit 7",
+  prix: 10.0,
+  type_produits_id: 2,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: true)
+  
+produit6.urlFichier = urlSender
+
+produit6.tags << Tag.find_by(:nom => "L'analyse")
+produit6.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit6.save
 
 # Création des status
 Status.create([{nom: "En ligne"},

@@ -2,6 +2,9 @@
 <%= link_to 'Creer une formation', new_formation_path %>
 <hr>
 <%@formations = Formation.all.paginate(:page => params[:page])%>
+<% @formation_menu_active = true %>
+<% provide :titreH1, "Liste des formations" %>
+
 <table>
   <thead>
     <tr>
@@ -58,3 +61,5 @@
   </div>
 
 <br>
+
+<%= link_to 'New Formation', new_formation_path %>

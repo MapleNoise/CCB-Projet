@@ -1,26 +1,40 @@
-<p id="notice">
-	<%= notice %>
-</p>
 
-<p>
-	<strong>Ref:</strong>
-	<%= @produit.ref %>
-</p>
+        <h3 class="section__content__title section__content__title--page"><%= @produit.nom %></h3>
+    </div>
+  </section>  
+  <section class="l-section section">
+    <div class="section__content">
+    	<p id="notice">
+				<%= notice %>
+			</p>
+     	<div class="image-produit">
+     		
+     	</div>
+     	<div class="description-produit">
+    		<p>
+					<strong>Description Courte :</strong>
+					<%= @produit.descriptionCourte %>
+				</p>
 
-<p>
-	<strong>Nom:</strong>
-	<%= @produit.nom %>
-</p>
+				<p>
+					<strong>Description :</strong>
+					<%= @produit.description %>
+				</p>
+  		</div>
+  		<p>
+			<strong>Prix:</strong>
+				<%= @produit.prix %>
+			</p>
 
-<p>
-	<strong>Description Courte :</strong>
-	<%= @produit.descriptionCourte %>
-</p>
+			<p>
+				<strong>Tag :</strong>
+				<%= @produit.tags[0].nom %>
+			</p>
 
-<p>
-	<strong>Description :</strong>
-	<%= @produit.description %>
-</p>
+			<p>
+				<strong>Type produit :</strong>
+				<%= TypeProduit.find_by(:id => @produit.type_produits_id).nom %>
+			</p>
 
 <p>
 	<strong>Prix:</strong>

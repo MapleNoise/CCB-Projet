@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Connexion</title>
+  <title>Implémentation des différents composants du style</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="utf-8">
   <link data-turbolinks-track="true" href="assets/stylesheets/application.css" media="all" rel="stylesheet">
@@ -18,18 +18,18 @@
   
   <div class="section">
     <div class="section__content section__content--wide">
+      <div class="section__content__body--sticky">
         <div class="header">
-            <a href="#" class="header__logo">
-            </a>
+            <a href="#" class="header__logo"></a>
           <div class="header__client">
-              <div class="expert__login awe-user">
-                <a href="#" class="button button--link">Espace expert</a>
+            <div class="expert__login">
+              <a href="#" class="button button--link">Espace expert</a>
             </div>
-            <div class="client__login awe-user">
+            <div class="client__login">
               <a href="#" class="button button--link">Espace client</a>
             </div>
             <div class="panel client__newsletter">
-                <img class="panel client__newsletter__picto" alt="Picto-mail" src="/assets/images/picto-mail.png">
+                <img class="panel client__newsletter__picto" alt="Picto-mail" src="assets/images/picto-mail.png">
                 <p class="bold">Abonnez-vous à notre newsletter !</p>
                 <p>5 vidéos bonus pour vous mettre sur la voie !</p>
                 <form>
@@ -39,6 +39,7 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
@@ -60,7 +61,7 @@
                 <option value="">Nos Formations</option> 
               </select>
             </div>
-            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item menu--icon">
               <h2 class="menu__item__title">Reconversion professionnelle
                   <span class="menu__item__body">les 5 étapes clés</span>
               </h2>
@@ -92,36 +93,58 @@
         </div>
     </div>
   </section> 
+
+
   
   <section class="l-section section">
-    <div class="section__content">
-        <h3 class="section__content__title section__content__title--page">votre espace client</h3>
+    <div class="section__content section__content--wide">
+      <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
+        <div class="section__content__body">
+          <div class="categories categories--block">
+            <div class="categorie">
+              <h4 class="categorie__title">Formations</h4>
+              <a href="#categorie" class="categorie__items">
+                <p class="categorie__item__random">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                <p class="categorie__item__random">Réaliser un bilan comptable</p>
+                <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+              </a>
+            </div>
+            <div class="categorie">
+              <h4 class="categorie__title">eBook</h4>
+              <a href="#categorie" class="categorie__items">
+                <p class="categorie__item__random">Fnances</p>
+                <p class="categorie__item__random">Réaliser un bilan comptable</p>
+                <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+              </a>
+            </div>
+            <div class="categorie">
+              <h4 class="categorie__title">Bibliothèque</h4>
+              <a href="#categorie" class="categorie__items">
+                <p class="categorie__item__random">Fnances</p>
+                <p class="categorie__item__random">Réaliser un bilan comptable</p>
+                <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+              </a>
+            </div>
+            <div class="categorie">
+              <h4 class="categorie__title">Outils</h4>
+              <a href="#categorie" class="categorie__items">
+                <p class="categorie__item__random">Fnances</p>
+                <p class="categorie__item__random">Réaliser un bilan comptable</p>
+                <p class="categorie__item__random">Comment faire un bilan de compétence</p>
+              </a>
+            </div>
+          </div>          
+        </div>
     </div>
   </section>
 
-  <section class="l-section section section--connexion">
-    <div class="section__content section__content--sticky">
-      <div class="section__content__body">
-        <h3 class="section__content__title">Connexion</h3>
-        <span class="input input__label">Adresse Email</span>
-        <input class="input input__control" type="email"/>
-        <span class="input input__label">Mot de passe</span>
-        <input class="input input__control" type="password"/>
-        <div class="input input--checkbox">
-          <input type="checkbox" class="input__control"/> 
-          <label for="" class="input__label">Connexion persistante</label>
-        </div>
-        <input class="button button--connexion" placeholder="Connexion"/><br>
-        <a class="link--connexion" href="#">Vous avez perdu votre mot de passe?</a>
-      </div>
-      <div class="section__content__body">
-        <span class=""></span>
-      </div>
-    </div>
-  </section>
 
   <div class="l-footer section">
     <div class="section__content section__content--wide">
+      <div class="section__content__body">
         <nav class="menu">
             <a href="#" class="menu__item menu__item--first is-active">
               <h2 class="menu__item__title menu__item__title--home"></h2>
@@ -165,10 +188,7 @@
               <h2 class="menu__item__title">Nos formations</h2>
             </a>
           </nav>
-        </div>
-        </div>
-        <div class="section">
-        <div class="section__content">
+
         <div class="footer">
           <p class="footer__copyright">© Copyright Cap Cohérence</p>
           <div class="footer__link">
@@ -180,7 +200,7 @@
         </div>
       </div>
     </div>
-  
+  </div>
 
   <section>
     <div class="color-bar">
@@ -191,6 +211,6 @@
   </section>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script type="text/javascript" src="assets/javascripts/app.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.min.js"></script>
 </body>
 </html>
