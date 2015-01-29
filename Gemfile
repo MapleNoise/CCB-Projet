@@ -48,5 +48,7 @@ gem 'digest'
 
 gem 'bcrypt'
 
+gem 'will_paginate', '~> 3.0.6'
+
 # Gestion des fichiers (upload)
 gem 'carrierwave'

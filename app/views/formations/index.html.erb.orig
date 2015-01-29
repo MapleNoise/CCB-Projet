@@ -1,3 +1,5 @@
+<h1>Gestion des formations</h1>
+
 <hr>
 <%= link_to 'Creer une formation', new_formation_path %>
 <hr>
@@ -7,6 +9,7 @@
     <tr>
       <th>Ref</th>
       <th>Nom</th>
+<<<<<<< HEAD
       <th>Prix</th>
       <th>Catégorie</th>
       <th>Status</th>
@@ -14,13 +17,20 @@
       <th>Date de publication</th>
       <th>Editer</th>
       <th>Supprimer</th>
+=======
+      <th>Descriptioncourte</th>
+      <th>Description</th>
+      <th>Estpublic</th>
+      <th>Datesuppression</th>
+>>>>>>> FETCH_HEAD
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @formations.each do |formation| %>
       <tr>
-        <td><%= formation.ref %></td>
+<<<<<<< HEAD
         <td><%= link_to formation.nom, formation %></td>
         <td><%= "#{formation.prix}€" %></td>
         <% #trouver le tag qui n a pas de mere (il ne peut y en avoir qu un) %>
@@ -45,6 +55,17 @@
           %></td>
         <td><%= link_to 'EDIT_IMAGE', edit_formation_path(formation) %></td>
         <td><%= link_to 'DELETE_IMAGE', formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+=======
+        <td><%= formation.ref %></td>
+        <td><%= formation.nom %></td>
+        <td><%= formation.descriptionCourte %></td>
+        <td><%= formation.description %></td>
+        <td><%= formation.estPublic %></td>
+        <td><%= formation.dateSuppression %></td>
+        <td><%= link_to 'Show', formation %></td>
+        <td><%= link_to 'Edit', edit_formation_path(formation) %></td>
+        <td><%= link_to 'Destroy', formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+>>>>>>> FETCH_HEAD
       </tr>
     <% end %>
   </tbody>
