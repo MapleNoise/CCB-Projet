@@ -34,23 +34,13 @@
 
 <p>
 	<strong>Type produit :</strong>
-	<%= TypeProduit.find_by(@produit.type_produits_id).nom %>
+	<%= TypeProduit.find_by(:id => @produit.type_produits_id).nom %>
 </p>
 
 <p>
-	<strong>Datecreation:</strong>
-	<%= @produit.created_at %>
+	<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+		<%= link_to("Visionner", @produit.urlFichier) %>
+	<% else %>
+		<%= link_to("Télécharger", @produit.urlFichier) %>
+	<% end %>
 </p>
-
-<p>
-	<strong>Datemodification:</strong>
-	<%= @produit.updated_at %>
-</p>
-
-<p>
-	<strong>Datesuppression:</strong>
-	<%= @produit.dateSuppression %>
-</p>
-
-<%= link_to 'Edit', edit_produit_path(@produit) %> |
-<%= link_to 'Back', produits_path %>
