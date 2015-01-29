@@ -14,7 +14,7 @@
     text-transform: uppercase;
     cursor: pointer;
     &:hover{
-            background-color: $color-grey;
+        background-color: $color-grey;
     }
   
     &--submit {
@@ -125,29 +125,46 @@
     }
 
     &-categorie{
+        // @include gridle_parent();
+        // @include gridle(1);
+        @extend .button;
         border : none;
         outline: none;
         text-transform: uppercase;
         background-color: white;
-        font-size: 24px;
+        padding-left: 46px;
+        text-align: center;
+        font-size: 15px;     
         color : black;
         &:hover{
-            background-color: $color-grey;
+            background-color: #eee;
         }
         &.is-active{
-            background-color: $color-grey;
+            background-color: darken(#eee,10%);
         }
         &--formation{
-            @include icon('list-ol');
+            background: url("#{$images_path}/icone_formation.png") no-repeat;
+            background-position: left center;
+            background-size: 36px;
+            height: 54px;      
         }
         &--ebook{
-            @include icon('book');
+            background: url("#{$images_path}/icone_ebook.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;            
+            height: 54px; 
         }
         &--bibliotheque{
-            @include icon('apple');
+            background: url("#{$images_path}/icone_bibliotheque.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;            
+            height: 54px;
         }
         &--outil{
-            @include icon('th');
+            background: url("#{$images_path}/icone_outil.png") no-repeat;
+            background-size: 36px;
+            background-position: left center;
+            height: 54px;
         }
     }
 }
