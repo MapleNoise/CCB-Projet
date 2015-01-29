@@ -27,17 +27,20 @@ class ProduitsController < ApplicationController
 
   # GET /produits/new
   def new
+    @layout = "back"
     @produit = Produit.new
     @produit.init!
   end
 
   # GET /produits/1/edit
   def edit
+    @layout = "back"
   end
 
   # POST /produits
   # POST /produits.json
   def create
+    @layout = "back"
     @produit = Produit.new(produit_params)
     @produit.type_produits_id = type_produit_params
     @produit.statusId = status_params
@@ -66,6 +69,7 @@ class ProduitsController < ApplicationController
   # PATCH/PUT /produits/1
   # PATCH/PUT /produits/1.json
   def update
+    @layout = "back"
     respond_to do |format|
       if @produit.update(produit_params)
         format.html { redirect_to @produit, notice: 'Produit was successfully updated.' }
@@ -80,6 +84,7 @@ class ProduitsController < ApplicationController
   # DELETE /produits/1
   # DELETE /produits/1.json
   def delete
+    @layout = "back"
     puts "Destruction en attente"
 
     @produit.delete!
@@ -93,6 +98,7 @@ class ProduitsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_produit
+    @layout = "back"
     @produit = Produit.find(params[:id])
   end
 
