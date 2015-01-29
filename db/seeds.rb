@@ -214,7 +214,7 @@ produit1 = Produit.create(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: false,
-  urlFichier: "http://localhost:3000/test.docx")
+  urlFichier: "Lorem_ipsum_dolor_sit_amet.docx")
   
 produit1.tags << Tag.find_by(:nom => "Le constat")
 produit1.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
@@ -228,7 +228,7 @@ produit2 = Produit.create(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
-  urlFichier: "http://localhost:3000/test.docx")
+  urlFichier: "Lorem_ipsum_dolor_sit_amet.docx")
   
 produit2.tags << Tag.find_by(:nom => "L'analyse")
 produit2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
@@ -241,7 +241,7 @@ produit3 = Produit.create(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
-  urlFichier: "https://www.youtube.com/watch?v=DnGdoEa1tPg&index=27&list=RDHCqCy8JROFn5Y&spfreload=1")
+  urlFichier: "Lorem_ipsum_dolor_sit_amet.docx")
   
 produit3.tags << Tag.find_by(:nom => "L'analyse")
 produit3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
