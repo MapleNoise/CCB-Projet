@@ -54,18 +54,25 @@
 <div class="field">
 	Type produit :
 	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-	<%= select_tag(:types_produits, options_from_collection_for_select(TypeProduit.all, :id, :nom)) %>
+	<%= select_tag(:types_produits, options_from_collection_for_select(TypeProduit.all, :id, :nom), id: "jsTypeProduitSelect") %>
 </div>
 <div class="field">
 	Status :
 	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
 	<%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom)) %>
 </div>
+<!--
+<div class="field">
+<%= f.label :urlFichier, "Lien vers le fichier" %>
+<br />
+<%= f.text_field :urlFichier %>
+</div>
+-->
 
 <div class="field">
-	<%= f.label :urlFichier, "Lien vers le fichier" %>
+	<%= f.label :urlFichier, "Charger le fichier"%>
 	<br />
-	<%= f.text_field :urlFichier %>
+	<%= f.file_field :urlFichier  %>
 </div>
 
 <div class="actions">

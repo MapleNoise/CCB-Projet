@@ -15,6 +15,9 @@ class Produit < ActiveRecord::Base
   validates :descriptionCourte, length: { minimum: 6 , too_short: "Le minimum requis est de %{count} caractères"}
   validates :descriptionCourte, length: { maximum: 200 , too_long: "Le maximum requis est de %{count} caractères"}
 
+  # Ajout de la gestion urlFichier
+  mount_uploader :urlFichier, FichierGeneralUploader
+
   has_and_belongs_to_many :tags
   #has_many :categories_produits
   #has_many :categories, :through  => :categories_produits

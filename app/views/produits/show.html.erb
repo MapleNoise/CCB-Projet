@@ -38,9 +38,13 @@
 </p>
 
 <p>
+	<!--
+	<% puts @produit.urlFichier %>
 	<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-		<%= link_to("Visionner", @produit.urlFichier) %>
-	<% else %>
-		<%= link_to("Télécharger", @produit.urlFichier) %>
+	<%= link_to("Visionner", @produit.urlFichier.identifier) %>
+	<% else %> -->
+	<%= link_to("Télécharger", @produit.urlFichier.url ) %>
+	<!--
 	<% end %>
+	-->
 </p>

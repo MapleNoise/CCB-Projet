@@ -48,3 +48,5 @@ gem 'digest'
 
 gem 'bcrypt'
 
+# Gestion des fichiers (upload)
+gem 'carrierwave'
