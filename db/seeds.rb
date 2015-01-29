@@ -213,14 +213,14 @@ form13.tags << Tag.find_by(:nom => "L'analyse")
 form13.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
 
 urlSender = FichierGeneralUploader.new
-urlSender.cache!(File.open(Dir.pwd + "/Bonsai_IMG_6404.jpg"))
+urlSender.cache!(File.open(Dir.pwd + "/Lorem_ipsum_dolor_sit_amet.docx"))
 
 # Création de produits
 produit1 = Produit.new(
   ref: "80ba14f781d79164",
   nom: "Produit 1",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: false)
@@ -235,7 +235,7 @@ produit2 = Produit.new(
   ref: "90ba14f781d72264",
   nom: "Produit 2",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
@@ -250,7 +250,7 @@ produit3 = Produit.new(
   ref: "90ba14f781d12464",
   nom: "Produit 3",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
@@ -265,7 +265,7 @@ produit4 = Produit.new(
   ref: "90ba14f78aze2464",
   nom: "Produit 4",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
@@ -280,7 +280,7 @@ produit5 = Produit.new(
   ref: "90ba14ze81d12464",
   nom: "Produit 5",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
@@ -295,7 +295,7 @@ produit6 = Produit.new(
   ref: "90basdfd81d12464",
   nom: "Produit 6",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
@@ -310,7 +310,7 @@ produit6 = Produit.new(
   ref: "90ba1ddfg1d12464",
   nom: "Produit 6",
   prix: 10.0,
-  type_produits_id: 3,
+  type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true)
