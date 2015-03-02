@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
     resources :fiche_produits
 
-    resources :produits
+    resources :produits #, defaults: { format: 'html' }
     
     resources :tags
 
