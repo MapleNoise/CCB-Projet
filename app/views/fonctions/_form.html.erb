@@ -1,6 +1,6 @@
 <%= form_for(@fonction) do |f| %>
   <% if @fonction.errors.any? %>
-    <div id="error_explanation">
+    <div class="error_explanation">
       <h2><%= pluralize(@fonction.errors.count, "error") %> prohibited this fonction from being saved:</h2>
 
       <ul>

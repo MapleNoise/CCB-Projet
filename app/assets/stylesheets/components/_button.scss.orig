@@ -128,7 +128,13 @@
         }
     }
 
+<<<<<<< HEAD
+    &-categorie{
+=======
     &__categorie{
+        // @include gridle_parent();
+        // @include gridle(1);
+>>>>>>> 6fb9ebaf2881a882706a5f3a5bb8428893326c1c
         @extend .button;
         border : none;
         outline: none;
@@ -168,4 +174,5 @@
             background-position: left center;
             height: 54px;
         }
-    }}
+    }
+}

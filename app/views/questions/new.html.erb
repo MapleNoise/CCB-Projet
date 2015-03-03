@@ -2,31 +2,31 @@
 
 <%= form_for(@question) do |f| %>
   <% if @question.errors.any? %>
-    <div id="error_explanation">
-        <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+    <div class="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
 
-        <ul>
-            <% @question.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-        </ul>
+      <ul>
+        <% @question.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
   <div class="field">
-      <%= f.label :nom %><br>
-      <%= f.text_field :nom %>
+    <%= f.label :nom %><br>
+    <%= f.text_field :nom %>
   </div>
   <div class="field">
-      <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:quizz, options_from_collection_for_select(Quizz.all, :id, :nom)) %>
+    <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+    <%= select_tag(:quizz, options_from_collection_for_select(Quizz.all, :id, :nom)) %>
   </div>
   <div class="field">
-      <%= f.label :dateSuppression %><br>
-      <%= f.datetime_select :dateSuppression %>
+    <%= f.label :dateSuppression %><br>
+    <%= f.datetime_select :dateSuppression %>
   </div>
   <div class="actions">
-      <%= f.submit %>
+    <%= f.submit %>
   </div>
 <% end %>
 
