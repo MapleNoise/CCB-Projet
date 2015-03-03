@@ -78,7 +78,7 @@ gulp.task('js', function() {
         .pipe($.plumber({errorHandler: onError }))
         .pipe($.concat('app.min.js'))
         .pipe($.uglify())
-        .pipe(gulp.dest(dest.javascripts)),
+        .pipe(gulp.dest(dest.javascripts))
         .pipe($.notify({ // Add gulpif here
            title: 'Gulp',
            subtitle: 'success',
