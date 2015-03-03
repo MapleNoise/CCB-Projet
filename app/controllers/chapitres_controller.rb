@@ -2,25 +2,38 @@ class ChapitresController < ApplicationController
   before_action :set_chapitre, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  
+  layout :chapitres_layout
+  
+  @layout = "back"
+  
+  def chapitres_layout
+    @layout
+  end
 
   def index
+    @layout = "back"
     @chapitres = Chapitre.all
     respond_with(@chapitres)
   end
 
   def show
+    @layout = "back"
     respond_with(@chapitre)
   end
 
   def new
+    @layout = "back"
     @chapitre = Chapitre.new
     respond_with(@chapitre)
   end
 
   def edit
+    @layout = "back"
   end
 
   def create
+    @layout = "back"
     @chapitre = Chapitre.new(chapitre_params)
     @chapitre.sections_id = section_params
     respond_to do |format|      
@@ -38,11 +51,13 @@ class ChapitresController < ApplicationController
   end
 
   def update
+    @layout = "back"
     @chapitre.update(chapitre_params)
     respond_with(@chapitre)
   end
 
   def destroy
+    @layout = "back"
     @chapitre.destroy
     respond_with(@chapitre)
   end
