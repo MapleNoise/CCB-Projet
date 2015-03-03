@@ -10,8 +10,6 @@
 	$('.button-categorie').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
-  //schema de reconversion
-  $('img[usemap]').rwdImageMaps();
 
 
 
