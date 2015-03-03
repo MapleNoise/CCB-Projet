@@ -74,7 +74,7 @@
         }
     }
 
-    &-filter{
+    &__filter{
         @extend .button;
         @include transition(1s);
         background-color: white;
@@ -124,7 +124,7 @@
         }
     }
 
-    &-categorie{
+    &__categorie{
         // @include gridle_parent();
         // @include gridle(1);
         @extend .button;
