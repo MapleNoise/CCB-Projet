@@ -3,7 +3,11 @@
 	'variables/color',
 	'variables/color-bar',
 	'variables/grid',
-	'variables/section';
+	'variables/section',
+	'variables/button',
+	'variables/input',
+	'variables/header',
+	'variables/connexion';
 
 @import
 	'vendors-extended/gridle/gridle';
@@ -34,13 +38,11 @@
         'components/menu_back',
 	'components/button',
 	'components/categorie',
+	'components/connexion',
 	'components/etape-reconversion',
         'components/table',
         'components/liste',
 	'components/input';
-
-@import
-	'pages/connexion';
 
 @import 
 	'shame';
