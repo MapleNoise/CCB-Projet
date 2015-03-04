@@ -23,4 +23,23 @@ class ApplicationController < ActionController::Base
     return true
     end
   end
+
+  def test_client
+    if(session[:user_id] == nil || Utilisateur2.find_by(:id => session[:user_id]).isClient?)
+      redirect_to forbidden_path :status => 403
+      false
+    else
+      true
+    end
+  end
+
+  def test_admin
+    if(session[:user_id] == nil || !(Utilisateur2.find_by(:id => session[:user_id]).isAdmin?))
+      redirect_to forbidden_path :status => 403
+      false
+    else
+      true
+    end
+  end
+
 end

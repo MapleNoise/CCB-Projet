@@ -1,5 +1,6 @@
 class ReponsesController < ApplicationController
   before_action :set_reponse, only: [:show, :edit, :update, :destroy]
+  before_action :test_client
 
   respond_to :html
 

@@ -1,5 +1,6 @@
 class TypeProduitsController < ApplicationController
   before_action :set_type_produit, only: [:show, :edit, :update, :destroy]
+  before_action :test_client
 
   # GET /type_produits
   # GET /type_produits.json
