@@ -1,3 +1,13 @@
+.formulaire{
+	&--back{
+	}
+}
+
+.field{
+	@include gridle(6);
+	@include gridle_centered();
+}
+
 .error_explanation{
   margin: 10px;
   padding: 10px;
