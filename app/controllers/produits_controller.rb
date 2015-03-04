@@ -1,9 +1,9 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
   layout :produits_layout
-  
+
   @layout = "back"
-  
+
   def produits_layout
     @layout
   end
@@ -106,7 +106,7 @@ class ProduitsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def produit_params
-    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description, :urlFichier)
+    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description, :urlFichier, :image)
   end
 
   def produit_tag_params

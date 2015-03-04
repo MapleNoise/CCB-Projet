@@ -1,11 +1,11 @@
-#encoding: UTF-8
+#encoding: utf-8
 class Produit < ActiveRecord::Base
-  
+
   ################################
   #             INFO
   # Pour récupérer la liste des tags : produit.tags ça retourne un tableau de tags
   ################################
-  
+
   validates_presence_of :ref, :nom, :prix, :description, :descriptionCourte, :urlFichier
   validates :prix, :numericality => { :greater_than_or_equal_to => 0 }
   validates :ref, length: { minimum: 6 , too_short: "Le minimum requis est de %{count} caractères"} , uniqueness: true
@@ -17,6 +17,7 @@ class Produit < ActiveRecord::Base
 
   # Ajout de la gestion urlFichier
   mount_uploader :urlFichier, FichierGeneralUploader
+  mount_uploader :image, ImageProduitUploader
 
   has_and_belongs_to_many :tags
   #has_many :categories_produits
@@ -24,7 +25,7 @@ class Produit < ActiveRecord::Base
   #belongs_to :Coach
   #has_many :Chapitre
   has_one :type_produits
-  
+
   # Gestion de la suppression d'un produit
   def delete!
     update_attribute(:dateSuppression, Time.now)
