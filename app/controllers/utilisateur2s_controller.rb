@@ -31,19 +31,20 @@ class Utilisateur2sController < ApplicationController
   def update  
     if utilisateur2_params['password'] #Si c'est un utlisateur qui modifie son compte
       
-      if utilisateur2_params['old_password'].length > 0
+      unless utilisateur2_params['old_password'].empty?
         
         authorized_user = Utilisateur2.find_by(id: session[:user_id])
      
         if authorized_user
           
-           authorized_user = authorized_user.authenticate(utilisateur2_params[:old_password])
+           authorized_user = authorized_user.authenticate(utilisateur2_params['old_password'])
            
            if authorized_user
              @utilisateur2.update(utilisateur2_params)
            end
         end
       else 
+        puts "/////////////////////////"
         @utilisateur2.update(utilisateur2_params)
       end
         
@@ -74,4 +75,5 @@ class Utilisateur2sController < ApplicationController
     def fonction_params
       params.require(:fonctions)
     end
+    
 end

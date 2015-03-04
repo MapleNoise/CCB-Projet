@@ -28,18 +28,18 @@
     <%= f.text_field :prenom %>
   </div>
 
-  <div class="field">
+ <div class="field">  
     <%= f.label "Mot de passe actuel" %><br>
-    <%= f.password_field :old_password %><br>  
+    <%= f.password_field :old_password %><br> 
+ </div>
+    
+  <div class="field">  
     <%= f.label "Nouveau mot de passe" %><br>
     <%= f.password_field :password %><br>
     <%= f.label "Confirmation mot de passe" %><br>
     <%= f.password_field :password_confirmation %>
   </div>
 
-<div class="field">  
-   <%= hidden_field_tag :fonctions, 3 %>
-</div>
   <div class="actions">
     <%= f.submit %>
   </div>

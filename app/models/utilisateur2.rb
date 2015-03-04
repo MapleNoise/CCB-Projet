@@ -1,5 +1,5 @@
 class Utilisateur2 < ActiveRecord::Base
-
+  attr_accessor :old_password
   before_save { self.email = email.downcase }
   #before_filter :save_login_state, :only => [:new, :create]
   validates :prenom, presence: true

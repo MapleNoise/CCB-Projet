@@ -8,8 +8,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Création des fonctions
-Fonction.create([{nom: "Expert"},
-  {nom: "Administrateur"},
+Fonction.create([{nom: "Administrateur"},
+  {nom: "Expert"},
   {nom: "Client"}])
 
 # Création d'utilisateur
