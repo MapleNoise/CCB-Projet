@@ -52,3 +52,8 @@ gem 'will_paginate', '~> 3.0.6'
 
 # Gestion des fichiers (upload)
 gem 'carrierwave'
+
+# Special settings
+gem 'pry'
+gem 'pry-doc'
+gem 'method_source'

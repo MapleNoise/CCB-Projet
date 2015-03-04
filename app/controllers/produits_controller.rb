@@ -50,11 +50,13 @@ class ProduitsController < ApplicationController
     @tag = Tag.find_by(:id => produit_tag_params)
     @produit.tags << @tag
 
+    format = nil
+
     respond_to do |format|
       Produit.transaction do
         if @produit.save
           if
-          format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
+            format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
             format.json { render :show, status: :created, location: @produit }
           else
             format.html { render :new }

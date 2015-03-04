@@ -19,7 +19,7 @@ class Utilisateur2sController < ApplicationController
 
   def edit
   end
-  
+
   def modifierUtilisateur
   end
 
@@ -48,7 +48,7 @@ class Utilisateur2sController < ApplicationController
     def utilisateur2_params
       params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation)
     end
-    
+
     def fonction_params
       params.require(:fonctions)
     end
