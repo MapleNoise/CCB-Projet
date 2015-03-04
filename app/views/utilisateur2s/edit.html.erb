@@ -1,4 +1,4 @@
-<h1>Editing utilisateur2</h1>
+<div class = "sectionback__content__title">Editing utilisateur2</div>
 
 <%= form_for(@utilisateur2) do |f| %>
   <% if @utilisateur2.errors.any? %>
@@ -14,24 +14,27 @@
   <% end %>
 
 <div class="field">
-    <%= f.label "Nom" %><br>
-    <%= f.text_field :nom %>
+    <%= f.label "Nom", :class=>'input input--back input--back__label' %>
+    <%= f.text_field :nom, :class=>'input input--back input--back__control' %>
   </div>
 
   <div class="field">
-    <%= f.label "Prenom" %><br>
-    <%= f.text_field :prenom %>
+    <%= f.label "Prenom", :class=>'input input--back input--back__label'  %>
+    <%= f.text_field :prenom, :class=>'input input--back input--back__control' %>
   </div>
 
 <div class="field">  
-   Fonction :
-	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom)) %>
+   <div class="input  input--back input--back__label">Fonction</div>
+	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom), :class=>'input input--back input--back__select') %>
 </div>
+<div class="field">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class=>'button button--submit' %>
   </div>
+</div>
 <% end %>
 
-
-<%= link_to 'Show', @utilisateur2 %> |
-<%= link_to 'Back', utilisateur2s_path %>
+<div class="field">
+  <%= link_to 'Show', @utilisateur2, :class=>'button button--submit' %>
+</div>
+<!--|<%= link_to 'Back', utilisateur2s_path %>-->
