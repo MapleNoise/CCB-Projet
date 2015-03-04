@@ -1,4 +1,103 @@
-.error_explanation{
+.formulaire {
+  @include gridle_parent();
+	&--back{
+	}
+}
+
+
+.field {
+	@include gridle(9);
+	@include gridle_centered();
+  @include gridle_parent();
+  display : inline-block;
+  font : {
+    size : 0.875em;
+    family : inherit;
+  }
+  height: $formulaire-field-height;
+  margin-bottom: $formulaire-field-height/2;
+  outline : none;
+
+  &__label {
+    @include gridle(3);
+    background: #f2f2f2;
+    overflow : hidden;
+    text-align : center;
+    color : #333;
+    border : $formulaire-field-border;
+    border-right: none;
+    height: 100%;
+  }
+
+  &__control {
+    @include gridle(9);
+    @include transition(all 150ms linear);
+    height: 100%;
+
+    
+
+    &:focus {
+      // border-color : lighten(black , 65%);
+      outline: none;
+    }
+
+    &--select {
+      // height: 45px;
+      // width: 80%;
+      // display : inline-block;
+    }
+
+  }
+
+
+  &--checkbox {
+    .field__control {
+      @include gridle(1);
+      @include vertical-align();
+      height: $formulaire-field-height/2;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .field__label {
+      @include gridle(10);
+      border: $formulaire-field-border;
+      background: none;
+      color : #4d4d4d;
+    }
+  }
+
+  &--textarea {
+    height: $formulaire-field-height*2;
+
+    .field__control {
+      resize: vertical;
+    }
+  }
+
+
+  &--back {
+
+    .field__label {
+      @include gridle(3);
+      background: #f2f2f2;
+      overflow : hidden;
+      text-align : center;
+      line-height: 2.3125em;
+      color : #333;
+    }
+    
+    .field__control {
+      &--select {
+
+      }
+    }
+
+  }
+}
+
+
+.error_explanation {
   margin: 10px;
   padding: 10px;
   padding-left: 20px;
@@ -6,3 +105,5 @@
   border-left: 4px solid $color-red;
   background-color: lighten($color-red, 40%);
 }
+
+
