@@ -23,13 +23,22 @@
         
       }
       &--word {
-        
+        @include icon('file-word-o');
+        color: $color-blue-word;
       }
       &--pdf {
-        
+        @include icon("file-pdf-o");
+        color: $color-red;
       }
       &--excel {
-        
+        @include icon("file-excel-o");
+        color: $color-green;
+      }
+      &--image {
+        @include icon("file-image-o");
+      }
+      &--fichier {
+        @include icon("file-o");
       }
     }
     

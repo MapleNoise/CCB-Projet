@@ -1,5 +1,5 @@
 
-<h3 class="section__content__title section__content__title--page"><%= @produit.nom %></h3>
+<h3 class="section__content__title section__content__title--wide"><%= @produit.nom %></h3>
 </div>
 </section>  
 <div class="produit">
@@ -20,6 +20,7 @@
             <%= @produit.prix %>
           </div>
         <% else %>
+          <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
           <% puts @produit.urlFichier %>
           <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
             <!-- Ici Ajouter la vidéo -->
@@ -32,17 +33,21 @@
             <div class="produit__general__lien--son">
 
             </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Word" %> 
+          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
             <div class="produit__general__lien--word">
-
+              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
             </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Excel" %> 
+          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
             <div class="produit__general__lien--excel">
-
+              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
             </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Pdf" %> 
+          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
             <div class="produit__general__lien--pdf">
-
+              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
+            </div>
+          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
+            <div class="produit__general__lien--image">
+              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
             </div>
           <% else %> 
             <div class="produit__general__lien--fichier">
