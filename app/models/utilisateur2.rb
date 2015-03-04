@@ -14,7 +14,7 @@ class Utilisateur2 < ActiveRecord::Base
 
   has_one :fonctions
 
-  validates :password, length: { minimum: 8, too_short: "C'est trop court" }
+  validates :password, length: { minimum: 8, too_short: "C'est trop court" }, on: :update, allow_blank: true
   has_secure_password
 
 end

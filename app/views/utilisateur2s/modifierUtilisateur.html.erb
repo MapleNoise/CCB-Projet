@@ -4,6 +4,7 @@
 # and open the template in the editor.
 %>
 
+    
 <%= form_for(@utilisateur2) do |f| %>
   <% if @utilisateur2.errors.any? %>
     <div id="error_explanation">
@@ -28,7 +29,9 @@
   </div>
 
   <div class="field">
-    <%= f.label "Mot de passe" %><br>
+    <%= f.label "Mot de passe actuel" %><br>
+    <%= f.password_field :old_password %><br>  
+    <%= f.label "Nouveau mot de passe" %><br>
     <%= f.password_field :password %><br>
     <%= f.label "Confirmation mot de passe" %><br>
     <%= f.password_field :password_confirmation %>
@@ -41,4 +44,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-<%= "modifierUtilisateur.html" %>

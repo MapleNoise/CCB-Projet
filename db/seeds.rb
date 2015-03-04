@@ -344,6 +344,6 @@ Status.create([{nom: "En ligne"},
   {nom: "Désactivé"}])
 
 # Création des fonctions
-Fonction.create([{nom: "Expert"},
-  {nom: "Administrateur"},
+Fonction.create([{nom: "Administrateur"},
+  {nom: "Expert"},
   {nom: "Client"}])

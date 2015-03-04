@@ -50,7 +50,7 @@ Rails.application.routes.draw do
     resources :tags
   
   get 'listeProduit' => 'produits#listeProduit'
-  #get 'utilisateur2s/:id/modifierUtilisateur' => 'utilisateur2s#modifierUtilisateur'
+  get 'utilisateur2s/:id/modifierUtilisateur' => 'utilisateur2s#modifierUtilisateur'
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
