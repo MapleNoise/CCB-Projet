@@ -42,7 +42,6 @@
 			border-color : lighten(black , 65%);
 			outline: none;
 		}
-
 	}
 	
 	&__label{
@@ -54,5 +53,46 @@
 		text-align : center;
 		line-height: 2.3125em;
 		color : #333;
+	}
+
+	&__select {
+		height: 45px;
+		width: 80%;
+		display : inline-block;
+	}
+
+	&--back{
+		&__label {
+			@include gridle(2);
+			background: #f2f2f2;
+			overflow : hidden;
+			text-align : center;
+			line-height: 2.3125em;
+			color : #333;
+		}
+
+		&__control {
+			@include gridle(4);
+			@include transition(all 150ms linear);
+			&--error{
+				background-color : $input-error-background-color;
+				border-color : $input-error-border-color;
+			}
+			&:focus{
+				border-color : lighten(black , 65%);
+			}
+		}
+
+		&__checkbox {
+			border: none;
+			@include gridle(1);
+			outline: none;
+			cursor: pointer;
+			margin-right: 30px;
+		}
+
+		&__select {
+			@include gridle(4);
+		}
 	}
 }
