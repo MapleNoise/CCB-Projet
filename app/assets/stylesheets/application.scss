@@ -5,7 +5,7 @@
 	'variables/grid',
 	'variables/section',
 	'variables/button',
-	'variables/input',
+	'variables/formulaire',
 	'variables/header',
 	'variables/connexion';
 
@@ -20,32 +20,30 @@
 
 @import 
 	'base/reset',
-  	'base/base',
-  	'base/icon',
-  	'base/responsive',
-  	'base/icon';
+	'base/base',
+	'base/responsive',
+	'base/icon';
 
 @import 
 	'layout/section',
-        'layout/section_back',
+  'layout/section_back',
 	'layout/header',
-        'layout/header_back',
+  'layout/header_back',
 	'layout/footer';
 
 @import 
 	'components/color-bar',
 	'components/menu',
-        'components/menu_back',
+  'components/menu_back',
 	'components/button',
 	'components/categorie',
 	'components/connexion',
 	'components/etape-reconversion',
-        'components/table',
-        'components/liste',
-        'components/filter',
-        'components/produit',
-        'components/formulaire',
-	'components/input';
+  'components/table',
+  'components/liste',
+  'components/filter',
+  'components/produit',
+  'components/formulaire';
 
 @import 
 	'shame';
