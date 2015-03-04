@@ -2,25 +2,38 @@ class QuizzsController < ApplicationController
   before_action :set_quizz, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
+  
+  layout :quizzs_layout
+  
+  @layout = "back"
+  
+  def quizzs_layout
+    @layout
+  end
 
   def index
+    @layout = "back"
     @quizzs = Quizz.all
     respond_with(@quizzs)
   end
 
   def show
+    @layout = "back"
     respond_with(@quizz)
   end
 
   def new
+    @layout = "back"
     @quizz = Quizz.new
     respond_with(@quizz)
   end
 
   def edit
+    @layout = "back"
   end
 
   def create
+    @layout = "back"
     @quizz = Quizz.new(quizz_params)
     @quizz.chapitres_id = chapitre_params
     respond_to do |format|      
@@ -38,11 +51,13 @@ class QuizzsController < ApplicationController
   end
 
   def update
+    @layout = "back"
     @quizz.update(quizz_params)
     respond_with(@quizz)
   end
 
   def destroy
+    @layout = "back"
     @quizz.destroy
     respond_with(@quizz)
   end

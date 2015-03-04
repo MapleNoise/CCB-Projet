@@ -1,29 +1,44 @@
 class TypeProduitsController < ApplicationController
   before_action :set_type_produit, only: [:show, :edit, :update, :destroy]
 
+    layout :type_produits_layout
+  
+  @layout = "back"
+  
+  def type_produits_layout
+    @layout
+  end
+  
+  
+  
   # GET /type_produits
   # GET /type_produits.json
   def index
+    @layout = "back"
     @type_produits = TypeProduit.all
   end
 
   # GET /type_produits/1
   # GET /type_produits/1.json
   def show
+    @layout = "back"
   end
 
   # GET /type_produits/new
   def new
+    @layout = "back"
     @type_produit = TypeProduit.new
   end
 
   # GET /type_produits/1/edit
   def edit
+    @layout = "back"
   end
 
   # POST /type_produits
   # POST /type_produits.json
   def create
+    @layout = "back"
     @type_produit = TypeProduit.new(type_produit_params)
 
     puts "------extension_fichier_params------"
@@ -43,6 +58,7 @@ class TypeProduitsController < ApplicationController
   # PATCH/PUT /type_produits/1
   # PATCH/PUT /type_produits/1.json
   def update
+    @layout = "back"
     respond_to do |format|
       if @type_produit.update(type_produit_params)
         format.html { redirect_to @type_produit, notice: 'Type produit was successfully updated.' }
@@ -57,6 +73,7 @@ class TypeProduitsController < ApplicationController
   # DELETE /type_produits/1
   # DELETE /type_produits/1.json
   def destroy
+    @layout = "back"
     @type_produit.destroy
     respond_to do |format|
       format.html { redirect_to type_produits_url, notice: 'Type produit was successfully destroyed.' }

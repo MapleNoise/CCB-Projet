@@ -3,27 +3,42 @@ class Utilisateur2sController < ApplicationController
 
   respond_to :html
 
+   layout :utilisateur2s_layout
+  
+  @layout = "back"
+  
+  def utilisateur2s_layout
+    @layout
+  end
+  
+  
   def index
+    @layout = "back"
     @utilisateur2s = Utilisateur2.all
     respond_with(@utilisateur2s)
   end
 
   def show
+    @layout = "back"
     respond_with(@utilisateur2)
   end
 
   def new
+    @layout = "back"
     @utilisateur2 = Utilisateur2.new
     respond_with(@utilisateur2)
   end
 
   def edit
+    @layout = "back"
   end
   
   def modifierUtilisateur
+    @layout = "back"
   end
 
   def create
+    @layout = "back"
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
     @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
@@ -31,11 +46,13 @@ class Utilisateur2sController < ApplicationController
   end
 
   def update
+    @layout = "back"
     @utilisateur2.update(utilisateur2_params)
     respond_with(@utilisateur2)
   end
 
   def destroy
+    @layout = "back"
     @utilisateur2.destroy
     respond_with(@utilisateur2)
   end
