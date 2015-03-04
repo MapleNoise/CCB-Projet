@@ -25,7 +25,7 @@
 
 <div class="field">  
    Fonction :
-	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom, @utilisateur2.id)) %>
+	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom, @utilisateur2.fonctionId)) %>
 </div>
   <div class="actions">
     <%= f.submit %>

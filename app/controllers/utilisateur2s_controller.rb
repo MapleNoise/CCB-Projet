@@ -40,12 +40,25 @@ class Utilisateur2sController < ApplicationController
            authorized_user = authorized_user.authenticate(utilisateur2_params['old_password'])
            
            if authorized_user
-             @utilisateur2.update(utilisateur2_params)
+             if utilisateur2_params['password'] === utilisateur2_params['password_confirmation']
+                @utilisateur2.update(utilisateur2_params)
+             else
+               @utilisateur2.errors.add(:password_confirmation, "Confirmation password incorrect")
+               respond_with(@utilisateur2) do |format|
+                  format.html { render 'modifierUtilisateur' }
+                end
+             end
+           else #l'utilisateur se trompe de mdp
+             @utilisateur2.errors.add(:old_password, "Incorect password")
+            respond_with(@utilisateur2) do |format|
+              format.html { render 'modifierUtilisateur' }
+            end
            end
         end
       else 
-        puts "/////////////////////////"
-        @utilisateur2.update(utilisateur2_params)
+        @utilisateur2.nom =  utilisateur2_params['nom']
+        @utilisateur2.prenom = utilisateur2_params['prenom']
+        @utilisateur2.save
       end
         
      
@@ -53,10 +66,11 @@ class Utilisateur2sController < ApplicationController
         @utilisateur2.update(utilisateur2_params)
         @utilisateur2.fonctionId = fonction_params
         @utilisateur2.save
+        respond_with(@utilisateur2)
     end
-    respond_with(@utilisateur2)
   end
-
+  
+  
   def destroy
     @utilisateur2.destroy
     respond_with(@utilisateur2)
