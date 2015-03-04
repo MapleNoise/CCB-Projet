@@ -1,5 +1,7 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :test_client, only: [:new, :create, :edit, :update, :destroy]
+
   layout :produits_layout
 
   @layout = "back"

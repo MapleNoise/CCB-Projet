@@ -20,6 +20,12 @@ Utilisateur2.create(
   password: "azerty12",
   password_confirmation: "azerty12",
   fonctionId: Fonction.find_by(:nom => ["Expert"]).id},
+  {nom: "admin",
+  prenom: "admin",
+  email: "admin@gmail.com",
+  password: "azerty12",
+  password_confirmation: "azerty12",
+  fonctionId: Fonction.find_by(:nom => ["Administrateur"]).id},
   {nom: "Mangel",
   prenom: "Maxime",
   email: "mangel.maxime@outlook.com",
@@ -337,4 +343,9 @@ produit7.save
 Status.create([{nom: "En ligne"},
   {nom: "En cours"},
   {nom: "Désactivé"}])
+
+# Création des fonctions
+Fonction.create([{nom: "Administrateur"},
+  {nom: "Expert"},
+  {nom: "Client"}])
 

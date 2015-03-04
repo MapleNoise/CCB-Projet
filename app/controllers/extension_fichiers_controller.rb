@@ -1,5 +1,7 @@
 class ExtensionFichiersController < ApplicationController
   before_action :set_extension_fichier, only: [:show, :edit, :update, :destroy]
+  before_action :test_client, only: [:new, :create, :edit, :update, :destroy]
+
 
   respond_to :html
 
