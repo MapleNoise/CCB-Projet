@@ -1,16 +1,67 @@
-.description__produit p {
-	margin-bottom: 14px;
+.produit {
+  @include gridle_parent();
+  
+  &__general {
+    height: 100px;
+    &__title {
+      text-transform : uppercase;
+      font-size: 18px;
+      padding: 7px;
+    }
+    
+    &__prix{
+      padding: 10px;
+      font-size: 18px;
+    }
+    
+    &__lien {
+      padding: 10px;
+      &--video {
+        
+      }
+      &--son {
+        
+      }
+      &--word {
+        @include icon('file-word-o');
+        color: $color-blue-word;
+      }
+      &--pdf {
+        @include icon("file-pdf-o");
+        color: $color-red;
+      }
+      &--excel {
+        @include icon("file-excel-o");
+        color: $color-green;
+      }
+      &--image {
+        @include icon("file-image-o");
+      }
+      &--fichier {
+        @include icon("file-o");
+      }
+    }
+    
+    &__image{
+      @include gridle(4);
+    }
+    
+    &__description-courte  {
+      @include gridle(8);
+      margin-bottom: 14px;
+      padding-bottom: 7px;
+      //text-transform : uppercase;
+      font-size: 15px;
+      color: $color-grey-black;
+      //border-bottom: 1px solid #d2d3d5;
+    }
+  }
+  &__detail {
+    
+    &__description-longue {
+      //border-top: 1px solid #d2d3d5;
+    }
+  }
+}
 
-}
-.image__produit{
-	@include gridle(8, large);
-}
-.image__produit img{
-	width: 100%;
-	height: auto;
-}
-.detail__produit{
-	@include gridle(4, large);
-	height: 50px;
-	border: 1px solid #cfcfcf;
-}
+
