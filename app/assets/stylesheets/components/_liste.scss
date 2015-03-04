@@ -58,35 +58,35 @@
     &--ebook{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_ebook.png")  no-repeat;
-        background-size: 24px 24px;
+        background-size: $liste-item-background-size;
       }
     }
     
     &--bibliotheque{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_bibliotheque.png")  no-repeat;
-        background-size: 24px 24px;
+        background-size: $liste-item-background-size;
       }
     }
     
     &--outil{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_outil.png")  no-repeat;
-        background-size: 24px 24px;
+        background-size: $liste-item-background-size;
       }
     }
     
     &--formation{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_formation.png")  no-repeat;
-        background-size: 24px 24px;
+        background-size: $liste-item-background-size;
       }
     }
     
     &__etiquette{
       border: 1px solid #d2d3d5;
-      height: 240px;;
-      width: 240px;
+      height: $liste-etiquette-size;
+      width: $liste-etiquette-size;
       display: inline-block;
       color: $color-white;
       pointer: cursor;
@@ -95,7 +95,7 @@
       &:hover {
         .liste__item__etiquette__volet {
           top: 0;
-          height: 240px;
+          height: $liste-etiquette-size;
         }
       }
       

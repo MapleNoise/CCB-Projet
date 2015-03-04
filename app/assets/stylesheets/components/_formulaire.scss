@@ -4,9 +4,8 @@
 	}
 }
 
-
 .field {
-	@include gridle(9);
+	@include gridle(12);
 	@include gridle_centered();
   @include gridle_parent();
   display : inline-block;
@@ -20,10 +19,11 @@
 
   &__label {
     @include gridle(3);
-    background: #f2f2f2;
+    background: $formulaire-label-color;
     overflow : hidden;
     text-align : center;
     color : #333;
+    line-height: $formulaire-field-height;
     border : $formulaire-field-border;
     border-right: none;
     height: 100%;
@@ -34,19 +34,12 @@
     @include transition(all 150ms linear);
     height: 100%;
 
-    
-
     &:focus {
-      // border-color : lighten(black , 65%);
       outline: none;
     }
 
     &--select {
-      // height: 45px;
-      // width: 80%;
-      // display : inline-block;
     }
-
   }
 
 
@@ -63,7 +56,7 @@
       @include gridle(10);
       border: $formulaire-field-border;
       background: none;
-      color : #4d4d4d;
+      color : $color-black;
     }
   }
 
@@ -77,14 +70,14 @@
 
 
   &--back {
-
+    @include gridle(9);
     .field__label {
       @include gridle(3);
-      background: #f2f2f2;
+      background: $formulaire-label-color;
       overflow : hidden;
       text-align : center;
       line-height: 2.3125em;
-      color : #333;
+      color : $color-black;
     }
     
     .field__control {
@@ -95,7 +88,6 @@
 
   }
 }
-
 
 .error_explanation {
   margin: 10px;
