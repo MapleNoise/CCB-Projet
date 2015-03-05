@@ -76,6 +76,9 @@ class Utilisateur2sController < ApplicationController
     respond_with(@utilisateur2)
   end
 
+  def MapSite
+  end
+
   private
     def set_utilisateur2
       @utilisateur2 = Utilisateur2.find(params[:id])

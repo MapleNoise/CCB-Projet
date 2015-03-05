@@ -1,5 +1,6 @@
 class FonctionsController < ApplicationController
   before_action :set_fonction, only: [:show, :edit, :update, :destroy]
+  before_action :acces_juste_admin
 
   respond_to :html
 
