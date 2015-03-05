@@ -15,10 +15,14 @@
 	  <div class="connexion__content__body">
     	<%= form_tag(:action => 'login_attempt') do %>
       <h3 class="connexion__content__title">Connexion</h3>
-      <span class="input input__label">Adresse Email</span>
-      <%= text_field_tag(:email, nil, {placeholder: 'Email@mail.com', class: 'input input__control'}) %>
-      <span class="input input__label">Mot de passe</span>
-      <%= password_field_tag :login_password, nil, {placeholder: 'Mot de passe', class: 'input input__control'} %>
+      <div class="field"> 
+      <span class="field__label">Adresse Email</span>
+        <%= text_field_tag(:email, nil, {placeholder: 'Email@mail.com', class: 'field__control'}) %>
+      </div>
+      <div class="field"> 
+        <span class="field__label">Mot de passe</span>
+        <%= password_field_tag :login_password, nil, {placeholder: 'Mot de passe', class: 'field__control'} %>
+      </div>
       <%= submit_tag("Connexion", options = {class: 'button button--connexion'}) %>
       <% end %>
     </div>
