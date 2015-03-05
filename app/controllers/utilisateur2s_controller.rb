@@ -4,21 +4,40 @@ class Utilisateur2sController < ApplicationController
   respond_to :html
 
   def index
-    @utilisateur2s = Utilisateur2.all
-    respond_with(@utilisateur2s)
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+      @utilisateur2s = Utilisateur2.all
+      respond_with(@utilisateur2s)
+    else
+      redirect_to forbidden_path :status => 403
+    end
   end
 
   def show
-    respond_with(@utilisateur2)
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+      @utilisateur2s = Utilisateur2.all
+      respond_with(@utilisateur2s)
+    else
+      redirect_to forbidden_path :status => 403
+    end
   end
 
   def new
-    @utilisateur2 = Utilisateur2.new
-    respond_with(@utilisateur2)
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+      @utilisateur2 = Utilisateur2.new
+      respond_with(@utilisateur2)
+    else
+      redirect_to forbidden_path :status => 403
+    end
   end
 
   def edit
   end
+
+  def afficherMonProfil
+    @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
+    respond_with(@utilisateur2)
+  end
+
 
 
   def create
@@ -28,8 +47,8 @@ class Utilisateur2sController < ApplicationController
     respond_with(@utilisateur2)
   end
 
-  def update  
-    if utilisateur2_params['password'] #Si c'est un utlisateur qui modifie son compte
+  def update
+    if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
       
       unless utilisateur2_params['old_password'].empty?
         
@@ -62,7 +81,7 @@ class Utilisateur2sController < ApplicationController
       end
         
      
-    else #Si c'est un admin qui change le role d'un utilisateur
+    elsif(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) #Si c'est un admin qui change le role d'un utilisateur
         @utilisateur2.update(utilisateur2_params)
         @utilisateur2.fonctionId = fonction_params
         @utilisateur2.save
@@ -74,6 +93,9 @@ class Utilisateur2sController < ApplicationController
   def destroy
     @utilisateur2.destroy
     respond_with(@utilisateur2)
+  end
+
+  def MapSite
   end
 
   private

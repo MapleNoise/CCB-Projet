@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :tags
 
     root :to => "welcome#index", :action => '/'
-    match "signup", :to => "utilisateur2#new", via: [:get, :post]
+    match "signup", :to => "utilisateur2s#new", via: [:get, :post]
     match "login", :to => "sessions#login", via: [:get, :post]
     match "logout", :to => "sessions#logout", via: [:get, :post]
     match "home", :to => "sessions#home", via: [:get, :post]
@@ -44,6 +44,9 @@ Rails.application.routes.draw do
     match "setting", :to => "sessions#setting"    , via: [:get, :post]
     match 'connexion' => 'sessions#login_attempt', via: [:get, :post]
     match 'erreur' => 'errors#erreur', via: [:get, :post], as: :forbidden
+    match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
+    match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
+    
     
 #  get 'login' => 'sessions#setting'
 
