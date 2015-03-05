@@ -3,86 +3,88 @@
 </div>
 </section>  
 <div class="produit">
-  <section class="l-section section">
+  <%#*<section class="l-section section">%>
 
-    <div class="section__content">
+    <div class="section__content section__content--sticky">
       <p id="notice">
         <%= notice %>
       </p>
 
       <div class="produit__general">
+        <span class="produit__general__title"> Description :</span>
         <img class="produit__general__image" alt="img" src="/assets/images/logo-cap-coherence.png">
-        <div class="produit__general__title">
-          <%= @produit.nom %>
-        </div>
+        <div class="produit__general__description"><%= @produit.description %></div>
+        
+        
         <% if @produit.prix > 0 %>
-          <div class="produit__general__prix">
-            <%= @produit.prix %>
-          </div>
-        <% else %>
-          <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
-          <% puts @produit.urlFichier %>
-          <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-            <!-- Ici Ajouter la vidéo -->
-            <div class="produit__general__lien--video">
+          <span class="produit__general__title"> Prix :</span>
+          <span class="produit__general__prix">
+            <%= @produit.prix %> €
+          </span>
+        <% end %>
+        </div>
+        <div class="produit__detail">
+          <div class="produit__detail__grey">
+            <div class="produit__detail__grey__title">
+            <%= @produit.nom %></div>
+        
+          <% if @produit.prix <= 0 %>
+            <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
+            <% puts @produit.urlFichier %>
+            <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+              <!-- Ici Ajouter la vidéo -->
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--video">
 
-            </div>
-            <%= link_to("Visionner", @produit.urlFichier.identifier) %>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Son" %> 
-            <!-- Ici Ajouter le son -->
-            <div class="produit__general__lien--son">
+              </div>
+              <%= link_to("Visionner", @produit.urlFichier.identifier) %>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Son" %> 
+              <!-- Ici Ajouter le son -->
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--son">
 
-            </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
-            <div class="produit__general__lien--word">
-              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
-            </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
-            <div class="produit__general__lien--excel">
-              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
-            </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
-            <div class="produit__general__lien--pdf">
-              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
-            </div>
-          <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
-            <div class="produit__general__lien--image">
-              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
-            </div>
-          <% else %> 
-            <div class="produit__general__lien--fichier">
-              <%= link_to("Télécharger", @produit.urlFichier.url ) %>
-            </div>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--word">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--excel">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--pdf">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--image">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% else %> 
+              <div class="produit__detail__grey__lien produit__detail__grey__lien--fichier">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
 
+            <% end %>
           <% end %>
 
+          </div>
 
-
-
-
-        <% end %>
-        <div class="produit__general__description-courte">
-          <%= @produit.descriptionCourte %>
         </div>
-      </div>
+
+        
+        <!--<div class="produit__general__description-courte">
+          <%= @produit.descriptionCourte %>
+        </div>-->
+      
     </div>
-  </section>
-  <section class="l-section section">
-    <div class="section__content">
-      <div class="produit__detail__description-longue">
-
-
-        <%= @produit.description %>
-
-
-
-        <p>
-          <strong>Tag :</strong>
+    <div class="section__content section__content--sticky">
+      <div class="produit__etape">
           <%= @produit.tags[0].nom %>
-        </p>
-
       </div>
     </div>
-  </section>
+    <div class="section__content section__content--sticky">
+      <div class="produit__retour">
+        <button onClick="window.history.back()" class="produit__retour__bouton"> Retour</button>
+      </div>
+    </div>
 </div>
 
