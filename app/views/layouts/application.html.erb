@@ -8,10 +8,11 @@
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://connect.soundcloud.com/sdk.js"></script>
     <script type="text/javascript" src="/assets/javascripts/filter.js"></script>
+    
   </head>
   <body>
-
     <header>
       <div class="color-bar">
         <div class="color-bar__item color-bar__item--blue"></div>
@@ -179,6 +180,7 @@
       </section>
 
       <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
+      <script type="text/javascript" src="/assets/javascripts/SoundCloud.js"></script>
       <script>
         $(document).ready(function (e) {
           $('img[usemap]').rwdImageMaps();
