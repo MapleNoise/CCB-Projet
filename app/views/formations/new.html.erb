@@ -1,4 +1,4 @@
-<div class = "sectionback__content__title">New formation</div>
+<% provide :titreH1, "New formation" %>
 
 <%= form_for(@formation , html: {class: "formulaire--back"}) do |f| %>
   <% if @formation.errors.any? %>

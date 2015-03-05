@@ -1,4 +1,4 @@
-<div class="sectionback__content__title">New chapitre</div>
+<% provide :titreH1, "New chapitre" %>
 
 <%= form_for(@chapitre, html: {class: "formulaire--back"}) do |f| %>
   <% if @chapitre.errors.any? %>
