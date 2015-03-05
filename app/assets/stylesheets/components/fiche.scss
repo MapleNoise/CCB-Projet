@@ -1,4 +1,4 @@
-.produit {
+.fiche {
   @include gridle_parent();
   position: relative; 
   &__general {
@@ -35,14 +35,6 @@
       padding-right: 30px;
       margin-top: 10px;
     }
-    
-    &__description-courte  {
-      
-      margin-bottom: 14px;
-      padding-bottom: 7px;
-      font-size: 15px;
-      color: $color-grey-black;
-    }
   }
   &__detail {
     @include gridle(4);
@@ -63,18 +55,17 @@
         font-size: 20px;
         padding: 10px;
       }
-      
-      
+     
       &__lien {
         padding: 10px;
         position: absolute;
         bottom: 0;
         text-align: center;
         vertical-align: bottom;
-        left:0;
-        right:0;
-        margin-left:auto;
-        margin-right:auto;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
         &--video {
           
         }
@@ -117,6 +108,7 @@
     border-top: $border-section-body;
     padding: 30px;
     text-align: left;
+    
     &__bouton{
       background-color: $color-grey-white;
       color: $color-black;
