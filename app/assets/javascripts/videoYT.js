@@ -1,9 +1,7 @@
-(function($)
-	{
-		$.fn.videoYT = function(url) {
+(function($) {
+		jQuery.fn.videoYT = function(url) {
 			var ID = '';
 			url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-			console.log(url)
 			if(url[2] !== undefined) {
 				ID = url[2].split(/[^0-9a-z_\-]/i);
 				ID = ID[0];
