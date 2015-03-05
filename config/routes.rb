@@ -45,6 +45,8 @@ Rails.application.routes.draw do
     match 'connexion' => 'sessions#login_attempt', via: [:get, :post]
     match 'erreur' => 'errors#erreur', via: [:get, :post], as: :forbidden
     match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
+    match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
+    
     
 #  get 'login' => 'sessions#setting'
 
