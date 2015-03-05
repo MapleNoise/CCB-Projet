@@ -1,4 +1,4 @@
-<%= form_for(@reponse) do |f| %>
+<%= form_for(@reponse, html: {class: "formulaire--back"}) do |f| %>
   <% if @reponse.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@reponse.errors.count, "error") %> prohibited this reponse from being saved:</h2>
@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :reponse %><br>
-    <%= f.text_field :reponse %>
+  <div class="field field--back">
+    <span class="field__label"><%= f.label :reponse %></span>
+    <%= f.text_field( :reponse, class: "field__control") %>
   </div>
-  <div class="field">
-    <%= f.label :estJuste %><br>
-    <%= f.check_box :estJuste %>
+  <div class="field field--checkbox field--back">
+    <span class="field__label"><%= f.label :estJuste %></span>
+    <%= f.check_box( :estJuste, class: "field__control") %>
   </div>
-  <div class="field">
-    <%= f.label :dateSuppression %><br>
-    <%= f.datetime_select :dateSuppression %>
-  </div>
+<div class="field field--back">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button button--submit"%>
   </div>
+</div>
 <% end %>

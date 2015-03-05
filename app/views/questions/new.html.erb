@@ -1,6 +1,6 @@
-<h1>New question</h1>
+<div class = "sectionback__content__title">New question</div>
 
-<%= form_for(@question) do |f| %>
+<%= form_for(@question, html: {class: "formulaire--back"}) do |f| %>
   <% if @question.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
@@ -13,21 +13,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nom %><br>
-    <%= f.text_field :nom %>
+  <div class="field field--back">
+    <span class="field__label"><%= f.label :nom %></span>
+    <%= f.text_field( :nom, class: "field__control") %>
   </div>
-  <div class="field">
+  <div class="field field--back">
+    <span class="field__label">Quizz</span>
     <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-    <%= select_tag(:quizz, options_from_collection_for_select(Quizz.all, :id, :nom)) %>
+    <%= select_tag(:quizz, options_from_collection_for_select(Quizz.all, :id, :nom), class: "field__control field__control--select") %>
   </div>
-  <div class="field">
-    <%= f.label :dateSuppression %><br>
-    <%= f.datetime_select :dateSuppression %>
-  </div>
+<div class="field field--back">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button button--submit"%>
   </div>
+</div>
 <% end %>
 
 
