@@ -1,24 +1,25 @@
 .sectionback{
-  border: 1px solid $color-grey-black;
+  @include gridle(12);
+  //@include gridle_float(right);
   border-radius: 5px;
   
-  &__entete{
+  &__entete {
+    @include gridle(12);
     background-color: $color-grey-black;
     color: $color-white;
     font-weight: bold;
     display: block;
-    width: 100%;
     height: 50px;
     padding-right: 10px;
     padding-left: 10px;
     font-size: 22px;
     
-    &__title{
+    &__title {
       @include vertical-align();
       display: inline-block;
     }
     
-    &__back{
+    &__back {
       float: right;
       display: inline-block;
       text-align: center;
@@ -31,17 +32,23 @@
       cursor: pointer;
       @include icon('arrow-left');
     }
+
+    &--menu {
+      @include gridle(12);
+    }
   }
   
-  &__content{
+  &__content {
+    @include gridle(8);
+    border: 1px solid $color-grey-black;
+    border-radius: 5px;
+    float: right;
     margin: 0 auto;
     text-align: center;
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
     border-bottom: 1px solid $color-grey-black;
     
-    &__title{
+    &__title {
       text-transform : uppercase;
       font-size: 18px;
       padding : 0 30px 5px 30px;
@@ -51,22 +58,21 @@
     }
   }
   
-  &__pied{
+  &__pied {
+    @include gridle(12);
     background-color: $color-grey-black;
     color: $color-white;
     font-weight: bold;
-    display: block;
-    width: 100%;
     height: 50px;
     padding-right: 10px;
     font-size: 13px;
     text-align: right;
     
-    &__page{
+    &__page {
       @include vertical-align();
       display: inline-block;
       
-      &__num{
+      &__num {
         color: $color-white;
         text-decoration: none;
         
@@ -75,12 +81,15 @@
           @include vertical-align();
         }
       }
-      
+    }
+
+    &--menu {
+      @include gridle(12);
     }
   }
 }
 
-.body{
+.body {
   //padding-right: 100px;
   //padding-left: 100px;
   width: 85%;
