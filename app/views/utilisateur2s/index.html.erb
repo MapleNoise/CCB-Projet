@@ -1,11 +1,36 @@
 <h1>Listing utilisateur2s</h1>
-
+<!-- <label class="input input--back input--back__label">Nom:</label>
+<input class="input input--back input--back__control">
+<label class="input input--back input--back__label">Prénom:</label>
+<input class="input input--back input--back__control">
+<label class="input input--back input--back__label">Email:</label>
+<input class="input input--back input--back__control"> -->
+<%= form_tag("utilisateur2s", :method => :get) do |f| %>
+  <div class="field">
+    <%= label_tag "Nom", "Nom", :class=>'input input--back input--back__label' %>
+    <%= text_field_tag :nom, params[:nom] , :class=>'input input--back input--back__control' %>
+  </div>
+  <div class="field">
+    <%= label_tag "Prenom", "Prénom",:class=>'input input--back input--back__label' %>
+    <%= text_field_tag :prenom, params[:prenom], :class=>'input input--back input--back__control' %>
+  </div>
+  <div class="field">
+    <%= label_tag "Email", "Email",:class=>'input input--back input--back__label' %>
+    <%= text_field_tag :email, params[:email], :class=>'input input--back input--back__control' %>
+  </div>
+  <div class="field">
+    <div class="actions">
+      <%= link_to "reset", "utilisateur2s", :class=>'button' %>
+      <%= submit_tag "Submit", :name => nil, :class=>'button button--submit' %>
+    </div>
+  </div>
+<% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nom</th>
+      <th>Prenom</th>
       <th>Email</th>
-      <th>Password digest</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +38,9 @@
   <tbody>
     <% @utilisateur2s.each do |utilisateur2| %>
       <tr>
-        <td><%= utilisateur2.nom %> <%= utilisateur2.prenom %></td>
+        <td><%= utilisateur2.nom %></td>
+        <td><%= utilisateur2.prenom %></td>
         <td><%= utilisateur2.email %></td>
-        <td><%= utilisateur2.password_digest %></td>
         <td><%= link_to 'Show', utilisateur2 %></td>
         <td><%= link_to 'Edit', edit_utilisateur2_path(utilisateur2) %></td>
         <td><%= link_to 'Destroy', utilisateur2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
