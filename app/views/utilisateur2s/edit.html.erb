@@ -25,7 +25,7 @@
 
 <div class="field field--back">  
    <div class="field__label">Fonction</div>
-	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom), :class=>'field__control') %>
+  <%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom), :class=>'field__control') %>
 </div>
 <div class="field field--back">
   <div class="actions">
