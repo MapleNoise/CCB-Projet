@@ -7,3 +7,9 @@ body .connexion {
 		padding : 15px !important;
 	}
 }
+
+body .sectionback{
+	&__content{
+		float : right
+	}
+}
