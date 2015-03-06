@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
-  before_action :test_client, only: [:new, :create, :edit, :update, :destroy]
+  before_action :test_client, only: [:new, :index, :create, :edit, :update, :destroy]
 
   respond_to :html
 

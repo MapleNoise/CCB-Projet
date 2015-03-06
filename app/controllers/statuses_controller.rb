@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   before_action :set_status, only: [:show, :edit, :update, :destroy]
-  before_action :test_admin
+  before_action :acces_juste_admin
 
   respond_to :html
 

@@ -13,6 +13,7 @@ class Utilisateur2 < ActiveRecord::Base
     confirmation: true
 
   has_one :fonctions
+  has_many :produits
 
   validates :password, length: { minimum: 8, too_short: "C'est trop court" }, on: :update, allow_blank: true
   has_secure_password
@@ -29,5 +30,9 @@ class Utilisateur2 < ActiveRecord::Base
     Fonction.find_by(:id => self.fonctionId).nom == "Client"
   end
   
+  def MapSite
+    
+  end
+
   
 end
