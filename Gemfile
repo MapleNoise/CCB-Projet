@@ -54,6 +54,4 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'carrierwave'
 
 # Special settings
-gem 'pry'
-gem 'pry-doc'
-gem 'method_source'
+gem 'htmlbeautifier'

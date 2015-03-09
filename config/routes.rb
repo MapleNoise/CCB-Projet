@@ -12,11 +12,14 @@ Rails.application.routes.draw do
 
   resources :quizzs
 
-  resources :chapitres
+  #resources :chapitres
 
-  resources :sections
+  #resources :sections
 
-  resources :formations
+  # Routes pour le workflow formations
+  resources :formations do 
+    resources :sections
+  end
 
   resources :utilisateur2s
 

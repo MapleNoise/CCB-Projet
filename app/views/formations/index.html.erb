@@ -27,11 +27,11 @@
         <td><%= link_to formation.nom, formation %></td>
         <td><%= "#{formation.prix}€" %></td>
         <% #trouver le tag qui n a pas de mere (il ne peut y en avoir qu un) %>
-        <td><%= 
+        <td><%=
             t = Tag.where(:id => formation.tag_ids).order('mere ASC').limit(1)[0]
-            link_to t.nom, t  
+            link_to t.nom, t
             %></td>
-        <td><%= 
+        <td><%=
             if formation.estPublic
               "En ligne"
             else
@@ -39,8 +39,8 @@
             end
           %></td>
         <td><%= formation.created_at %></td>
-        <td><%= 
-          if formation.datePublication 
+        <td><%=
+          if formation.datePublication
             formation.datePublication
           else
             "Pas de publication prévue"

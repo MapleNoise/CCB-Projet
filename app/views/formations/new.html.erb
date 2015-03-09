@@ -3,18 +3,16 @@
   <% if @formation.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@formation.errors.count, "error") %> prohibited this formation from being saved:</h2>
-
       <ul>
-      <% @formation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @formation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :ref %><br>
-    <%= f.text_field :ref %>
+    <%= f.text_field :ref, :readonly => true %>
   </div>
   <div class="field">
     <%= f.label :nom %><br>
@@ -26,30 +24,29 @@
   </div>
   <div class="field">
     <%= f.label :descriptionCourte %><br>
-    <%= f.text_field :descriptionCourte %>
+    <%= f.text_area :descriptionCourte %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :estPublic %><br>
-    <%= f.check_box :estPublic %>
+    Tag :
+    <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+    <%= select_tag(:tag, options_from_collection_for_select(Tag.all, :id, :nom)) %>
   </div>
-<div class="field">
-  Status :
-  <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégories possible ? -->
-  <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom)) %>
-</div>
   <div class="field">
-    <%= f.label :dateSuppression %><br>
-    <%= f.datetime_select :dateSuppression %>
+    Type produit :
+    <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+    <%= select_tag(:types_produits, options_from_collection_for_select(TypeProduit.all, :id, :nom), id: "jsTypeProduitSelect") %>
   </div>
-
+  <div class="field">
+    Status :
+    <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégories possible ? -->
+    <%= select_tag(:statusId, options_from_collection_for_select(Status.all, :id, :nom, Status.find_by(:nom => "En cours de rédaction").id)) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-
 <%= link_to 'Back', formations_path %>

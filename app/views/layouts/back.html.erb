@@ -6,8 +6,8 @@
         <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
         <%= csrf_meta_tags %>
         <%= favicon_link_tag '/favicon.png' %>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script>
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script> -->
     </head>
     <body>
         <header>
@@ -24,7 +24,7 @@
                 </a>
                 <div class="headerback__client">
                     <div class="client">
-                        <span class="client__hello">Bonjour, 
+                        <span class="client__hello">Bonjour,
                             <% u = Utilisateur2.find_by(id: session[:user_id])%>
                             <% if u -%>
                                     <%= "#{u.prenom} #{u.nom}"%>
