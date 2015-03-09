@@ -110,21 +110,21 @@
     <section class="l-section section">
       <div class="section__content section__content--wide">
         <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
-        <div class="section__content__body" style="padding: 10px;">
-          <p style="padding: 7px;">Filtrer par catégorie :</p>
-          <p style="padding: 7px;">
-            <button class="button-categorie button-categorie--formation" data-target-filter="formation"> Formation</button>
-            <button class="button-categorie button-categorie--ebook" data-target-filter="ebook"> ebook</button>
-            <button class="button-categorie button-categorie--bibliotheque" data-target-filter="bibliotheque"> bibliotheque</button>
-            <button class="button-categorie button-categorie--outil" data-target-filter="outil"> outil</button>
+        <div class="section__content__body">
+          <p>Filtrer par catégorie :</p>
+          <p>
+            <button class="button__categorie button__categorie--formation" data-target-filter="formation"> Formation</button>
+            <button class="button__categorie button__categorie--ebook" data-target-filter="ebook"> ebook</button>
+            <button class="button__categorie button__categorie--bibliotheque" data-target-filter="bibliotheque"> bibliotheque</button>
+            <button class="button__categorie button__categorie--outil" data-target-filter="outil"> outil</button>
           </p>
-          <p style="padding: 7px;">Filtrer par étape de reconversion :</p>
-          <p style="padding: 7px;">
-            <button class="button-filter button-filter--constat" data-target-filter="constat"> Le Constat </button>
-            <button class="button-filter button-filter--analyse" data-target-filter="analyse"> L'analyse </button>
-            <button class="button-filter button-filter--decision" data-target-filter="decision"> La Decision </button>
-            <button class="button-filter button-filter--action" data-target-filter="action"> L'action </button>
-            <button class="button-filter button-filter--cap" data-target-filter="cap"> Cap Cohérence </button>
+          <p>Filtrer par étape de reconversion :</p>
+          <p>
+            <button class="button__filter button__filter--constat" data-target-filter="constat"> Le Constat </button>
+            <button class="button__filter button__filter--analyse" data-target-filter="analyse"> L'analyse </button>
+            <button class="button__filter button__filter--decision" data-target-filter="decision"> La Decision </button>
+            <button class="button__filter button__filter--action" data-target-filter="action"> L'action </button>
+            <button class="button__filter button__filter--cap" data-target-filter="cap"> Cap Cohérence </button>
           </p>
         </div>
         <div class="section__content__body">
@@ -213,15 +213,15 @@
       </div>
     </section>
     
-    <div id="filters" style="display: none">
-      <div id="filter-categories">
+    <div id="filters" class="filters">
+      <div id="filterCategories">
         <input type="checkbox" value="Formation" data-filter="formation">
         <input type="checkbox" value="Outils" data-filter="outils">
         <input type="checkbox" value="Bibliothèque" data-filter="bibliotheque">
         <input type="checkbox" value="Ebook" data-filter="ebook">
       </div>
         
-      <div id="filter-etapes">
+      <div id="filterEtapes">
         <input type="checkbox" value="L'analyse" data-filter="analyse">
         <input type="checkbox" value="Le constat" data-filter="constat">
         <input type="checkbox" value="La décision" data-filter="decision">
@@ -230,7 +230,7 @@
       </div>
     </div>
 
-    <script id="produit-template" type="text/html">
+    <script id="produitTemplate" type="text/html">
         <div class="liste__item <%= liste__item__class %>">
               <a href="/produits/<%= _fid %>" class="liste__item__etiquette">
                 <img class="liste__item__etiquette__img" alt="img" src="/assets/images/logo-cap-coherence.png">
@@ -268,7 +268,7 @@
       })
 
       var FJS = FilterJS(produits, '#produits', {
-          template: '#produit-template',
+          template: '#produitTemplate',
           search: { ele: '#toto'},
           callbacks: {
             beforeRecordRender: function(produit){
@@ -319,7 +319,7 @@
 
       FJS.filter();
 
-      $('.button-filter, .button-categorie').click(function(e){
+      $('.button__filter, .button-categorie').click(function(e){
           e.preventDefault();
 
           $target = $(this).data('target-filter');
@@ -354,7 +354,7 @@
       if (etapes.length > 0)
       {
         for(var i=0;i<etapes.length;i++){
-           $('.button-filter--' + etapes[i]).trigger('click');
+           $('.button__filter--' + etapes[i]).trigger('click');
         }
       }
 

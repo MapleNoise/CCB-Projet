@@ -3,8 +3,19 @@ class Utilisateur2sController < ApplicationController
 
   respond_to :html
 
+   layout :utilisateur2s_layout
+  
+  @layout = "back"
+  
+  def utilisateur2s_layout
+    @layout
+  end
+  
+  
   def index
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+        @layout = "back"
+
+    if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       if params[:nom].present?
         @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%")
@@ -34,6 +45,8 @@ class Utilisateur2sController < ApplicationController
   end
 
   def show
+    @layout = "application"
+
     if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
@@ -43,6 +56,7 @@ class Utilisateur2sController < ApplicationController
   end
 
   def new
+    @layout = "application"
     if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
       respond_with(@utilisateur2)
@@ -52,16 +66,22 @@ class Utilisateur2sController < ApplicationController
   end
 
   def edit
+    @layout = "back"
   end
 
   def afficherMonProfil
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
   end
+  
+  def modifierUtilisateur
+    @layout = "back"
+  end
 
 
 
   def create
+    @layout = "back"
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
     @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
@@ -69,6 +89,8 @@ class Utilisateur2sController < ApplicationController
   end
 
   def update
+    @layout = "back"
+
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
       
       unless utilisateur2_params['old_password'].empty?
@@ -112,6 +134,7 @@ class Utilisateur2sController < ApplicationController
   
   
   def destroy
+    @layout = "back"
     @utilisateur2.destroy
     respond_with(@utilisateur2)
   end
