@@ -23,15 +23,21 @@
     <%= f.text_field :prenom %>
   </div>
 
-<div class="field">  
-   Fonction :
-	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom)) %>
-</div>
+<% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>
+      
+  <div class="field">  
+     Fonction :
+  	<%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom, @utilisateur2.fonctionId)) %>
+  </div>
+<% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
+<% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>     
+  <%= link_to 'Show', @utilisateur2 %> |
+  <%= link_to 'Back', utilisateur2s_path %>
+<% end %>
 
-<%= link_to 'Show', @utilisateur2 %> |
-<%= link_to 'Back', utilisateur2s_path %>

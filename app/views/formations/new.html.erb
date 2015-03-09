@@ -1,5 +1,4 @@
 <h1>New formation</h1>
-
 <%= form_for(@formation) do |f| %>
   <% if @formation.errors.any? %>
     <div id="error_explanation">
@@ -38,9 +37,9 @@
     <%= f.check_box :estPublic %>
   </div>
 <div class="field">
-	Status :
-	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-	<%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom)) %>
+  Status :
+  <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégories possible ? -->
+  <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom)) %>
 </div>
   <div class="field">
     <%= f.label :dateSuppression %><br>
