@@ -19,7 +19,7 @@
 /log/*.log
 /tmp
 
-# ignore sass 
+# ignore sass
 /app/assets/.sass-cache/**/
 node_modules/
 public/stylesheets/*
@@ -38,3 +38,9 @@ public/assets/stylesheets/application.css
 db/schema.rb
 
 public/uploads/*
+*.*~
+db/seeds.rb.BACKUP.4336.rb
+db/seeds.rb.BASE.4336.rb
+db/seeds.rb.LOCAL.4336.rb
+db/seeds.rb.REMOTE.4336.rb
+db/seeds.rb.orig

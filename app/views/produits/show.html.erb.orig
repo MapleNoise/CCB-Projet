@@ -1,0 +1,128 @@
+
+<<<<<<< HEAD
+        <h3 class="section__content__title section__content__title--page"><%= @produit.nom %></h3>
+    </div>
+  </section>
+  <section class="l-section section">
+    <div class="section__content">
+    	<p id="notice">
+				<%= notice %>
+			</p>
+     	<div class="image-produit">
+
+     	</div>
+     	<div class="description-produit">
+    		<p>
+					<strong>Description Courte :</strong>
+					<%= @produit.descriptionCourte %>
+				</p>
+=======
+<h3 class="section__content__title section__content__title--wide"><%= @produit.nom %></h3>
+</div>
+</section>  
+<div class="fiche">
+  <div class="section__content section__content--sticky">
+    <p id="notice">
+      <%= notice %>
+    </p>
+      <div class="fiche__general">
+        <span class="fiche__general__title"> Description :</span>
+        <img class="fiche__general__image" alt="img" src="/assets/images/logo-cap-coherence.png">
+        <div class="fiche__general__description"><%= @produit.description %></div>
+        
+        
+        <% if @produit.prix > 0 %>
+          <span class="fiche__general__title"> Prix :</span>
+          <span class="fiche__general__prix">
+            <%= @produit.prix %> €
+          </span>
+        <% end %>
+        </div>
+        <div class="fiche__detail">
+          <div class="fiche__detail__grey">
+            <div class="fiche__detail__grey__title">
+            <%= @produit.nom %></div>
+        
+          <% if @produit.prix <= 0 %>
+            <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
+            <% puts @produit.urlFichier %>
+            <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+              <!-- Ici Ajouter la vidéo -->
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--video">
+>>>>>>> origin/front
+
+              </div>
+              <%= link_to("Visionner", @produit.urlFichier.identifier) %>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Son" %> 
+              <!-- Ici Ajouter le son -->
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--son">
+
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--word">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--excel">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--pdf">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--image">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+            <% else %> 
+              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--fichier">
+                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+              </div>
+
+<<<<<<< HEAD
+			<p>
+				<strong>Type produit :</strong>
+				<%= TypeProduit.find_by(:id => @produit.type_produits_id).nom %>
+			</p>
+	<p>
+	  <%= image_tag(@produit.image) %>
+	</p>
+
+<p>
+	<!--
+	<% puts @produit.urlFichier %>
+	<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+	<%= link_to("Visionner", @produit.urlFichier.identifier) %>
+	<% else %> -->
+	<%= link_to("Télécharger", @produit.urlFichier.url ) %>
+	<!--
+	<% end %>
+	-->
+</p>
+=======
+            <% end %>
+          <% end %>
+
+          </div>
+
+        </div>
+
+        
+       
+      
+    </div>
+    <div class="section__content section__content--sticky">
+      <div class="fiche__etape">
+          <%= @produit.tags[0].nom %>
+      </div>
+    </div>
+  <section class="section">
+    <div class="section__content section__content--sticky">
+      <div class="fiche__retour">
+        <button onClick="window.history.back()" class="fiche__retour__bouton"> Retour</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+>>>>>>> origin/front
