@@ -27,9 +27,9 @@ public/stylesheets/*
 # Ignore Gemfile.lock
 Gemfile.lock
 
-# IDE
+# Netbeans
 /nbproject/
-.idea/
+
 
 db/development.sqlite3_test
 .project
@@ -38,9 +38,9 @@ public/assets/stylesheets/application.css
 db/schema.rb
 
 public/uploads/*
+<<<<<<< Updated upstream
 *.*~
-db/seeds.rb.BACKUP.4336.rb
-db/seeds.rb.BASE.4336.rb
-db/seeds.rb.LOCAL.4336.rb
-db/seeds.rb.REMOTE.4336.rb
-db/seeds.rb.orig
+=======
+
+.rake_tasks~
+>>>>>>> Stashed changes

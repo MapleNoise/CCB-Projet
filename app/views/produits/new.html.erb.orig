@@ -22,6 +22,13 @@
     <%= f.text_field( :ref,:readonly => true, class: "field__control")%>
   </div>
 
+<<<<<<< HEAD
+<div class="field">
+	<%= f.label :descriptionCourte, "Courte description", class: "myClass" %>
+	<br />
+	<%= f.text_area :descriptionCourte, cols: 100, rows: 5, max_length: 150 %>
+</div>
+=======
   <div class="field field--back">
     <span class="field__label"><%= f.label :nom %>
     </span>
@@ -32,11 +39,12 @@
     </span>
     <%= f.text_field( :prix, class: "field__control") %>
   </div>
+>>>>>>> origin/front
 
   <div class="field field--textarea field--back">
     <%= f.label :descriptionCourte, "Courte description", class: "field__label" %>
       
-      <%= f.text_area( :descriptionCourte, cols: 100, rows: 5, max_length: 150, class: "field__control") %>
+      <%= f.text_area( :descriptionCourte, cols: 100, rows: 5, class: "field__control") %>
     </div>
 
     <div class="field field--textarea field--back">
@@ -69,20 +77,24 @@
     </div>
     -->
 
-    <%= f.label :image, "Miniature" %>
-    <br />
-    <%= f.file_field :image %>
+<<<<<<< HEAD
+<%= f.label :image, "Miniature" %>
+<br />
+<%= f.file_field :image %>
 
-
+<div class="actions">
+	<%= f.submit %>
+=======
     <div class="field field--back">
       <span class="field__label"><%= f.label :urlFichier, "Charger le fichier"%></span>
       <%= f.file_field( :urlFichier, class: "field__control")  %>
     </div>
-    <div class="field field--back">
-        <div class="actions">
-          <%= f.submit class: "button button--submit"%>
-        </div>
+<div class="field field--back">
+    <div class="actions">
+      <%= f.submit class: "button button--submit"%>
     </div>
+>>>>>>> origin/front
+</div>
   <% end %>
 
   <%= link_to 'Back', produits_path %>

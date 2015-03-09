@@ -1,9 +1,12 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :test_client, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+  before_action :test_expert, only: [:show]
+
   layout :produits_layout
-  
+
   @layout = "back"
-  
+
   def produits_layout
     @layout
   end
@@ -11,7 +14,13 @@ class ProduitsController < ApplicationController
   # GET /produits.json
   def index
     @layout = "back"
-    @produits = Produit.all
+    if(session[:user_id] != nil)
+      if(Utilisateur2.find_by(:id => session[:user_id]).isAdmin?)
+        @produits = Produit.all
+      elsif (Utilisateur2.find_by(:id => session[:user_id]).isExpert?)
+        @produits = Produit.all.where(:utilisateur2s_id => session[:user_id])
+      end
+    end
   end
 
   def listeProduit
@@ -50,11 +59,15 @@ class ProduitsController < ApplicationController
     @tag = Tag.find_by(:id => produit_tag_params)
     @produit.tags << @tag
 
+    @produit.utilisateur2s_id = session[:user_id]
+
+    format = nil
+
     respond_to do |format|
       Produit.transaction do
         if @produit.save
           if
-          format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
+            format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
             format.json { render :show, status: :created, location: @produit }
           else
             format.html { render :new }
@@ -104,7 +117,7 @@ class ProduitsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def produit_params
-    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description, :urlFichier)
+    params.require(:produit).permit(:ref, :nom, :prix, :descriptionCourte, :description, :urlFichier, :image)
   end
 
   def produit_tag_params

@@ -1,5 +1,6 @@
 class TypeProduitsController < ApplicationController
   before_action :set_type_produit, only: [:show, :edit, :update, :destroy]
+  before_action :acces_juste_admin
 
     layout :type_produits_layout
   

@@ -13,9 +13,8 @@ class Utilisateur2sController < ApplicationController
   
   
   def index
-        @layout = "back"
-
-    if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+<<<<<<< HEAD
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       if params[:nom].present?
         @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%")
@@ -45,8 +44,6 @@ class Utilisateur2sController < ApplicationController
   end
 
   def show
-    @layout = "application"
-
     if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
@@ -56,26 +53,43 @@ class Utilisateur2sController < ApplicationController
   end
 
   def new
-    @layout = "application"
     if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
       respond_with(@utilisateur2)
     else
       redirect_to forbidden_path :status => 403
     end
+=======
+    @layout = "back"
+    @utilisateur2s = Utilisateur2.all
+    respond_with(@utilisateur2s)
+  end
+
+  def show
+    @layout = "back"
+    respond_with(@utilisateur2)
+  end
+
+  def new
+    @layout = "back"
+    @utilisateur2 = Utilisateur2.new
+    respond_with(@utilisateur2)
+>>>>>>> origin/front
   end
 
   def edit
     @layout = "back"
   end
+<<<<<<< HEAD
 
   def afficherMonProfil
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
-  end
+=======
   
   def modifierUtilisateur
     @layout = "back"
+>>>>>>> origin/front
   end
 
 
@@ -89,8 +103,7 @@ class Utilisateur2sController < ApplicationController
   end
 
   def update
-    @layout = "back"
-
+<<<<<<< HEAD
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
       
       unless utilisateur2_params['old_password'].empty?
@@ -130,6 +143,11 @@ class Utilisateur2sController < ApplicationController
         @utilisateur2.save
         respond_with(@utilisateur2)
     end
+=======
+    @layout = "back"
+    @utilisateur2.update(utilisateur2_params)
+    respond_with(@utilisateur2)
+>>>>>>> origin/front
   end
   
   

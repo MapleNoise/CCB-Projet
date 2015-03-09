@@ -1,25 +1,41 @@
 <!--Titre transféré dans la page back.html.erb -->
 <% provide :titreH1, "Liste des produits" %>
-
+<% if(@produits == nil)%>
+  <p>Aucun produit</p>
+<% else%>
 <table>
   <thead>
     <tr>
       <th>Ref</th>
       <th>Nom</th>
       <th>Prix</th>
+      <% isCurrentUserAdmin = Utilisateur2.find_by(:id => session[:user_id]).isAdmin?%>
+      <% if(isCurrentUserAdmin)%>
+        <th>Autheur</th>
+      <%end%>
       <th>Datecreation</th>
       <th>Datemodification</th>
       <th>Datesuppression</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <% puts @produits%>
   <tbody>
     <% @produits.each do |produit| %>
       <tr>
         <td><%= produit.ref %></td>
         <td><%= produit.nom %></td>
         <td><%= produit.prix %></td>
+        <% if(isCurrentUserAdmin)%>
+          <td> 
+            <% utilisateur = Utilisateur2.all.find_by(:id => produit.utilisateur2s_id) %>
+            <% if (utilisateur) %>
+              <%= utilisateur.prenom + " " + utilisateur.nom %>
+            <% else %>
+              Utilisateur inconnu <!-- Ne devrait pas arriver, mais évite un crash le cas echeant -->
+            <% end %>
+          </td>
+        <%end%>
         <td><%= produit.created_at %></td>
         <td><%= produit.updated_at %></td>
         <td><%= produit.dateSuppression %></td>
@@ -30,6 +46,7 @@
     <% end %>
   </tbody>
 </table>
+<% end%>
 
 <br>
 
