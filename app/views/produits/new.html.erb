@@ -33,13 +33,13 @@
     <%= f.text_field( :prix, class: "field__control") %>
   </div>
 
-  <div class="field field--back">
+  <div class="field field--textarea field--back">
     <%= f.label :descriptionCourte, "Courte description", class: "field__label" %>
       
       <%= f.text_area( :descriptionCourte, cols: 100, rows: 5, class: "field__control") %>
     </div>
 
-    <div class="field field--back">
+    <div class="field field--textarea field--back">
       <span class="field__label"><%= f.label :description %>
       </span>
       <%= f.text_area( :description, cols: 100, rows: 10, class: "field__control") %>
