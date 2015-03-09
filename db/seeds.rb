@@ -37,7 +37,7 @@ Utilisateur2.create(
   email: "client@gmail.com",
   password: "azerty12",
   password_confirmation: "azerty12",
-  fonctionId: Fonction.find_by(:nom => ["Client"]).id}
+  fonctionId: Fonction.find_by(:nom => ["Client"]).id},
   {nom: "Mangel",
   prenom: "Maxime",
   email: "mangel.maxime@outlook.com",
