@@ -8,15 +8,15 @@
     cursor: pointer;
     //vertical-align: middle;
     
-        &__item{
+        &__item {
             @include gridle(3);
             height: 100%;
             display: inline-block;
             line-height: 100%;
             text-align: center;
-             @include vertical-align();
-             //vertical-align: middle;
-             text-decoration: none;
+            @include vertical-align();
+            //vertical-align: middle;
+            text-decoration: none;
             
             &.is-active {
                 .menuback__item__title{
@@ -27,7 +27,7 @@
                 }
             }
             
-            &__title{
+            &__title {
                 text-align: center;
                 @include vertical-align();
                 horizontal-align: middle;
@@ -35,8 +35,50 @@
                 line-height: 18px;
                 width: 150px;
                 color: $color-black;
-                margin: 0 auto;
-             
+                margin: 0 auto;            
+            }
+        }
+
+        &--leftmenu {
+            @include gridle_parent();
+            @include gridle(3.8);
+            border: 1px solid $color-grey-black;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            height: 100%;
+
+            &__item {
+                @include gridle(12);
+                display: inline-block;
+                border-bottom : 1px solid $color-black;
+                height: 50px;
+                text-align: center;
+                text-decoration: none;
+                &:first-child {
+                    border-top : 1px solid $color-black;
+                    margin-top:28px;
+                }
+                &:last-child {
+                    margin-bottom:28px;
+                }
+
+                &.is-active {
+                    background-color: #eee;
+                }
+
+                &:hover {
+                    background-color: #898787;
+                }
+                &__title {
+                    @include gridle(12);
+                    @include vertical-align();
+                    text-align: center;
+                    horizontal-align: middle;
+                    display: inline-block;
+                    line-height: 18px;
+                    color: $color-black;
+                }
             }
         }
 }

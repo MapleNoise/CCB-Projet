@@ -1,6 +1,6 @@
-<h1>New chapitre</h1>
+<% provide :titreH1, "New chapitre" %>
 
-<%= form_for(@chapitre) do |f| %>
+<%= form_for(@chapitre, html: {class: "formulaire--back"}) do |f| %>
   <% if @chapitre.errors.any? %>
     <div class="error_explanation">
         <h2><%= pluralize(@chapitre.errors.count, "error") %> prohibited this chapitre from being saved:</h2>
@@ -13,32 +13,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-      <%= f.label :ref %><br>
-      <%= f.text_field :ref %>
+  <div class="field field--back">
+      <span class="field__label"><%= f.label :ref %></span>
+      <%= f.text_field( :ref, class: "field__control") %>
   </div>
-  <div class="field">
-      <%= f.label :nom %><br>
-      <%= f.text_field :nom %>
+  <div class="field field--back">
+      <span class="field__label"><%= f.label :nom %></span>
+      <%= f.text_field( :nom, class: "field__control") %>
   </div>
-  <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_field :description %>
+  <div class="field field--back">
+      <span class="field__label"><%= f.label :description %></span>
+      <%= f.text_area( :description, class: "field__control") %>
   </div>
-  <div class="field">
-      <%= f.label :texte %><br>
-      <%= f.text_field :texte %>
+  <div class="field field--back">
+      <span class="field__label"><%= f.label :texte %></span>
+      <%= f.text_area( :texte, class: "field__control") %>
   </div>
-  <div class="field">
+  <div class="field field--back">
+    <span class="field__label">Section </span>
       <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:section, options_from_collection_for_select(Section.all, :id, :nom)) %>
+      <%= select_tag(:section, options_from_collection_for_select(Section.all, :id, :nom), class: "field__control field__control--select") %>
   </div>
-  <div class="field">
-      <%= f.label :dateSuppression %><br>
-      <%= f.datetime_select :dateSuppression %>
-  </div>
-  <div class="actions">
-      <%= f.submit %>
+  <div class="field field--back">
+    <div class="actions">
+        <%= f.submit class: "button button--submit" %>
+    </div>
   </div>
 <% end %>
 

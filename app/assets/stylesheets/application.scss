@@ -5,9 +5,11 @@
 	'variables/grid',
 	'variables/section',
 	'variables/button',
-	'variables/input',
+	'variables/formulaire',
 	'variables/header',
-	'variables/connexion';
+	'variables/connexion',
+	'variables/liste',
+	'variables/menu';
 
 @import
 	'vendors-extended/gridle/gridle';
@@ -20,10 +22,9 @@
 
 @import 
 	'base/reset',
-  	'base/base',
-  	'base/icon',
-  	'base/responsive',
-  	'base/icon';
+	'base/base',
+	'base/responsive',
+	'base/icon';
 
 @import 
 	'layout/section',
@@ -43,9 +44,8 @@
         'components/table',
         'components/liste',
         'components/filter',
-        'components/produit',
-        'components/formulaire',
-	'components/input';
+        'components/fiche',
+        'components/formulaire';
 
 @import 
 	'shame';
