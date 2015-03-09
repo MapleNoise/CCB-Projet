@@ -1,17 +1,17 @@
 <% @special_template = capture do %>
 
-<section class="l-section section">
-  <div class="section__content section__content--wide">
-    <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
+  <section class="l-section section">
+    <div class="section__content section__content--wide">
+      <h3 class="section__content__title">Nous vous aidons dans vos recherches</h3>
       <div class="section__content__body">
         <div class="categories categories--block">
           <div class="categorie">
             <h4 class="categorie__title">Formations</h4>
             <a href="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap" class="categorie__items">
               <p class="categorie__item__random">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
               <p class="categorie__item__random">Réaliser un bilan comptable</p>
               <p class="categorie__item__random">Comment faire un bilan de compétence</p>
             </a>
@@ -43,53 +43,53 @@
         </div>
       </div>
       <div class="section__content__body">
-	      <img name="immap"src="/assets/images/schema-reconversion-vierge.png" hidefocus="true" width="914" height="585" alt="Etapes de reconversion" usemap="#etapesReconversion" class="image-responsive-schema-reconversion">
-	      <map name="etapesReconversion" class="etapes-reconversion" >
-	      	<!-- petites bulles de constat -->
-	        <area shape="circle" class="etapes-reconversion__item" coords="137,292,30" href="/listeProduit.html?categories=formation&etapes=constat" alt="Constat: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="201,331,30" href="/listeProduit.html?categories=ebook&etapes=constat" alt="Constat: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="229,399,30" href="/listeProduit.html?categories=outil&etapes=constat" alt="Constat: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="201,467,30" href="/listeProduit.html?categories=bibliotheque&etapes=constat" alt="Constat: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	      	<!-- grosse bulle de constat -->
-	        <area shape="circle" class="etapes-reconversion" coords="145,390,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=constat" alt="Le Constat" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"  />
-	      	<!-- petites bulles de analyse -->
-	        <area shape="circle" class="etapes-reconversion__item" coords="392,292,30" href="/listeProduit.html?categories=formation&etapes=analyse" alt="Analyse: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="456,331,30" href="/listeProduit.html?categories=ebook&etapes=analyse" alt="Analyse: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="484,399,30" href="/listeProduit.html?categories=outil&etapes=analyse" alt="Analyse: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="456,467,30" href="/listeProduit.html?categories=bibliotheque&etapes=analyse" alt="Analyse: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	      	<!-- grosse bulle de analyse -->
-	        <area shape="circle" class="etapes-reconversion" coords="400,395,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=analyse" alt="L'analyse" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-analyse.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
-	      	<!-- petites bulles de décision -->
-	        <area shape="circle" class="etapes-reconversion__item" coords="420,177,30" href="/listeProduit.html?categories=formation&etapes=decision" alt="Decision: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="476,130,30" href="/listeProduit.html?categories=ebook&etapes=decision" alt="Decision: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="550,136,30" href="/listeProduit.html?categories=outil&etapes=decision" alt="Decision: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="607,182,30" href="/listeProduit.html?categories=bibliotheque&etapes=decision" alt="Decision: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	      	<!-- grosse bulle de décision -->
-	        <area shape="circle" class="etapes-reconversion" coords="512,200,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=decision" alt="La décision" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-decision.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
-	      	<!-- petites bulles de action -->
-	        <area shape="circle" class="etapes-reconversion__item" coords="726,331,30" href="/listeProduit.html?categories=formation&etapes=action" alt="Action: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="755,399,30" href="/listeProduit.html?categories=ebook&etapes=action" alt="Action: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="726,467,30" href="/listeProduit.html?categories=outil&etapes=action" alt="Action: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="666,508,30" href="/listeProduit.html?categories=bibliotheque&etapes=action" alt="Action: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	      	<!-- grosse bulle de action -->
-	        <area shape="circle" class="etapes-reconversion" coords="689,420,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=action" alt="L'action" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-action.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
-	      	<!-- petites bulles de CAP -->
-	        <area shape="circle" class="etapes-reconversion__item" coords="709,87,30" href="/listeProduit.html?categories=formation&etapes=cap" alt="Cap: Formation" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="781,104,30" href="/listeProduit.html?categories=ebook&etapes=cap" alt="Cap: EBooks" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="821,166,30" href="/listeProduit.html?categories=outil&etapes=cap" alt="Cap: Outils" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	        <area shape="circle" class="etapes-reconversion__item" coords="821,236,30" href="/listeProduit.html?categories=bibliotheque&etapes=cap" alt="Cap: Biblio" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';"/>
-	      	<!-- grosse bulle de CAP -->
-	        <area shape="circle" class="etapes-reconversion" coords="748,175,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=cap" alt="CAP" onmouseover="document.images['immap'].src='/assets/images/schema-reconversion-cap.png';" onmouseout="document.images['immap'].src='/assets/images/schema-reconversion-vierge.png';" />
-	      </map>
-    	</div>
-  </div>
-</section>
+        <img name="immap"src="/assets/images/schema-reconversion-vierge.png" hidefocus="true" width="914" height="585" alt="Etapes de reconversion" usemap="#etapesReconversion" class="image-responsive-schema-reconversion">
+        <map name="etapesReconversion" class="etapes-reconversion" >
+          <!-- petites bulles de constat -->
+          <area shape="circle" class="etapes-reconversion__item" coords="137,292,30" href="/listeProduit.html?categories=formation&etapes=constat" alt="Constat: Formation" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="201,331,30" href="/listeProduit.html?categories=ebook&etapes=constat" alt="Constat: EBooks" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="229,399,30" href="/listeProduit.html?categories=outil&etapes=constat" alt="Constat: Outils" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="201,467,30" href="/listeProduit.html?categories=bibliotheque&etapes=constat" alt="Constat: Biblio" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <!-- grosse bulle de constat -->
+          <area shape="circle" class="etapes-reconversion" coords="145,390,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=constat" alt="Le Constat" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-constat.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"  />
+          <!-- petites bulles de analyse -->
+          <area shape="circle" class="etapes-reconversion__item" coords="392,292,30" href="/listeProduit.html?categories=formation&etapes=analyse" alt="Analyse: Formation" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="456,331,30" href="/listeProduit.html?categories=ebook&etapes=analyse" alt="Analyse: EBooks" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="484,399,30" href="/listeProduit.html?categories=outil&etapes=analyse" alt="Analyse: Outils" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="456,467,30" href="/listeProduit.html?categories=bibliotheque&etapes=analyse" alt="Analyse: Biblio" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Analyse.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <!-- grosse bulle de analyse -->
+          <area shape="circle" class="etapes-reconversion" coords="400,395,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=analyse" alt="L'analyse" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-analyse.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';" />
+          <!-- petites bulles de décision -->
+          <area shape="circle" class="etapes-reconversion__item" coords="420,177,30" href="/listeProduit.html?categories=formation&etapes=decision" alt="Decision: Formation" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="476,130,30" href="/listeProduit.html?categories=ebook&etapes=decision" alt="Decision: EBooks" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="550,136,30" href="/listeProduit.html?categories=outil&etapes=decision" alt="Decision: Outils" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="607,182,30" href="/listeProduit.html?categories=bibliotheque&etapes=decision" alt="Decision: Biblio" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Decision.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <!-- grosse bulle de décision -->
+          <area shape="circle" class="etapes-reconversion" coords="512,200,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=decision" alt="La décision" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-decision.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';" />
+          <!-- petites bulles de action -->
+          <area shape="circle" class="etapes-reconversion__item" coords="726,331,30" href="/listeProduit.html?categories=formation&etapes=action" alt="Action: Formation" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="755,399,30" href="/listeProduit.html?categories=ebook&etapes=action" alt="Action: EBooks" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="726,467,30" href="/listeProduit.html?categories=outil&etapes=action" alt="Action: Outils" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="666,508,30" href="/listeProduit.html?categories=bibliotheque&etapes=action" alt="Action: Biblio" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Action.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <!-- grosse bulle de action -->
+          <area shape="circle" class="etapes-reconversion" coords="689,420,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=action" alt="L'action" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-action.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';" />
+          <!-- petites bulles de CAP -->
+          <area shape="circle" class="etapes-reconversion__item" coords="709,87,30" href="/listeProduit.html?categories=formation&etapes=cap" alt="Cap: Formation" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="781,104,30" href="/listeProduit.html?categories=ebook&etapes=cap" alt="Cap: EBooks" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="821,166,30" href="/listeProduit.html?categories=outil&etapes=cap" alt="Cap: Outils" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <area shape="circle" class="etapes-reconversion__item" coords="821,236,30" href="/listeProduit.html?categories=bibliotheque&etapes=cap" alt="Cap: Biblio" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-Cap.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';"/>
+          <!-- grosse bulle de CAP -->
+          <area shape="circle" class="etapes-reconversion" coords="748,175,120" href="/listeProduit.html?categories=formation,bibliotheque,outil,ebook&etapes=cap" alt="CAP" onmouseover="document.images['immap'].src = '/assets/images/schema-reconversion-cap.png';" onmouseout="document.images['immap'].src = '/assets/images/schema-reconversion-vierge.png';" />
+        </map>
+      </div>
+    </div>
+  </section>
 
 
-<script>
-  $(document).ready(function(e) {
+  <script>
+    $(document).ready(function (e) {
       $('img[usemap]').rwdImageMaps();
-  });
-</script>
+    });
+  </script>
 
 <% end %>

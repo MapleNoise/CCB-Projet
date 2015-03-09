@@ -19,7 +19,7 @@ class FormationsController < ApplicationController
   end
 
   def show
-    @layout = "back"
+    @layout = "application"
     respond_with(@formation)
   end
 
