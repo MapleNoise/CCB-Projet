@@ -1,6 +1,6 @@
 <h1>New section</h1>
 
-<%= form_for(@section) do |f| %>
+<%= form_for @section, url: new_formation_section_path, html: { method: :post } do |f| %>
   <% if @section.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
@@ -39,4 +39,4 @@
 <% end %>
 
 
-<%= link_to 'Back', sections_path %>
+<%= link_to 'Back', "/home" %>
