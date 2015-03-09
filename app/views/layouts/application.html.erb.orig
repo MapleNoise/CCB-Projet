@@ -25,19 +25,29 @@
           <div class="header">
             <a href="/" class="header__logo"></a>
             <div class="identify">
-
-              <div class="header__client">
+<<<<<<< HEAD
+  	          <div class="header__client">
                 <% if(session[:user_id] == nil)%>
+                  <div class="expert__login">
+                    <!--<img class="expert__login__picto" alt="Picto-mail" src="assets/images/espace-client.png"> -->
+    	              <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
+    	            </div>
+    	            <div class="client__login">
+    	              <%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
+    	            </div>
+                  <% else%>
+                    <div><p>Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></p></div>
+                    <div><p><%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
+                  <% end%>
+                  
+=======
+              <div class="header__client">
                 <div class="expert__login">
                   <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
                   </div>
                   <div class="client__login">
                     <%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
                     </div>
-                    <% else%>
-                    <div><p>Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></p></div>
-                    <div><p><%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
-                  <% end%>
                   </div>
                   <div class="panel client__newsletter">
                     <img class="panel client__newsletter__picto" alt="Picto-mail" src="/assets/images/picto-mail.png">
@@ -48,8 +58,8 @@
                       <button class="button button--submit">Je m'inscris</button>
                     </form>
                   </div>
-                  
                 </div>
+>>>>>>> origin/front
               </div>
             </div>
           </div>

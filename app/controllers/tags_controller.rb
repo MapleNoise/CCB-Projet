@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :test_client
 
   layout :tags_layout
   
