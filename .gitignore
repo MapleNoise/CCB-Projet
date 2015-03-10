@@ -27,9 +27,9 @@ public/stylesheets/*
 # Ignore Gemfile.lock
 Gemfile.lock
 
-# Netbeans
+# IDE
 /nbproject/
-
+.idea/
 
 db/development.sqlite3_test
 .project

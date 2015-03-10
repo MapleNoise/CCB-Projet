@@ -2,17 +2,17 @@
 
 	@include gridle_parent();
 	border-bottom: 1px solid #d2d3d5;
-	height: 80px;
+	height: $menu-height;
 
 	&__item {
 		@include gridle_hide('small');
 		@include gridle(1.85, 'medium large');
 		display: inline-block;
-		height: 80px;
-		border-right: 1px solid #d2d3d5;
+		height: $menu-height;
+		border-right: $menu-border-right;
 		text-decoration: none;
-		color: rgb(88, 89, 91);
-		line-height: 80px;
+		color: $menu-item-color;
+		line-height: $menu-height;
 		text-align: center;
     	@include vertical-align();
 		
