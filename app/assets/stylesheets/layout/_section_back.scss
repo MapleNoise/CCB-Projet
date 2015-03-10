@@ -1,79 +1,97 @@
 .sectionback{
+  @include gridle(12);
+  //@include gridle_float(right);
+  border-radius: 5px;
+  
+  &__entete {
+    @include gridle(12);
+    background-color: $color-grey-black;
+    color: $color-white;
+    font-weight: bold;
+    display: block;
+    height: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 22px;
+    
+    &__title {
+      @include vertical-align();
+      display: inline-block;
+    }
+    
+    &__back {
+      float: right;
+      display: inline-block;
+      text-align: center;
+      background-color: $color-white;
+      color: $color-black;
+      border: 1px solid $color-white;
+      border-radius: 5px;
+      font-size: 13px;
+      @include vertical-align();
+      cursor: pointer;
+      @include icon('arrow-left');
+    }
+
+    &--menu {
+      @include gridle(12);
+    }
+  }
+  
+  &__content {
+    @include gridle(8);
     border: 1px solid $color-grey-black;
     border-radius: 5px;
+    float: right;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid $color-grey-black;
     
-    &__entete{
-        background-color: $color-grey-black;
-        color: $color-white;
-        font-weight: bold;
-        display: block;
-        width: 100%;
-        height: 50px;
-        padding-right: 10px;
-        padding-left: 10px;
-        font-size: 22px;
-        
-        &__title{
-            @include vertical-align();
-            display: inline-block;
-        }
-        
-        &__back{
-            float: right;
-            display: inline-block;
-            text-align: center;
-            background-color: $color-white;
-            color: $color-black;
-            border: 1px solid $color-white;
-            border-radius: 5px;
-            font-size: 13px;
-            @include vertical-align();
-            cursor: pointer;
-            @include icon('arrow-left');
-        }
+    &__title {
+      text-transform : uppercase;
+      font-size: 18px;
+      padding : 0 30px 5px 30px;
+      margin-bottom: 30px;
+      border-bottom: $border-section-title-type;
+      border-width: $border-section-title-width;
     }
+  }
+  
+  &__pied {
+    @include gridle(12);
+    background-color: $color-grey-black;
+    color: $color-white;
+    font-weight: bold;
+    height: 50px;
+    padding-right: 10px;
+    font-size: 13px;
+    text-align: right;
     
-    &__content{
-        margin: 0 auto;
-        text-align: center;
-        display: block;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid $color-grey-black;
-    }
-        
-    &__pied{
-        background-color: $color-grey-black;
+    &__page {
+      @include vertical-align();
+      display: inline-block;
+      
+      &__num {
         color: $color-white;
-        font-weight: bold;
-        display: block;
-        width: 100%;
-        height: 50px;
-        padding-right: 10px;
-        font-size: 13px;
-        text-align: right;
+        text-decoration: none;
         
-                &__page{
-                    @include vertical-align();
-                    display: inline-block;
-                    
-                    &__num{
-                        color: $color-white;
-                        text-decoration: none;
-                        
-                        &.is-active {
-                            font-size: 20px;
-                            @include vertical-align();
-                        }
-                    }
-                        
-                }
+        &.is-active {
+          font-size: 20px;
+          @include vertical-align();
+        }
+      }
     }
+
+    &--menu {
+      @include gridle(12);
+    }
+  }
 }
 
-.body{
-    //padding-right: 100px;
-    //padding-left: 100px;
-    width: 85%;
-    margin: 0 auto;
+.body {
+  //padding-right: 100px;
+  //padding-left: 100px;
+  width: 85%;
+  margin: 0 auto;
 }

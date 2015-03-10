@@ -3,9 +3,41 @@ class Utilisateur2sController < ApplicationController
 
   respond_to :html
 
+   layout :utilisateur2s_layout
+  
+  @layout = "back"
+  
+  def utilisateur2s_layout
+    @layout
+  end
+  
+  
   def index
+
+    @layout = "back"
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
+      if params[:nom].present?
+        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%")
+      end
+      if params[:prenom].present?
+        @utilisateur2s = Utilisateur2.where('prenom LIKE ?', params[:prenom] + "%")
+      end
+      if params[:email].present?
+        @utilisateur2s = Utilisateur2.where('email LIKE ?'  ,   params[:email] + "%")
+      end
+      if params[:nom].present? && params[:prenom].present?
+        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('prenom LIKE ?', params[:prenom] + "%")
+      end
+      if params[:nom].present? && params[:email].present?
+        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('email LIKE ?', params[:email] + "%")
+      end
+      if params[:prenom].present? && params[:email].present?
+        @utilisateur2s = Utilisateur2.where('prenom LIKE ?', params[:prenom] + "%").where('email LIKE ?', params[:email] + "%")
+      end
+      if params[:nom].present? && params[:prenom].present? && params[:email].present?
+        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('prenom LIKE ?', params[:prenom] + "%").where('email LIKE ?', params[:email] + "%")
+      end
       respond_with(@utilisateur2s)
     else
       @utilisateur2s = Utilisateur2.find_by(id: session[:user_id])
@@ -17,6 +49,7 @@ class Utilisateur2sController < ApplicationController
   def show
     if(!session[:user_id].nil?)
      if( Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+      @layout = "application"
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
     else
@@ -35,6 +68,7 @@ class Utilisateur2sController < ApplicationController
   def new
     @produit = Produit.all.find_by(:id => prod_id_params)
     ##if(session[:user_id] == nil || Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    @layout = "application"
       @utilisateur2 = Utilisateur2.new
       respond_with(@utilisateur2, @produit)
     ##else
@@ -43,14 +77,20 @@ class Utilisateur2sController < ApplicationController
   end
 
   def edit
+    @layout = "back"
   end
 
   def afficherMonProfil
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
   end
+  
+  def modifierUtilisateur
+    @layout = "back"
+  end
 
   def create
+    @layout = "back"
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
     @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
@@ -70,6 +110,8 @@ class Utilisateur2sController < ApplicationController
   end
 
   def update
+    @layout = "back"
+
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
       
       unless utilisateur2_params['old_password'].empty?
@@ -113,6 +155,7 @@ class Utilisateur2sController < ApplicationController
   
   
   def destroy
+    @layout = "back"
     @utilisateur2.destroy
     respond_with(@utilisateur2)
   end
