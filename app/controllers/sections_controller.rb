@@ -14,6 +14,7 @@ class SectionsController < ApplicationController
   end
 
   def new
+    @formation = Formation.find_by(:id => formation_params)
     @section = Section.new
     respond_with(@section)
   end
@@ -24,16 +25,16 @@ class SectionsController < ApplicationController
   def create
     @section = Section.new(section_params)
     @section.formations_id = formation_params
-    respond_to do |format|      
+    respond_to do |format|
       if @section.save
-        if 
+        if
           format.html { redirect_to @section, notice: 'La section a ete cree.' }
           format.json { render :show, status: :created, location: @produit }
         else
           format.html { render :new }
           format.json { render json: @section.errors, status: :unprocessable_entity }
-        end       
-         
+        end
+
       end
     end
   end
@@ -56,8 +57,8 @@ class SectionsController < ApplicationController
   def section_params
     params.require(:section).permit(:ref, :nom, :description, :dateSuppression)
   end
-    
+
   def formation_params
-    params.require(:formation)
+    params.require(:formation_id)
   end
 end
