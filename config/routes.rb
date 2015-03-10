@@ -1,4 +1,4 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
 
   resources :fonctions
 
@@ -21,10 +21,10 @@ Rails.application.routes.draw do
   resources :utilisateur2s
 
   resources :formats
-  
+
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
-  
+
   # Routes des ressources
 
     resources :type_produits
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     resources :fiche_produits
 
     resources :produits #, defaults: { format: 'html' }
-    
+
     resources :tags
 
     root :to => "welcome#index", :action => '/'
@@ -46,17 +46,17 @@ Rails.application.routes.draw do
     match 'erreur' => 'errors#erreur', via: [:get, :post], as: :forbidden
     match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
     match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
-    
-    
+
+
 #  get 'login' => 'sessions#setting'
 
 
-  
+
     resources :tags
-  
+
   get 'listeProduit' => 'produits#listeProduit'
   get 'utilisateur2s/:id/modifierUtilisateur' => 'utilisateur2s#modifierUtilisateur', :as => :modifier_utilisateur
- 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # resources :utilisateurs, :controller => "utilisateurs"
@@ -64,7 +64,7 @@ Rails.application.routes.draw do
   #root 'welcome#index'
 
   get 'test/style' => 'style#index'
-  
+
   get '/indexBack' => 'welcome#indexBack'
 
   # Example of regular route:
