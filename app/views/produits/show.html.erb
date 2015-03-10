@@ -25,64 +25,65 @@
         <div class="fiche__detail">
           <div class="fiche__detail__grey">
             <div class="fiche__detail__grey__title">
-            <%= @produit.nom %></div>
+            	<%= @produit.nom %>
+            </div>
         
-          <% if @produit.prix <= 0 %>
-            <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
-            <% puts @produit.urlFichier %>
-            <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-              <!-- Ici Ajouter la vidéo -->
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--video">
+          	<% if @produit.prix <= 0 %>
+	            <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
+	            <% puts @produit.urlFichier %>
+	            <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+	              <!-- Ici Ajouter la vidéo -->
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--video">
 
-              </div>
-              <%= link_to("Visionner", @produit.urlFichier.identifier) %>
-            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Son" %> 
-              <!-- Ici Ajouter le son -->
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--son">
+	              </div>
+	              <%= link_to("Visionner", @produit.urlFichier.identifier) %>
+	            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Son" %> 
+	              <!-- Ici Ajouter le son -->
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--son">
 
-              </div>
-            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--word">
-                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
-            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--excel">
-                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
-            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--pdf">
-                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
-            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--image">
-                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
-            <% else %> 
-              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--fichier">
-                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
-
-
-<p>
-	<% if(session[:user_id].nil? || Utilisateur2.find_by(:id => session[:user_id]).isClient?)  %>
-		<% if(@produit.prix > 0.0) %>
-			<%= button_to("Acheter le produit", "/achat/#{@produit.id}", params: { prod: @produit }) %>
-		<% else %>
-		<!--
-		<% puts @produit.urlFichier %>
-		<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-		<%= link_to("Visionner", @produit.urlFichier.identifier) %>
-		<% else %> -->
-		<%= link_to("Télécharger", @produit.urlFichier.url ) %>
-		<!--
-		<% end %>
-		-->
-		<% end  %>
-	<% end  %>
-
-</p>
+	              </div>
+	            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Word" %> 
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--word">
+	                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+	              </div>
+	            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--excel">
+	                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+	              </div>
+	            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--pdf">
+	                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+	              </div>
+	            <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Image" %> 
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--image">
+	                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+	              </div>
+	            <% else %> 
+	              <div class="fiche__detail__grey__lien fiche__detail__grey__lien--fichier">
+	                <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
+	              </div>
+	            <% end %>
             <% end %>
-          <% end %>
+
+
+			<p>
+				<% if(session[:user_id].nil? || Utilisateur2.find_by(:id => session[:user_id]).isClient?)  %>
+					<% if(@produit.prix > 0.0) %>
+						<%= button_to("Acheter le produit", "/achat/#{@produit.id}", params: { prod: @produit }) %>
+					<% else %>
+					<!--
+					<% puts @produit.urlFichier %>
+					<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+					<%= link_to("Visionner", @produit.urlFichier.identifier) %>
+					<% else %> -->
+					<%= link_to("Télécharger", @produit.urlFichier.url ) %>
+					<!--
+					<% end %>
+					-->
+					<% end  %>
+				<% end  %>
+
+			</p>
 
           </div>
 

@@ -66,7 +66,7 @@ class Utilisateur2sController < ApplicationController
   end
 
   def new
-    @produit = Produit.all.find_by(:id => prod_id_params)
+
     ##if(session[:user_id] == nil || Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
     @layout = "application"
       @utilisateur2 = Utilisateur2.new
