@@ -25,13 +25,10 @@ class Produit < ActiveRecord::Base
   #belongs_to :Coach
   #has_many :Chapitre
   has_one :type_produits
-  has_one :utilisateur2s
 
   # Gestion de la suppression d'un produit
   def delete!
-    if(:dateSuppression == nil)
-      update_attribute(:dateSuppression, Time.now)
-    end
+    update_attribute(:dateSuppression, Time.now)
   end
 
   # Initialise l'instance de produit pour générer une référence.

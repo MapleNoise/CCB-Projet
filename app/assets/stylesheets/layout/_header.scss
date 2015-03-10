@@ -3,17 +3,21 @@
         &__logo{
             @include gridle(7);
             @include gridle(12,small);
+            //float: left;
+            //width: 475px;
             height: 134px;
             background: url("#{$images_path}/logo-cap-coherence.png")  no-repeat;
-            background-size: $header-background-size;
+            background-size: 505px;
         }
         
     &__client{
+        //@include gridle_parent(); 
         @include gridle(12);
         text-align: right;
         padding-right: 20px;
         display: inline-block;
         float: right;
+        //width: 408px;
         position: relative;
     }
 }
@@ -26,6 +30,7 @@
         padding-right: 20px;
         display: inline-block;
         float: right;
+        //width: 408px;
         position: relative;
 }
 .client {
@@ -39,6 +44,7 @@
             position: relative;
             height: 104px;
             width: 320px;
+            //margin: 26px 20px 0px 48px;
             margin-right: 40px;
             margin-top: 26px;
             padding: 10px;
@@ -55,19 +61,20 @@
                 display: inline-block;
             }
             
-            p {
-                margin-left: 46px;
-                color: black;
-                font-size: 13px;
-                line-height: 20px;
-                margin-bottom: 0;
-                text-align: left;
-            }
+        p{
+            margin-left: 46px;
+            color: black;
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 0;
+            text-align: left;
+        }
         }
 }
 
 .expert{
         &__login{
+            //padding-right: 150px;
             @include icon('user');
             position: absolute;
             float: right;

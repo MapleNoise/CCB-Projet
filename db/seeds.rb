@@ -7,31 +7,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Création des fonctions
-Fonction.create([{nom: "Administrateur"},
-  {nom: "Expert"},
-  {nom: "Client"}])
-
 # Création d'utilisateur
+
 Utilisateur2.create(
   [{nom: "Ayoub",
   prenom: "Thomas",
   email: "ayoub@gmail.com",
   password: "azerty12",
-  password_confirmation: "azerty12",
-  fonctionId: Fonction.find_by(:nom => ["Expert"]).id},
-  {nom: "Administrateur",
-  prenom: "Administrateur",
-  email: "admin@gmail.com",
-  password: "azerty12",
-  password_confirmation: "azerty12",
-  fonctionId: Fonction.find_by(:nom => ["Administrateur"]).id},
+  password_confirmation: "azerty12"},
   {nom: "Mangel",
   prenom: "Maxime",
   email: "mangel.maxime@outlook.com",
   password: "azerty12",
-  password_confirmation: "azerty12",
-  fonctionId: Fonction.find_by(:nom => ["Client"]).id}
+  password_confirmation: "azerty12"}
   ])
 
 # Création de deux Type de fichier.
@@ -240,8 +228,7 @@ produit1 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: false,
-  utilisateur2s_id: 1)
+  estPublic: false)
 
 produit1.urlFichier = urlSender
 produit1.image = imageSender
@@ -257,8 +244,7 @@ produit2 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 1)
+  estPublic: true)
 
 produit2.urlFichier = urlSender
 produit2.image = imageSender
@@ -273,8 +259,7 @@ produit3 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 1)
+  estPublic: true)
 
 produit3.urlFichier = urlSender
 produit3.image = imageSender
@@ -289,8 +274,7 @@ produit4 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 1)
+  estPublic: true)
 
 produit4.urlFichier = urlSender
 produit4.image = imageSender
@@ -305,8 +289,7 @@ produit5 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 1)
+  estPublic: true)
 
 produit5.urlFichier = urlSender
 produit5.image = imageSender
@@ -321,8 +304,7 @@ produit6 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 2)
+  estPublic: true)
 
 produit6.urlFichier = urlSender
 produit6.image = imageSender
@@ -337,8 +319,7 @@ produit7 = Produit.new(
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
-  estPublic: true,
-  utilisateur2s_id: 2)
+  estPublic: true)
 
 produit7.urlFichier = urlSender
 produit7.image = imageSender
@@ -351,3 +332,7 @@ Status.create([{nom: "En ligne"},
   {nom: "En cours"},
   {nom: "Désactivé"}])
 
+# Création des fonctions
+Fonction.create([{nom: "Administrateur"},
+  {nom: "Expert"},
+  {nom: "Client"}])

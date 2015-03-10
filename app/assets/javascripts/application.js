@@ -1,5 +1,5 @@
 (function($){
-	$('.button__filter').on('click', function(e){
+	$('.button-filter').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
 	
@@ -7,11 +7,9 @@
 	$('#jsTypeProduitSelect').on('change', function(e){
 		var selectedType = $("#jsTypeProduitSelect option:selected ").text();
 	})
-	$('.button__categorie').on('click', function(e){
+	$('.button-categorie').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
-  //schema de reconversion
-  //$('img[usemap]').rwdImageMaps();
 
 
 
@@ -32,7 +30,7 @@
       })
 
       var FJS = FilterJS(produits, '#produits', {
-          template: '#produitTemplate',
+          template: '#produit-template',
           search: { ele: '#toto'},
           callbacks: {
             beforeRecordRender: function(produit){
@@ -78,12 +76,12 @@
           }
       });
 
-      FJS.addCriteria({field: 'categorie', ele: '#filterCategories input:checkbox'})
-      FJS.addCriteria({field: 'etape', ele: '#filterEtapes input:checkbox'})
+      FJS.addCriteria({field: 'categorie', ele: '#filter-categories input:checkbox'})
+      FJS.addCriteria({field: 'etape', ele: '#filter-etapes input:checkbox'})
 
       FJS.filter();
 
-      $('.button__filter, .button__categorie').click(function(e){
+      $('.button-filter, .button-categorie').click(function(e){
           e.preventDefault();
 
           $target = $(this).data('target-filter');
@@ -111,14 +109,14 @@
       {
         for(var i=0;i<categories.length;i++){
 
-           $('.button__categorie--' + categories[i]).trigger('click');
+           $('.button-categorie--' + categories[i]).trigger('click');
         }
       }
 
       if (etapes.length > 0)
       {
         for(var i=0;i<etapes.length;i++){
-           $('.button__filter--' + etapes[i]).trigger('click');
+           $('.button-filter--' + etapes[i]).trigger('click');
         }
       }
 

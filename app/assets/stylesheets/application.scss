@@ -3,13 +3,7 @@
 	'variables/color',
 	'variables/color-bar',
 	'variables/grid',
-	'variables/section',
-	'variables/button',
-	'variables/formulaire',
-	'variables/header',
-	'variables/connexion',
-	'variables/liste',
-	'variables/menu';
+	'variables/section';
 
 @import
 	'vendors-extended/gridle/gridle';
@@ -22,9 +16,10 @@
 
 @import 
 	'base/reset',
-	'base/base',
-	'base/responsive',
-	'base/icon';
+  	'base/base',
+  	'base/icon',
+  	'base/responsive',
+  	'base/icon';
 
 @import 
 	'layout/section',
@@ -39,13 +34,13 @@
         'components/menu_back',
 	'components/button',
 	'components/categorie',
-	'components/connexion',
 	'components/etape-reconversion',
         'components/table',
         'components/liste',
-        'components/filter',
-        'components/fiche',
-        'components/formulaire';
+	'components/input';
+
+@import
+	'pages/connexion';
 
 @import 
 	'shame';

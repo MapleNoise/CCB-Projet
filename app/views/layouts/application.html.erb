@@ -1,194 +1,193 @@
 <% 	provide(:special_template,true) %>
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= yield(:title) %></title>
+	<head>
+	  <title><%= yield(:title) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
-    <%= csrf_meta_tags %>
+	  <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
+	  <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/assets/javascripts/filter.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="color-bar">
-        <div class="color-bar__item color-bar__item--blue"></div>
-        <div class="color-bar__item color-bar__item--green"></div>
-        <div class="color-bar__item color-bar__item--yellow"></div>
-      </div>
-    </header>
+	</head>
+	<body>
 
-    <div class="section">
-      <div class="section__content section__content--wide">
-        <div class="section__content__body section__content__body--sticky">
-          <div class="header">
+		<header>
+			<div class="color-bar">
+				<div class="color-bar__item color-bar__item--blue"></div>
+				<div class="color-bar__item color-bar__item--green"></div>
+				<div class="color-bar__item color-bar__item--yellow"></div>
+			</div>
+		</header>
+
+	  <div class="section">
+	    <div class="section__content section__content--wide">
+	      <div class="section__content__body--sticky">
+	        <div class="header">
             <a href="/" class="header__logo"></a>
             <div class="identify">
-
-              <div class="header__client">
-                <% if(session[:user_id] == nil)%>
+  	          <div class="header__client">
                 <div class="expert__login">
-                  <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
-                  </div>
-                  <div class="client__login">
-                    <%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
-                    </div>
-                    <% else%>
-                    <div><p>Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></p></div>
-                    <div><p><%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
-                  <% end%>
-                  </div>
-                  <div class="panel client__newsletter">
-                    <img class="panel client__newsletter__picto" alt="Picto-mail" src="/assets/images/picto-mail.png">
-                    <p class="bold">Abonnez-vous à notre newsletter !</p>
-                    <p>5 vidéos bonus pour vous mettre sur la voie !</p>
-                    <form>
-                      <input name="email" type="email">
-                      <button class="button button--submit">Je m'inscris</button>
-                    </form>
-                  </div>
-                  
-                </div>
+                  <!--<img class="expert__login__picto" alt="Picto-mail" src="assets/images/espace-client.png"> -->
+  	              <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
+  	            </div>
+  	            <div class="client__login">
+  	               <%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
+  	            </div>
               </div>
-            </div>
-          </div>
-        </div>
+	            <div class="panel client__newsletter">
+                <img class="panel client__newsletter__picto" alt="Picto-mail" src="/assets/images/picto-mail.png">
+                <p class="bold">Abonnez-vous à notre newsletter !</p>
+                <p>5 vidéos bonus pour vous mettre sur la voie !</p>
+                <form>
+                  <input name="email" type="email">
+                  <button class="button button--submit">Je m'inscris</button>
+                </form>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 
-        <section class="section">
-          <div class="l-section section__content section__content--sticky">
-            <div class="section__content__body">
-              <nav class="menu">
-                <a href="/" class="menu__item menu__item--first is-active">
-                  <h2 class="menu__item__title menu__item__title--home"></h2>
-                </a>
-                <div class="menu__item menu__item--icon">
-                  <select class="menu__item__select" onChange="window.location.href = this.value"> 
-                    <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
-                    <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
-                    <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
-                    <option value="https://www.cap-coherence.fr/blog">Blog</option>
-                    <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
-                    <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
-                  </select>
-                </div>
-                <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
-                  <h2 class="menu__item__title">Reconversion professionnelle
-                    <span class="menu__item__body">les 5 étapes clés</span>
-                  </h2>
-                </a>
-                <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
-                  <h2 class="menu__item__title">Accompagnement
-                    <span class="menu__item__body">conseils, coaching, bilan</span>
-                  </h2>
-                </a>
-                <a href="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision" class="menu__item">
-                  <h2 class="menu__item__title">Outils
-                    <span class="menu__item__body">aide à la décision</span>
-                  </h2>
-                </a>
-                <a href="https://www.cap-coherence.fr/blog" class="menu__item">
-                  <h2 class="menu__item__title">Blog
-                    <span class="menu__item__body">informations, analyses</span>
-                  </h2>
-                </a>
-                <a href="https://www.cap-coherence.fr/cap-coherence" class="menu__item">
-                  <h2 class="menu__item__title">Cap cohérence
-                    <span class="menu__item__body">présentation, contact</span>
-                  </h2>
-                </a>
-                <a href="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap" class="menu__item menu__item--last menu__item--cart">
-                  <h2 class="menu__item__title">Nos formations</h2>
-                </a>
-              </nav>
+  <section class="section">
+    <div class="l-section section__content section__content--sticky">
+        <div class="section__content__body">
+          <nav class="menu">
+            <a href="/" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+              <select class="menu__item__select" onChange="window.location.href=this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
+                <option value="https://www.cap-coherence.fr/blog">Blog</option>
+                <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
+                <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
+              </select>
             </div>
-          </div>
-        </section> 
-        <% if @special_template %>
-          <%= @special_template %>
-        </section>
-      <% else %>
-        <section class="section">
-          <div class="l-section section__content">
-            <%= flash[:alert]  %>
-            <%= yield %>
-          </div>
-        </section>
-      <% end%>
-
-      <div class="l-footer section">
-        <div class="section__content section__content--wide">
-          <div class="section__content__body">
-            <nav class="menu">
-              <a href="/" class="menu__item menu__item--first is-active">
-                <h2 class="menu__item__title menu__item__title--home"></h2>
-              </a>
-              <div class="menu__item menu__item--icon">
-                <select class="menu__item__select" onChange="window.location.href = this.value"> 
-                  <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
-                  <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
-                  <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
-                  <option value="https://www.cap-coherence.fr/blog">Blog</option>
-                  <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
-                  <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
-                </select>
-              </div>
-              <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
-                <h2 class="menu__item__title">Reconversion professionnelle
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+              <h2 class="menu__item__title">Reconversion professionnelle
                   <span class="menu__item__body">les 5 étapes clés</span>
-                </h2>
-              </a>
-              <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
-                <h2 class="menu__item__title">Accompagnement
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
                   <span class="menu__item__body">conseils, coaching, bilan</span>
-                </h2>
-              </a>
-              <a href="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision" class="menu__item">
-                <h2 class="menu__item__title">Outils
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision" class="menu__item">
+              <h2 class="menu__item__title">Outils
                   <span class="menu__item__body">aide à la décision</span>
-                </h2>
-              </a>
-              <a href="https://www.cap-coherence.fr/blog" class="menu__item">
-                <h2 class="menu__item__title">Blog
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/blog" class="menu__item">
+              <h2 class="menu__item__title">Blog
                   <span class="menu__item__body">informations, analyses</span>
-                </h2>
-              </a>
-              <a href="https://www.cap-coherence.fr/cap-coherence" class="menu__item">
-                <h2 class="menu__item__title">Cap cohérence
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/cap-coherence" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
                   <span class="menu__item__body">présentation, contact</span>
-                </h2>
-              </a>
-              <a href="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap" class="menu__item menu__item--last menu__item--cart">
-                <h2 class="menu__item__title">Nos formations</h2>
-              </a>
-            </nav>
+              </h2>
+            </a>
+            <a href="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+        </div>
+    </div>
+  </section> 
 
-            <div class="footer">
-              <p class="footer__copyright">© Copyright Cap Cohérence</p>
-              <div class="footer__link">
-                <a href="/login" class="button--link">Espace client</a>
-                <a href="#" class="button--link">Témoignages clients</a>
-                <a href="#" class="button--link">Mentions légales</a>
-                <a href="#" class="button--link">C.G.V</a>
-              </div>
+  
+
+
+<% if @special_template %>
+      <%= @special_template %>
+  </section>
+<% else %>
+  <section class="section">
+    <div class="l-section section__content">
+      <%= flash[:alert]  %>
+      <%= yield %>
+  </div>
+  </section>
+<% end%>
+
+  <div class="l-footer section">
+    <div class="section__content section__content--wide">
+      <div class="section__content__body">
+        <nav class="menu">
+            <a href="/" class="menu__item menu__item--first is-active">
+              <h2 class="menu__item__title menu__item__title--home"></h2>
+            </a>
+            <div class="menu__item menu__item--icon">
+              <select class="menu__item__select" onChange="window.location.href=this.value"> 
+                <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
+                <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
+                <option value="https://www.cap-coherence.fr/blog">Blog</option>
+                <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
+                <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
+              </select>
             </div>
+            <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
+              <h2 class="menu__item__title">Reconversion professionnelle
+                  <span class="menu__item__body">les 5 étapes clés</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils" class="menu__item">
+              <h2 class="menu__item__title">Accompagnement
+                  <span class="menu__item__body">conseils, coaching, bilan</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision" class="menu__item">
+              <h2 class="menu__item__title">Outils
+                  <span class="menu__item__body">aide à la décision</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/blog" class="menu__item">
+              <h2 class="menu__item__title">Blog
+                  <span class="menu__item__body">informations, analyses</span>
+              </h2>
+            </a>
+            <a href="https://www.cap-coherence.fr/cap-coherence" class="menu__item">
+              <h2 class="menu__item__title">Cap cohérence
+                  <span class="menu__item__body">présentation, contact</span>
+              </h2>
+            </a>
+            <a href="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap" class="menu__item menu__item--last menu__item--cart">
+              <h2 class="menu__item__title">Nos formations</h2>
+            </a>
+          </nav>
+
+        <div class="footer">
+          <p class="footer__copyright">© Copyright Cap Cohérence</p>
+          <div class="footer__link">
+            <a href="/login" class="button--link">Espace client</a>
+            <a href="#" class="button--link">Témoignages clients</a>
+            <a href="#" class="button--link">Mentions légales</a>
+            <a href="#" class="button--link">C.G.V</a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <section>
-        <div class="color-bar">
-          <div class="color-bar__item color-bar__item--blue"></div>
-          <div class="color-bar__item color-bar__item--green"></div>
-          <div class="color-bar__item color-bar__item--yellow"></div>
-        </div>
-      </section>
+	  <section>
+	    <div class="color-bar">
+	      <div class="color-bar__item color-bar__item--blue"></div>
+	      <div class="color-bar__item color-bar__item--green"></div>
+	      <div class="color-bar__item color-bar__item--yellow"></div>
+	    </div>
+	  </section>
 
-      <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
-      <script>
-        $(document).ready(function (e) {
-          $('img[usemap]').rwdImageMaps();
-        });
-      </script>
-    </body>
-    </html>
+		<script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
+		<script>
+	    $(document).ready(function(e) {
+	        $('img[usemap]').rwdImageMaps();
+	    });
+  </script>
+	</body>
+</html>

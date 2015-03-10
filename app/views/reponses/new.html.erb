@@ -1,8 +1,8 @@
-<% provide :titreH1, "New reponse"%>
+<h1>New reponse</h1>
 
 <%= form_for(@reponse) do |f| %>
   <% if @reponse.errors.any? %>
-    <div class="error_explanation">
+    <div id="error_explanation">
       <h2><%= pluralize(@reponse.errors.count, "error") %> prohibited this reponse from being saved:</h2>
 
       <ul>
@@ -13,24 +13,25 @@
     </div>
   <% end %>
 
-  <div class="field field--back">
-    <span class="field__label"><%= f.label :reponse %></span>
-    <%= f.text_field( :reponse, class: "field__control") %>
+  <div class="field">
+    <%= f.label :reponse %><br>
+    <%= f.text_field :reponse %>
   </div>
-  <div class="field field--checkbox field--back">
-    <span class="field__label"><%= f.label :estJuste %></span>
-    <%= f.check_box( :estJuste, class: "field__control field__control--checkbox") %>
+  <div class="field">
+    <%= f.label :estJuste %><br>
+    <%= f.check_box :estJuste %>
   </div>
-<div class="field field--back">
-    <span class="field__label">Question </span>
+<div class="field">
       <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:question, options_from_collection_for_select(Question.all, :id, :nom) , class: "field__control field__control--select") %>
+      <%= select_tag(:question, options_from_collection_for_select(Question.all, :id, :nom)) %>
   </div>
-<div class="field field--back">
+  <div class="field">
+    <%= f.label :dateSuppression %><br>
+    <%= f.datetime_select :dateSuppression %>
+  </div>
   <div class="actions">
-    <%= f.submit class: "button button--submit" %>
+    <%= f.submit %>
   </div>
-</div>
 <% end %>
 
 

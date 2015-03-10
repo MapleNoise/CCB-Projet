@@ -402,6 +402,6 @@
 // Icons
 @mixin icon($name){
     @extend %icon;
-    @extend .fa-#{$name};
+    @extend .awe-#{$name};
     //@extend ".awe-#{$args}:before";
 }

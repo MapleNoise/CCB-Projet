@@ -1,51 +1,38 @@
-    <h3  class="section__content__title section__content__title--wide"><%= @formation.nom %></h3>
-  </div>
-</section> 
-<div class="fiche">
-  <div class="section__content section__content--sticky">
-    <p id="notice">
-      <%= notice %>
-    </p>
-    <div class="fiche__general">
-      <span class="fiche__general__title"> Description :</span>
-      <div class="fiche__general__description"><%= @formation.description %></div>
-    </div>
-    
-  
-    <div class="fiche__detail">
-        <div class="fiche__detail__grey">
-          <div class="fiche__detail__grey__title">
-          <%= @formation.nom %></div>
-        </div>
-      <div class="fiche__detail__grey__lien">
-        <button class="button button--submit">Lien</button>
-      </div>
-    </div>
-  
+<p id="notice"><%= notice %></p>
 
-  <%#*<strong>Ref:</strong>%>
-  <%#= @formation.ref %>
-  <%#*<strong>Date publication:</strong>%>
-  <%#= @formation.datePublication %>
-  <%#*<strong>Estpublic:</strong>%>
-  <%#= @formation.estPublic %>
-  <%#*<strong>Datesuppression:</strong>%>
-  <%#= @formation.dateSuppression %>
+<p>
+  <strong>Nom:</strong>
+  <%= @formation.nom %>
+  <strong>Ref:</strong>
+  <%= @formation.ref %>
+</p>
 
-<%#= link_to 'Edit', edit_formation_path(@formation) %> 
+<p>
+  <strong>Nom:</strong>
+  <%= @formation.nom %>
+</p>
 
-</div>
-  <div class="section__content section__content--sticky">
-    <div class="fiche__etape">
-        Etape
-    </div>
-  </div>
-  <section class="section">
-    <div class="section__content section__content--sticky">
-      <div class="fiche__retour">
-        <button onClick="window.history.back()" class="fiche__retour__bouton"> Retour</button>
-        <%#= link_to 'Back', formations_path %>
-      </div>
-    </div>
-  </section>
-</div>
+<p>
+  <strong>Descriptioncourte:</strong>
+  <%= @formation.descriptionCourte %>
+</p>
+
+<p>
+  <strong>Date publication:</strong>
+  <%= @formation.datePublication %>
+  <strong>Description:</strong>
+  <%= @formation.description %>
+</p>
+
+<p>
+  <strong>Estpublic:</strong>
+  <%= @formation.estPublic %>
+</p>
+
+<p>
+  <strong>Datesuppression:</strong>
+  <%= @formation.dateSuppression %>
+</p>
+
+<%= link_to 'Edit', edit_formation_path(@formation) %> |
+<%= link_to 'Back', formations_path %>
