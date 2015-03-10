@@ -34,24 +34,7 @@
                 <div class="color-bar__item color-bar__item--yellow"></div>
             </div>
         </header>
-
-        <div class="body">
-            <div class="headerback">
-                <a href="/" class="headerback__logo">
-                </a>
-                <div class="headerback__client">
-                    <div class="client">
-                        <span class="client__hello">Bonjour,
-                            <% u = Utilisateur2.find_by(id: session[:user_id])%>
-                            <% if u -%>
-                                    <%= "#{u.prenom} #{u.nom}"%>
-                            <% end -%></span>
-                        <a href="/logout" class="button button--link">Déconnexion</a>
-                    </div>
-                </div>
-            </div>
->>>>>>> bc86d6e5d341b4e38631aa37ba595db51711bf05
-
+        
     <div class="body">
       <div class="headerback">
         <a href="/" class="headerback__logo">

@@ -29,7 +29,6 @@
             link_to t.nom, t
             %></td>
         <td class="<%= formation.estPublic ? 'formation__status--enLigne' : 'formation__status--enAttente' %>"><%= 
-        <td><%=
             if formation.estPublic
               "En ligne"
             else
@@ -38,9 +37,6 @@
           %></td>
         <td><%= formation.created_at.strftime("%d / %m / %Y") %></td>
         <td><%= 
-          if formation.datePublication
-        <td><%= formation.created_at %></td>
-        <td><%=
           if formation.datePublication
             formation.datePublication
           else
