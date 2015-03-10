@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Mere:</strong>
-  <%= @tag.mere %>
+  <strong>Parent:</strong>
+  <%= Tag.find_by(:id => @tag.mere).nom %>
 </p>
 
 <p>

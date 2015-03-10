@@ -1,5 +1,8 @@
 class ProduitsController < ApplicationController
   before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :test_client, only: [:new, :index, :show, :create, :edit, :update, :destroy]
+  before_action :test_expert, only: [:show]
+
   layout :produits_layout
 
   @layout = "back"
@@ -11,7 +14,13 @@ class ProduitsController < ApplicationController
   # GET /produits.json
   def index
     @layout = "back"
-    @produits = Produit.all
+    if(session[:user_id] != nil)
+      if(Utilisateur2.find_by(:id => session[:user_id]).isAdmin?)
+        @produits = Produit.all
+      elsif (Utilisateur2.find_by(:id => session[:user_id]).isExpert?)
+        @produits = Produit.all.where(:utilisateur2s_id => session[:user_id])
+      end
+    end
   end
 
   def listeProduit
@@ -49,6 +58,8 @@ class ProduitsController < ApplicationController
 
     @tag = Tag.find_by(:id => produit_tag_params)
     @produit.tags << @tag
+
+    @produit.utilisateur2s_id = session[:user_id]
 
     format = nil
 

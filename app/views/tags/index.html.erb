@@ -1,4 +1,4 @@
-<h1>Listing categories</h1>
+<% provide :titreH1, "Listing categories"%>
 
 <table>
   <thead>
@@ -16,7 +16,15 @@
     <% @tags.each do |tag| %>
       <tr>
         <td><%= tag.nom %></td>
-        <td><%= tag.mere %></td>
+        <td>
+        <% t = Tag.find_by(:id => tag.mere) %>
+        <% if (t) %>
+          <%= t.nom %> 
+        <% else %> 
+          <center>-</center> 
+        <% end %>
+
+        </td>
         <td><%= tag.created_at %></td>
         <td><%= tag.updated_at %></td>
         <td><%= tag.dateSuppression %></td>

@@ -1,95 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title><%= yield(:title) %></title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
-        <%= csrf_meta_tags %>
-        <%= favicon_link_tag '/favicon.png' %>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="color-bar">
-                <div class="color-bar__item color-bar__item--blue"></div>
-                <div class="color-bar__item color-bar__item--green"></div>
-                <div class="color-bar__item color-bar__item--yellow"></div>
-            </div>
-        </header>
+  <head>
+    <title><%= yield(:title) %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag '/favicon.png' %>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="color-bar">
+        <div class="color-bar__item color-bar__item--blue"></div>
+        <div class="color-bar__item color-bar__item--green"></div>
+        <div class="color-bar__item color-bar__item--yellow"></div>
+      </div>
+    </header>
 
-        <div class="body">
-            <div class="headerback">
-                <a href="/" class="headerback__logo">
-                </a>
-                <div class="headerback__client">
-                    <div class="client">
-                        <span class="client__hello">Bonjour, 
-                            <% u = Utilisateur2.find_by(id: session[:user_id])%>
-                            <% if u -%>
-                                    <%= "#{u.prenom} #{u.nom}"%>
-                            <% end -%></span>
-                        <a href="/logout" class="button button--link">Déconnexion</a>
-                    </div>
-                </div>
-            </div>
-
-            <nav class="menuback">
-                <a href="#" class="menuback__item <%= @compte_active ? 'is-active' : '' %>">
-                    <h2 class="menuback__item__title ">Mon compte</h2>
-                </a>
-                <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
-                    <h2 class="menuback__item__title">Formations</h2>
-                </a>
-                <a href="#" class="menuback__item">
-                    <h2 class="menuback__item__title">Modules</h2>
-                </a>
-                <a href="#" class="menuback__item">
-                    <h2 class="menuback__item__title">Chapitres</h2>
-                </a>
-            </nav>
-
-            <% if @special_template %>
-              <%= @special_template %>
-          </section>
-        <% else %>
-          <section class="sectionback">
-              <div class="sectionback__entete">
-                  <span class="sectionback__entete__title"><%= yield(:titreH1) %></span>
-                  <button onClick="window.history.back()" class="sectionback__entete__back"> Retour</button>
-              </div>
-
-              <div class="sectionback__content">
-                  <%= flash[:alert]  %>
-                  <%= yield %>
-              </div>
-              <div class="sectionback__pied">
-                  <!--<span class="sectionback__pied__page">Page :
-                      <a href="#" class="sectionback__pied__page__num is-active">1</a>
-                      <a href="#" class="sectionback__pied__page__num">2</a>
-                      <a href="#" class="sectionback__pied__page__num">3</a>
-                      <a href="#" class="sectionback__pied__page__num">4</a>
-                  </span> -->
-              </div>
-          </section>
-
-        <% end%>
-
-
-    </div>
-    <section>
-        <div class="color-bar">
-            <div class="color-bar__item color-bar__item--blue"></div>
-            <div class="color-bar__item color-bar__item--green"></div>
-            <div class="color-bar__item color-bar__item--yellow"></div>
+    <div class="body">
+      <div class="headerback">
+        <a href="/" class="headerback__logo">
+        </a>
+        <div class="headerback__client">
+          <div class="client">
+            <span class="client__hello">Bonjour, 
+              <% u = Utilisateur2.find_by(id: session[:user_id])%>
+              <% if u -%>
+                <%= "#{u.prenom} #{u.nom}"%>
+              <% end -%></span>
+            <a href="/logout" class="button button--link">Déconnexion</a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
-    <script>
-      $(document).ready(function (e) {
-          $('img[usemap]').rwdImageMaps();
-      });
-    </script>
+      <nav class="menuback">
+        <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title ">Mon compte</h2>
+        </a>
+        <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Formations</h2>
+        </a>
+        <a href="/produits" class="menuback__item <%= @produit_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Produits</h2>
+        </a>
+        <a href="/chapitres" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Chapitres</h2>
+        </a>
+      </nav>
+
+      <% if @special_template %>
+        <%= @special_template %>
+      </section>
+    <% else %>
+      <section class="sectionback">
+          <nav class="menuback--leftmenu">
+            <div class="sectionback__entete sectionback__entete--menu"></div>
+            <div>
+            <a href="#" class="menuback--leftmenu__item <%= @compte_active ? 'is-active' : '' %>">
+            <h2 class="menuback--leftmenu__item__title ">Infos</h2>
+            </a>
+            <a href="/formations" class="menuback--leftmenu__item <%= @formation_menu_active ? 'is-active' : '' %>">
+              <h2 class="menuback--leftmenu__item__title">Formations</h2>
+            </a>
+            <a href="/modules" class="menuback--leftmenu__item">
+              <h2 class="menuback--leftmenu__item__title">Modules</h2>
+            </a>
+            <a href="/chapitres" class="menuback--leftmenu__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
+              <h2 class="menuback--leftmenu__item__title">Chapitres</h2>
+            </a>
+            <a href="/quizzs" class="menuback--leftmenu__item <%= @quizz_menu_active ? 'is-active' : '' %>">
+              <h2 class="menuback--leftmenu__item__title">Quizz</h2>
+            </a>
+            </div>
+            <div class="sectionback__pied sectionback__pied--menu"></div>
+          </nav>
+        
+
+        <div class="sectionback__content">
+        <div class="sectionback__entete">
+          <span class="sectionback__entete__title"><%= yield(:titreH1) %></span>
+          <button onClick="window.history.back()" class="sectionback__entete__back"> Retour</button>
+        </div>
+        
+          <%= flash[:alert]  %>
+          <%= yield %>
+        
+        <div class="sectionback__pied">
+          <!--<span class="sectionback__pied__page">Page :
+              <a href="#" class="sectionback__pied__page__num is-active">1</a>
+              <a href="#" class="sectionback__pied__page__num">2</a>
+              <a href="#" class="sectionback__pied__page__num">3</a>
+              <a href="#" class="sectionback__pied__page__num">4</a>
+          </span> -->
+        </div>
+        </div>
+      </section>
+    <% end%>
+  </div>
+  <section>
+    <div class="color-bar">
+      <div class="color-bar__item color-bar__item--blue"></div>
+      <div class="color-bar__item color-bar__item--green"></div>
+      <div class="color-bar__item color-bar__item--yellow"></div>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="/assets/javascripts/app.min.js"></script>
+  <script>
+    $(document).ready(function (e) {
+      $('img[usemap]').rwdImageMaps();
+    });
+  </script>
 </body>
 </html>

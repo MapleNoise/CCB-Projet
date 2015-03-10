@@ -10,7 +10,9 @@ class Tag < ActiveRecord::Base
   #has_many :produit, :through  => :categories_produits
   # Gestion de la suppression d'un produit
   def delete!
-    update_attribute(:dateSuppression, Time.now)
+    if(:dateSuppression == nil)
+      update_attribute(:dateSuppression, Time.now)
+    end
   end
   
 end
