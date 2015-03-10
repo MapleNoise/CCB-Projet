@@ -4,30 +4,42 @@ class Utilisateur2sController < ApplicationController
   respond_to :html
 
   def index
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
     else
-      redirect_to forbidden_path :status => 403
+      @utilisateur2s = Utilisateur2.find_by(id: session[:user_id])
+      respond_with(@utilisateur2s)
+      #redirect_to forbidden_path :status => 403
     end
   end
 
   def show
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    if(!session[:user_id].nil?)
+     if( Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
     else
-      redirect_to forbidden_path :status => 403
+      if(prod_id_params != {})
+        redirect_to produit/prod_id_params/achat
+      end
+      @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
+      respond_with(@utilisateur2)
+
+    #else
+    #  redirect_to forbidden_path :status => 403
     end
+  end
   end
 
   def new
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    @produit = Produit.all.find_by(:id => prod_id_params)
+    ##if(session[:user_id] == nil || Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
-      respond_with(@utilisateur2)
-    else
-      redirect_to forbidden_path :status => 403
-    end
+      respond_with(@utilisateur2, @produit)
+    ##else
+      ##redirect_to forbidden_path :status => 403
+    ##end
   end
 
   def edit
@@ -38,13 +50,23 @@ class Utilisateur2sController < ApplicationController
     respond_with(@utilisateur2)
   end
 
-
-
   def create
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
     @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
-    respond_with(@utilisateur2)
+
+    session[:user_id] = @utilisateur2.id
+
+    if(prod_id_params == {})
+      respond_with(@utilisateur2)
+    else
+      @prod = Produit.all.find_by(:id => prod_id_params)
+      if(!@prod.nil?)
+        redirect_to "/achat/#{@prod.id}"
+      else
+        respond_with(@utilisateur2)
+      end
+    end
   end
 
   def update
@@ -104,12 +126,19 @@ class Utilisateur2sController < ApplicationController
     end
 
     def utilisateur2_params
-      params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password)
+      params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password, :prod, :produit)
     end
 
     
     def fonction_params
       params.require(:fonctions)
     end
-    
+
+    def prod_id_params
+      if(params[:prod] == nil || params[:prod] == "")
+        {}
+      else
+        params.require(:prod)
+      end
+    end    
 end

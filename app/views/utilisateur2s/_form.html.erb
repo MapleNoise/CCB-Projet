@@ -37,6 +37,13 @@
 <div class="field">  
    <%= hidden_field_tag :fonctions, 3 %>
 </div>
+
+<% if(!params[:prod].nil?)%>
+<div class="field">  
+   <%= hidden_field_tag :prod, params[:prod] %>
+</div>
+<% end%>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -46,6 +46,8 @@ Rails.application.routes.draw do
     match 'erreur' => 'errors#erreur', via: [:get, :post], as: :forbidden
     match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
     match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
+    match "achat/:id", :to => "produits#achat", via: [:get, :post]
+    
     
     
 #  get 'login' => 'sessions#setting'

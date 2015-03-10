@@ -3,3 +3,7 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', utilisateur2s_path %>
+
+<% if(@produit != nil) %>
+	<%= @produit.nom %>
+<% end %>

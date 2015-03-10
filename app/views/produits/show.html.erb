@@ -40,13 +40,20 @@
 	</p>
 
 <p>
-	<!--
-	<% puts @produit.urlFichier %>
-	<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-	<%= link_to("Visionner", @produit.urlFichier.identifier) %>
-	<% else %> -->
-	<%= link_to("Télécharger", @produit.urlFichier.url ) %>
-	<!--
-	<% end %>
-	-->
+	<% if(session[:user_id].nil? || Utilisateur2.find_by(:id => session[:user_id]).isClient?)  %>
+		<% if(@produit.prix > 0.0) %>
+			<%= button_to("Acheter le produit", "/achat/#{@produit.id}", params: { prod: @produit }) %>
+		<% else %>
+		<!--
+		<% puts @produit.urlFichier %>
+		<% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+		<%= link_to("Visionner", @produit.urlFichier.identifier) %>
+		<% else %> -->
+		<%= link_to("Télécharger", @produit.urlFichier.url ) %>
+		<!--
+		<% end %>
+		-->
+		<% end  %>
+	<% end  %>
+
 </p>

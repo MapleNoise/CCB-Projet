@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
   end
 
   def login_attempt
-
     authorized_user = Utilisateur2.find_by(email: params[:email].downcase)
     if authorized_user
       authorized_user = authorized_user.authenticate(params[:login_password])
@@ -17,7 +16,13 @@ class SessionsController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.nom}"
-      redirect_to root_path
+
+      if(prod_id_params != {})
+        redirect_to "/achat/#{prod_id_params}"
+      else
+        redirect_to root_path
+      end
+
     else
       flash[:notice] = "Invalid Username or Password"
       flash[:color]= "invalid"
@@ -29,4 +34,12 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to root_path
   end
+
+  def prod_id_params
+      if(params[:prod] == nil || params[:prod] == "")
+        {}
+      else
+        params.require(:prod)
+      end
+    end    
 end
