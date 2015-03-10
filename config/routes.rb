@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   #root 'welcome#index'
 
   get 'test/style' => 'style#index'
+  
+  get '/indexBack' => 'welcome#indexBack'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

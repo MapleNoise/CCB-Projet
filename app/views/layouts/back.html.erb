@@ -35,14 +35,14 @@
       </div>
 
       <nav class="menuback">
-        <a href="#" class="menuback__item <%= @compte_active ? 'is-active' : '' %>">
+        <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title ">Mon compte</h2>
         </a>
         <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Formations</h2>
         </a>
-        <a href="/modules" class="menuback__item">
-          <h2 class="menuback__item__title">Modules</h2>
+        <a href="/produits" class="menuback__item <%= @produit_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Produits</h2>
         </a>
         <a href="/chapitres" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Chapitres</h2>
