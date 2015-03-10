@@ -1,0 +1,16 @@
+.description-produit p {
+	margin-bottom: 14px;
+
+}
+.image-produit{
+	@include gridle(8, large);
+}
+.image-produit img{
+	width: 100%;
+	height: auto;
+}
+.detail-produit{
+	@include gridle(4, large);
+	height: 50px;
+	border: 1px solid #cfcfcf;
+}

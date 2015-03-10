@@ -2,14 +2,8 @@ body .input__control{
 	padding : 0.5em;
 }
 
-body .connexion {
-	&__content__body{
-		padding : 15px !important;
-	}
-}
-
-body .sectionback{
-	&__content{
-		float : right
+body .section--connexion{
+	.section__content__body{
+		padding : 15px;
 	}
 }

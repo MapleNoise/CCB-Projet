@@ -1,8 +1,7 @@
 class FormationsController < ApplicationController
   before_action :set_formation, only: [:show, :edit, :update, :destroy]
-  before_action :test_client, only: [:new, :show, :edit, :update, :destroy]
 
-  layout :formations_layout
+   layout :formations_layout
   
   @layout = "back"
   
@@ -19,7 +18,7 @@ class FormationsController < ApplicationController
   end
 
   def show
-    @layout = "application"
+    @layout = "back"
     respond_with(@formation)
   end
 

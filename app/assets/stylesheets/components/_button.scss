@@ -1,25 +1,20 @@
+
 .button {
     border-radius: 2px;
-    border-color: $color-grey;
+    border-color: #777;
     text-align: center;
     background-color: $color-black;
     color: $color-white;
     font-weight: 600;
-    height: $button-height;
+    height: 40px;
     padding: 8px 18px;
-    font-size: $button-font-size;
+    font-size: 15px;
     border: none;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
     &:hover{
         background-color: $color-grey;
-    }
-
-    &--connexion{
-        display: block;
-        margin-bottom: 10px;
-        width: 100%;
     }
   
     &--submit {
@@ -39,7 +34,7 @@
         background-color: $color-black;
         color: $color-white;
         font-weight: 600;
-        height: $button-height;
+        height: 40px;
         padding: 10px 50px 10px 20px;
         font-size: 18px;
         text-transform: uppercase;
@@ -55,12 +50,12 @@
         padding: 7px 20px;
         margin: 20px 0;
         text-transform: uppercase;
-        font : {  
-            weight: normal;
-            size: 1em;
-        }
+        font-weight: normal;
+        padding: 7px 20px;
+        margin: 20px 0;
+        font-size: 1em;
         &:hover{
-            background-color: $color-white;
+                background-color: $color-white;
         }
     }
     
@@ -70,7 +65,8 @@
         text-transform: none;
         background-color: $color-white;
         font-weight: normal;
-        padding: 0 20px 0 0;
+        padding: 0 0 0 0;
+        padding-right: 20px;
         &:hover{
             background-color: $color-white;
             color: $color-grey;
@@ -78,7 +74,7 @@
         }
     }
 
-    &__filter{
+    &-filter{
         @extend .button;
         @include transition(1s);
         background-color: white;
@@ -128,16 +124,18 @@
         }
     }
 
-    &__categorie{
+    &-categorie{
+        // @include gridle_parent();
+        // @include gridle(1);
         @extend .button;
         border : none;
         outline: none;
         text-transform: uppercase;
-        background-color: $color-white;
+        background-color: white;
         padding-left: 46px;
         text-align: center;
-        font-size: $button-font-size;     
-        color : $color-black;
+        font-size: 15px;     
+        color : black;
         &:hover{
             background-color: #eee;
         }
@@ -147,25 +145,26 @@
         &--formation{
             background: url("#{$images_path}/icone_formation.png") no-repeat;
             background-position: left center;
-            background-size: $button-categorie-background-size;
+            background-size: 36px;
             height: 54px;      
         }
         &--ebook{
             background: url("#{$images_path}/icone_ebook.png") no-repeat;
-            background-size: $button-categorie-background-size;
+            background-size: 36px;
             background-position: left center;            
             height: 54px; 
         }
         &--bibliotheque{
             background: url("#{$images_path}/icone_bibliotheque.png") no-repeat;
-            background-size: $button-categorie-background-size;
+            background-size: 36px;
             background-position: left center;            
             height: 54px;
         }
         &--outil{
             background: url("#{$images_path}/icone_outil.png") no-repeat;
-            background-size: $button-categorie-background-size;
+            background-size: 36px;
             background-position: left center;
             height: 54px;
         }
-    }}
+    }
+}

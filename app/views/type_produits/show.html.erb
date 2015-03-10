@@ -6,10 +6,10 @@
 </p>
 
 <p>
-  <%= pluralize(@type_produit.extension_fichiers.count, "Extension") %>
-  <% @type_produit.extension_fichiers.each do |ext| %>
-  <li><%= ext.extension %></li>
-<% end %>
+	<%= pluralize(@type_produit.extension_fichiers.count, "Extension") %>
+	<% @type_produit.extension_fichiers.each do |ext| %>
+	<li><%= ext.extension %></li>
+	<% end %>
 </p>
 
 <%= link_to 'Edit', edit_type_produit_path(@type_produit) %> |
