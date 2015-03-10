@@ -18,22 +18,13 @@ class Utilisateur2sController < ApplicationController
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       if params[:nom].present?
-        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%")
+        @utilisateur2s = @utilisateur2s.where('nom LIKE ?', '%' + params[:nom].downcase + '%')
       end
       if params[:prenom].present?
-        @utilisateur2s = Utilisateur2.where('prenom LIKE ?', params[:prenom] + "%")
+        @utilisateur2s = @utilisateur2s.where('prenom LIKE ?', '%' + params[:prenom].downcase + '%')
       end
       if params[:email].present?
-        @utilisateur2s = Utilisateur2.where('email LIKE ?'  ,   params[:email] + "%")
-      end
-      if params[:nom].present? && params[:prenom].present?
-        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('prenom LIKE ?', params[:prenom] + "%")
-      end
-      if params[:nom].present? && params[:email].present?
-        @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('email LIKE ?', params[:email] + "%")
-      end
-      if params[:prenom].present? && params[:email].present?
-        @utilisateur2s = Utilisateur2.where('prenom LIKE ?', params[:prenom] + "%").where('email LIKE ?', params[:email] + "%")
+        @utilisateur2s = @utilisateur2s.where('email LIKE ?', '%' + params[:email].downcase + '%')
       end
       if params[:nom].present? && params[:prenom].present? && params[:email].present?
         @utilisateur2s = Utilisateur2.where('nom LIKE ?', params[:nom] + "%").where('prenom LIKE ?', params[:prenom] + "%").where('email LIKE ?', params[:email] + "%")
