@@ -27,7 +27,6 @@ class FormationsController < ApplicationController
     @layout = "back"
     @formation = Formation.new
     @formation.init!
-    respond_with(@formation)
   end
 
   def edit
