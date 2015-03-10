@@ -348,6 +348,5 @@ produit7.save
 
 # Création des status
 Status.create([{nom: "En ligne"},
-  {nom: "En cours"},
+  {nom: "En cours de rédaction"},
   {nom: "Désactivé"}])
-
