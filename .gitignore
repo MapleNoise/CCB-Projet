@@ -39,8 +39,4 @@ db/schema.rb
 
 public/uploads/*
 *.*~
-db/seeds.rb.BACKUP.4336.rb
-db/seeds.rb.BASE.4336.rb
-db/seeds.rb.LOCAL.4336.rb
-db/seeds.rb.REMOTE.4336.rb
-db/seeds.rb.orig
+*.orig
