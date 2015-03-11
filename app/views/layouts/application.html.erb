@@ -107,8 +107,9 @@
         <% if @special_template %>
           <section class="section">
           <div class="l-section section__content">
-            <%= flash[:notice]  %>
-            <%= yield %>
+            <div class="error_explanation">
+            <%= flash[:alert]  %>
+            </div>
           </div>
         </section>
           <%= @special_template %>

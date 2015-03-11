@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         redirect_to "/indexBack"
       end
     else
-      flash[:alert] = "Invalid Username or Password"
+      flash[:alert] = "Cette combinaison email/mot de passe n'est pas valide"
       redirect_to login_path
     end
   end
