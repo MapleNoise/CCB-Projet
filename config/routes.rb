@@ -47,7 +47,7 @@ Rails.application.routes.draw do
     match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
     match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
     
-    
+    get "/formations/:id/hierarchie" => "formations#hierarchie"
 #  get 'login' => 'sessions#setting'
 
 
@@ -62,8 +62,6 @@ Rails.application.routes.draw do
   # resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
   #root 'welcome#index'
-
-  get 'test/style' => 'style#index'
   
   get '/indexBack' => 'welcome#indexBack'
 
