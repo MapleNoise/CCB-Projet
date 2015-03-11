@@ -20,7 +20,7 @@ class SectionsController < ApplicationController
   end
 
   def show
-    @layout = "back"
+    @layout = "application"
     respond_with(@section)
   end
 
