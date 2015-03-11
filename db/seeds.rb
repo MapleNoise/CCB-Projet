@@ -103,7 +103,12 @@ Tag.create([
   {nom: "Bibliothèque", mere: Tag.find_by(:nom => "L'analyse").id},
   {nom: "Bibliothèque", mere: Tag.find_by(:nom => "La décision").id},
   {nom: "Bibliothèque", mere: Tag.find_by(:nom => "L'action").id},
-  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id}
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id},
+  {nom: "Outil", mere: Tag.find_by(:nom => "Le constat").id},
+  {nom: "Outil", mere: Tag.find_by(:nom => "L'analyse").id},
+  {nom: "Outil", mere: Tag.find_by(:nom => "La décision").id},
+  {nom: "Outil", mere: Tag.find_by(:nom => "L'action").id},
+  {nom: "Outil", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id}
   ])
 
 form1 = Formation.create(
@@ -276,7 +281,7 @@ produit1.save
 
 produit2 = Produit.new(
   ref: "90ba14f781d12264",
-  nom: "Outil Ananlyse Word 1",
+  nom: "Outil Analyse Word 1",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
@@ -340,7 +345,7 @@ produit5.save
 
 produit6 = Produit.new(
   ref: "90ba1ddfg1ty2464",
-  nom: "Outil Analyse Word 1",
+  nom: "Outil Analyse Word 2",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
