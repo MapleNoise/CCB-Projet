@@ -76,10 +76,22 @@ Tag.create([{nom: "Le constat", mere: nil},
   {nom: "Cap vers la Cohérence", mere: nil}])
 
 # Création de quelques "sous-catégories"
-Tag.create([{nom: "Formation", mere: Tag.find_by(:nom => "Le constat").id},
-  {nom: "Quizz", mere: Tag.find_by(:nom => "Le constat").id},
-  {nom: "Quizz", mere: Tag.find_by(:nom => "L'analyse").id},
-  {nom: "Ebook", mere: Tag.find_by(:nom => "La décision").id}
+Tag.create([
+  {nom: "Formation", mere: Tag.find_by(:nom => "Le constat").id},
+  {nom: "Formation", mere: Tag.find_by(:nom => "L'analyse").id},
+  {nom: "Formation", mere: Tag.find_by(:nom => "La décision").id},
+  {nom: "Formation", mere: Tag.find_by(:nom => "L'action").id},
+  {nom: "Formation", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "Le constat").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "L'analyse").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "La décision").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "L'action").id},
+  {nom: "Ebook", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id},
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "Le constat").id},
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "L'analyse").id},
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "La décision").id},
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "L'action").id},
+  {nom: "Bibliothèque", mere: Tag.find_by(:nom => "Cap vers la Cohérence").id}
   ])
 
 form1 = Formation.create(
@@ -91,7 +103,7 @@ form1 = Formation.create(
     prix: 10.0
   )
 
-  form1.tags << Tag.find_by(:nom => "Le constat")
+form1.tags << Tag.find_by(:nom => "Le constat")
 form1.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
 
 form2 = Formation.create(
@@ -104,7 +116,7 @@ form2 = Formation.create(
   )
 
 form2.tags << Tag.find_by(:nom => "L'analyse")
-form2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form2.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "L'analyse"))
 
 form3 = Formation.create(
     ref: "form36f781d79464",
@@ -115,8 +127,8 @@ form3 = Formation.create(
     prix: 109.0
   )
 
-form3.tags << Tag.find_by(:nom => "L'analyse")
-form3.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form3.tags << Tag.find_by(:nom => "Le constat")
+form3.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
 
 form5 = Formation.create(
     ref: "form56f781d79464",
@@ -127,8 +139,8 @@ form5 = Formation.create(
     prix: 109.0
   )
 
-form5.tags << Tag.find_by(:nom => "L'analyse")
-form5.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form5.tags << Tag.find_by(:nom => "L'action")
+form5.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "L'action"))
 
 form6 = Formation.create(
     ref: "form66f781d79464",
@@ -140,7 +152,7 @@ form6 = Formation.create(
   )
 
 form6.tags << Tag.find_by(:nom => "L'analyse")
-form6.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form6.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "L'analyse"))
 
 form7 = Formation.create(
     ref: "form7f781d79464",
@@ -151,8 +163,8 @@ form7 = Formation.create(
     prix: 109.0
   )
 
-form7.tags << Tag.find_by(:nom => "L'analyse")
-form7.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form7.tags << Tag.find_by(:nom => "L'action")
+form7.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "L'action"))
 
 form8 = Formation.create(
     ref: "90ba56f781d79464",
@@ -163,8 +175,8 @@ form8 = Formation.create(
     prix: 109.0
   )
 
-form8.tags << Tag.find_by(:nom => "L'analyse")
-form8.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form8.tags << Tag.find_by(:nom => "Cap vers la Cohérence")
+form8.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Cap vers la Cohérence"))
 
 form9 = Formation.create(
     ref: "90baform91d79464",
@@ -175,8 +187,8 @@ form9 = Formation.create(
     prix: 109.0
   )
 
-form9.tags << Tag.find_by(:nom => "L'analyse")
-form9.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form9.tags << Tag.find_by(:nom => "Le constat")
+form9.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
 
 form10 = Formation.create(
     ref: "form10f781d79464",
@@ -187,8 +199,8 @@ form10 = Formation.create(
     prix: 109.0
   )
 
-form10.tags << Tag.find_by(:nom => "L'analyse")
-form10.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form10.tags << Tag.find_by(:nom => "La décision")
+form10.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "La décision"))
 
 form11 = Formation.create(
     ref: "form11f781d79464",
@@ -199,8 +211,8 @@ form11 = Formation.create(
     prix: 109.0
   )
 
-form11.tags << Tag.find_by(:nom => "L'analyse")
-form11.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form11.tags << Tag.find_by(:nom => "Le constat")
+form11.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Le constat"))
 
 form12 = Formation.create(
     ref: "form12f781d79464",
@@ -211,8 +223,8 @@ form12 = Formation.create(
     prix: 109.0
   )
 
-form12.tags << Tag.find_by(:nom => "L'analyse")
-form12.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form12.tags << Tag.find_by(:nom => "La décision")
+form12.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "La décision"))
 
 form13 = Formation.create(
     ref: "form13f781d79464",
@@ -223,8 +235,8 @@ form13 = Formation.create(
     prix: 109.0
   )
 
-form13.tags << Tag.find_by(:nom => "L'analyse")
-form13.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+form13.tags << Tag.find_by(:nom => "Cap vers la Cohérence")
+form13.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "Cap vers la Cohérence"))
 
 urlSender = FichierGeneralUploader.new
 urlSender.cache!(File.open(Dir.pwd + "/Lorem_ipsum_dolor_sit_amet.docx"))
@@ -235,9 +247,9 @@ imageSender.cache!(File.open(Dir.pwd + "/Bonsai.jpg"))
 # Création de produits
 produit1 = Produit.new(
   ref: "80ba14f781d79164",
-  nom: "Produit 1",
+  nom: "Formation Constat Excel 1",
   prix: 10.0,
-  type_produits_id: 2,
+  type_produits_id: 1,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: false,
@@ -252,7 +264,7 @@ produit1.save
 
 produit2 = Produit.new(
   ref: "90ba14f781d12264",
-  nom: "Produit 2",
+  nom: "Outil Ananlyse Word 1",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
@@ -263,14 +275,14 @@ produit2 = Produit.new(
 produit2.urlFichier = urlSender
 produit2.image = imageSender
 produit2.tags << Tag.find_by(:nom => "L'analyse")
-produit2.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit2.tags << Tag.find_by(:nom => "Outil", :mere => Tag.find_by(:nom => "L'analyse"))
 produit2.save
 
 produit3 = Produit.new(
   ref: "90ba14f231d12464",
-  nom: "Produit 3",
+  nom: "Ebook Décision Excel 1",
   prix: 10.0,
-  type_produits_id: 2,
+  type_produits_id: 1,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
@@ -284,7 +296,7 @@ produit3.save
 
 produit4 = Produit.new(
   ref: "90ba14f7jkze2464",
-  nom: "Produit 4",
+  nom: "Formation Action Word 1",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
@@ -295,14 +307,14 @@ produit4 = Produit.new(
 produit4.urlFichier = urlSender
 produit4.image = imageSender
 produit4.tags << Tag.find_by(:nom => "L'action")
-produit4.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit4.tags << Tag.find_by(:nom => "Formation", :mere => Tag.find_by(:nom => "L'action"))
 produit4.save
 
 produit5 = Produit.new(
   ref: "90baa4ze81d12464",
-  nom: "Produit 5",
+  nom: "Bibliothèque Cap Image 1",
   prix: 10.0,
-  type_produits_id: 2,
+  type_produits_id: 3,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
@@ -311,12 +323,12 @@ produit5 = Produit.new(
 produit5.urlFichier = urlSender
 produit5.image = imageSender
 produit5.tags << Tag.find_by(:nom => "Cap vers la Cohérence")
-produit5.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit5.tags << Tag.find_by(:nom => "Bibliothèque", :mere => Tag.find_by(:nom => "Cap vers la Cohérence"))
 produit5.save
 
 produit6 = Produit.new(
   ref: "90ba1ddfg1ty2464",
-  nom: "Produit 6",
+  nom: "Outil Analyse Word 1",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
@@ -327,12 +339,12 @@ produit6 = Produit.new(
 produit6.urlFichier = urlSender
 produit6.image = imageSender
 produit6.tags << Tag.find_by(:nom => "L'analyse")
-produit6.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit6.tags << Tag.find_by(:nom => "Outil", :mere => Tag.find_by(:nom => "L'analyse"))
 produit6.save
 
 produit7 = Produit.new(
   ref: "90ba1ddfg1d9a464",
-  nom: "Produit 7",
+  nom: "Ebook Analyse Word 1",
   prix: 10.0,
   type_produits_id: 2,
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
@@ -343,7 +355,7 @@ produit7 = Produit.new(
 produit7.urlFichier = urlSender
 produit7.image = imageSender
 produit7.tags << Tag.find_by(:nom => "L'analyse")
-produit7.tags << Tag.find_by(:nom => "Quizz", :mere => Tag.find_by(:nom => "L'analyse"))
+produit7.tags << Tag.find_by(:nom => "Ebook", :mere => Tag.find_by(:nom => "L'analyse"))
 produit7.save
 
 # Création des status
