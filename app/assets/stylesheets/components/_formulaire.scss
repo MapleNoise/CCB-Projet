@@ -22,6 +22,10 @@
     .buttons-filter{
       @include gridle(12);
     }
+    .p__info{
+      text-align: left;
+      padding: 5px;
+    }
   }
 }
 
