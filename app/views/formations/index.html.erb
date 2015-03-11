@@ -1,6 +1,5 @@
-<hr>
-<%= link_to 'Creer une formation', new_formation_path %>
-<hr>
+
+<%= link_to 'Creer une formation', new_formation_path , :class =>"button button__back button__back--formation" %>
 <%@formations = Formation.all.paginate(:page => params[:page])%>
 <% @formation_menu_active = true %>
 <% provide :titreH1, "Liste des formations" %>
@@ -8,7 +7,6 @@
 <table>
   <thead>
     <tr>
-      <th>Ref</th>
       <th>Nom</th>
       <th>Prix</th>
       <th>Catégorie</th>
@@ -23,7 +21,6 @@
   <tbody>
     <% @formations.each do |formation| %>
       <tr>
-        <td><%= formation.ref %></td>
         <td><%= link_to formation.nom, formation %></td>
         <td><%= "#{formation.prix}€" %></td>
         <% #trouver le tag qui n a pas de mere (il ne peut y en avoir qu un) %>
@@ -31,14 +28,14 @@
             t = Tag.where(:id => formation.tag_ids).order('mere ASC').limit(1)[0]
             link_to t.nom, t  
             %></td>
-        <td><%= 
+        <td class="<%= formation.estPublic ? 'formation__status--enLigne' : 'formation__status--enAttente' %>"><%= 
             if formation.estPublic
               "En ligne"
             else
               "En attente"
             end
           %></td>
-        <td><%= formation.created_at %></td>
+        <td><%= formation.created_at.strftime("%d / %m / %Y") %></td>
         <td><%= 
           if formation.datePublication 
             formation.datePublication
@@ -46,8 +43,8 @@
             "Pas de publication prévue"
           end
           %></td>
-        <td><%= link_to 'EDIT_IMAGE', edit_formation_path(formation) %></td>
-        <td><%= link_to 'DELETE_IMAGE', formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to image_tag('icone_edition.png'), edit_formation_path(formation) %></td>
+        <td><%= link_to image_tag('icone_corbeille.png'), formation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -55,11 +52,11 @@
 
 <hr>
 
-
   <div class="digg_pagination">
     <p>Page :<%= will_paginate @formations, :container => false %></p>
   </div>
 
 <br>
 
-<%= link_to 'New Formation', new_formation_path %>
+<!-- # <%= link_to 'New Formation', new_formation_path %>
+ -->

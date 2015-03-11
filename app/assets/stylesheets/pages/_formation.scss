@@ -1,0 +1,37 @@
+.formation {
+
+	&__title{
+		text-align: left;
+		font-size: 24px;
+		padding : 15px 0px 5px 30px;
+		margin: 60px 0 30px 0;
+      	border-bottom: 1px solid grey;
+	}
+
+	&__status {
+
+		&--enLigne {
+			background : green;
+		}
+		&--enAttente {
+			background : orange;
+		}
+	}
+
+	&__liste {
+		@include gridle(6);
+		background : $color-grey-white;
+		height : 300px;
+
+		&--select{
+			@include gridle_parent();
+			@include gridle(5);
+		}
+	}
+
+	&__edit{
+		@include gridle(6);
+		padding-left : 30px;
+	}
+}
+
