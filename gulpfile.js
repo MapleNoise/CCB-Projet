@@ -74,10 +74,10 @@ gulp.task('js', function() {
     };
 
 
-    return gulp.src([src.javascripts + 'rails.js', src.javascripts + 'jquery.rwdImageMaps.js', src.javascripts + '**/*.js'])
+    return gulp.src([src.javascripts + 'vendor/*.js', src.javascripts + 'jquery-plugins/*.js', src.javascripts + '*.js'])
         .pipe($.plumber({errorHandler: onError }))
         .pipe($.concat('app.min.js'))
-        .pipe($.uglify())
+        // .pipe($.uglify())
         .pipe(gulp.dest(dest.javascripts))
         .pipe($.notify({ // Add gulpif here
            title: 'Gulp',

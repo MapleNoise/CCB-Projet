@@ -7,8 +7,6 @@
     <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script> -->
-    <script type="text/javascript" src="/assets/javascripts/filter.js"></script>
   </head>
   <body>
     <header>
@@ -105,13 +103,15 @@
           </div>
         </section> 
         <% if @special_template %>
-          <section class="section">
-          <div class="l-section section__content">
-            <div class="error_explanation">
-            <%= flash[:alert]  %>
-            </div>
-          </div>
-        </section>
+          <% if flash.key? :alert %>
+            <section class="section">
+              <div class="l-section section__content">
+                  <div class="error_explanation">
+                    <%= flash[:alert]  %>
+                  </div>
+              </div>
+            </section>
+          <% end %>
           <%= @special_template %>
         </section>
       <% else %>
