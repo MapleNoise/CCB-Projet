@@ -26,7 +26,7 @@ class ProduitsController < ApplicationController
   def achat
     if(session[:user_id] != nil)
       respond_with(@produit)
-    else  
+    else
       redirect_to login_path params: { prod: @produit }
     end
   end
@@ -74,14 +74,11 @@ class ProduitsController < ApplicationController
     respond_to do |format|
       Produit.transaction do
         if @produit.save
-          if
-            format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
-            format.json { render :show, status: :created, location: @produit }
-          else
-            format.html { render :new }
-            format.json { render json: @produit.errors, status: :unprocessable_entity }
-          end
-
+          format.html { redirect_to @produit, notice: 'Le Produit à été crée.' }
+          format.json { render :show, status: :created, location: @produit }
+        else
+          format.html { render :action => "new" }
+          format.json { render json: @produit.errors, status: :unprocessable_entity }
         end
       end
     end
