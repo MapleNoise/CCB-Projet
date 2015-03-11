@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     if authorized_user
       session[:user_id] = authorized_user.id
-      
+
       if authorized_user.isClient?
   		  if(prod_id_params != {})
           	redirect_to "/achat/#{prod_id_params}"
@@ -47,5 +47,5 @@ class SessionsController < ApplicationController
       else
         params.require(:prod)
       end
-    end    
+    end
 end
