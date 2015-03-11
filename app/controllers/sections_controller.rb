@@ -3,26 +3,40 @@ class SectionsController < ApplicationController
   before_action :test_client, only: [:new, :index, :create, :edit, :update, :destroy]
 
   respond_to :html
-
+  
+    layout :sections_layout
+  
+  @layout = "back"
+  
+  def sections_layout
+    @layout
+  end
+  
+  
   def index
+    @layout = "back"
     @sections = Section.all
     respond_with(@sections)
   end
 
   def show
+    @layout = "back"
     respond_with(@section)
   end
 
   def new
+    @layout = "back"
     @formation = Formation.find_by(:id => formation_params)
     @section = Section.new
     respond_with(@section)
   end
 
   def edit
+    @layout = "back"
   end
 
   def create
+    @layout = "back"
     @section = Section.new(section_params)
     @section.formations_id = formation_params
     respond_to do |format|
@@ -40,11 +54,13 @@ class SectionsController < ApplicationController
   end
 
   def update
+    @layout = "back"
     @section.update(section_params)
     respond_with(@section)
   end
 
   def destroy
+    @layout = "back"
     @section.destroy
     respond_with(@section)
   end

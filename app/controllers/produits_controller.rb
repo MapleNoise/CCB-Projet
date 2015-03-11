@@ -1,9 +1,9 @@
 class ProduitsController < ApplicationController
-  before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
-  before_action :test_client, only: [:new, :index, :show, :create, :edit, :update, :destroy]
-  before_action :test_expert, only: [:show]
+  before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete, :achat]
+  before_action :test_client, only: [:new, :index, :create, :edit, :update, :destroy]
 
   layout :produits_layout
+  respond_to :html
 
   @layout = "back"
 
@@ -20,6 +20,14 @@ class ProduitsController < ApplicationController
       elsif (Utilisateur2.find_by(:id => session[:user_id]).isExpert?)
         @produits = Produit.all.where(:utilisateur2s_id => session[:user_id])
       end
+    end
+  end
+
+  def achat
+    if(session[:user_id] != nil)
+      respond_with(@produit)
+    else  
+      redirect_to login_path params: { prod: @produit }
     end
   end
 
@@ -129,5 +137,10 @@ class ProduitsController < ApplicationController
   end
   def status_params
       params.require(:status)
-    end
+  end
+
+    def prod_id_params
+      params.require(:prod)
+  end
+
 end

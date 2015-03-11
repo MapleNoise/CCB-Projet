@@ -34,6 +34,9 @@ class Produit < ActiveRecord::Base
     end
   end
 
+  def achat
+  end
+
   # Initialise l'instance de produit pour générer une référence.
   # Il faut voir quel format de référence est souhaité.
   def init!

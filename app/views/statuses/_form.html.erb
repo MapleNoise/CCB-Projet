@@ -1,6 +1,6 @@
-<%= form_for(@status) do |f| %>
+<%= form_for(@status, html: {class: "formulaire--back"}) do |f| %>
   <% if @status.errors.any? %>
-    <div id="error_explanation">
+    <div class="error_explanation">
       <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
 
       <ul>
@@ -11,11 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nom %><br>
-    <%= f.text_field :nom %>
+  <div class="field field--back">
+    <span class="field__label"><%= f.label :nom %></span>
+    <%= f.text_field( :nom, class: "field__control") %>
   </div>
+<div class="field field--back">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button button--submit" %>
   </div>
+</div>
 <% end %>

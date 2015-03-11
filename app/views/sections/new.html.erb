@@ -1,29 +1,35 @@
-<h1>New section</h1>
+<% provide :titreH1, "New section"%>
 
-<%= @formation.nom %>
-<%= @section.nom %>
+<%= form_for(@section, html: {class: "formulaire--back"}) do |f| %>
+  <% if @section.errors.any? %>
+    <div class="error_explanation">
+      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
 
 <%= form_for (@section), :url => "/formations/#{@formation.id}/sections" do |f| %>
 
-  <div class="field">
-  <%= f.label :ref %><br>
-  <%= f.text_field :ref %>
+  <div class="field field--back">
+    <span class="field__label"><%= f.label :ref %></span>
+    <%= f.text_field( :ref, class: "field__control") %>
   </div>
-
-  <div class="field">
-  <%= f.label :nom, "Nom" %><br>
-  <%= f.text_field :nom %>
+  <div class="field field--back">
+    <span class="field__label"><%= f.label :nom %></span>
+    <%= f.text_field( :nom, class: "field__control") %>
   </div>
-
-  <div class="field">
-  <%= f.label :description, "Description" %><br>
-  <%= f.text_field :description %>
+  <div class="field field--textarea field--back">
+    <span class="field__label"><%= f.label :description %></span>
+    <%= f.text_area( :description, class: "field__control") %>
   </div>
-
+ <div class="field field--back">
+   <span class="field__label">Formation</span>
+  	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+  	<%= select_tag(:formation, options_from_collection_for_select(Formation.all, :id, :nom), class: "field__control field__control--select") %>
+  </div>
+<div class="field field--back">
   <div class="actions">
-  <%= f.submit "Créer section", :disable_with => 'Créer section...' %>
+    <%= f.submit class: "button button--submit" %>
   </div>
-
+</div>
 <% end %>
 
-<%= link_to 'Back', formation_sections_path %>
+
+<%= link_to 'Back', sections_path %>

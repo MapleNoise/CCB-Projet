@@ -1,5 +1,9 @@
-<h1>New utilisateur2</h1>
+<% provide :titreH1, "New utilisateur2"%>
 
 <%= render 'form' %>
 
 <%= link_to 'Back', utilisateur2s_path %>
+
+<% if(@produit != nil) %>
+	<%= @produit.nom %>
+<% end %>
