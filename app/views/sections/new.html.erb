@@ -1,11 +1,6 @@
 <% provide :titreH1, "New section"%>
 
-<%= form_for(@section, html: {class: "formulaire--back"}) do |f| %>
-  <% if @section.errors.any? %>
-    <div class="error_explanation">
-      <h2><%= pluralize(@section.errors.count, "error") %> prohibited this section from being saved:</h2>
-
-<%= form_for (@section), :url => "/formations/#{@formation.id}/sections" do |f| %>
+<%= form_for (@section), html: {class: "formulaire--back"}, :url => "/formations/#{@formation.id}/sections" do |f| %>
 
   <div class="field field--back">
     <span class="field__label"><%= f.label :ref %></span>
@@ -32,4 +27,4 @@
 <% end %>
 
 
-<%= link_to 'Back', sections_path %>
+<%= link_to 'Back', formation_sections_path %>
