@@ -10,8 +10,6 @@
     </p>
       <div class="fiche__general">
         <span class="fiche__general__title"> Description :</span>
-        <img class="fiche__general__image" alt="img" src="/assets/images/logo-cap-coherence.png">
-        <%= image_tag(@produit.image) %>
         <div class="fiche__general__description"><%= @produit.description %></div>
         
         
@@ -21,12 +19,23 @@
             <%= @produit.prix %> €
           </span>
         <% end %>
+        <%#*<div class="section__content section__content--sticky">%>
+      <div class="fiche__general__etape">
+          <%= @produit.tags[0].nom %>
+        <%#*<div class="fiche__general__etape__retour">%>
+        <button onClick="window.history.back()" class="fiche__general__etape__bouton"> Retour</button>
+      <%#*</div>%>
+      </div>
+    <%#*</div>%>  
+          
         </div>
         <div class="fiche__detail">
           <div class="fiche__detail__grey">
             <div class="fiche__detail__grey__title">
             <%= @produit.nom %></div>
-        
+            <div class="fiche__detail__grey__image">
+              <%= image_tag(@produit.image, class: "apercu") %>
+            </div>
           <% if @produit.prix <= 0 %>
             <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
             <% puts @produit.urlFichier %>
@@ -61,29 +70,22 @@
               <div class="fiche__detail__grey__lien fiche__detail__grey__lien--fichier">
                 <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
               </div>
-
-
             <% end %>
+          <% else %> 
+               <div class="fiche__detail__grey__lien">
+                 <%#*Il faut encore mettre le bon lien pour commander le produit%>
+                <%= link_to("Je choisis ce produit", @produit,  class: "button button--submit" ) %>
+              </div>
           <% end %>
 
           </div>
 
         </div>
-
-        
-       
-      
-    </div>
-    <div class="section__content section__content--sticky">
-      <div class="fiche__etape">
-          <%= @produit.tags[0].nom %>
-      </div>
+    
     </div>
   <section class="section">
     <div class="section__content section__content--sticky">
-      <div class="fiche__retour">
-        <button onClick="window.history.back()" class="fiche__retour__bouton"> Retour</button>
-      </div>
+      
     </div>
   </section>
 </div>
