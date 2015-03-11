@@ -3,7 +3,7 @@
     // 6 create an instance when the DOM is ready
     $('#jstree').jstree({  "core" : {
       "animation" : 200,
-      "check_callback" : true,
+      "check_callback" : function (operation, node, node_parent, node_position) {return true;},
       "data": [{
             'text': "Module 1",
             'children': [{
@@ -61,20 +61,42 @@
   });
 
 $('#createChapitre').on('click', function () {
-   var position = 'inside';
-   var parent = $('#jstree').jstree('get_selected');
-     var newNode = { state: "open", data:'mydata'};
-    $('#jstree').jstree("create_node", parent, position, newNode, false, false);
+   //TODO Formulaire de création d'un chapitre
 });
 
-$('#deleteChapitre').on('click', function (e, data) {
+$('#deleteChapitre').on('click', function (e) {
   // TODO faire la requête AJAX et si réussi alors :
   var ref = $('#jstree').jstree(true),
-    sel = ref.get_selected();
+  sel = ref.get_selected();
   if(!sel.length) { return false; }
   ref.delete_node(sel);
 });
-    
+
+$('#moveUp').on('click', function () {
+    var instance = $.jstree.reference('#jstree'),
+          selected = instance.get_selected(),
+          position = $('#'+selected).index();
+
+    instance.move_node(
+          selected,
+          instance.get_parent( selected ),
+          position - 1 < 0 ? 0 : position - 1
+    );
+});
+
+$('#moveDown').on('click', function () {
+     var instance = $.jstree.reference('#jstree'),
+            selected = instance.get_selected(),
+            position = $('#'+selected).index();
+
+      instance.move_node(
+          selected,
+          instance.get_next_dom( selected, true ),
+          'after'
+      );
+});
+
+
 $('#jstree')
   // listen for event
   .on('changed.jstree', function (e, data) {
@@ -90,3 +112,13 @@ $('#jstree')
   .jstree();
 
   });
+
+
+// $('#moveDown').on('click', function () {
+//     var ref = $('#jstree').jstree(true),
+//     sel = ref.get_selected();
+//     var next = ref.get_next_dom(sel,false);
+//     if (next.length) {
+//         $("#jstree").jstree("move_node", sel, next, "after");
+//     }
+// });
