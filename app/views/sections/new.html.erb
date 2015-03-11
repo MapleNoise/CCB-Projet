@@ -3,8 +3,6 @@
 <%= @formation.nom %>
 <%= @section.nom %>
 
-<%= "formations/#{@formation.id}/sections" %>
-
 <%= form_for (@section), :url => "/formations/#{@formation.id}/sections" do |f| %>
 
   <div class="field">
