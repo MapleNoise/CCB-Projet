@@ -4,14 +4,13 @@ class Utilisateur2sController < ApplicationController
   respond_to :html
 
    layout :utilisateur2s_layout
-  
+
   @layout = "back"
-  
+
   def utilisateur2s_layout
     @layout
   end
-  
-  
+
   def index
 
     @layout = "back"
@@ -84,7 +83,7 @@ class Utilisateur2sController < ApplicationController
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
   end
-  
+
   def modifierUtilisateur
     @layout = "back"
   end
@@ -113,15 +112,15 @@ class Utilisateur2sController < ApplicationController
     @layout = "back"
 
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
-      
+
       unless utilisateur2_params['old_password'].empty?
-        
+
         authorized_user = Utilisateur2.find_by(id: session[:user_id])
-     
+
         if authorized_user
-          
+
            authorized_user = authorized_user.authenticate(utilisateur2_params['old_password'])
-           
+
            if authorized_user
              if utilisateur2_params['password'] === utilisateur2_params['password_confirmation']
                 @utilisateur2.update(utilisateur2_params)
@@ -138,13 +137,13 @@ class Utilisateur2sController < ApplicationController
             end
            end
         end
-      else 
+      else
         @utilisateur2.nom =  utilisateur2_params['nom']
         @utilisateur2.prenom = utilisateur2_params['prenom']
         @utilisateur2.save
       end
-        
-     
+
+
     elsif(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) #Si c'est un admin qui change le role d'un utilisateur
         @utilisateur2.update(utilisateur2_params)
         @utilisateur2.fonctionId = fonction_params
@@ -152,8 +151,8 @@ class Utilisateur2sController < ApplicationController
         respond_with(@utilisateur2)
     end
   end
-  
-  
+
+
   def destroy
     @layout = "back"
     @utilisateur2.destroy
@@ -172,7 +171,7 @@ class Utilisateur2sController < ApplicationController
       params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password, :prod, :produit)
     end
 
-    
+
     def fonction_params
       params.require(:fonctions)
     end

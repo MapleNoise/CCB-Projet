@@ -25,13 +25,13 @@ class Utilisateur2 < ActiveRecord::Base
   def isAdmin?
     Fonction.find_by(:id => self.fonctionId).nom == "Administrateur"
   end
-  
+
   def isClient?
     Fonction.find_by(:id => self.fonctionId).nom == "Client"
   end
-  
+
   def MapSite
-    
+
   end
   def to_string
     puts "--------------------USER---------------------"
@@ -42,5 +42,5 @@ class Utilisateur2 < ActiveRecord::Base
     puts "--------------------USER---------------------"
   end
 
-  
+
 end

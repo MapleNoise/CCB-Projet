@@ -24,7 +24,7 @@
         </a>
         <div class="headerback__client">
           <div class="client">
-            <span class="client__hello">Bonjour, 
+            <span class="client__hello">Bonjour,
               <% u = Utilisateur2.find_by(id: session[:user_id])%>
               <% if u -%>
                 <%= "#{u.prenom} #{u.nom}"%>
@@ -35,17 +35,17 @@
       </div>
 
       <nav class="menuback">
-        <a href="#" class="menuback__item <%= @compte_active ? 'is-active' : '' %>">
-          <h2 class="menuback__item__title ">Mon compte</h2>
+        <a href="/indexBack" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Back Office</h2>
+        </a>
+        <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title ">Gestion utilisateurs</h2>
         </a>
         <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Formations</h2>
         </a>
-        <a href="/modules" class="menuback__item">
-          <h2 class="menuback__item__title">Modules</h2>
-        </a>
-        <a href="/chapitres" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
-          <h2 class="menuback__item__title">Chapitres</h2>
+        <a href="/produits" class="menuback__item <%= @produit_menu_active ? 'is-active' : '' %>">
+          <h2 class="menuback__item__title">Produits</h2>
         </a>
       </nav>
 
@@ -75,17 +75,17 @@
             </div>
             <div class="sectionback__pied sectionback__pied--menu"></div>
           </nav>
-        
+
 
         <div class="sectionback__content">
         <div class="sectionback__entete">
           <span class="sectionback__entete__title"><%= yield(:titreH1) %></span>
           <button onClick="window.history.back()" class="sectionback__entete__back"> Retour</button>
         </div>
-        
+
           <%= flash[:alert]  %>
           <%= yield %>
-        
+
         <div class="sectionback__pied">
           <!--<span class="sectionback__pied__page">Page :
               <a href="#" class="sectionback__pied__page__num is-active">1</a>
