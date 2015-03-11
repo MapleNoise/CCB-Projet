@@ -7,6 +7,7 @@ class Utilisateur2sController < ApplicationController
   
   @layout = "back"
   
+  helper_method :sort_column, :sort_direction
   def utilisateur2s_layout
     @layout
   end
@@ -14,21 +15,24 @@ class Utilisateur2sController < ApplicationController
   
   def index
         @layout = "back"
-
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
-      @utilisateur2s = Utilisateur2.all
-      if params[:nom].present?
-        @utilisateur2s = @utilisateur2s.where('nom LIKE ?', '%' + params[:nom] + '%')
-      end
-      if params[:prenom].present?
-        @utilisateur2s = @utilisateur2s.where('prenom LIKE ?', '%' + params[:prenom] + '%')
-      end
-      if params[:email].present?
-        @utilisateur2s = @utilisateur2s.where('email LIKE ?', '%' + params[:email] + '%')
-      end
-      respond_with(@utilisateur2s)
+
+      respond_with(user_filtered)
     else
       redirect_to forbidden_path :status => 403
+    end
+  end
+
+  def user_filtered
+    @utilisateur2s = Utilisateur2.all.order(sort_column + " " + sort_direction)
+    if params[:nom].present?
+      @utilisateur2s = @utilisateur2s.where('nom LIKE ?', '%' + params[:nom] + '%').order(sort_column + " " + sort_direction)
+    end
+    if params[:prenom].present?
+      @utilisateur2s = @utilisateur2s.where('prenom LIKE ?', '%' + params[:prenom] + '%').order(sort_column + " " + sort_direction)
+    end
+    if params[:email].present?
+      @utilisateur2s = @utilisateur2s.where('email LIKE ?', '%' + params[:email] + '%').order(sort_column + " " + sort_direction)
     end
   end
 
@@ -139,9 +143,23 @@ class Utilisateur2sController < ApplicationController
       params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password)
     end
 
-    
     def fonction_params
       params.require(:fonctions)
     end
-    
+
+    def sort_column
+      if Utilisateur2.column_names.include?(params[:sort])
+        params[:sort]
+      else
+        "nom"
+      end
+    end
+
+    def sort_direction
+      if %w[asc desc].include?(params[:direction])
+        params[:direction]
+      else
+        "asc"
+      end
+    end
 end

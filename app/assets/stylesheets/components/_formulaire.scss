@@ -2,6 +2,18 @@
   @include gridle_parent();
 	&--back{
 	}
+  &--filter{
+    @include gridle_parent();
+    & fieldset{
+      text-align: left;
+      border: 1px solid black;
+      padding: 10px;
+      margin: 0 2px 2px 2px;
+    }
+    & fieldset legend{
+      font-size: 25px;
+    }
+  }
 }
 
 .field {
@@ -16,7 +28,15 @@
   height: $formulaire-field-height;
   margin-bottom: $formulaire-field-height/2;
   outline: none;
-
+  &--filter{
+    @include gridle(3);
+    font : {
+      size : 0.875em;
+      family : inherit;
+    }
+    height: $formulaire-field-height;
+    margin-bottom: $formulaire-field-height/2;
+  }
   &__label {
     //@include gridle(3);
     //background: $formulaire-label-color;
@@ -30,7 +50,12 @@
     //border-right: none;
     //height: 100%;
     //margin-top: 7px;
-    
+    &--filter{
+      @include gridle_parent();
+        font-weight: bold;
+        text-align : left;
+        color : #333;
+    }
   }
 
   &__control {
@@ -45,6 +70,12 @@
     }
 
     &--select {
+    }
+    &--filter{
+      @include gridle_parent();
+      @include transition(all 150ms linear);
+      border-radius: 5px;
+      border: $formulaire-field-border;
     }
   }
 
@@ -105,5 +136,9 @@
   border-left: 4px solid $color-red;
   background-color: lighten($color-red, 40%);
 }
+
+
+
+
 
 
