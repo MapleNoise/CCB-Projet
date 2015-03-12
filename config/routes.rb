@@ -17,14 +17,14 @@ Rails.application.routes.draw do
   #resources :sections
 
   # Routes pour le workflow formations
-  resources :formations do 
-    resources :sections do 
+  resources :formations do
+    resources :sections do
       resources :chapitres
     end
   end
-  
+
   get 'formations/:id/hierarchie' => 'formations#hierarchie', :as => :hierarchie
- 
+
 
   resources :utilisateur2s
 
@@ -71,9 +71,7 @@ Rails.application.routes.draw do
   # resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
   #root 'welcome#index'
-
-  get 'test/style' => 'style#index'
-
+  
   get '/indexBack' => 'welcome#indexBack'
 
   # Example of regular route:

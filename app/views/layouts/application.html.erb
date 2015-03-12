@@ -22,11 +22,13 @@
         <div class="section__content__body section__content__body--sticky">
           <div class="header">
             <a href="/" class="header__logo"></a>
-            <div class="identify">
 
               <div class="header__client">
                 <% if(session[:user_id] == nil)%>
                 <div class="expert__login">
+                  <% if (!request.original_url.include? "login") %>
+                    <% session[:redirect_to] = request.original_url%>
+                  <% end %>
                   <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
                   </div>
                   <div class="client__login">
@@ -46,8 +48,6 @@
                       <button class="button button--submit">Je m'inscris</button>
                     </form>
                   </div>
-                  
-                </div>
               </div>
             </div>
           </div>
@@ -61,13 +61,13 @@
                   <h2 class="menu__item__title menu__item__title--home"></h2>
                 </a>
                 <div class="menu__item menu__item--icon">
-                  <select class="menu__item__select" onChange="window.location.href = this.value"> 
+                  <select class="menu__item__select" onChange="window.location.href = this.value">
                     <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
-                    <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                    <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option>
                     <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
                     <option value="https://www.cap-coherence.fr/blog">Blog</option>
-                    <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
-                    <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
+                    <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option>
+                    <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option>
                   </select>
                 </div>
                 <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">
@@ -130,13 +130,13 @@
                 <h2 class="menu__item__title menu__item__title--home"></h2>
               </a>
               <div class="menu__item menu__item--icon">
-                <select class="menu__item__select" onChange="window.location.href = this.value"> 
+                <select class="menu__item__select" onChange="window.location.href = this.value">
                   <option value="https://www.cap-coherence.fr/reconversion-professionnelle" selected="selected">Reconversion professionnelle</option>
-                  <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option> 
+                  <option value="https://www.cap-coherence.fr/nos-partenaires-coaching-conseils">Accompagnement</option>
                   <option value="https://www.cap-coherence.fr/cap-IBO-outil-aide-decision">Outils</option>
                   <option value="https://www.cap-coherence.fr/blog">Blog</option>
-                  <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option> 
-                  <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option> 
+                  <option value="https://www.cap-coherence.fr/cap-coherence">Cap cohérence</option>
+                  <option value="/listeProduit.html?categories=formation&etapes=constat,analyse,action,decision,cap">Nos Formations</option>
                 </select>
               </div>
               <a href="https://www.cap-coherence.fr/reconversion-professionnelle" class="menu__item">

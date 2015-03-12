@@ -3,8 +3,11 @@
   position: relative; 
   &__general {
     @include gridle(8);
-    padding: 30px;
+    @include gridle_parent();
+    padding-top: 30px;
     border-right: $border-section-body;
+    min-height: 250px;
+    position: relative;
     
     &__title {
       text-transform : uppercase;
@@ -12,28 +15,51 @@
       padding-left: 30px;
       padding-right: 30px;
       padding-top: 7px;
+      padding-bottom: 7px;
       text-decoration: underline;
     }
     
     &__prix{
       padding-left: 30px;
       padding-right: 30px;
-      padding: 10px;
+      //margin-bottom: 10px;
+      //margin-top: 10px;
       font-size: 18px;
     }
     
     &__description {
       padding-left: 30px;
-      
       padding-right: 30px;
       margin-bottom: 10px;
       margin-top: 10px;
     }
     
-    &__image{
-      padding-left: 30px;
-      padding-right: 30px;
+    &__etape{
+      @include gridle(12);
+      border-bottom: $border-section-body;
+      border-top: $border-section-body;
+      padding: 30px;
+      
       margin-top: 10px;
+      margin-bottom: 0px;
+      background-color: $color-grey;
+      color: $color-white;
+      text-transform : uppercase;
+      bottom: 0;
+      position: absolute;
+      display: block;
+      
+      
+      &__bouton{
+        background-color: $color-grey-white;
+        color: $color-black;
+        border: 1px solid $color-grey;
+        border-radius: 5px;
+        font-size: 13px;
+        cursor: pointer;
+        @include icon('arrow-left');
+        float: right;
+      }
     }
   }
   &__detail {
@@ -45,27 +71,43 @@
       @include gridle(11);
       background-color: $color-grey-white;
       vertical-align : middle;
-      min-height: 100px;
+      position: absolute;
+      //min-height: 150px;
       margin-top: 10px;
       margin-left: 15px;
       margin-right: 15px;
+      
       &__title {
         text-transform : uppercase;
         text-align: center;
         font-size: 20px;
         padding: 10px;
+        position: relative;
       }
-     
-      &__lien {
-        padding: 10px;
-        position: absolute;
-        bottom: 0;
+      
+      &__image{
         text-align: center;
-        vertical-align: bottom;
+        //padding: 10px;
+        max-height: 120px;
+        //display: inline-block;
+        position: relative;
         left: 0;
         right: 0;
         margin-left: auto;
         margin-right: auto;
+      }
+      
+      &__lien {
+        padding: 10px;
+        /*position: relative;*/
+        /*bottom: 0;*/
+        text-align: center;
+        /*vertical-align: bottom;*/
+          /*        left: 0;
+          right: 0;
+        margin-left: auto;
+        margin-right: auto;*/
+        display: block;
         &--video {
           
         }
@@ -93,32 +135,10 @@
       }
     }
   }
-  
-  &__etape{
-    border-bottom: $border-section-body;
-    border-top: $border-section-body;
-    padding: 30px;
-    background-color: $color-grey;
-    color: $color-white;
-    text-transform : uppercase;
-  }
-  
-  &__retour{
-    border-bottom: $border-section-body;
-    border-top: $border-section-body;
-    padding: 30px;
-    text-align: left;
-    
-    &__bouton{
-      background-color: $color-grey-white;
-      color: $color-black;
-      border: 1px solid $color-grey;
-      border-radius: 5px;
-      font-size: 13px;
-      cursor: pointer;
-      @include icon('arrow-left');
-    }
-  }
+}
+
+.apercu {
+  max-height: 120px;
 }
 
 

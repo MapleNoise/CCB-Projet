@@ -20,7 +20,7 @@ class QuizzsController < ApplicationController
   end
 
   def show
-    @layout = "back"
+    @layout = "application"
     respond_with(@quizz)
   end
 

@@ -33,6 +33,14 @@ class FormationsController < ApplicationController
     @layout = "back"
   end
 
+  def hierarchie
+    @layout = "back"
+    # @formation = Formation.new(formation_params)
+    # @formation.estPublic = false
+    # @formation.save
+    # respond_with(@formation)
+  end
+
   def create
     @layout = "back"
     @formation = Formation.new(formation_params)

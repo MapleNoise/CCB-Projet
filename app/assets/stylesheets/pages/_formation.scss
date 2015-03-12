@@ -1,4 +1,8 @@
 .formation {
+	@include gridle(12);
+	@include gridle_parent();
+	@include gridle_centered();
+	padding: 0 30px 0 30px;
 
 	&__title{
 		text-align: left;
@@ -11,7 +15,7 @@
 	&__status {
 
 		&--enLigne {
-			background : green;
+			background : #3ab042;
 		}
 		&--enAttente {
 			background : orange;
@@ -30,6 +34,7 @@
 	}
 
 	&__edit{
+		@include gridle_parent();
 		@include gridle(6);
 		padding-left : 30px;
 	}

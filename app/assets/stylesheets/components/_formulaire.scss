@@ -1,11 +1,11 @@
 .formulaire {
   @include gridle_parent();
-	&--back{
-	}
+  &--back{
+  }
 }
 
 .field {
-  @include gridle(12);
+  @include gridle(10.6);
   @include gridle_centered();
   @include gridle_parent();
   display : inline-block;
@@ -16,38 +16,39 @@
   height: $formulaire-field-height;
   margin-bottom: $formulaire-field-height/2;
   outline: none;
-
+  margin-right: 20px;
+  
   &__label {
-    //@include gridle(3);
-    //background: $formulaire-label-color;
-    //overflow : hidden;
-    //text-decoration: strong;
+    @include gridle(3);
+    background: $formulaire-label-color;
+    overflow : hidden;
+    text-decoration: strong;
     font-weight: bold;
-    text-align : left;
+    text-align : center;
     color : #333;
-    //line-height: $formulaire-field-height;
-    //border : $formulaire-field-border;
-    //border-right: none;
-    //height: 100%;
-    //margin-top: 7px;
+    line-height: $formulaire-field-height;
+    border : $formulaire-field-border;
+    border-right: none;
+    height: 100%;
+    /*margin-top: 7px;*/
     
   }
-
+  
   &__control {
-    @include gridle(12);
+    @include gridle(9);
     @include transition(all 150ms linear);
-    border-radius: 5px;
-    border: $formulaire-field-border;
-    //height: 100%;
-
+/*    border-radius: 5px;
+    border: $formulaire-field-border;*/
+    height: 100%;
+    
     &:focus {
       outline: none;
     }
-
+    
     &--select {
     }
   }
-
+  
   &--checkbox {
     .field__control {
       @include gridle(1);
@@ -58,7 +59,7 @@
       padding: 0 0 0 0;
       margin: 0 0 0 0;
     }
-
+    
     .field__label {
       @include gridle(10);
       @include vertical-align();
@@ -67,33 +68,50 @@
       color : $color-black;
     }
   }
-
+  
   &--textarea {
     //height: $formulaire-field-height*2;
-
+    
     .field__control {
       resize: vertical;
     }
   }
-
+  
   &--back {
     @include gridle(9);
     //margin-top: 50px;
     .field__label {
-      @include gridle(3);
+      @include gridle(12);
       //background: $formulaire-label-color;
       overflow : hidden;
-      //text-align : center;
+      text-align : left;
       //line-height: 2.3125em;
       color : $color-black;
+      //line-height: $formulaire-field-height;
+      border : none;
+      //height: 100%;
+      bottom: 0;
+      margin-top: 0px;
+      @include gridle(3);
+      background: $color-white;
+      overflow : hidden;
+      text-decoration: strong;
+      /*vertical-align: bottom;*/
+      padding-top: 10px;
+      /*line-height: -20px;*/
     }
     
     .field__control {
+      @include gridle(12);
+      height: 50%;
+      border-radius: 5px;
+    border: $formulaire-field-border;
+      margin-bottom: 17px;
       &--select {
-
+        
       }
     }
-
+    
   }
 }
 

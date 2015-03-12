@@ -1,7 +1,36 @@
-<%#
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
-%>
+	<div class="formation__title"> Composition d'une formation </div>
 
-<%= "hierarchie.html" %>
+	<div class="formation__liste">
+		<div class="button-container">
+			<%= link_to "Retour à la gestion des formation", formations_path, :class => "button button__back button__back--formation" %>
+		</div>
+		<div id="jstree"></div>
+
+		<div id="event_result"> </div>
+	</div>
+	<div class="formation__edit">
+		<div class="field field--back">
+	      <span class="field__label">Etape de reconversion </span>
+	      <%= select_tag(:tag, options_from_collection_for_select(Tag.all, :id, :nom), class: "field__control field__control--select") %>
+	  </div>
+		<div class="field field--back">
+	    <span class="field__label">Prix</span>
+	    <%= text_field_tag( :nom, nil,class: "field__control") %>
+	  </div>
+		<div class="button-container button-container--move">
+			<a id="moveUp" class="button button__back button--up"></a>
+			<a id="moveDown" class="button button__back button--down"></a>
+		</div>
+
+		<div class="button-container">
+			<button id="createChapitre" class="button button__back button__back--formation"> Créer un chapitre </button>
+			<button class="button button__back button__back--formation"> Créer un module </button>
+		</div>
+
+		<div class="button-container">
+			<button class="button button__back button__back--formation"> Modifier la sélection </button>
+			<button id="deleteChapitre" class="button button__back button__back--formation">Supprimer la sélection </button>
+		</div>
+	</div>
+
+	<script src="/assets/javascripts/hierarchie.js"></script>

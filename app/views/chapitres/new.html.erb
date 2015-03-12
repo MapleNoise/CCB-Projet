@@ -1,6 +1,6 @@
 <% provide :titreH1, "New chapitre" %>
 
-<%= form_for(@chapitre, html: {class: "formulaire--back"}) do |f| %>
+<%= form_for(@chapitre, :url => "/formations/#{@formation.id}/sections/#{@section.id}/chapitres", html: {class: "formulaire--back"}) do |f| %>
   <% if @chapitre.errors.any? %>
     <div class="error_explanation">
         <h2><%= pluralize(@chapitre.errors.count, "error") %> prohibited this chapitre from being saved:</h2>
@@ -29,17 +29,10 @@
       <span class="field__label"><%= f.label :texte %></span>
       <%= f.text_area( :texte, class: "field__control") %>
   </div>
-  <div class="field field--back">
-    <span class="field__label">Section </span>
-      <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:section, options_from_collection_for_select(Section.all, :id, :nom), class: "field__control field__control--select") %>
-  </div>
+
   <div class="field field--back">
     <div class="actions">
         <%= f.submit class: "button button--submit" %>
     </div>
   </div>
 <% end %>
-
-
-<%= link_to 'Back', chapitres_path %>
