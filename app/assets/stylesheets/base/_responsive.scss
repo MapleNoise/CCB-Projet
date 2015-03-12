@@ -6,5 +6,10 @@
 			&__login{
 				@include gridle_centered();
 			}
-		}		
+		}
+
+	table {
+		overflow-x: auto;
+		display: block;
+	}
 }
