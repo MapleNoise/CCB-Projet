@@ -4,15 +4,15 @@ class Utilisateur2sController < ApplicationController
   respond_to :html
 
    layout :utilisateur2s_layout
-  
+
   @layout = "back"
-  
+
   helper_method :sort_column, :sort_direction
   def utilisateur2s_layout
     @layout
   end
-  
-  
+
+
   def index
         @layout = "back"
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
@@ -38,10 +38,14 @@ class Utilisateur2sController < ApplicationController
 
   def show
     @layout = "application"
-
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    u = Utilisateur2.find_by(id: session[:user_id])
+    if(u.isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
+    elsif (u.isExpert? || u.isClient?)
+      respond_with(u) do |format|
+        format.html { render 'edit' }
+      end
     else
       redirect_to forbidden_path :status => 403
     end
@@ -65,12 +69,10 @@ class Utilisateur2sController < ApplicationController
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
   end
-  
-  def modifierUtilisateur
+
+  def modifier_utilisateur
     @layout = "back"
   end
-
-
 
   def create
     @layout = "back"
@@ -84,38 +86,38 @@ class Utilisateur2sController < ApplicationController
     @layout = "back"
 
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
-      
+
       unless utilisateur2_params['old_password'].empty?
-        
+
         authorized_user = Utilisateur2.find_by(id: session[:user_id])
-     
+
         if authorized_user
-          
+
            authorized_user = authorized_user.authenticate(utilisateur2_params['old_password'])
-           
+
            if authorized_user
              if utilisateur2_params['password'] === utilisateur2_params['password_confirmation']
                 @utilisateur2.update(utilisateur2_params)
              else
-               @utilisateur2.errors.add(:password_confirmation, "Confirmation password incorrect")
+               @utilisateur2.errors.add(:password_confirmation, "Les deux mots de passe ne sont pas identiques")
                respond_with(@utilisateur2) do |format|
-                  format.html { render 'modifierUtilisateur' }
+                  format.html { render 'modifier_utilisateur' }
                 end
              end
            else #l'utilisateur se trompe de mdp
-             @utilisateur2.errors.add(:old_password, "Incorect password")
+             @utilisateur2.errors.add(:old_password, "L'ancien mot de passe est incorrect")
             respond_with(@utilisateur2) do |format|
-              format.html { render 'modifierUtilisateur' }
+              format.html { render 'modifier_utilisateur' }
             end
            end
         end
-      else 
+      else
         @utilisateur2.nom =  utilisateur2_params['nom']
         @utilisateur2.prenom = utilisateur2_params['prenom']
         @utilisateur2.save
       end
-        
-     
+
+
     elsif(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) #Si c'est un admin qui change le role d'un utilisateur
         @utilisateur2.update(utilisateur2_params)
         @utilisateur2.fonctionId = fonction_params
@@ -123,8 +125,8 @@ class Utilisateur2sController < ApplicationController
         respond_with(@utilisateur2)
     end
   end
-  
-  
+
+
   def destroy
     @layout = "back"
     @utilisateur2.destroy
@@ -163,9 +165,9 @@ class Utilisateur2sController < ApplicationController
       end
     end
 
-    
+
     def fonction_params
       params.require(:fonctions)
     end
-    
+
 end

@@ -38,9 +38,15 @@
         <a href="/indexBack" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Back Office</h2>
         </a>
-        <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
-          <h2 class="menuback__item__title ">Gestion utilisateurs</h2>
-        </a>
+        <% if(u.isAdmin?)%>
+          <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+            <h2 class="menuback__item__title ">Gestion utilisateurs</h2>
+          </a>
+        <% else %>
+          <a href=<%="/utilisateur2s/#{session[:user_id]}/modifierUtilisateur"%> class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+            <h2 class="menuback__item__title ">Modifier mon profil</h2>
+          </a>
+        <% end %>
         <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Formations</h2>
         </a>
