@@ -22,7 +22,6 @@
         <div class="section__content__body section__content__body--sticky">
           <div class="header">
             <a href="/" class="header__logo"></a>
-
               <div class="header__client">
                 <% if(session[:user_id] == nil)%>
                 <div class="expert__login">
@@ -34,9 +33,10 @@
                   <div class="client__login">
                     <%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
                     </div>
-                    <% else%>
+                  <% else%>
                     <div><p>Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></p></div>
-                    <div><p><%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
+                    <div><p></p></div>
+                    <div><p><%=link_to( 'Mon espace', indexBack_path, class: "button button--link")%> <%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
                   <% end%>
                   </div>
                   <div class="panel client__newsletter">
