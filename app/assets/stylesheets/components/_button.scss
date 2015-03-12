@@ -1,9 +1,9 @@
 .button-container {
-    
     @include gridle_parent();
+    margin-bottom : 30px;
 
     &--move {
-        @include gridle(6);
+        @include gridle(12);
     }
 
 }
@@ -93,10 +93,14 @@
 
     &--up {
         @include icon('caret-up');
+        color : black;
+        @include gridle_push(1);
     }
 
     &--down {
         @include icon('caret-down');
+        color : black;
+        @include gridle_push(2);
     }
 
     &__filter{
@@ -192,12 +196,34 @@
     }
 
     &__back {
-        width : 120px;
         background-color : $color-grey-white;
+        border : $color-grey;
+        line-height: 24px;
         height : 45px;
         text-transform: none;
 
         &--formation {
+            float : left;
+            margin : 30px 0 30px 120px;
+            color: $color-black;
+
+            &--edit {
+                @include gridle(4);
+                @include gridle_push(1);
+                @include gridle_prefix(1);
+                background-color : $color-grey-white;
+                color: $color-black;
+            }
+
+            &--retour {
+                float : left;
+                margin : 30px 0 0 30px;
+                color: $color-black;
+            }
+        }
+        &--produit{
+            float : left;
+            margin : 30px 0 30px 90px;
             color: $color-black;
         }
     }

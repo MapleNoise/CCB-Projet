@@ -1,6 +1,4 @@
-	
-  jQuery(document).ready(function($) {
-    $(function () {
+$(function () {
     $.jstree.defaults.core.themes.variant = "large";
     // 6 create an instance when the DOM is ready
     $('#jstree').jstree({  "core" : {
@@ -102,20 +100,6 @@ $('#moveDown').on('click', function () {
         $("#jstree").jstree("move_node", sel, next, "after");
     }
 });
-
-
-$('#jstree')
-  // listen for event
-  .on('changed.jstree', function (e, data) {
-    var i, j, r = [];
-    for(i = 0, j = data.selected.length; i < j; i++) {
-      r.push(data.instance.get_node(data.selected[i]).text);
-    }
-    $('#event_result').html('Selected: ' + r.join(', '));
-  })
-  // create the instance
-  .jstree();
-  }); 
 
 });
   
