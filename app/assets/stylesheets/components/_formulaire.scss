@@ -72,6 +72,10 @@
     
     &--select {
     }
+
+    &--formation{
+      @include gridle(6);
+    }
   }
   
   &--checkbox {

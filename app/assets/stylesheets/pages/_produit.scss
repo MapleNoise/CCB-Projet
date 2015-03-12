@@ -1,0 +1,4 @@
+.produit{
+	@include gridle(12);
+	@include gridle_parent();
+}

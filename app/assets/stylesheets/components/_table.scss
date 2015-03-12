@@ -1,6 +1,9 @@
 table {
     border: 1px solid $color-grey-black;
     margin: 0 auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+
 }
 
 tr {
@@ -41,5 +44,12 @@ td {
         
     &.is-wait {
         background-color: $color-orange;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    table {
+        overflow-x: auto;
+        display: block;
     }
 }

@@ -162,4 +162,10 @@ class Utilisateur2sController < ApplicationController
         "asc"
       end
     end
+
+    
+    def fonction_params
+      params.require(:fonctions)
+    end
+    
 end

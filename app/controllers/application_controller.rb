@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
       false
     else
       true
-    end
+    end 
   end
 
   #Autorise l'affichage de la page uniquement si l'utilisateur est un Admin
