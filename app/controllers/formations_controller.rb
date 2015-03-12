@@ -3,13 +3,13 @@ class FormationsController < ApplicationController
   before_action :test_client, only: [:new, :show, :edit, :update, :destroy]
 
   layout :formations_layout
-  
+
   @layout = "back"
-  
+
   def formations_layout
     @layout
   end
-  
+
   respond_to :html
 
   def index
@@ -26,7 +26,7 @@ class FormationsController < ApplicationController
   def new
     @layout = "back"
     @formation = Formation.new
-    respond_with(@formation)
+    @formation.init!
   end
 
   def edit
@@ -36,7 +36,7 @@ class FormationsController < ApplicationController
   def create
     @layout = "back"
     @formation = Formation.new(formation_params)
-    @formation.statusId = status_params
+    @formation.estPublic = false
     @formation.save
     respond_with(@formation)
   end
@@ -59,10 +59,7 @@ class FormationsController < ApplicationController
     end
 
     def formation_params
-      params.require(:formation).permit(:ref, :nom, :descriptionCourte, :description, :estPublic, :dateSuppression, :prix)
+      params.require(:formation).permit(:ref, :nom, :descriptionCourte, :description, :dateSuppression, :prix, :statusId)
     end
-    
-     def status_params
-      params.require(:status)
-    end
+
 end

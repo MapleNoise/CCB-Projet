@@ -17,7 +17,24 @@
         <div class="color-bar__item color-bar__item--yellow"></div>
       </div>
     </header>
-
+    <head>
+        <title><%= yield(:title) %></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
+        <%= csrf_meta_tags %>
+        <%= favicon_link_tag '/favicon.png' %>
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="http://jiren.github.io/filter.js/filter.min.js"></script> -->
+    </head>
+    <body>
+        <header>
+            <div class="color-bar">
+                <div class="color-bar__item color-bar__item--blue"></div>
+                <div class="color-bar__item color-bar__item--green"></div>
+                <div class="color-bar__item color-bar__item--yellow"></div>
+            </div>
+        </header>
+        
     <div class="body">
       <div class="headerback">
         <a href="/" class="headerback__logo">
