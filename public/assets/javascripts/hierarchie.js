@@ -8,47 +8,47 @@
       "check_callback" : function (operation, node, node_parent, node_position) {return true;},
       "data": [{
             'text': "Module 1",
+            "icon": false,
             'children': [{
               'text': 'Chapitre 1',
-              'info': 'plop'
+              "icon": false,
             },{
               'text': 'Chapitre 2',
-              'info': 'plop'
+              "icon": false,
             }]
           },{
             'text': 'Module 2',
+            "icon": false,
             'children': [{
               'text': 'Chapitre 1',
+              "icon": false,
               'data' : {
                   'info': 'plop',
                 }
               },{
                 'text': 'Chapitre 2',
+                "icon": false,
                 'data' : {
                   'info': 'plop',
                 }
               }]
           }
       ],
-      "themes" : { "stripes" : true },
+      
     },
     "types" : {
       "#" : {
         "max_children" : 1, 
         "max_depth" : 2, 
-        "valid_children" : ["root"]
+        "valid_children" : ["root"],
       },
       "root" : {
-        "icon" : "/static/3.0.9/assets/images/tree_icon.png",
+        "icon" : "glyphicon glyphicon-flash",
         "valid_children" : ["default"]
       },
       "default" : {
         "valid_children" : ["default","file"]
       },
-      "file" : {
-        "icon" : "",
-        "valid_children" : []
-      }
     },
 
       "dnd" : {
@@ -111,8 +111,6 @@ $('#jstree')
     for(i = 0, j = data.selected.length; i < j; i++) {
       r.push(data.instance.get_node(data.selected[i]).text);
     }
-    console.log(data);
-    console.log(data.instance.get_node(data.selected[0]));
     $('#event_result').html('Selected: ' + r.join(', '));
   })
   // create the instance
