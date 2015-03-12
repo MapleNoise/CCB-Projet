@@ -24,6 +24,7 @@ class ProduitsController < ApplicationController
   end
 
   def achat
+    @layout = "application"
     if(session[:user_id] != nil)
       respond_with(@produit)
     else  
