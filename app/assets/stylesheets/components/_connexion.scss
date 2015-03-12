@@ -48,3 +48,18 @@
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:    #fff;
 }
+
+
+.forbiden-container {
+		text-align: center;
+		font-size: 50px;
+		color: $color-grey;
+		margin-top: 50px;
+		margin-bottom: 50px;
+}
+
+.forbiden-icon {
+	@include icon('ban');
+	font-size: 50px;
+	margin-right: 10px;
+}

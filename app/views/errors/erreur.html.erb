@@ -1,6 +1,8 @@
 <% case params[:status]%>
 <% when "403"%>
-	403 Forbiden Path
+	<div class="forbiden-container">
+		<i class="forbiden-icon"></i>403 Accès refusé
+	</div>
 <% else %>
 	<h1>Erreur inconnue</h1>
 <% end %>
