@@ -1,9 +1,8 @@
-
-<%= link_to 'Creer une formation', new_formation_path , :class =>"button button__back button__back--formation" %>
-
 <%@formations = Formation.all.paginate(:page => params[:page])%>
 <% @formation_menu_active = true %>
 <% provide :titreH1, "Liste des formations" %>
+
+<%= link_to 'Créer une formation', new_formation_path , :class =>"button button__back button__back--formation" %>
 
 <div class="formation">
 <table>
@@ -51,14 +50,12 @@
     <% end %>
   </tbody>
 </table>
-
-<hr>
-
+</div>
   <div class="digg_pagination">
     <p>Page :<%= will_paginate @formations, :container => false %></p>
   </div>
 
 <br>
-</div>
+
 <!-- # <%= link_to 'New Formation', new_formation_path %>
  -->
