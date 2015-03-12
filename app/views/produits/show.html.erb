@@ -3,44 +3,38 @@
 <h3 class="section__content__title section__content__title--wide"><%= @produit.nom %></h3>
 </div>
 </section>  
-<div class="fiche">
+<section class="section">
   <div class="section__content section__content--sticky">
-    <p id="notice">
-      <%= notice %>
-    </p>
+    <div class="fiche">
+      <p id="notice">
+        <%= notice %>
+      </p>
       <div class="fiche__general">
         <span class="fiche__general__title"> Description :</span>
         <div class="fiche__general__description"><%= @produit.description %></div>
-        
-        
         <% if @produit.prix > 0 %>
           <span class="fiche__general__title"> Prix :</span>
           <span class="fiche__general__prix">
             <%= @produit.prix %> €
           </span>
         <% end %>
-        <%#*<div class="section__content section__content--sticky">%>
-      <div class="fiche__general__etape">
+        <div class="fiche__general__etape">
           <%= @produit.tags[0].nom %>
-        <%#*<div class="fiche__general__etape__retour">%>
-        <button onClick="window.history.back()" class="fiche__general__etape__bouton"> Retour</button>
-      <%#*</div>%>
-      </div>
-    <%#*</div>%>  
-          
+          <button onClick="window.history.back()" class="fiche__general__etape__bouton"> Retour</button>
         </div>
-        <div class="fiche__detail">
-          <div class="fiche__detail__grey">
-            <div class="fiche__detail__grey__title">
+      </div>
+      <div class="fiche__detail">
+        <div class="fiche__detail__grey">
+          <div class="fiche__detail__grey__title">
             <%= @produit.nom %></div>
-            <div class="fiche__detail__grey__image">
-              <%= image_tag(@produit.image, class: "apercu") %>
-            </div>
+          <div class="fiche__detail__grey__image">
+            <%= image_tag(@produit.image, class: "apercu") %>
+          </div>
           <% if @produit.prix <= 0 %>
-            <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
-            <% puts @produit.urlFichier %>
-            <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
-              <!-- Ici Ajouter la vidéo -->
+              <!--<%=  TypeProduit.find_by(:id => @produit.type_produits_id).nom%>-->
+              <% puts @produit.urlFichier %>
+              <% if TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Vidéo" %>
+                <!-- Ici Ajouter la vidéo -->
               <div class="fiche__detail__grey__lien fiche__detail__grey__lien--video">
 
 	              </div>
@@ -57,7 +51,7 @@
             <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Excel" %> 
               <div class="fiche__detail__grey__lien fiche__detail__grey__lien--excel">
                 <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
-              </div>
+                </div>
             <% elsif  TypeProduit.find_by(:id => @produit.type_produits_id).nom == "Fichier Pdf" %> 
               <div class="fiche__detail__grey__lien fiche__detail__grey__lien--pdf">
                 <%= link_to("Télécharger", @produit.urlFichier.url, class: "button button--submit" ) %>
@@ -72,29 +66,14 @@
               </div>
             <% end %>
           <% else %> 
-               <div class="fiche__detail__grey__lien">
-                 <%#*Il faut encore mettre le bon lien pour commander le produit%>
-                <%= link_to("Je choisis ce produit", @produit,  class: "button button--submit" ) %>
-              </div>
+            <div class="fiche__detail__grey__lien">
+              <%#*Il faut encore mettre le bon lien pour commander le produit%>
+              <%= link_to("Je choisis ce produit", @produit,  class: "button button--submit" ) %>
+            </div>
           <% end %>
-
-			</p>
-
-          </div>
-
         </div>
-    
-    </div>
-  <section class="section">
-    <div class="section__content section__content--sticky">
-      <div class="fiche__retour">
-      	<% if session[:user_fonction] == "client" %>
-        	<a onClick="window.history.back()" class="fiche__retour__bouton"> Retour</a>
-        <% else %>
-        	<%= link_to "Gestion produit", produits_path, class: "button fiche__retour__bouton" %>
-        <% end %>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
 
