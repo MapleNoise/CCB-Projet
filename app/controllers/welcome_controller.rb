@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
   
   def index
-    @layout = "back"
+    @layout = "application"
   end
   
  def indexBack 
