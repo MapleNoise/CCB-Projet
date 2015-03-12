@@ -19,7 +19,7 @@
 /log/*.log
 /tmp
 
-# ignore sass 
+# ignore sass
 /app/assets/.sass-cache/**/
 node_modules/
 public/stylesheets/*
@@ -27,9 +27,9 @@ public/stylesheets/*
 # Ignore Gemfile.lock
 Gemfile.lock
 
-# Netbeans
+# IDE
 /nbproject/
-
+.idea/
 
 db/development.sqlite3_test
 .project
@@ -38,3 +38,5 @@ public/assets/stylesheets/application.css
 db/schema.rb
 
 public/uploads/*
+*.*~
+*.orig
