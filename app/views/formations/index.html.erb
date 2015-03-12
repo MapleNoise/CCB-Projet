@@ -1,10 +1,11 @@
-<hr>
+
 <%= link_to 'Creer une formation', new_formation_path , :class =>"button button__back button__back--formation" %>
-<hr>
+
 <%@formations = Formation.all.paginate(:page => params[:page])%>
 <% @formation_menu_active = true %>
 <% provide :titreH1, "Liste des formations" %>
 
+<div class="formation">
 <table>
   <thead>
     <tr>
@@ -58,6 +59,6 @@
   </div>
 
 <br>
-
+</div>
 <!-- # <%= link_to 'New Formation', new_formation_path %>
  -->
