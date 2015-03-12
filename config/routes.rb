@@ -17,14 +17,14 @@ Rails.application.routes.draw do
   #resources :sections
 
   # Routes pour le workflow formations
-  resources :formations do 
-    resources :sections do 
+  resources :formations do
+    resources :sections do
       resources :chapitres
     end
   end
-  
+
   get 'formations/:id/hierarchie' => 'formations#hierarchie', :as => :hierarchie
- 
+
 
   resources :utilisateur2s
 

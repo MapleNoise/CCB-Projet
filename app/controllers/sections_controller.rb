@@ -42,7 +42,7 @@ class SectionsController < ApplicationController
     @section.formations_id = formation_params
 
     if @section.save
-      redirect_to formation_section_path(@formation, @section), notice: 'La section a ete cree.'
+      redirect_to formation_section_path(@formation, @section), notice: 'La section a été crée.'
     else
       flash[:error] = @section.errors.full_messages
       render :new
