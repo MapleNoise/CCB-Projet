@@ -36,11 +36,16 @@
     <span class="field__label"><%= f.label :estPublic %></span>
     <%= f.check_box(:estPublic, class: "field__control field__control--checkbox") %>
   </div>
-<div class="field field--back">
-	<span class="field__label">Status </span>
-	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-	<%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom) , class: "field__control field__control--select") %>
-</div>
+  <div class="field field--back">
+    <span class="field__label">Status </span>
+    <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
+    <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom) , class: "field__control field__control--select") %>
+  </div>
+  <div class="field field--back">
+    <span class="field__label">Etape de reconvertion </span>
+    <%#= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom) , class: "field__control field__control--select") %>
+  </div>
+
   <div class="field field--back">
     <div class="actions">
       <%= f.submit "Créer", class: "button button--submit"  %>
