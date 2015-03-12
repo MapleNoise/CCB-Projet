@@ -38,7 +38,7 @@ class Utilisateur2sController < ApplicationController
   end
 
   def show
-    @layout = "application"
+    @layout = "back"
 
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
