@@ -4,63 +4,57 @@ class Utilisateur2sController < ApplicationController
   respond_to :html
 
    layout :utilisateur2s_layout
-
+  
   @layout = "back"
-
+  
+  helper_method :sort_column, :sort_direction
   def utilisateur2s_layout
     @layout
   end
-
+  
+  
   def index
-
-    @layout = "back"
+        @layout = "back"
     if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
-      @utilisateur2s = Utilisateur2.all
-      if params[:nom].present?
-        @utilisateur2s = @utilisateur2s.where('nom LIKE ?', '%' + params[:nom] + '%')
-      end
-      if params[:prenom].present?
-        @utilisateur2s = @utilisateur2s.where('prenom LIKE ?', '%' + params[:prenom] + '%')
-      end
-      if params[:email].present?
-        @utilisateur2s = @utilisateur2s.where('email LIKE ?', '%' + params[:email] + '%')
-      end
-      respond_with(@utilisateur2s)
+
+      respond_with(user_filtered)
     else
-      @utilisateur2s = Utilisateur2.find_by(id: session[:user_id])
-      respond_with(@utilisateur2s)
-      #redirect_to forbidden_path :status => 403
+      redirect_to forbidden_path :status => 403
+    end
+  end
+
+  def user_filtered
+    @utilisateur2s = Utilisateur2.all.order(sort_column + " " + sort_direction)
+    if params[:nom].present?
+      @utilisateur2s = @utilisateur2s.where('nom LIKE ?', '%' + params[:nom] + '%').order(sort_column + " " + sort_direction)
+    end
+    if params[:prenom].present?
+      @utilisateur2s = @utilisateur2s.where('prenom LIKE ?', '%' + params[:prenom] + '%').order(sort_column + " " + sort_direction)
+    end
+    if params[:email].present?
+      @utilisateur2s = @utilisateur2s.where('email LIKE ?', '%' + params[:email] + '%').order(sort_column + " " + sort_direction)
     end
   end
 
   def show
-    if(!session[:user_id].nil?)
-     if( Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
-      @layout = "application"
+    @layout = "application"
+
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
     else
-      if(prod_id_params != {})
-        redirect_to produit/prod_id_params/achat
-      end
-      @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
-      respond_with(@utilisateur2)
-
-    #else
-    #  redirect_to forbidden_path :status => 403
+      redirect_to forbidden_path :status => 403
     end
-  end
   end
 
   def new
-
-    ##if(session[:user_id] == nil || Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
     @layout = "application"
+    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
-      respond_with(@utilisateur2, @produit)
-    ##else
-      ##redirect_to forbidden_path :status => 403
-    ##end
+      respond_with(@utilisateur2)
+    else
+      redirect_to forbidden_path :status => 403
+    end
   end
 
   def edit
@@ -71,44 +65,34 @@ class Utilisateur2sController < ApplicationController
     @utilisateur2 = Utilisateur2.find_by(id: session[:user_id])
     respond_with(@utilisateur2)
   end
-
+  
   def modifierUtilisateur
     @layout = "back"
   end
+
+
 
   def create
     @layout = "back"
     @utilisateur2 = Utilisateur2.new(utilisateur2_params)
     @utilisateur2.fonctionId = fonction_params
     @utilisateur2.save
-
-    session[:user_id] = @utilisateur2.id
-
-    if(prod_id_params == {})
-      respond_with(@utilisateur2)
-    else
-      @prod = Produit.all.find_by(:id => prod_id_params)
-      if(!@prod.nil?)
-        redirect_to "/achat/#{@prod.id}"
-      else
-        respond_with(@utilisateur2)
-      end
-    end
+    respond_with(@utilisateur2)
   end
 
   def update
     @layout = "back"
 
     if utilisateur2_params['password'] #Si c'est un utilisateur qui modifie son compte
-
+      
       unless utilisateur2_params['old_password'].empty?
-
+        
         authorized_user = Utilisateur2.find_by(id: session[:user_id])
-
+     
         if authorized_user
-
+          
            authorized_user = authorized_user.authenticate(utilisateur2_params['old_password'])
-
+           
            if authorized_user
              if utilisateur2_params['password'] === utilisateur2_params['password_confirmation']
                 @utilisateur2.update(utilisateur2_params)
@@ -125,13 +109,13 @@ class Utilisateur2sController < ApplicationController
             end
            end
         end
-      else
+      else 
         @utilisateur2.nom =  utilisateur2_params['nom']
         @utilisateur2.prenom = utilisateur2_params['prenom']
         @utilisateur2.save
       end
-
-
+        
+     
     elsif(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) #Si c'est un admin qui change le role d'un utilisateur
         @utilisateur2.update(utilisateur2_params)
         @utilisateur2.fonctionId = fonction_params
@@ -139,8 +123,8 @@ class Utilisateur2sController < ApplicationController
         respond_with(@utilisateur2)
     end
   end
-
-
+  
+  
   def destroy
     @layout = "back"
     @utilisateur2.destroy
@@ -156,19 +140,26 @@ class Utilisateur2sController < ApplicationController
     end
 
     def utilisateur2_params
-      params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password, :prod, :produit)
+      params.require(:utilisateur2).permit(:nom, :prenom, :email, :email_confirmation, :password, :password_confirmation, :old_password)
     end
-
 
     def fonction_params
       params.require(:fonctions)
     end
 
-    def prod_id_params
-      if(params[:prod] == nil || params[:prod] == "")
-        {}
+    def sort_column
+      if Utilisateur2.column_names.include?(params[:sort])
+        params[:sort]
       else
-        params.require(:prod)
+        "nom"
       end
-    end    
+    end
+
+    def sort_direction
+      if %w[asc desc].include?(params[:direction])
+        params[:direction]
+      else
+        "asc"
+      end
+    end
 end
