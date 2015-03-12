@@ -29,9 +29,16 @@ class Produit < ActiveRecord::Base
 
   # Gestion de la suppression d'un produit
   def delete!
-    if(:dateSuppression == nil)
+    if(self.dateSuppression.nil?)
       update_attribute(:dateSuppression, Time.now)
     end
+  end
+
+  def to_string
+    puts "-------------PRODUIT-----------------"
+      puts self.nom
+      puts self.dateSuppression
+    puts "-------------/PRODUIT-----------------"
   end
 
   def achat

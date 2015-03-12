@@ -1,4 +1,4 @@
-<% provide :titreH1, "New formation" %>
+<% provide :titreH1, "Création formation" %>
 
 <%= form_for(@formation , html: {class: "formulaire--back"}) do |f| %>
   <% if @formation.errors.any? %>
@@ -43,7 +43,7 @@
 </div>
   <div class="field field--back">
     <div class="actions">
-      <%= f.submit class: "button button--submit" %>
+      <%= f.submit "Créer", class: "button button--submit"  %>
     </div>
   </div>
 <% end %>

@@ -1,4 +1,4 @@
-<% provide :titreH1, "Editing utilisateur2"%>
+<% provide :titreH1, "Edition utilisateur"%>
 
 <%= form_for(@utilisateur2, html: {class: "formulaire--back"}) do |f| %>
   <% if @utilisateur2.errors.any? %>
@@ -34,14 +34,14 @@
 <div class="field field--back">
 
   <div class="actions">
-    <%= f.submit :class=>'button button--submit' %>
+    <%= f.submit "Enregistrer", :class=>'button button--submit' %>
   </div>
 </div>
 <% end %>
 
 <% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>     
 	<div class="field">
-  		<%= link_to 'Show', @utilisateur2 %>
+  		<%= link_to 'Afficher', @utilisateur2 , class: "button button--link"%>
 	</div>
 <!--|<%= link_to 'Back', utilisateur2s_path %>-->
 
