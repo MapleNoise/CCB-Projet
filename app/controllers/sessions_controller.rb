@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
     if authorized_user
       session[:user_id] = authorized_user.id
+      session[:user_fonction] = Fonction.find_by(:id => authorized_user.fonctionId).nom.downcase
       
       if authorized_user.isClient?
   		  if(prod_id_params != {})

@@ -101,7 +101,11 @@
   <section class="section">
     <div class="section__content section__content--sticky">
       <div class="fiche__retour">
-        <button onClick="window.history.back()" class="fiche__retour__bouton"> Retour</button>
+      	<% if session[:user_fonction] == "client" %>
+        	<a onClick="window.history.back()" class="fiche__retour__bouton"> Retour</a>
+        <% else %>
+        	<%= link_to "Gestion produit", produits_path, class: "button fiche__retour__bouton" %>
+        <% end %>
       </div>
     </div>
   </section>
