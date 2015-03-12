@@ -41,17 +41,14 @@
 <div class="field field--back">  
    <%= hidden_field_tag :fonctions, 3 %>
 </div>
-<<<<<<< HEAD
-
 <% if(!params[:prod].nil?)%>
 <div class="field">  
    <%= hidden_field_tag :prod, params[:prod] %>
 </div>
 <% end%>
 
-=======
+
 <div class="field field--back">
->>>>>>> origin/back
   <div class="actions">
     <%= f.submit  class: "button button--submit"%>
   </div>
