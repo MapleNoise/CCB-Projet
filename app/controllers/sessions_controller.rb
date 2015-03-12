@@ -24,7 +24,8 @@ class SessionsController < ApplicationController
           if session[:redirect_to].nil?
             redirect_to root_path
           else
-            redirect_to session[:redirect_to]
+              #redirect_to session[:redirect_to]
+              redirect_to "/indexBack"
           end
   	    end
       else
