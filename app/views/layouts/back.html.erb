@@ -6,8 +6,6 @@
     <link data-turbolinks-track="true" href="/assets/stylesheets/application.css" media="all" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= favicon_link_tag '/favicon.png' %>
-    <script type="text/javascript" src="/assets/javascripts/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/assets/javascripts/filter.min.js"></script>
   </head>
   <body>
     <header>
@@ -48,14 +46,12 @@
           <h2 class="menuback__item__title">Produits</h2>
         </a>
       </nav>
-
-        <% if @special_template %>
-          <section class="section">
-            <div class="l-section section__content">
-              <%= flash[:notice]  %>
-              <%= yield %>
-            </div>
-          </section>
+      <% if @special_template %>
+        <% unless flash.empty? %>
+            <% flash.each do |key, value| %>
+              <div class="message message--<%= key %>"><%= value %></div>
+            <% end %>
+        <% end %>
         <%= @special_template %>
       </section>
     <% else %>
@@ -89,7 +85,13 @@
           <button onClick="window.history.back()" class="sectionback__entete__back"> Retour</button>
         </div>
 
-          <%= flash[:alert]  %>
+          <% unless flash.empty? %>
+            <div class="message-container">
+              <% flash.each do |key, value| %>
+                <div class="message message--<%= key %>"><%= value %></div>
+              <% end %>
+            </div>
+          <% end %>
           <%= yield %>
 
         <div class="sectionback__pied">
