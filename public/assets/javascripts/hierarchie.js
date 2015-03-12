@@ -1,4 +1,6 @@
-	$(function () {
+	
+  jQuery(document).ready(function($) {
+    $(function () {
     $.jstree.defaults.core.themes.variant = "large";
     // 6 create an instance when the DOM is ready
     $('#jstree').jstree({  "core" : {
@@ -73,27 +75,32 @@ $('#deleteChapitre').on('click', function (e) {
 });
 
 $('#moveUp').on('click', function () {
-    var instance = $.jstree.reference('#jstree'),
-          selected = instance.get_selected(),
-          position = $('#'+selected).index();
+    var ref = $('#jstree').jstree(true),
+    sel = ref.get_selected();
+    var prev = ref.get_prev_dom(sel);
+    var par = ref.get_parent(sel);
 
-    instance.move_node(
-          selected,
-          instance.get_parent( selected ),
-          position - 1 < 0 ? 0 : position - 1
-    );
+    if(par === prev.context.id){
+      var newNode = ref.get_prev_dom(par);
+      var newPar = ref.get_parent(newNode);
+      $("#jstree").jstree("move_node",sel,newPar,"last");
+    }
+    if (prev.length) {
+        $("#jstree").jstree("move_node", sel, prev, "before");
+    }
 });
 
 $('#moveDown').on('click', function () {
-     var instance = $.jstree.reference('#jstree'),
-            selected = instance.get_selected(),
-            position = $('#'+selected).index();
+    var ref = $('#jstree').jstree(true),
+    sel = ref.get_selected();
+    var next = ref.get_next_dom(sel);
 
-      instance.move_node(
-          selected,
-          instance.get_next_dom( selected, true ),
-          'after'
-      );
+    if(ref.is_parent(next) == true){
+      $("#jstree").jstree("move_node",sel,next,"first");
+    }
+    if (next.length) {
+        $("#jstree").jstree("move_node", sel, next, "after");
+    }
 });
 
 
@@ -110,8 +117,10 @@ $('#jstree')
   })
   // create the instance
   .jstree();
+  }); 
 
-  });
+});
+  
 
 
 // $('#moveDown').on('click', function () {
