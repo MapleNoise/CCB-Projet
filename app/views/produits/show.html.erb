@@ -68,7 +68,7 @@
           <% else %> 
             <div class="fiche__detail__grey__lien">
               <%#*Il faut encore mettre le bon lien pour commander le produit%>
-              <%= button_to("Acheter le produit", "/achat/#{@produit.id}", params: { prod: @produit }) %>
+              <%= button_to("Acheter le produit", "/achat/#{@produit.id}", params: { prod: @produit }, class: "button button--submit") %>
             </div>
           <% end %>
         </div>
