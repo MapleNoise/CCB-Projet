@@ -31,7 +31,7 @@ class ProduitsController < ApplicationController
     if(session[:user_id] != nil)
       respond_with(@produit)
     else
-      redirect_to login_path params: { prod: @produit }
+      redirect_to loginAchat_path params: { prod: @produit }
     end
   end
 

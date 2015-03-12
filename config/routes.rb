@@ -45,7 +45,10 @@ Rails.application.routes.draw do
 
     root :to => "welcome#index", :action => '/'
     match "signup", :to => "utilisateur2s#new", via: [:get, :post]
+    
     match "login", :to => "sessions#login", via: [:get, :post]
+    get "loginAchat", :to => "sessions#login_achat"
+
     match "logout", :to => "sessions#logout", via: [:get, :post]
     match "home", :to => "sessions#home", via: [:get, :post]
     match "profile", :to => "sessions#profile", via: [:get, :post]

@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
     #Login Form
   end
 
+  def login_achat
+    #Login_achat Form
+  end
+
   def login_attempt
     authorized_user = Utilisateur2.find_by(email: params[:email].downcase)
     if authorized_user
@@ -19,17 +23,16 @@ class SessionsController < ApplicationController
       
       if authorized_user.isClient?
   		  if(prod_id_params != {})
-          	redirect_to "/achat/#{prod_id_params}"
+        	redirect_to "/achat/#{prod_id_params}"
       	else
-          if session[:redirect_to].nil?
-            redirect_to root_path
-          else
-              #redirect_to session[:redirect_to]
-              redirect_to "/indexBack"
-          end
+         # if session[:redirect_to].nil?
+        	redirect_to indexBack_path
+          #else
+	        #redirect_to session[:redirect_to]
+          #end
   	    end
       else
-        redirect_to "/indexBack"
+        redirect_to indexBack_path
       end
     else
       flash[:error] = "Cette combinaison email/mot de passe n'est pas valide"

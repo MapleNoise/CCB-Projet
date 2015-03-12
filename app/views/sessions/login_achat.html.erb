@@ -1,5 +1,5 @@
 <%
-	@page_title = "UserAuth | Login",
+	@page_title = "Connexion | Inscription",
 %>
 
 <% @special_template = capture do %>
@@ -31,6 +31,8 @@
       <%= submit_tag("Connexion", options = {class: 'button button--connexion', params: { prod: params[:prod] }}) %>
       <% end %>
       <hr>
+
+      <%= button_to("Inscription",  new_utilisateur2_path, :class => "button button--connexion", :method => :get, params: { prod: params[:prod] }) %>
 
     </div>
     <div class="connexion__content__body">
