@@ -1,4 +1,4 @@
-<% provide :titreH1, "Listing quizzs"%>
+<% provide :titreH1, "Liste des quizzs"%>
 
 <% @quizz_menu_active = true %>
 
@@ -9,7 +9,9 @@
       <th>Nom</th>
       <th>Description</th>
       <th>Datesuppression</th>
-      <th colspan="3"></th>
+      <th>Consulter</th>
+      <th>Editer</th>
+      <th>Supprimer</th>
     </tr>
   </thead>
 
@@ -20,9 +22,9 @@
         <td><%= quizz.nom %></td>
         <td><%= quizz.description %></td>
         <td><%= quizz.dateSuppression %></td>
-        <td><%= link_to 'Show', quizz %></td>
-        <td><%= link_to 'Edit', edit_quizz_path(quizz) %></td>
-        <td><%= link_to 'Destroy', quizz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to  image_tag('icone-search.png'), quizz %></td>
+        <td><%= link_to image_tag('icone_edition.png'), edit_quizz_path(quizz) %></td>
+        <td><%= link_to image_tag('icone_corbeille.png'), quizz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Quizz', new_quizz_path %>
+<%= link_to 'Créer un quizz', new_quizz_path %>

@@ -1,5 +1,7 @@
 # coding: utf-8
 <% provide :titreH1, "Liste des utilisateurs"%>
+<% @utilisateur_menu_active = true %>
+
 
 <%= form_tag("utilisateur2s", :method => :get, :class=>'formulaire formulaire--filter') do |f| %>
   <fieldset class="fieldset">
@@ -46,12 +48,11 @@
   <tbody>
     <% @utilisateur2s.each do |utilisateur2| %>
       <tr>
-        <td><%= utilisateur2.nom %></td>
+        <td><%= link_to utilisateur2.nom, utilisateur2 %></td>
         <td><%= utilisateur2.prenom %></td>
         <td><%= utilisateur2.email %></td>
-        <td><%= link_to  image_tag('icone-search.png'), utilisateur2, class: "button--link" %></td>
         <td><%= link_to image_tag('icone_edition.png'), edit_utilisateur2_path(utilisateur2) %></td>
-        <td><%= link_to image_tag('icone_corbeille.png'), utilisateur2, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
+        <td><%= link_to image_tag('icone_corbeille.png'), utilisateur2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

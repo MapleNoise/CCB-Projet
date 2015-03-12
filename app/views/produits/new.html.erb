@@ -1,4 +1,4 @@
-<% provide :titreH1, "New produit" %>
+<% provide :titreH1, "Création produit" %>
 
 <%= form_for(@produit, html: {class: "formulaire--back"}) do |f| %>
 
@@ -80,7 +80,7 @@
     </div>
     <div class="field field--back">
         <div class="actions">
-          <%= f.submit class: "button button--submit"%>
+          <%= f.submit "Créer", class: "button button--submit"%>
         </div>
     </div>
   <% end %>

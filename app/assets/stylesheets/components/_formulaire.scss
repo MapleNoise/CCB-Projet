@@ -110,24 +110,15 @@
     @include gridle(9);
     //margin-top: 50px;
     .field__label {
-      @include gridle(12);
-      //background: $formulaire-label-color;
-      overflow : hidden;
       text-align : left;
-      //line-height: 2.3125em;
       color : $color-black;
-      //line-height: $formulaire-field-height;
       border : none;
-      //height: 100%;
       bottom: 0;
       margin-top: 0px;
-      @include gridle(3);
+      @include gridle(12);
       background: $color-white;
-      overflow : hidden;
       text-decoration: strong;
-      /*vertical-align: bottom;*/
       padding-top: 10px;
-      /*line-height: -20px;*/
     }
 
     .field__control {

@@ -45,7 +45,8 @@ Rails.application.routes.draw do
 
     root :to => "welcome#index", :action => '/'
     match "signup", :to => "utilisateur2s#new", via: [:get, :post]
-
+    get "inscription", :to => "utilisateur2s#inscription"
+    
     match "login", :to => "sessions#login", via: [:get, :post]
     get "loginAchat", :to => "sessions#login_achat"
 

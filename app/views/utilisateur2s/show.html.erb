@@ -1,19 +1,18 @@
-<p id="notice"><%= notice %></p>
+<h3 class="section__content__title section__content__title--wide"><%= @utilisateur2.nom %>  <%= @utilisateur2.prenom %></h3>
 
-<p>
-  <strong>Name:</strong>
-  <%= @utilisateur2.nom %>  <%= @utilisateur2.prenom %>
-</p>
+    <div class="fiche">
+      
+      <div class="fiche__general__description">
+        <strong>Email :</strong>
+        <%= @utilisateur2.email %>
+      </div>
+      <div class="fiche__general__description">
+        <strong>Fonction :</strong>
+        <%= Fonction.find_by(:id => @utilisateur2.fonctionId).nom.capitalize %>
+      </div>
+      <div class="fiche__general__description">
+        <%= link_to 'Editer', edit_utilisateur2_path(@utilisateur2), class: "button button--link" %> 
+        <%= link_to 'Gestion des utilisateurs', utilisateur2s_path, class: "button button--link" %>
+      </div>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @utilisateur2.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @utilisateur2.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_utilisateur2_path(@utilisateur2) %> |
-<%= link_to 'Back', utilisateur2s_path %>
