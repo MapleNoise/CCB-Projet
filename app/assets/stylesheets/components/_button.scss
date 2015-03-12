@@ -91,6 +91,23 @@
         }
     }
 
+
+    &--client {
+        @include icon('user');
+        &:before {
+            padding-right: 7px;
+        }
+    }
+
+    
+    &--logout {
+        @include icon('sign-out');
+        &:before {
+            padding-right: 7px;
+        }
+    }
+    
+
     &--up {
         @include icon('caret-up');
         color : black;

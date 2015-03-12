@@ -34,9 +34,8 @@
 											<%= link_to( 'Espace client', login_path, class: "button button--link" ) %>
 											</div>
 											<% else%>
-											<div><p>Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></p></div>
-											<div><p></p></div>
-										<div><p><%=link_to( 'Mon espace', indexBack_path, class: "button button--link")%> <%=link_to( 'Deconnexion', logout_path, class: "button button--link")%></p></div>
+											<div><span class="header-connexion">Bonjour <%=(Utilisateur2.find_by(id: session[:user_id])).nom%></span></div>
+										<div><p><%=link_to( 'Mon espace', indexBack_path, class: "button button--link button--client")%> <%=link_to( 'Deconnexion', logout_path, class: "button button--link button--logout")%></p></div>
 								<% end%>
                   </div>
                   <div class="panel client__newsletter">
