@@ -19,7 +19,7 @@ class ProduitsController < ApplicationController
       if(Utilisateur2.find_by(:id => session[:user_id]).isAdmin?)
         @produits = Produit.all
       elsif (Utilisateur2.find_by(:id => session[:user_id]).isExpert?)
-        @produits = Produit.all.where(:utilisateur2s_id => session[:user_id])
+        @produits = Produit.all.where(:utilisateur2s_id => session[:user_id]).where(:dateSuppression => nil)
       elsif (Utilisateur2.find_by(:id => session[:user_id]).isClient?)
         redirect_to forbidden_path :status => 403
       end
