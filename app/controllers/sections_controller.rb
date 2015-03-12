@@ -1,18 +1,20 @@
+# coding: utf-8
 class SectionsController < ApplicationController
   before_action :set_section, only: [:show, :edit, :update, :destroy]
   before_action :test_client, only: [:new, :index, :create, :edit, :update, :destroy]
+  before_action :set_formation
 
   respond_to :html
-  
+
     layout :sections_layout
-  
+
   @layout = "back"
-  
+
   def sections_layout
     @layout
   end
-  
-  
+
+
   def index
     @layout = "back"
     @sections = Section.all
@@ -26,9 +28,8 @@ class SectionsController < ApplicationController
 
   def new
     @layout = "back"
-    @formation = Formation.find_by(:id => formation_params)
     @section = Section.new
-    respond_with(@section)
+    respond_with(@formation, @section)
   end
 
   def edit
@@ -39,17 +40,12 @@ class SectionsController < ApplicationController
     @layout = "back"
     @section = Section.new(section_params)
     @section.formations_id = formation_params
-    respond_to do |format|
-      if @section.save
-        if
-          format.html { redirect_to @section, notice: 'La section a ete cree.' }
-          format.json { render :show, status: :created, location: @produit }
-        else
-          format.html { render :new }
-          format.json { render json: @section.errors, status: :unprocessable_entity }
-        end
 
-      end
+    if @section.save
+      redirect_to formation_section_path(@formation, @section), notice: 'La section a ete cree.'
+    else
+      flash[:error] = @section.errors.full_messages
+      render :new
     end
   end
 
@@ -66,12 +62,17 @@ class SectionsController < ApplicationController
   end
 
   private
+
+  def set_formation
+    @formation = Formation.find_by(:id => formation_params)
+  end
+
   def set_section
     @section = Section.find(params[:id])
   end
 
   def section_params
-    params.require(:section).permit(:ref, :nom, :description, :dateSuppression)
+    params.require(:section).permit(:titre, :description, :dateSuppression)
   end
 
   def formation_params

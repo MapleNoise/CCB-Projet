@@ -3,21 +3,12 @@
 <%= form_for (@section), html: {class: "formulaire--back"}, :url => "/formations/#{@formation.id}/sections" do |f| %>
 
   <div class="field field--back">
-    <span class="field__label"><%= f.label :ref %></span>
-    <%= f.text_field( :ref, class: "field__control") %>
-  </div>
-  <div class="field field--back">
-    <span class="field__label"><%= f.label :nom %></span>
-    <%= f.text_field( :nom, class: "field__control") %>
+    <span class="field__label"><%= f.label :titre, "Titre" %></span>
+    <%= f.text_field( :titre, class: "field__control") %>
   </div>
   <div class="field field--textarea field--back">
-    <span class="field__label"><%= f.label :description %></span>
+    <span class="field__label"><%= f.label :description, "Description" %></span>
     <%= f.text_area( :description, class: "field__control") %>
-  </div>
- <div class="field field--back">
-   <span class="field__label">Formation</span>
-  	<!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-  	<%= select_tag(:formation, options_from_collection_for_select(Formation.all, :id, :nom), class: "field__control field__control--select") %>
   </div>
 <div class="field field--back">
   <div class="actions">
@@ -27,4 +18,4 @@
 <% end %>
 
 
-<%= link_to 'Back', formation_sections_path %>
+<%= link_to 'Back', hierarchie_path(@formation) %>

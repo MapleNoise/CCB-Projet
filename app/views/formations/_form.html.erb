@@ -13,7 +13,7 @@
 
   <div class="field field--back">
     <span class="field__label"><%= f.label :ref %></span>
-    <%= f.text_field(:ref, class: "field__control")%>
+    <%= f.text_field(:ref, :readonly => true, class: "field__control")%>
   </div>
   <div class="field field--back">
     <span class="field__label"><%= f.label :nom %></span>

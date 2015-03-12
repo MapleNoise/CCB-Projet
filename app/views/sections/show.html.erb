@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Ref:</strong>
-  <%= @section.ref %>
-</p>
-
-<p>
-  <strong>Nom:</strong>
-  <%= @section.nom %>
+  <strong>Titre:</strong>
+  <%= @section.titre %>
 </p>
 
 <p>
@@ -20,5 +15,5 @@
   <%= @section.dateSuppression %>
 </p>
 
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', formation_section_path %>
+<%= link_to 'Editer', edit_formation_section_path(@formation, @section) %> |
+<%= link_to 'Back', hierarchie_path(@formation) %>
