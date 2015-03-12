@@ -27,6 +27,9 @@
               <div class="header__client">
                 <% if(session[:user_id] == nil)%>
                 <div class="expert__login">
+                  <% if (!request.original_url.include? "login") %>
+                    <% session[:redirect_to] = request.original_url%>
+                  <% end %>
                   <%= link_to( 'Espace expert', login_path, class: "button button--link" ) %>
                   </div>
                   <div class="client__login">
