@@ -1,4 +1,5 @@
-<% provide :titreH1, "Listing utilisateur2s"%>
+# coding: utf-8
+<% provide :titreH1, "Liste des utilisateurs"%>
 
 <%= form_tag("utilisateur2s", :method => :get, :class=>'formulaire formulaire--filter') do |f| %>
   <fieldset class="fieldset">
@@ -36,7 +37,9 @@
       <th><%= sortable "nom" %></th>
       <th><%= sortable "prenom" %></th>
       <th><%= sortable "email" %></th>
-      <th colspan="3"></th>
+      <th>Consulter</th>
+      <th>Editer</th>
+      <th>Supprimer</th>
     </tr>
   </thead>
 
@@ -46,9 +49,9 @@
         <td><%= utilisateur2.nom %></td>
         <td><%= utilisateur2.prenom %></td>
         <td><%= utilisateur2.email %></td>
-        <td><%= link_to 'Show', utilisateur2 %></td>
-        <td><%= link_to 'Edit', edit_utilisateur2_path(utilisateur2) %></td>
-        <td><%= link_to 'Destroy', utilisateur2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to  image_tag('icone-search.png'), utilisateur2, class: "button--link" %></td>
+        <td><%= link_to image_tag('icone_edition.png'), edit_utilisateur2_path(utilisateur2) %></td>
+        <td><%= link_to image_tag('icone_corbeille.png'), utilisateur2, method: :delete, data: { confirm: 'Êtes-vous sûr?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -56,4 +59,4 @@
 
 <br>
 
-<%= link_to 'New Utilisateur2', new_utilisateur2_path %>
+<%= link_to 'Créer un utilisateur', new_utilisateur2_path, class: "button--link" %>
