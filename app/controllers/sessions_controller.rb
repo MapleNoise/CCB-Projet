@@ -15,12 +15,16 @@ class SessionsController < ApplicationController
 
     if authorized_user
       session[:user_id] = authorized_user.id
-      
+
       if authorized_user.isClient?
   		  if(prod_id_params != {})
           	redirect_to "/achat/#{prod_id_params}"
       	else
-          	redirect_to root_path
+          if session[:redirect_to].nil?
+            redirect_to root_path
+          else
+            redirect_to session[:redirect_to]
+          end
   	    end
       else
         redirect_to "/indexBack"
@@ -33,6 +37,7 @@ class SessionsController < ApplicationController
 
   def logout
     session[:user_id] = nil
+    session[:redirect_to] = nil
     redirect_to root_path
   end
 
@@ -42,5 +47,5 @@ class SessionsController < ApplicationController
       else
         params.require(:prod)
       end
-    end    
+    end
 end
