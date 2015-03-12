@@ -27,9 +27,9 @@
 	&__link{
 		@include gridle_parent();
 		@include gridle(11.8, 'small');
-		@include gridle(5.6, 'medium large');
+		@include gridle(7.2, 'medium large');
 		@include gridle_push(0.2, 'small');
-		@include gridle_push(1.4, 'medium large');
+		//@include gridle_push(1.4, 'medium large');
 		text-align: right;
 
 		@include gridle_state( 'small' ) {

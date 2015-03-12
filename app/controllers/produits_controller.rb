@@ -1,9 +1,10 @@
+# coding: utf-8
 class ProduitsController < ApplicationController
-  before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete]
-  before_action :test_client, only: [:new, :index, :show, :create, :edit, :update, :destroy]
-  before_action :test_expert, only: [:show]
+  before_action :set_produit, only: [:show, :edit, :update, :destroy, :delete, :achat]
+  before_action :test_client, only: [:new, :index, :create, :edit, :update, :destroy]
 
   layout :produits_layout
+  respond_to :html
 
   @layout = "back"
 
@@ -19,7 +20,18 @@ class ProduitsController < ApplicationController
         @produits = Produit.all
       elsif (Utilisateur2.find_by(:id => session[:user_id]).isExpert?)
         @produits = Produit.all.where(:utilisateur2s_id => session[:user_id])
+      elsif (Utilisateur2.find_by(:id => session[:user_id]).isClient?)
+        redirect_to forbidden_path :status => 403
       end
+    end
+  end
+
+  def achat
+    @layout = "application"
+    if(session[:user_id] != nil)
+      respond_with(@produit)
+    else
+      redirect_to loginAchat_path params: { prod: @produit }
     end
   end
 
@@ -66,14 +78,11 @@ class ProduitsController < ApplicationController
     respond_to do |format|
       Produit.transaction do
         if @produit.save
-          if
-            format.html { redirect_to @produit, notice: 'Le Produit a ete cree.' }
+            format.html { redirect_to @produit, notice: 'Le Produit a été crée.' }
             format.json { render :show, status: :created, location: @produit }
           else
             format.html { render :new }
             format.json { render json: @produit.errors, status: :unprocessable_entity }
-          end
-
         end
       end
     end
@@ -85,7 +94,7 @@ class ProduitsController < ApplicationController
     @layout = "back"
     respond_to do |format|
       if @produit.update(produit_params)
-        format.html { redirect_to @produit, notice: 'Produit was successfully updated.' }
+        format.html { redirect_to @produit, notice: 'Le produit à bien été mis à jour.' }
         format.json { render :show, status: :ok, location: @produit }
       else
         format.html { render :edit }
@@ -102,7 +111,7 @@ class ProduitsController < ApplicationController
 
     @produit.delete!
     respond_to do |format|
-      format.html { redirect_to produits_url, notice: 'Produit was successfully destroyed.' }
+      format.html { redirect_to produits_url, notice: 'Produit supprimé.' }
       format.json { head :no_content }
     end
   end
@@ -129,5 +138,10 @@ class ProduitsController < ApplicationController
   end
   def status_params
       params.require(:status)
-    end
+  end
+
+    def prod_id_params
+      params.require(:prod)
+  end
+
 end

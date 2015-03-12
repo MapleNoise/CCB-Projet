@@ -1,0 +1,36 @@
+.message {
+
+	margin: 10px;
+  padding: 10px;
+  padding-left: 20px;
+	
+	
+	&-container {
+		margin-top: 60px;
+	}
+
+	&--notice {
+		color: $color-blue;
+	  border-left: 4px solid $color-blue;
+	  background-color: lighten($color-blue, 40%);
+	}
+	
+	&--success {
+		color: $color-green;
+	  border-left: 4px solid $color-green;
+	  background-color: lighten($color-green, 40%);
+	}
+
+	&--alert {
+		color: $color-orange;
+	  border-left: 4px solid $color-orange;
+	  background-color: lighten($color-orange, 40%);
+	}
+
+	&--error {
+		color: $color-red;
+	  border-left: 4px solid $color-red;
+	  background-color: lighten($color-red, 40%);
+	}
+
+}

@@ -19,7 +19,7 @@ class FormationsController < ApplicationController
   end
 
   def show
-    @layout = "back"
+    @layout = "application"
     respond_with(@formation)
   end
 
@@ -31,6 +31,14 @@ class FormationsController < ApplicationController
 
   def edit
     @layout = "back"
+  end
+
+  def hierarchie
+    @layout = "back"
+    # @formation = Formation.new(formation_params)
+    # @formation.estPublic = false
+    # @formation.save
+    # respond_with(@formation)
   end
 
   def create

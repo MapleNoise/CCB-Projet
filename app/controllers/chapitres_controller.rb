@@ -1,55 +1,80 @@
 class ChapitresController < ApplicationController
   before_action :set_chapitre, only: [:show, :edit, :update, :destroy]
   before_action :test_client, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :set_section
+  before_action :set_formation
 
   respond_to :html
 
+  layout :chapitres_layout
+
+  @layout = "back"
+
+  def chapitres_layout
+    @layout
+  end
+
   def index
+    @layout = "back"
     @chapitres = Chapitre.all
     respond_with(@chapitres)
   end
 
   def show
+    @layout = "application"
     respond_with(@chapitre)
   end
 
   def new
+    @layout = "back"
     @chapitre = Chapitre.new
     respond_with(@chapitre)
   end
 
   def edit
+    @layout = "back"
   end
 
   def create
+    @layout = "back"
     @chapitre = Chapitre.new(chapitre_params)
     @chapitre.sections_id = section_params
-    respond_to do |format|      
+    respond_to do |format|
       if @chapitre.save
-        if 
+        if
           format.html { redirect_to @chapitre, notice: 'Le chapitre a ete cree.' }
           format.json { render :show, status: :created, location: @produit }
         else
           format.html { render :new }
           format.json { render json: @chapitre.errors, status: :unprocessable_entity }
-        end       
-         
+        end
+
       end
     end
   end
 
   def update
+    @layout = "back"
     @chapitre.update(chapitre_params)
     respond_with(@chapitre)
   end
 
   def destroy
+    @layout = "back"
     @chapitre.destroy
     respond_with(@chapitre)
   end
 
   private
+
+    def set_formation
+      @formation = Formation.find_by(:id => formation_params)
+    end
+
+    def set_section
+      @section = Section.find_by(:id => section_params)
+    end
+
     def set_chapitre
       @chapitre = Chapitre.find(params[:id])
     end
@@ -57,8 +82,13 @@ class ChapitresController < ApplicationController
     def chapitre_params
       params.require(:chapitre).permit(:ref, :nom, :description, :texte, :dateSuppression)
     end
-    
-     def section_params
-      params.require(:section)
+
+    def section_params
+      params.require(:section_id)
     end
+
+    def formation_params
+      params.require(:formation_id)
+    end
+
 end

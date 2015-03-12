@@ -1,5 +1,11 @@
 (function($){
-	$('.button-filter').on('click', function(e){
+	
+  var produits = [],
+  FJS = null,
+  etapes = [],
+  categories = [];
+
+  $('.button__filter').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
 	
@@ -7,118 +13,100 @@
 	$('#jsTypeProduitSelect').on('change', function(e){
 		var selectedType = $("#jsTypeProduitSelect option:selected ").text();
 	})
-	$('.button-categorie').on('click', function(e){
+	$('.button__categorie').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
 
 
-
-	$.urlParam = function(name){
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-        results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  $.ajax('/listeProduit.json', {
+      async: false,
+      success: function(data){
+        produits = data;
       }
+  })
 
-      var produits = [];
+  FJS = FilterJS(produits, '#produits', {
+      template: '#produitTemplate',
+      search: { ele: '#toto'},
+      callbacks: {
+        beforeRecordRender: function(produit){
+          produit.liste__item__class = '';
+          if ( typeof produit.description == 'undefined' ) { 
+            produit.description = ''
+          };
 
-      $.ajax('/listeProduit.json', {
-          async: false,
-          success: function(data){
-            produits = data;
+          if (produit.etape == 'Le constat') {
+           produit.liste__item__class += 'liste__item--constat';
           }
-      })
-
-      var FJS = FilterJS(produits, '#produits', {
-          template: '#produit-template',
-          search: { ele: '#toto'},
-          callbacks: {
-            beforeRecordRender: function(produit){
-              produit.liste__item__class = '';
-              if ( typeof produit.description == 'undefined' ) { produit.description = ''};
-              if (produit.etape == 'Le constat') 
-              {
-               produit.liste__item__class += 'liste__item--constat';
-              }
-              else if (produit.etape == "L'analyse"){
-                produit.liste__item__class += 'liste__item--analyse';
-              }
-              else if (produit.etape == "La décision"){
-                produit.liste__item__class += 'liste__item--decision';
-              }
-              else if (produit.etape == "L'action"){
-                produit.liste__item__class += 'liste__item--action';
-              }
-              else if (produit.etape == "Cap vers la Cohérence"){
-                produit.liste__item__class += 'liste__item--cap';
-              }
-
-
-              if (produit.categorie == "Formation") 
-              {
-                produit.liste__item__class += ' liste__item--formation'; 
-              }
-              else if (produit.categorie == "Outils") 
-              {
-                produit.liste__item__class += ' liste__item--outils'; 
-              }
-              else if (produit.categorie == "Bibliothèque") 
-              {
-                produit.liste__item__class += ' liste__item--bibliotheque'; 
-              }
-              else if (produit.categorie == "Ebook") 
-              {
-                produit.liste__item__class += ' liste__item--ebook'; 
-              }
-
-
-            },
+          else if (produit.etape == "L'analyse") {
+            produit.liste__item__class += 'liste__item--analyse';
           }
-      });
-
-      FJS.addCriteria({field: 'categorie', ele: '#filter-categories input:checkbox'})
-      FJS.addCriteria({field: 'etape', ele: '#filter-etapes input:checkbox'})
-
-      FJS.filter();
-
-      $('.button-filter, .button-categorie').click(function(e){
-          e.preventDefault();
-
-          $target = $(this).data('target-filter');
-
-          if ($target) 
-          {
-
-            $target_is_checked = $('#filters').find('[data-filter='+ $target +']').first();
-            if ($target_is_checked.prop('checked'))
-            {
-              $target_is_checked.trigger('click');
-            }
-            else 
-            {
-              $target_is_checked.trigger('click');
-            }
+          else if (produit.etape == "La décision") {
+            produit.liste__item__class += 'liste__item--decision';
+          }
+          else if (produit.etape == "L'action") {
+            produit.liste__item__class += 'liste__item--action';
+          }
+          else if (produit.etape == "Cap vers la Cohérence") {
+            produit.liste__item__class += 'liste__item--cap';
           }
 
-      })
 
-      var categories = $.urlParam('categories') ? $.urlParam('categories').split(',') : [];
-      var etapes = $.urlParam('etapes') ? $.urlParam('etapes').split(',') : [];
+          if (produit.categorie == "Formation") {
+            produit.liste__item__class += ' liste__item--formation'; 
+          }
+          else if (produit.categorie == "Outil") {
+            produit.liste__item__class += ' liste__item--outil'; 
+          }
+          else if (produit.categorie == "Bibliothèque") {
+            produit.liste__item__class += ' liste__item--bibliotheque'; 
+          }
+          else if (produit.categorie == "Ebook") {
+            produit.liste__item__class += ' liste__item--ebook'; 
+          }
 
-      if (categories.length > 0)
-      {
-        for(var i=0;i<categories.length;i++){
 
-           $('.button-categorie--' + categories[i]).trigger('click');
+        },
+      }
+  });
+
+  FJS.addCriteria({field: 'categorie', ele: '#filterCategories input:checkbox'});
+  FJS.addCriteria({field: 'etape', ele: '#filterEtapes input:checkbox'});
+
+  FJS.filter();
+
+  $('.button__filter, .button__categorie').click(function(e){
+      e.preventDefault();
+
+      $target = $(this).data('target-filter');
+
+      if ($target) {
+        $target_is_checked = $('#filters').find('[data-filter='+ $target +']').first();
+        if ($target_is_checked.prop('checked')) {
+          $target_is_checked.trigger('click');
+        }
+        else {
+          $target_is_checked.trigger('click');
         }
       }
 
-      if (etapes.length > 0)
-      {
-        for(var i=0;i<etapes.length;i++){
-           $('.button-filter--' + etapes[i]).trigger('click');
-        }
-      }
+  })
+
+  categories = $.urlParam('categories') ? $.urlParam('categories').split(',') : [];
+  etapes = $.urlParam('etapes') ? $.urlParam('etapes').split(',') : [];
+
+  if (categories.length > 0) {
+    for(var i=0;i<categories.length;i++) {
+
+       $('.button__categorie--' + categories[i]).trigger('click');
+    }
+  }
+
+  if (etapes.length > 0) {
+    for(var i=0;i<etapes.length;i++) {
+       $('.button__filter--' + etapes[i]).trigger('click');
+    }
+  }
 
 
-})(jQuery)
+})(jQuery);

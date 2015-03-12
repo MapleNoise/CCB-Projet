@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -55,3 +55,7 @@ gem 'carrierwave'
 
 # Special settings
 gem 'htmlbeautifier'
+gem 'pry'
+gem 'pry-doc'
+gem 'method_source'
+gem 'paymill', '~> 0.5.1'

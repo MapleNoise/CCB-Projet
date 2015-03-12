@@ -1,0 +1,152 @@
+.formulaire {
+  @include gridle_parent();
+	&--back{
+	}
+
+  &--filter {
+    @include gridle(12);
+    .field{
+      @include gridle(3);
+      float: left;
+      display: inline-block !important;
+    }
+    .fieldset{
+      border: 1px solid black;
+      margin: 10px 20px 40px 20px;
+      &__legend{
+        margin-left: 10px;
+        text-align: left;
+        font-size: 25px;
+      }
+    }
+    .buttons-filter{
+      @include gridle(12);
+    }
+    .p__info{
+      text-align: left;
+      padding: 5px;
+    }
+  }
+}
+
+.field {
+  @include gridle(10.6);
+  @include gridle_centered();
+  @include gridle_parent();
+  display : inline-block;
+  font : {
+    size : 0.875em;
+    family : inherit;
+  }
+  height: $formulaire-field-height;
+  margin-bottom: $formulaire-field-height/2;
+  outline: none;
+  margin-right: 20px;
+  
+  &__label {
+    @include gridle(3);
+    background: $formulaire-label-color;
+    overflow : hidden;
+    text-decoration: strong;
+    font-weight: bold;
+    text-align : center;
+    color : #333;
+    line-height: $formulaire-field-height;
+    border : $formulaire-field-border;
+    border-right: none;
+    height: 100%;
+    /*margin-top: 7px;*/
+    
+  }
+  
+  &__control {
+    @include gridle(9);
+    @include transition(all 150ms linear);
+/*    border-radius: 5px;
+    border: $formulaire-field-border;*/
+    height: 100%;
+    
+    &:focus {
+      outline: none;
+    }
+    
+    &--select {
+    }
+
+    &--formation{
+      @include gridle(6);
+    }
+  }
+  
+  &--checkbox {
+    .field__control {
+      @include gridle(1);
+      @include vertical-align();
+      height: $formulaire-field-height/2;
+      outline: none;
+      cursor: pointer;
+      padding: 0 0 0 0;
+      margin: 0 0 0 0;
+    }
+    
+    .field__label {
+      @include gridle(10);
+      @include vertical-align();
+      //border: $formulaire-field-border;
+      background: none;
+      color : $color-black;
+    }
+  }
+  
+  &--textarea {
+    //height: $formulaire-field-height*2;
+    
+    .field__control {
+      resize: vertical;
+    }
+  }
+  
+  &--back {
+    @include gridle(9);
+    //margin-top: 50px;
+    .field__label {
+      @include gridle(12);
+      //background: $formulaire-label-color;
+      overflow : hidden;
+      text-align : left;
+      //line-height: 2.3125em;
+      color : $color-black;
+      //line-height: $formulaire-field-height;
+      border : none;
+      //height: 100%;
+      bottom: 0;
+      margin-top: 0px;
+      @include gridle(3);
+      background: $color-white;
+      overflow : hidden;
+      text-decoration: strong;
+      /*vertical-align: bottom;*/
+      padding-top: 10px;
+      /*line-height: -20px;*/
+    }
+    
+    .field__control {
+      @include gridle(12);
+      height: 50%;
+      border-radius: 5px;
+    border: $formulaire-field-border;
+      margin-bottom: 17px;
+      &--select {
+        
+      }
+    }
+    
+  }
+}
+
+.error_explanation {
+   @extend %message;
+   @extend %message--error;
+}
+
+

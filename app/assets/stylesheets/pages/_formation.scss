@@ -1,0 +1,56 @@
+.formation {
+	@include gridle(12);
+	@include gridle_parent();
+	@include gridle_centered();
+	padding: 0 30px 30px 30px;
+
+	&__title{
+		@include gridle_parent();
+		text-align: left;
+		font-size: 20px;
+		padding : 15px 0px 5px 30px;
+		margin: 60px 0 30px 0;
+      	border-bottom: 1px solid grey;
+
+		&--composition{
+			@include gridle_parent();
+			@include gridle(6);
+		}
+
+		&--selection{
+			@include gridle_push(0.2);
+			@include gridle(5.8);
+			font-size : 20px;
+			text-decoration: underline;
+			text-align: none;
+		}
+	}
+
+	&__status {
+
+		&--enLigne {
+			background : #3ab042;
+		}
+		&--enAttente {
+			background : orange;
+		}
+	}
+
+	&__liste {
+		@include gridle_parent();
+		@include gridle(6);
+		background : #eeeeee;
+		height : 350px;
+
+		&--select{
+			@include gridle_parent();
+			@include gridle(5);
+		}
+	}
+
+	&__edit{
+		@include gridle(6);
+		padding-left : 30px;
+	}
+}
+

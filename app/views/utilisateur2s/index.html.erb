@@ -1,11 +1,41 @@
-<h1>Listing utilisateur2s</h1>
+<% provide :titreH1, "Listing utilisateur2s"%>
 
+<%= form_tag("utilisateur2s", :method => :get, :class=>'formulaire formulaire--filter') do |f| %>
+  <fieldset class="fieldset">
+    <legend class="fieldset__legend">Filtres</legend>
+    <div class="field field--back">
+      <span class="field__label">
+        <%= label_tag "Nom", "Nom" %>
+      </span>
+      <%= text_field_tag :nom, params[:nom] , :class=>'field__control' %>
+    </div>
+    <div class="field field--back">
+      <span class="field__label">
+        <%= label_tag "Prenom", "Prénom" %>
+      </span>
+      <%= text_field_tag :prenom, params[:prenom], :class=>'field__control' %>
+    </div>
+    <div class="field field--back">
+      <span class="field__label">
+        <%= label_tag "Email", "Email" %>
+      </span>
+      <%= text_field_tag :email, params[:email], :class=>'field__control' %>
+    </div>
+    <div class="field field--back buttons-filter">
+      <div class="actions">
+        <%= link_to "Annuler les filtres", "utilisateur2s", :class=>'button' %>
+        <%= submit_tag "FILTRER", :name => nil, :class=>'button button--submit' %>
+      </div>
+    </div>
+        <p class="p__info">Un ou plusieurs filtres peuvent être appliqués.</p>
+  </fieldset>
+<% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Password digest</th>
+      <th><%= sortable "nom" %></th>
+      <th><%= sortable "prenom" %></th>
+      <th><%= sortable "email" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +43,9 @@
   <tbody>
     <% @utilisateur2s.each do |utilisateur2| %>
       <tr>
-        <td><%= utilisateur2.nom %> <%= utilisateur2.prenom %></td>
+        <td><%= utilisateur2.nom %></td>
+        <td><%= utilisateur2.prenom %></td>
         <td><%= utilisateur2.email %></td>
-        <td><%= utilisateur2.password_digest %></td>
         <td><%= link_to 'Show', utilisateur2 %></td>
         <td><%= link_to 'Edit', edit_utilisateur2_path(utilisateur2) %></td>
         <td><%= link_to 'Destroy', utilisateur2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
