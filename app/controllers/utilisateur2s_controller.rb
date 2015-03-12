@@ -1,3 +1,4 @@
+# coding: utf-8
 class Utilisateur2sController < ApplicationController
   before_action :set_utilisateur2, only: [:show, :edit, :update, :destroy, :modifierUtilisateur]
 
@@ -39,7 +40,7 @@ class Utilisateur2sController < ApplicationController
   def show
     @layout = "application"
 
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    if(session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2s = Utilisateur2.all
       respond_with(@utilisateur2s)
     else
@@ -47,9 +48,19 @@ class Utilisateur2sController < ApplicationController
     end
   end
 
+	def inscription
+    @layout = "application"
+    if(session[:user_id] == nil)
+      @utilisateur2 = Utilisateur2.new
+      respond_with(@utilisateur2)
+    else
+      redirect_to forbidden_path :status => 403
+    end
+  end
+
   def new
     @layout = "back"
-    if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+    if(session[:user_id] == nil || Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
       respond_with(@utilisateur2)
     else
@@ -70,14 +81,27 @@ class Utilisateur2sController < ApplicationController
     @layout = "back"
   end
 
-
-
   def create
-    @layout = "back"
-    @utilisateur2 = Utilisateur2.new(utilisateur2_params)
-    @utilisateur2.fonctionId = fonction_params
-    @utilisateur2.save
-    respond_with(@utilisateur2)
+
+  	if (session[:user_id] != nil && Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
+	    @layout = "back"
+	    @utilisateur2 = Utilisateur2.new(utilisateur2_params)
+	    @utilisateur2.fonctionId = fonction_params
+	    
+	    if @utilisateur2.save
+	    	flash[:notice] = "Création d'utilisateur terminée"
+	    	respond_with(@utilisateur2)
+	    else
+	    	flash[:error] = "Problème lors de la communication avec la base de données."
+	    	render 'new'
+	    end
+	  else
+	    @utilisateur2 = Utilisateur2.new(utilisateur2_params)
+	    @utilisateur2.fonctionId = fonction_params
+	    @utilisateur2.save
+	  	redirect_to root_path, notice: 'Inscription terminée.'
+	  end
+
   end
 
   def update

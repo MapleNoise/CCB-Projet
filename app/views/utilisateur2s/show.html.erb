@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @utilisateur2.nom %>  <%= @utilisateur2.prenom %>
@@ -11,9 +9,9 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @utilisateur2.password_digest %>
-</p>
+	<strong>Fonction:</strong>
+	<%= Fonction.find_by(:id => @utilisateur2.fonctionId).nom.capitalize %>
+<p>
 
-<%= link_to 'Edit', edit_utilisateur2_path(@utilisateur2) %> |
-<%= link_to 'Back', utilisateur2s_path %>
+<%= link_to 'Editer', edit_utilisateur2_path(@utilisateur2) %> |
+<%= link_to 'Gestion des utilisateurs', utilisateur2s_path %>
