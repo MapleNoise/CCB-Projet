@@ -1,6 +1,31 @@
 .formulaire {
   @include gridle_parent();
-  &--back{
+	&--back{
+	}
+
+  &--filter {
+    @include gridle(12);
+    .field{
+      @include gridle(3);
+      float: left;
+      display: inline-block !important;
+    }
+    .fieldset{
+      border: 1px solid black;
+      margin: 10px 20px 40px 20px;
+      &__legend{
+        margin-left: 10px;
+        text-align: left;
+        font-size: 25px;
+      }
+    }
+    .buttons-filter{
+      @include gridle(12);
+    }
+    .p__info{
+      text-align: left;
+      padding: 5px;
+    }
   }
 }
 
