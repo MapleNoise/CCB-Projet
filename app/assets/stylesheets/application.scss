@@ -35,17 +35,18 @@
 
 @import 
 	'components/color-bar',
+  'components/message',
 	'components/menu',
-        'components/menu_back',
+  'components/menu_back',
 	'components/button',
 	'components/categorie',
 	'components/connexion',
 	'components/etape-reconversion',
-        'components/table',
-        'components/liste',
-        'components/filter',
-        'components/fiche',
-        'components/formulaire';
+  'components/table',
+  'components/liste',
+  'components/filter',
+  'components/fiche',
+  'components/formulaire';
 
 @import
 	'pages/formation';

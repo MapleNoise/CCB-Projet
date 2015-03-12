@@ -98,12 +98,8 @@
 }
 
 .error_explanation {
-  margin: 10px;
-  padding: 10px;
-  padding-left: 20px;
-  color: $color-red;
-  border-left: 4px solid $color-red;
-  background-color: lighten($color-red, 40%);
+   @extend %message;
+   @extend %message--error;
 }
 
 

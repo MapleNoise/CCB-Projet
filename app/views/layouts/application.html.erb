@@ -101,23 +101,22 @@
               </nav>
             </div>
           </div>
-        </section> 
+        </section>
+        <% unless flash.empty? %>
+          <section class="section">
+            <div class="l-section section__content">
+            <% flash.each do |key, value| %>
+              <div class="message message--<%= key %>"><%= value %></div>
+            <% end %>
+            </div>
+          </section>
+        <% end %>
         <% if @special_template %>
-          <% if flash.key? :alert %>
-            <section class="section">
-              <div class="l-section section__content">
-                  <div class="error_explanation">
-                    <%= flash[:alert]  %>
-                  </div>
-              </div>
-            </section>
-          <% end %>
           <%= @special_template %>
         </section>
       <% else %>
         <section class="section">
           <div class="l-section section__content">
-            <%= flash[:alert]  %>
             <%= yield %>
           </div>
         </section>
