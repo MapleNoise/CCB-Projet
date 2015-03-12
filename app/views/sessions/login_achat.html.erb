@@ -19,10 +19,8 @@
       <span class="field__label">Adresse Email</span>
         <%= text_field_tag(:email, nil, {placeholder: 'Email@mail.com', class: 'field__control'}) %>
       </div>
-	  <% if(!params[:prod].nil?)%>
-        <div class="field">  
+	  <% if(!params[:prod].nil?)%> 
            <%= hidden_field_tag :prod, params[:prod] %>
-        </div>
       <% end%>
       <div class="field">
         <span class="field__label">Mot de passe</span>
@@ -35,7 +33,7 @@
     </div>
     <div class="connexion__content__body">
       <span class=""></span>
-      <%= button_to("Inscription",  new_utilisateur2_path, :class => "button button--connexion", :method => :get, params: { prod: params[:prod] }) %>
+      <%= button_to("Inscription",  inscription_path, :class => "button button--connexion", :method => :get, params: { prod: params[:prod] }) %>
 
     </div>
   </div>

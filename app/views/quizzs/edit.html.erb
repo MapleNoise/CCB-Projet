@@ -1,6 +1,6 @@
-<% provide :titreH1, "Editing quizz"%>
+<% provide :titreH1, "Edition du quizz"%>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @quizz %> |
-<%= link_to 'Back', quizzs_path %>
+<%= link_to 'Show', @quizz, class: "button button--link" %>
+<%= link_to 'Back', quizzs_path, class: "button button--link" %>

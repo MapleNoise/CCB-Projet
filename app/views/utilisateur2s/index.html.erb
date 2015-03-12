@@ -1,5 +1,8 @@
-<% provide :titreH1, "Listing utilisateur2s"%>
+# coding: utf-8
+<% provide :titreH1, "Liste des utilisateurs"%>
 <% @utilisateur_menu_active = true %>
+
+
 <%= form_tag("utilisateur2s", :method => :get, :class=>'formulaire formulaire--filter') do |f| %>
   <fieldset class="fieldset">
     <legend class="fieldset__legend">Filtres</legend>
@@ -36,6 +39,7 @@
       <th><%= sortable "nom" %></th>
       <th><%= sortable "prenom" %></th>
       <th><%= sortable "email" %></th>
+      <th>Consulter</th>
       <th>Editer</th>
       <th>Supprimer</th>
     </tr>
@@ -56,4 +60,4 @@
 
 <br>
 
-<%= link_to 'New Utilisateur2', new_utilisateur2_path %>
+<%= link_to 'Créer un utilisateur', new_utilisateur2_path, class: "button--link" %>

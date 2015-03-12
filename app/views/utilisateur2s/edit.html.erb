@@ -1,4 +1,4 @@
-<% provide :titreH1, "Editing utilisateur2"%>
+<% provide :titreH1, "Edition utilisateur"%>
 
 <%= form_for(@utilisateur2, html: {class: "formulaire--back"}) do |f| %>
   <% if @utilisateur2.errors.any? %>
@@ -26,7 +26,7 @@
 <% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>
     <div class="field field--back">  
    <span class="field__label">Fonction</span>
-  <%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom), :class=>'field__control field__control--select') %>
+  <%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom, @utilisateur2.fonctionId), :class=>'field__control field__control--select') %>
 </div>  
   
 <% end %>
@@ -34,17 +34,15 @@
 <div class="field field--back">
 
   <div class="actions">
-    <%= f.submit :class=>'button button--submit' %>
+    <%= f.submit 'Mettre à jour', :class=>'button button--submit' %>
   </div>
 </div>
 <% end %>
 
 <% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>     
 	<div class="field">
-  		<%= link_to 'Show', @utilisateur2 %>
+  		<%= link_to 'Afficher', @utilisateur2 , class: "button button--link"%>
 	</div>
 <!--|<%= link_to 'Back', utilisateur2s_path %>-->
 
 <% end %>
-
-
