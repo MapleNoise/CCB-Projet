@@ -21,7 +21,7 @@ class ChapitresController < ApplicationController
   end
 
   def show
-    @layout = "back"
+    @layout = "application"
     respond_with(@chapitre)
   end
 

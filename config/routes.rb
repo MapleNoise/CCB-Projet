@@ -71,9 +71,7 @@ Rails.application.routes.draw do
   # resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
   #root 'welcome#index'
-
-  get 'test/style' => 'style#index'
-
+  
   get '/indexBack' => 'welcome#indexBack'
 
   # Example of regular route:
