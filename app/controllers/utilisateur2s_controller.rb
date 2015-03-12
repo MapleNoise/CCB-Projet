@@ -48,7 +48,7 @@ class Utilisateur2sController < ApplicationController
   end
 
   def new
-    @layout = "application"
+    @layout = "back"
     if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?)
       @utilisateur2 = Utilisateur2.new
       respond_with(@utilisateur2)
