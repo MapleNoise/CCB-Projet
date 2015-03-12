@@ -1,8 +1,13 @@
 .message {
-	
+
 	margin: 10px;
   padding: 10px;
   padding-left: 20px;
+	
+	
+	&-container {
+		margin-top: 60px;
+	}
 
 	&--notice {
 		color: $color-blue;
