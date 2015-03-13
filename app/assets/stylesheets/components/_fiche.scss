@@ -1,6 +1,6 @@
 .fiche {
   @include gridle_parent();
-  position: relative; 
+  position: relative;
   &__general {
     @include gridle(8);
     @include gridle_parent();
@@ -8,7 +8,7 @@
     border-right: $border-section-body;
     min-height: 250px;
     position: relative;
-    
+
     &__title {
       text-transform : uppercase;
       font-size: 18px;
@@ -18,7 +18,7 @@
       padding-bottom: 7px;
       text-decoration: underline;
     }
-    
+
     &__prix{
       padding-left: 30px;
       padding-right: 30px;
@@ -26,20 +26,20 @@
       //margin-top: 10px;
       font-size: 18px;
     }
-    
+
     &__description {
       padding-left: 30px;
       padding-right: 30px;
       margin-bottom: 10px;
       margin-top: 10px;
     }
-    
+
     &__etape{
       @include gridle(12);
       border-bottom: $border-section-body;
       border-top: $border-section-body;
       padding: 30px;
-      
+
       margin-top: 10px;
       margin-bottom: 0px;
       background-color: $color-grey;
@@ -48,8 +48,8 @@
       bottom: 0;
       position: absolute;
       display: block;
-      
-      
+
+
       &__bouton{
         background-color: $color-grey-white;
         color: $color-black;
@@ -66,7 +66,7 @@
     @include gridle(4);
     @include gridle_parent();
     position: relative;
-    
+
     &__grey {
       @include gridle(11);
       background-color: $color-grey-white;
@@ -76,7 +76,7 @@
       margin-top: 10px;
       margin-left: 15px;
       margin-right: 15px;
-      
+
       &__title {
         text-transform : uppercase;
         text-align: center;
@@ -84,7 +84,7 @@
         padding: 10px;
         position: relative;
       }
-      
+
       &__image{
         text-align: center;
         //padding: 10px;
@@ -96,7 +96,7 @@
         margin-left: auto;
         margin-right: auto;
       }
-      
+
       &__lien {
         padding: 10px;
         /*position: relative;*/
@@ -109,10 +109,10 @@
         margin-right: auto;*/
         display: block;
         &--video {
-          
+
         }
         &--son {
-          
+
         }
         &--word {
           @include icon('file-word-o');

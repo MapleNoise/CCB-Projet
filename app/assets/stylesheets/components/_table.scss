@@ -37,13 +37,17 @@ td {
     padding-right: 5px;
     padding-left: 5px;
     vertical-align: middle;
-    
-        &.is-online {
-            background-color: $color-green;
-        }
-        
+
+    &.is-online {
+        background-color: $color-green;
+    }
+
     &.is-wait {
         background-color: $color-orange;
+    }
+
+    &.is-deleted {
+        background-color: $color-grey;
     }
 }
 

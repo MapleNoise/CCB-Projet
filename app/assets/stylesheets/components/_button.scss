@@ -34,7 +34,7 @@
         margin-right: 30px;
         margin-left: 30px;
     }
-  
+
     &--submit {
         background-color: $color-green;
         color: $color-white;
@@ -47,7 +47,7 @@
                 background-color: $color-green-hover;
             }
     }
-    
+
     &--to{
         background-color: $color-black;
         color: $color-white;
@@ -61,14 +61,14 @@
                 background-color: $color-grey;
         }
     }
-    
+
     &--highlight {
         background-color: $color-yellow;
         color: $color-black;
         padding: 7px 20px;
         margin: 20px 0;
         text-transform: uppercase;
-        font : {  
+        font : {
             weight: normal;
             size: 1em;
         }
@@ -76,7 +76,7 @@
             background-color: $color-white;
         }
     }
-    
+
     &--link{
         text-decoration: underline;
         color: #020002;
@@ -99,14 +99,14 @@
         }
     }
 
-    
+
     &--logout {
         @include icon('sign-out');
         &:before {
             padding-right: 7px;
         }
     }
-    
+
 
     &--up {
         @include icon('caret-up');
@@ -178,7 +178,7 @@
         background-color: $color-white;
         padding-left: 46px;
         text-align: center;
-        font-size: $button-font-size;     
+        font-size: $button-font-size;
         color : $color-black;
         &:hover{
             background-color: #eee;
@@ -190,18 +190,18 @@
             background: url("#{$images_path}/icone_formation.png") no-repeat;
             background-position: left center;
             background-size: $button-categorie-background-size;
-            height: 54px;      
+            height: 54px;
         }
         &--ebook{
             background: url("#{$images_path}/icone_ebook.png") no-repeat;
             background-size: $button-categorie-background-size;
-            background-position: left center;            
-            height: 54px; 
+            background-position: left center;
+            height: 54px;
         }
         &--bibliotheque{
             background: url("#{$images_path}/icone_bibliotheque.png") no-repeat;
             background-size: $button-categorie-background-size;
-            background-position: left center;            
+            background-position: left center;
             height: 54px;
         }
         &--outil{

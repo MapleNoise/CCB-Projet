@@ -15,7 +15,7 @@
 		line-height: $menu-height;
 		text-align: center;
     	@include vertical-align();
-		
+
 		&.is-active {
 			background-color: #eee;
 		}
@@ -29,7 +29,7 @@
 			// @include gridle(1.5);
 			border-right: none;
 		}
-                
+
 	    &--cart {
 	        background-color: $color-blue;
 	    }
@@ -53,7 +53,7 @@
 				width: 24px;
 				height: 21px;
 				background: url("#{$images_path}/picto-home.png") left bottom no-repeat;
-			}    
+			}
 		}
 
 		&__body {

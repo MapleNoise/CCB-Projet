@@ -44,6 +44,15 @@ class ProduitsController < ApplicationController
   # GET /produits/1.json
   def show
     @layout = "application"
+    if (@produit.statusId != 1 && session[:user_fonction] == "client")
+      flash[:notice] = "Produit non accessible."
+      redirect_to listeProduit_path
+    elsif (@produit.statusId == 3 && session[:user_fonction] != "client")
+      flash[:alert] = "Le produit est désactivé est n'est donc pas visible par les clients"
+      respond_with(@produit)
+    else
+      respond_with(@produit)
+    end
   end
 
   # GET /produits/new
@@ -78,7 +87,7 @@ class ProduitsController < ApplicationController
     respond_to do |format|
       Produit.transaction do
         if @produit.save
-            format.html { redirect_to @produit, notice: 'Le Produit a été crée.' }
+            format.html { redirect_to @produit, notice: 'Le Produit a été créé.' }
             format.json { render :show, status: :created, location: @produit }
           else
             format.html { render :new }
@@ -92,6 +101,7 @@ class ProduitsController < ApplicationController
   # PATCH/PUT /produits/1.json
   def update
     @layout = "back"
+    @produit.statusId = status_params
     respond_to do |format|
       if @produit.update(produit_params)
         format.html { redirect_to @produit, notice: 'Le produit à bien été mis à jour.' }

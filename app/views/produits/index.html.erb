@@ -1,40 +1,44 @@
 <!--Titre transféré dans la page back.html.erb -->
 <% provide :titreH1, "Liste des produits" %>
 <% @produit_menu_active = true %>
-<% if(@produits == nil)%>
-  <p>Aucun produit</p>
-<% else%>
+<% if(@produits.first == nil)%>
+	<p>
+  	<% flash[:notice] = "Aucun produit" %>
+	</p>
 
-<%= link_to 'Créer un produit', new_produit_path , :class =>"button button__back button__back--produit" %>
+  <%= link_to 'Créer un produit', new_produit_path , :class =>"button button__back button__back--produit" %>
+<% else %>
 
+	<%= link_to 'Créer un produit', new_produit_path , :class =>"button button__back button__back--produit" %>
+
+<%@produits = Produit.all.paginate(:page => params[:page])%>
 
 <div class="produit">
 <table>
   <thead>
     <tr>
-      <th>Ref</th>
       <th>Nom</th>
       <th>Prix</th>
       <% isCurrentUserAdmin = Utilisateur2.find_by(:id => session[:user_id]).isAdmin?%>
       <% if(isCurrentUserAdmin)%>
         <th>Auteur</th>
       <%end%>
-      <th>Datecreation</th>
-      <th>Datemodification</th>
-      <th>Consulter</th>
+      <th>Date de création</th>
+      <th>Date de modification</th>
       <th>Editer</th>
       <th>Supprimer</th>
     </tr>
   </thead>
-  <% puts @produits%>
+
   <tbody>
     <% @produits.each do |produit| %>
+      <!-- Si le produit n'est pas supprimé -->
+      <% if produit.dateSuppression == nil %>
       <tr>
-        <td><%= produit.ref %></td>
-        <td><%= produit.nom %></td>
-        <td><%= produit.prix %></td>
+        <td> <%= link_to produit.nom, produit %></td>
+        <td> <%= produit.prix %> </td>
         <% if(isCurrentUserAdmin)%>
-          <td> 
+          <td>
             <% utilisateur = Utilisateur2.all.find_by(:id => produit.utilisateur2s_id) %>
             <% if (utilisateur) %>
               <%= utilisateur.prenom + " " + utilisateur.nom %>
@@ -45,17 +49,42 @@
         <%end%>
         <td><%= produit.created_at.strftime("%d / %m / %Y") %></td>
         <td><%= produit.updated_at.strftime("%d / %m / %Y") %></td>
-        <td><%= link_to  image_tag('icone-search.png') , produit%></td>
-        
-        <td><%= 
-        link_to image_tag('icone_edition.png'), edit_produit_path(produit) %></td>
-        <td><%= link_to image_tag('icone_corbeille.png'), produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%= link_to image_tag('icone_edition.png', :size => "30x30", :crop => :fill), edit_produit_path(produit) %></td>
+        <td><%= link_to image_tag('icone_corbeille.png', :size => "40x40", :crop => :fill), produit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% else %>
+      <!--  Si le produit est supprimé -->
+      <tr>
+        <td class="is-deleted"> ><%= link_to produit.nom, produit %></td>
+        <td class="is-deleted"> <%= produit.prix %> </td>
+        <% if(isCurrentUserAdmin)%>
+          <td class="is-deleted">
+            <% utilisateur = Utilisateur2.all.find_by(:id => produit.utilisateur2s_id) %>
+            <% if (utilisateur) %>
+              <%= utilisateur.prenom + " " + utilisateur.nom %>
+            <% else %>
+              Utilisateur inconnu <!-- Ne devrait pas arriver, mais évite un crash le cas echeant -->
+            <% end %>
+          </td>
+        <%end%>
+        <td class="is-deleted"><%= produit.created_at.strftime("%d / %m / %Y") %></td>
+        <td class="is-deleted"><%= produit.updated_at.strftime("%d / %m / %Y") %></td>
+
+        <td class="is-deleted"></td>
+        <td class="is-deleted"></td>
+      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
+<div class="digg_pagination" style="margin: 15px">
+    <p>Page : <%= will_paginate @produits, :container => false %></p>
 </div>
+
+</div>
+
 <% end%>
 
 <br>

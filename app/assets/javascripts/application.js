@@ -1,5 +1,5 @@
 (function($){
-	
+
   var produits = [],
   FJS = null,
   etapes = [],
@@ -8,11 +8,41 @@
   $('.button__filter').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
-	
+
+/***************************************************************/
+// Gestion de l'affichage dynamique pour new produit
+/***************************************************************/
+  var div_extract_urlMultimedia, div_extract_urlFichier;
+
+  if (document.getElementById("extract-urlMultimedia") != null)
+  {
+    div_extract_urlMultimedia = document.getElementById("extract-urlMultimedia").innerHTML;
+    $("#extract-urlMultimedia").remove();
+  }
+
+  if (document.getElementById("extract-urlFichier") != null)
+  {
+    div_extract_urlFichier = document.getElementById("extract-urlFichier").innerHTML;
+    $("#extract-urlFichier").remove();
+  }
+
 	// TODO : Pour changer la vue d'ajout des produits en fonction du type de produit.
 	$('#jsTypeProduitSelect').on('change', function(e){
 		var selectedType = $("#jsTypeProduitSelect option:selected ").text();
+
+    if (selectedType == "Vidéo" || selectedType == "Fichier audio" || selectedType == "Ebook")
+    {
+      document.getElementById("placeToLoad").innerHTML = div_extract_urlMultimedia;
+    }
+    else
+    {
+      document.getElementById("placeToLoad").innerHTML = div_extract_urlFichier;
+    }
+
 	})
+
+/***************************************************************/
+
 	$('.button__categorie').on('click', function(e){
 		$(this).toggleClass('is-active');
 	})
@@ -31,7 +61,7 @@
       callbacks: {
         beforeRecordRender: function(produit){
           produit.liste__item__class = '';
-          if ( typeof produit.description == 'undefined' ) { 
+          if ( typeof produit.description == 'undefined' ) {
             produit.description = ''
           };
 
@@ -53,16 +83,16 @@
 
 
           if (produit.categorie == "Formation") {
-            produit.liste__item__class += ' liste__item--formation'; 
+            produit.liste__item__class += ' liste__item--formation';
           }
           else if (produit.categorie == "Outil") {
-            produit.liste__item__class += ' liste__item--outil'; 
+            produit.liste__item__class += ' liste__item--outil';
           }
           else if (produit.categorie == "Bibliothèque") {
-            produit.liste__item__class += ' liste__item--bibliotheque'; 
+            produit.liste__item__class += ' liste__item--bibliotheque';
           }
           else if (produit.categorie == "Ebook") {
-            produit.liste__item__class += ' liste__item--ebook'; 
+            produit.liste__item__class += ' liste__item--ebook';
           }
 
 

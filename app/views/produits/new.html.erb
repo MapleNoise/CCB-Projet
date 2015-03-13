@@ -36,48 +36,56 @@
   <div class="field field--textarea field--back">
     <%= f.label :descriptionCourte, "Courte description", class: "field__label" %>
 
-      <%= f.text_area( :descriptionCourte, cols: 100, rows: 5, max_length: 150, class: "field__control") %>
+      <%= f.text_area( :descriptionCourte, cols: 100, rows: 5, max_length: 150, class: "field__control force__height") %>
     </div>
 
     <div class="field field--textarea field--back">
       <span class="field__label"><%= f.label :description %>
       </span>
-      <%= f.text_area( :description, cols: 100, rows: 10, class: "field__control") %>
+      <%= f.text_area( :description, cols: 100, rows: 10, class: "field__control force__height") %>
     </div>
 
     <div class="field field--back">
       <span class="field__label">Tag </span>
-      <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:tag, options_from_collection_for_select(Tag.all, :id, :nom), class: "field__control field__control--select") %>
+      <%= select_tag(:tag, options_from_collection_for_select(Tag.where(:mere => nil), :id, :nom), class: "field__control field__control--select") %>
+    </div>
+
+    <div class="field field--back">
+      <span class="field__label">Status</span>
+      <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom), class: "field__control field__control--select") %>
     </div>
 
     <div class="field field--back">
       <span class="field__label">Type produit</span>
-      <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:types_produits, options_from_collection_for_select(TypeProduit.all, :id, :nom), id: "jsTypeProduitSelect", class: "field__control field__control--select") %>
+      <%= select_tag(:types_produits,
+        content_tag(:option, "Choisir un type.", :value => "") +
+        options_from_collection_for_select(TypeProduit.all, :id, :nom), id: "jsTypeProduitSelect", class: "field__control field__control--select") %>
     </div>
-    <div class="field field--back">
-      <span class="field__label">Status</span>
-      <!-- On doit ajouter le lien avec la table des catégories. Comment gérer le fait qu'il y ai plusieurs catégorie possible ? -->
-      <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom), class: "field__control field__control--select") %>
-    </div>
-    <!--
-    <div class="field">
-    <%= f.label :urlFichier, "Lien vers le fichier" %>
-    <br />
-    <%= f.text_field :urlFichier %>
-    </div>
-    -->
 
-    <%= f.label :image, "Miniature" %>
-    <br />
-    <%= f.file_field :image %>
-
+    <div id="extract-urlMultimedia">
+      <div class="field field--back">
+        <%= f.label :urlMultimedia, "Lien externe", class: "field__label" %>
+          <br />
+        <%= f.text_field :urlMultimedia, class: "field__control" %>
+      </div>
+    </div>
 
     <div class="field field--back">
-      <span class="field__label"><%= f.label :urlFichier, "Charger le fichier"%></span>
-      <%= f.file_field( :urlFichier, class: "field__control")  %>
+      <%= f.label :image, "Miniature", class: "field__label" %>
+      <br />
+      <%= f.file_field :image, class: "field__control" %>
     </div>
+
+    <div id="extract-urlFichier">
+      <div class="field field--back">
+        <span class="field__label"><%= f.label :urlFichier, "Charger le fichier"%></span>
+        <%= f.file_field( :urlFichier, class: "field__control")  %>
+      </div>
+    </div>
+
+    <div id="placeToLoad">
+    </div>
+
     <div class="field field--back">
         <div class="actions">
           <%= f.submit "Créer", class: "button button--submit"%>
@@ -85,4 +93,4 @@
     </div>
   <% end %>
 
-  <%= link_to 'Back', produits_path %>
+  <%= link_to 'Retour', produits_path %>

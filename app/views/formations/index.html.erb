@@ -29,7 +29,7 @@
             t = Tag.where(:id => formation.tag_ids).order('mere ASC').limit(1)[0]
             link_to t.nom, t
             %></td>
-        <td class="<%= formation.estPublic ? 'formation__status--enLigne' : 'formation__status--enAttente' %>"><%= 
+        <td class="<%= formation.estPublic ? 'formation__status--enLigne' : 'formation__status--enAttente' %>"><%=
             if formation.estPublic
               "En ligne"
             else
@@ -37,8 +37,8 @@
             end
           %></td>
         <td><%= formation.created_at.strftime("%d / %m / %Y") %></td>
-        <td><%= 
-          if formation.datePublication 
+        <td><%=
+          if formation.datePublication
             formation.datePublication
           else
             "Pas de publication prévue"
@@ -52,7 +52,7 @@
 </table>
 </div>
   <div class="digg_pagination">
-    <p>Page :<%= will_paginate @formations, :container => false %></p>
+    <p>Page : <%= will_paginate @formations, :container => false %></p>
   </div>
 
 <br>

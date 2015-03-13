@@ -138,11 +138,11 @@ class Utilisateur2sController < ApplicationController
            end
         end
       else
+      	flash[:notice] = "Informations modifiée avec succès."
         @utilisateur2.nom =  utilisateur2_params['nom']
         @utilisateur2.prenom = utilisateur2_params['prenom']
         @utilisateur2.save
       end
-
 
     elsif(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) #Si c'est un admin qui change le role d'un utilisateur
         @utilisateur2.update(utilisateur2_params)

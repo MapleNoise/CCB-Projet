@@ -19,6 +19,8 @@ class Produit < ActiveRecord::Base
   mount_uploader :urlFichier, FichierGeneralUploader
   mount_uploader :image, ImageProduitUploader
 
+  self.per_page = 5
+
   has_and_belongs_to_many :tags
   #has_many :categories_produits
   #has_many :categories, :through  => :categories_produits

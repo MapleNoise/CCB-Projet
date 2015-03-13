@@ -3,10 +3,10 @@ module ApplicationHelper
   	title ||= column.titleize
   	if column == sort_column
   		css_class = "sort sort__active sort--#{sort_direction}"
-  	else 
+  	else
   		css_class = "sort"
   	end
-  	direction = 
+  	direction =
   	if column == sort_column && sort_direction == "asc"
   		direction = "desc"
   	else

@@ -1,21 +1,10 @@
-<% provide :titreH1, "Editing utilisateur2"%>
+<% provide :titreH1, "Modifier mes informations"%>
 
 
 <%if(@utilisateur2.nil?)%>
   <% @utilisateur2 = Utilisateur2.find_by(id: session[:user_id]) %>
 <% end %>
 <%= form_for(@utilisateur2) do |f| %>
-  <% if @utilisateur2.errors.any? %>
-    <div class="error_explanation">
-      <h2><%= pluralize(@utilisateur2.errors.count, "erreur") %> empèche la sauvegarde :</h2>
-
-      <ul>
-      <% @utilisateur2.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field field--back">
   <span class="field__label"><%= f.label "Nom" %></span>

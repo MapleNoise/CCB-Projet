@@ -80,6 +80,14 @@ TypeProduit.create(
   nom: "Vidéo",
   :extension_fichiers => ExtensionFichier.where(:extension => ["youtube"]))
 
+TypeProduit.create(
+  nom: "Fichier audio",
+  :extension_fichiers => ExtensionFichier.where(:extension => ["soundcloud"]))
+
+TypeProduit.create(
+  nom: "Ebook",
+  :extension_fichiers => ExtensionFichier.where(:extension => ["ebook"]))
+
 # Création des catégories de bases
 Tag.create([{nom: "Le constat", mere: nil},
   {nom: "L'analyse", mere: nil},
@@ -270,6 +278,7 @@ produit1 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: false,
+  statusId: 1,
   utilisateur2s_id: 1)
 
 produit1.urlFichier = urlSender
@@ -287,6 +296,7 @@ produit2 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 1)
 
 produit2.urlFichier = urlSender
@@ -303,6 +313,7 @@ produit3 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 1)
 
 produit3.urlFichier = urlSender
@@ -319,6 +330,7 @@ produit4 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 1)
 
 produit4.urlFichier = urlSender
@@ -335,6 +347,7 @@ produit5 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 1)
 
 produit5.urlFichier = urlSender
@@ -351,6 +364,7 @@ produit6 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 2)
 
 produit6.urlFichier = urlSender
@@ -367,6 +381,7 @@ produit7 = Produit.new(
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
   descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
   estPublic: true,
+  statusId: 1,
   utilisateur2s_id: 2)
 
 produit7.urlFichier = urlSender
@@ -374,6 +389,40 @@ produit7.image = imageSender
 produit7.tags << Tag.find_by(:nom => "L'analyse")
 produit7.tags << Tag.find_by(:nom => "Ebook", :mere => Tag.find_by(:nom => "L'analyse"))
 produit7.save
+
+produit8= Produit.new(
+  ref: "90ba1ddfg1d9e464",
+  nom: "Ebook gratuit",
+  prix: 0,
+  type_produits_id: 2,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: true,
+  statusId: 1,
+  utilisateur2s_id: 2)
+
+produit8.urlFichier = urlSender
+produit8.image = imageSender
+produit8.tags << Tag.find_by(:nom => "L'analyse")
+produit8.tags << Tag.find_by(:nom => "Ebook", :mere => Tag.find_by(:nom => "L'analyse"))
+produit8.save
+
+produit9= Produit.new(
+  ref: "90ba1ddfg1d9e764",
+  nom: "Vidéo gratuite",
+  prix: 0,
+  type_produits_id: 4,
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur.",
+  descriptionCourte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.",
+  estPublic: true,
+  statusId: 1,
+  utilisateur2s_id: 2)
+
+produit9.urlMultimedia = "https://www.youtube.com/watch?v=_RrA-R5VHQs&list=RDHCqCy8JROFn5Y&index=27"
+produit9.image = imageSender
+produit9.tags << Tag.find_by(:nom => "L'analyse")
+produit9.tags << Tag.find_by(:nom => "Outil", :mere => Tag.find_by(:nom => "L'analyse"))
+produit9.save
 
 # Création des status
 Status.create([{nom: "En ligne"},

@@ -1,5 +1,5 @@
 <%= form_for(@produit, html: {class: "formulaire--back"}) do |f| %>
-  
+
   <% if @produit.errors.any? %>
     <div class="error_explanation">
       <h2><%= pluralize(@produit.errors.count, "error") %> prohibited this produit from being saved:</h2>
@@ -14,7 +14,7 @@
 
   <div class="field field--back">
     <span class="field__label"><%= f.label :ref %></span>
-    <%= f.text_field( :ref, :readonly => true, class: "field__control")%>  
+    <%= f.text_field( :ref, :readonly => true, class: "field__control")%>
   </div>
 
   <div class="field field--back">
@@ -25,6 +25,12 @@
     <span class="field__label"><%= f.label :prix %></span>
     <%= f.text_field( :prix, class: "field__control") %>
   </div>
+
+  <div class="field field--back">
+    <span class="field__label">Status</span>
+      <%= select_tag(:status, options_from_collection_for_select(Status.all, :id, :nom, @produit.statusId), class: "field__control field__control--select") %>
+  </div>
+
 <div class="field field--back">
   <div class="actions">
     <%= f.submit "Enregistrer",  class: "button button--submit"%>

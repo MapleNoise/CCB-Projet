@@ -3,8 +3,8 @@
 	margin: 10px;
   padding: 10px;
   padding-left: 20px;
-	
-	
+
+
 	&-container {
 		margin-top: 60px;
 	}
@@ -14,7 +14,7 @@
 	  border-left: 4px solid $color-blue;
 	  background-color: lighten($color-blue, 40%);
 	}
-	
+
 	&--success {
 		color: $color-green;
 	  border-left: 4px solid $color-green;

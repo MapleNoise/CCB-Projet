@@ -1,14 +1,14 @@
 .liste{
   @include gridle_parent();
   position: relative;
-  
+
   &__item{
     @include gridle(3);
     display: inline-block;
     background-size: 100% 240px;
     height: 240px;
     position: relative;
-    
+
     &--constat{
       .liste__item__etiquette__volet__title{
         background-color: rgba($color-constat, 0.8);
@@ -16,9 +16,9 @@
       .liste__item__etiquette__volet__description{
         background-color: rgba($color-constat, 0.8);
       }
-      
+
     }
-    
+
     &--analyse{
       .liste__item__etiquette__volet__title{
         background-color: rgba($color-analyse, 0.8);
@@ -27,7 +27,7 @@
         background-color: rgba($color-analyse, 0.8);
       }
     }
-    
+
     &--decision{
       .liste__item__etiquette__volet__title{
         background-color: rgba($color-decision, 0.8);
@@ -36,7 +36,7 @@
         background-color: rgba($color-decision, 0.8);
       }
     }
-    
+
     &--action{
       .liste__item__etiquette__volet__title{
         background-color: rgba($color-action, 0.8);
@@ -45,7 +45,7 @@
         background-color: rgba($color-action, 0.8);
       }
     }
-    
+
     &--cap{
       .liste__item__etiquette__volet__title{
         background-color: rgba($color-cap, 0.8);
@@ -54,35 +54,35 @@
         background-color: rgba($color-cap, 0.8);
       }
     }
-    
+
     &--ebook{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_ebook.png")  no-repeat;
         background-size: $liste-item-background-size;
       }
     }
-    
+
     &--bibliotheque{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_bibliotheque.png")  no-repeat;
         background-size: $liste-item-background-size;
       }
     }
-    
+
     &--outil{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_outil.png")  no-repeat;
         background-size: $liste-item-background-size;
       }
     }
-    
+
     &--formation{
       .liste__item__etiquette__volet__iconerubrique{
         background: url("#{$images_path}/icone_formation.png")  no-repeat;
         background-size: $liste-item-background-size;
       }
     }
-    
+
     &__etiquette{
       border: 1px solid #d2d3d5;
       height: $liste-etiquette-size;
@@ -91,21 +91,21 @@
       color: $color-white;
       pointer: cursor;
       position: relative;
-      
+
       &:hover {
         .liste__item__etiquette__volet {
           top: 0;
           height: $liste-etiquette-size;
         }
       }
-      
+
       &__img {
         width: 100%;
         height: 100%;
         position: absolute;
         z-index: 0;
       }
-      
+
       &__volet{
         width: 100%;
         height: 30px;
@@ -115,7 +115,7 @@
         @include transition(1s);
         word-wrap: break-word;
         overflow: hidden;
-        
+
         &__title{
           width: 100%;
           display: inline-block;
@@ -127,14 +127,14 @@
           z-index:2;
           @include transition(2s);
         }
-        
+
         &__description {
           top: 30px;
           position: absolute;
           height: 210px;
           width: 100%;
         }
-        
+
         &__iconerubrique{
           width: 24px;
           height: 24px;
@@ -142,7 +142,7 @@
           margin-right: 10px;
           @include vertical-align();
         }
-        
+
         &__iconefile{
           width: 24px;
           height: 24px;
