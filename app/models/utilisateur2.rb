@@ -14,6 +14,7 @@ class Utilisateur2 < ActiveRecord::Base
 
   has_one :fonctions
   has_many :produits
+  has_and_belongs_to_many :produits
 
   validates :password, length: { minimum: 8, too_short: "C'est trop court" }, on: :update, allow_blank: true
   has_secure_password

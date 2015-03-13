@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   resources :utilisateur2s
 
   resources :formats
+  
+  
 
   # Routes personnalisées à placer avant les routes par défaut
   delete "/produits/:id" => "produits#delete"
@@ -55,7 +57,8 @@ Rails.application.routes.draw do
     match "MapSite", :to => "utilisateur2s#MapSite", via: [:get, :post]
     match "afficherMonProfil", :to => "utilisateur2s#afficherMonProfil", via: [:get, :post]
     match "achat/:id", :to => "produits#achat", via: [:get, :post]
-
+    post "/acheter", :to => "achats#acheter"
+    
 
 #  get 'login' => 'sessions#setting'
 
@@ -75,6 +78,7 @@ Rails.application.routes.draw do
   get 'test/style' => 'style#index'
 
   get '/indexBack' => 'welcome#indexBack'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

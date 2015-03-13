@@ -25,8 +25,9 @@ class Produit < ActiveRecord::Base
   #belongs_to :Coach
   #has_many :Chapitre
   has_one :type_produits
-  has_one :utilisateur2s
-
+  has_one :utilisateur2
+  has_and_belongs_to_many :utilisateur2s
+  
   # Gestion de la suppression d'un produit
   def delete!
     if(:dateSuppression == nil)

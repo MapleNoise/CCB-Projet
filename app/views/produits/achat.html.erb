@@ -35,6 +35,6 @@
 				<%= TypeProduit.find_by(:id => @produit.type_produits_id).nom %>
 			</p>
 
-			<button>Continuer mon achat</button>
+			<%= button_to("Continuer mon achat", "/acheter", params: { prod: @produit }) %>
 
 	
