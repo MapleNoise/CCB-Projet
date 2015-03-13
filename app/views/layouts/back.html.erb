@@ -28,8 +28,10 @@
               <% if u -%>
                 <%= "#{u.prenom} #{u.nom}"%>
               <% end -%></span>
-            <a href="/" class="button button--link">Retour site</a>
-            <a href="/logout" class="button button--link">Déconnexion</a>
+              <p>
+                <a href="/" class="button button--link">Retour site</a>
+                <a href="/logout" class="button button--link button--logout">Déconnexion</a>
+              </p>
           </div>
         </div>
       </div>
@@ -38,9 +40,15 @@
         <a href="/indexBack" class="menuback__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Back Office</h2>
         </a>
-        <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
-          <h2 class="menuback__item__title ">Gestion utilisateurs</h2>
-        </a>
+        <% if(u.isAdmin?)%>
+          <a href="/utilisateur2s" class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+            <h2 class="menuback__item__title ">Gestion utilisateurs</h2>
+          </a>
+        <% else %>
+          <a href=<%="/utilisateur2s/#{session[:user_id]}/modifierUtilisateur"%> class="menuback__item <%= @utilisateur_menu_active ? 'is-active' : '' %>">
+            <h2 class="menuback__item__title ">Modifier mon profil</h2>
+          </a>
+        <% end %>
         <a href="/formations" class="menuback__item <%= @formation_menu_active ? 'is-active' : '' %>">
           <h2 class="menuback__item__title">Formations</h2>
         </a>
@@ -66,12 +74,6 @@
             </a>
             <a href="/formations" class="menuback--leftmenu__item <%= @formation_menu_active ? 'is-active' : '' %>">
               <h2 class="menuback--leftmenu__item__title">Formations</h2>
-            </a>
-            <a href="/sections" class="menuback--leftmenu__item  <%= @section_menu_active ? 'is-active' : '' %>">
-              <h2 class="menuback--leftmenu__item__title">Modules</h2>
-            </a>
-            <a href="/chapitres" class="menuback--leftmenu__item <%= @chapitre_menu_active ? 'is-active' : '' %>">
-              <h2 class="menuback--leftmenu__item__title">Chapitres</h2>
             </a>
             <a href="/quizzs" class="menuback--leftmenu__item <%= @quizz_menu_active ? 'is-active' : '' %>">
               <h2 class="menuback--leftmenu__item__title">Quizz</h2>

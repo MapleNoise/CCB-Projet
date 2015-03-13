@@ -68,14 +68,14 @@ Rails.application.routes.draw do
     resources :tags
 
   get 'listeProduit' => 'produits#listeProduit'
-  get 'utilisateur2s/:id/modifierUtilisateur' => 'utilisateur2s#modifierUtilisateur', :as => :modifier_utilisateur
+  get 'utilisateur2s/:id/modifierUtilisateur' => 'utilisateur2s#modifier_utilisateur'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # resources :utilisateurs, :controller => "utilisateurs"
   # You can have the root of your site routed with "root"
   #root 'welcome#index'
-  
+
   get '/indexBack' => 'welcome#indexBack'
 
   # Example of regular route:

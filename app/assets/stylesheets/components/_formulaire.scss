@@ -42,7 +42,7 @@
   margin-bottom: $formulaire-field-height/2;
   outline: none;
   margin-right: 20px;
-  
+
   &__label {
     @include gridle(3);
     background: $formulaire-label-color;
@@ -56,20 +56,20 @@
     border-right: none;
     height: 100%;
     /*margin-top: 7px;*/
-    
+
   }
-  
+
   &__control {
     @include gridle(9);
     @include transition(all 150ms linear);
 /*    border-radius: 5px;
     border: $formulaire-field-border;*/
     height: 100%;
-    
+
     &:focus {
       outline: none;
     }
-    
+
     &--select {
     }
 
@@ -77,7 +77,7 @@
       @include gridle(6);
     }
   }
-  
+
   &--checkbox {
     .field__control {
       @include gridle(1);
@@ -88,7 +88,7 @@
       padding: 0 0 0 0;
       margin: 0 0 0 0;
     }
-    
+
     .field__label {
       @include gridle(10);
       @include vertical-align();
@@ -97,15 +97,15 @@
       color : $color-black;
     }
   }
-  
+
   &--textarea {
     //height: $formulaire-field-height*2;
-    
+
     .field__control {
       resize: vertical;
     }
   }
-  
+
   &--back {
     @include gridle(9);
     //margin-top: 50px;
@@ -120,7 +120,7 @@
       text-decoration: strong;
       padding-top: 10px;
     }
-    
+
     .field__control {
       @include gridle(12);
       height: 50%;
@@ -128,16 +128,16 @@
     border: $formulaire-field-border;
       margin-bottom: 17px;
       &--select {
-        
+
       }
     }
-    
+
   }
 }
 
 .error_explanation {
-   @extend %message;
-   @extend %message--error;
+   @extend .message;
+   @extend .message--error;
 }
 
 

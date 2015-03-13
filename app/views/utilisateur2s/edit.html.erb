@@ -1,4 +1,4 @@
-<% provide :titreH1, "Edition utilisateur"%>
+<% provide :titreH1, "Éditer un profil utilisateur"%>
 
 <%= form_for(@utilisateur2, html: {class: "formulaire--back"}) do |f| %>
 
@@ -8,12 +8,12 @@
   </div>
 
   <div class="field field--back">
-    <span class="field__label"><%= f.label "Prenom"  %></span>
+    <span class="field__label"><%= f.label "Prénom"  %></span>
     <%= f.text_field :prenom, :class=>'field__control' %>
   </div>
 
 <% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>
-    <div class="field field--back">  
+    <div class="field field--back">
    <span class="field__label">Fonction</span>
   <%= select_tag(:fonctions, options_from_collection_for_select(Fonction.all, :id, :nom, @utilisateur2.fonctionId), :class=>'field__control field__control--select') %>
 </div>  
@@ -28,7 +28,7 @@
 </div>
 <% end %>
 
-<% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>     
+<% if(Utilisateur2.find_by(id: session[:user_id]).isAdmin?) %>
 	<div class="field">
   		<%= link_to 'Afficher', @utilisateur2 , class: "button button--link"%>
 	</div>
