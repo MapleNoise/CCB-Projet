@@ -1,17 +1,6 @@
 <% provide :titreH1, "Edition utilisateur"%>
 
 <%= form_for(@utilisateur2, html: {class: "formulaire--back"}) do |f| %>
-  <% if @utilisateur2.errors.any? %>
-    <div class="error_explanation">
-      <h2><%= pluralize(@utilisateur2.errors.count, "error") %> prohibited this utilisateur2 from being saved:</h2>
-
-      <ul>
-      <% @utilisateur2.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 <div class="field field--back">
   <span class="field__label"><%= f.label "Nom" %></span>
